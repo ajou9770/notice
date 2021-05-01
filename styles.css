@@ -79,6 +79,11 @@ a {
     color:white;
     text-decoration: none;
 }
+.mile a {
+    text-decoration-color: none;
+    color:darkcyan;
+    text-decoration: none;
+}
 .footer {
     widows: 100px;
     height:120px;
