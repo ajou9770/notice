@@ -80,6 +80,7 @@ a {
     text-decoration: none;
 }
 .mile a {
+    display: inline-block;
     text-decoration-color: none;
     color:darkcyan;
     text-decoration: none;
