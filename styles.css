@@ -34,7 +34,7 @@ div {
 .mile {
     background-color:lightseagreen;
     border-radius: 20px;
-    border-color: black;
+    border: 2px solid brown;
     padding: 15px;
     box-shadow: cornflowerblue;
     text-align: left;
