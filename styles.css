@@ -35,8 +35,7 @@ div {
     background-color:lightseagreen
     border-radius: 20px;
     border-color: black;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding: 15px;
     box-shadow: cornflowerblue;
     text-align: left;
     opacity: 0.6;
