@@ -32,14 +32,14 @@ div {
     margin-bottom: 5px;
 }
 .mile {
-    background-color:darkseagreen;
+    background-color:lightseagreen
     border-radius: 20px;
     border-color: black;
     margin-left: 20px;
     margin-right: 20px;
     box-shadow: cornflowerblue;
     text-align: left;
-    opacity: 0.8;
+    opacity: 0.6;
     height: 600px;
     width: 680px;
     font-size:35px;
