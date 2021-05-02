@@ -112,6 +112,12 @@ a {
     color:darkcyan;
     text-decoration: none;
 }
+.cardcoupon a {
+    display: inline-block;
+    text-decoration-color: none;
+    color:goldenrod;
+    text-decoration: none;
+}
 .footer {
     widows: 100px;
     height:100px;
