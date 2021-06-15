@@ -157,7 +157,7 @@ a {
 }
 .footer {
     widows: 100px;
-    height:100px;
+    height:auto;
     bottom:0;
     background-color:lightseagreen;
     border-color: teal;
