@@ -72,7 +72,7 @@ div {
     text-align: left;
     text-overflow: ellipsis; overflow: visible;
     opacity: 0.8;
-    height: 550px;
+    height: auto;
     width: 640px;
     font-size:35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
