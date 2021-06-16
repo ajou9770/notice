@@ -21,62 +21,49 @@
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxPq8BIc5GUoQ2vj1EOdiKz7UTwtMQZHcfdbXcAoS_Qa0Gyw/viewform?usp=sf_link"> 생일선물 신청하기 <i class="fas fa-chevron-right fa-lg"></i></a>
             </div>
         <br/><br/>   
-        <div
-        id="kakao-talk-channel-add-button"
-        data-channel-public-id="_dfhkK"
-        data-size="large"
-        data-support-multiple-densities="true"
-      ></div<br/>
-      <div
-  id="kakao-talk-channel-chat-button"
+        <div class="text">카카오톡 채널 추가<br/>
+          <i class="fas fa-sort-down fa-lg"></i></div>
+          <div
+  id="kakao-talk-channel-add-button"
   data-channel-public-id="_dfhkK"
-  data-title="consult"
   data-size="large"
-  data-color="yellow"
-  data-shape="mobile"
   data-support-multiple-densities="true"
-></div>>           
-    </div>
-    <br/>
-    <div class="footer"> 
-    <footer><h2>&copy ajou9770@ajoucu.page 아주대의료원신협 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
-    </div>
+></div><br/>
+        <div class="text"> 상담톡(1:1채팅 문의)<br/>
+          <i class="fas fa-sort-down fa-lg"></i></div>
+          <div
+id="kakao-talk-channel-chat-button"
+data-channel-public-id="_dfhkK"
+data-title="consult"
+data-size="small"
+data-color="yellow"
+data-shape="mobile"
+data-support-multiple-densities="true"
+></div>
+<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script><br/>
 </div>
-    <script
-    src="https://kit.fontawesome.com/6478f529f2.js"
-    crossorigin="anonymous"></script>    
+<br/>
+<div class="footer"> 
+<footer><h2>&copy ajou9770@ajoucu.page 아주대의료원신협 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
+</div>
+</div>
+<script>
+window.kakaoAsyncInit = function() {
+  Kakao.Channel.createAddChannelButton({
+    container: '#kakao-talk-channel-add-button',
+  });
+  Kakao.Channel.createChatButton({
+    container: '#kakao-talk-channel-chat-button',
+  });    
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'kakao-js-sdk');
+</script>
 </body>
-<script>
-  window.kakaoAsyncInit = function() {
-    Kakao.Channel.createAddChannelButton({
-      container: '#kakao-talk-channel-add-button',
-    });
-    Kakao.Channel.createChatButton({
-      container: '#kakao-talk-channel-chat-button',
-    });    
-  };
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  })(document, 'script', 'kakao-js-sdk');
-</script>
-<script>
-  window.kakaoAsyncInit = function() {
-    Kakao.Channel.createChatButton({
-      container: '#kakao-talk-channel-chat-button',
-    });
-  };
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  })(document, 'script', 'kakao-js-sdk');
-</script>
 </html>
