@@ -136,9 +136,10 @@ div {
     width: 650px;
     font-size:35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:gray;
-    font-weight: 700;
+    color:honeydew;
+    font-weight: 800;
     margin-bottom: 5px;
+}
 .channel a {
     color: black;
 }
