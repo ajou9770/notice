@@ -24,25 +24,8 @@
         <div class="card">    
           <a href="http://pf.kakao.com/_dfhkK/79524237"> 이용고 배당 지급 예시 <i class="fas fa-chevron-right fa-lg"></i></a>
           </div><br/>
-  <div>
-    <a id="channel-add-button" href="http://pf.kakao.com/_dfhkK" onclick="void addChannel();">
-        <img
-          src="img/id_type.png"/>
-      </a>
-      <script type="text/javascript">
-        function addChannel() {
-          Kakao.Channel.addChannel({
-            channelPublicId: '_dfhkK',
-          })
-        }
-      </script>      
-    <div id="create-channel-add-button"></div>
-<script type="text/javascript">
-  Kakao.Channel.createAddChannelButton({
-    container: '#create-channel-add-button',
-    channelPublicId: '_dfhkK',
-  })
-</script>
+          <div id="kakao-talk-channel-add-button" data-channel-public-id="_dfhkK"
+          data-size="large" data-support-multiple-densities="true"></div>
 </div>
 <br/>
 <div class="footer"> 
@@ -53,4 +36,19 @@
 src="https://kit.fontawesome.com/6478f529f2.js"
 crossorigin="anonymous"></script>
 </body>
+<script>
+  window.kakaoAsyncInit = function() {
+    Kakao.Channel.createAddChannelButton({
+      container: '#kakao-talk-channel-add-button',
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'kakao-js-sdk');
+</script>
 </html>
