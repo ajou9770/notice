@@ -172,6 +172,7 @@ a {
     widows: 100px;
     height:auto;
     bottom:0;
+    border: 5px solid darkcyan;
     opacity: 0.8;
     background-color:lightseagreen;
     border-color: teal;
