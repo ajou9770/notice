@@ -129,16 +129,17 @@ div {
     margin-bottom: 5px;
 }
 .text {
-    background-color:yellow;
+    background-color:goldenrod;
     border-radius: 30px;
     opacity: 0.8;
     height:auto;
     width: 650px;
     font-size:35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:honeydew;
+    color:whitesmoke;
     font-weight: 800;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .channel a {
     color: black;
