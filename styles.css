@@ -129,14 +129,14 @@ div {
     margin-bottom: 5px;
 }
 .text {
-    background-color:wheat;
+    background-color:ivory;
     border-radius: 30px;
-    opacity: 0.8;
+    opacity: 0.9;
     height:auto;
     width: 650px;
     font-size:35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:whitesmoke;
+    color:darkorange;
     font-weight: 800;
     padding-top: 10px;
     padding-bottom: 10px;
