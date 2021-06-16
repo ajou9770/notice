@@ -116,6 +116,10 @@ div {
     font-weight: 700;
     margin-bottom: 5px;
 }
+.chadd {
+    width: 100px;
+    height: 60px;
+}
 .cvs {
     background-color:goldenrod;
     border-radius: 30px;
