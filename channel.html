@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>의료원신협 카카오 채널 안내</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <img src="img/event_ch.jpg"><br/>
+  <div class="mile">
+    ☆ 의료원 신협 카카오채널 조합원 우대혜택 ☆  <br/><br/>
+             <span>▶ 매월 세븐일레븐 할인쿠폰 또는 상품교환권을 보내 드립니다. <br/></span>
+         ▶ 대명리조트 객실 확보 예약 안내 우선 제공<br/>
+         ▶ 각종 금융혜택 정보 실시간 전송 <br/>
+         ▶ 신협 조합원 공동구매 참여 안내(서비스 오픈예정)<br/>      
+         ▶ 조합원 부동산 또는 세무상담 (서비스 오픈예정) <br/>
+         ▶ 전용 상담 어부바 쳇봇을 통한 24시간 체팅 상담 서비스<br/>
+    </div><br/>
+  <div>
+          <div class="text">카카오톡 채널 추가<br/>
+            <i class="fas fa-sort-down fa-lg"></i></div>
+            <div
+    id="kakao-talk-channel-add-button"
+    data-channel-public-id="_dfhkK"
+    data-size="large"
+    data-support-multiple-densities="true"
+  ></div><br/>
+          <div class="text"> 상담톡(1:1채팅 문의)<br/>
+            <i class="fas fa-sort-down fa-lg"></i></div>
+            <div
+  id="kakao-talk-channel-chat-button"
+  data-channel-public-id="_dfhkK"
+  data-title="consult"
+  data-size="small"
+  data-color="yellow"
+  data-shape="mobile"
+  data-support-multiple-densities="true"
+></div>
+<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script><br/>
+</div>
+<br/>
+<div class="footer"> 
+<footer><h2>&copy ajou9770@ajoucu.page 아주대의료원신협 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
+</div>
+</div>
+<script>
+  window.kakaoAsyncInit = function() {
+    Kakao.Channel.createAddChannelButton({
+      container: '#kakao-talk-channel-add-button',
+    });
+    Kakao.Channel.createChatButton({
+      container: '#kakao-talk-channel-chat-button',
+    });    
+  };
+ 
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'kakao-js-sdk');
+</script>
+</body>
+</html>
