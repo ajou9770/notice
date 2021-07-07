@@ -35,13 +35,7 @@
           <img src="img/sentence_type (1).png">
   <div>
           <div class="text"><i class="fas fa-sort-down fa-lg"></i></div><br/>
-            <div
-    id="kakao-talk-channel-add-button"
-    data-channel-public-id="_dfhkK"
-    data-size="large"
-    data-support-multiple-densities="true"
-  ></div><br/>
-          <div class="text"> 상담톡(챗봇)으로 돌아가기<br/>
+          <div class="text"> 상담톡(1:1채팅) 연결 <br/>
             <i class="fas fa-sort-down fa-lg"></i></div>
             <div
   id="kakao-talk-channel-chat-button"
@@ -61,9 +55,6 @@
 </div>
 <script>
   window.kakaoAsyncInit = function() {
-    Kakao.Channel.createAddChannelButton({
-      container: '#kakao-talk-channel-add-button',
-    });
     Kakao.Channel.createChatButton({
       container: '#kakao-talk-channel-chat-button',
     });    
