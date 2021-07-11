@@ -12,7 +12,7 @@ function handleSumbit(event) {
   if (show === null) {
     h1.innerText = "직원에게 문의 바랍니다. ";
   } else {
-    h1.innerText = show;
+    h1.innerText =`조합원번호(ID)는 ${show} 입니다`;
   }
   formInput.value = "";
 }
