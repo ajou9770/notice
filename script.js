@@ -1,6 +1,6 @@
 const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
-const h1 = document.querySelector("h2");
+const h1 = document.querySelector("h1");
 
 localStorage.setItem("1234", "6639");
 localStorage.setItem("4567", "114789");
