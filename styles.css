@@ -180,6 +180,18 @@ a {
     color:darkcyan;
     text-decoration: none;
 }
+}
+.script a {
+    background-color:ivory;
+    border-radius: 30px;
+    opacity: 0.9;
+    height:auto;
+    width: 650px;
+    display: inline-block;
+    text-decoration-color: none;
+    color:darkcyan;
+    text-decoration: none;
+}
 .coupon a {
     display: inline-block;
     text-decoration-color: none;
