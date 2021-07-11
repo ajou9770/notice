@@ -255,14 +255,14 @@ form {
 }
 .form-input-one {
 width: 60%;
-height: 70px;
+height: 40px;
 font-size: 20px;
 font-weight: 600;
 margin-right: 10px;
 }
 .form-input-two {
     width: 30%;
-height: 70px;
+height: 40px;
 font-weight: 600;
 font-size: 20px;
 }
