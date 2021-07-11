@@ -12,7 +12,7 @@ function handleSumbit(event) {
   if (show === null) {
     h1.innerText = "없슴";
   } else {
-    h1.innerText = `조합원번호(ID): ${show}`;
+    h1.innerText = show;
   }
   formInput.value = "";
 }
