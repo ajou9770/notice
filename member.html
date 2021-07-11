@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-      <h3>아래에 의료원 "사원번호"를 입력하세요~~👌</h3>
+      <h3>○ 의료원 "사원번호"를 입력하세요~👌</h3>
     <form class="formout">
       <input maxlength="8" type="number" placeholder="사번 입력" />
       <input type="submit" />
@@ -16,6 +16,35 @@
     <h1 class="result"></h1>
     <h4>※ 2021.7.1일 가입조합원 기준 <br/>
         ☞ 이후 가입조합원은 신협(☏6052,6971)으로 문의 바랍니다.</h4>
+        <div class="text"> 상담톡(챗봇)으로 돌아가기<br/>
+            <i class="fas fa-sort-down fa-lg"></i></div>
+            <div
+  id="kakao-talk-channel-chat-button"
+  data-channel-public-id="_dfhkK"
+  data-title="consult"
+  data-size="small"
+  data-color="yellow"
+  data-shape="mobile"
+  data-support-multiple-densities="true"
+></div>
     <script src="script.js"></script>
+    <script>
+        window.kakaoAsyncInit = function() {
+          Kakao.Channel.createChatButton({
+            container: '#kakao-talk-channel-chat-button',
+          });    
+        };
+       
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'kakao-js-sdk');
+      </script>
   </body>
+  <div class="footer"> 
+    <footer><h2>&copy ajou9770@ajoucu.page 아주대의료원신협 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
+    </div>
 </html>
