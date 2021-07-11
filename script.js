@@ -2,6 +2,10 @@ const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h1 = document.querySelector("h1");
 
+localStorage.setItem("1998001", "4795484");
+localStorage.setItem("2003001", "4796584");
+localStorage.setItem("2007003", "4798180");
+localStorage.setItem("2008001", "13915701");
 localStorage.setItem("110914", "21736933");
 localStorage.setItem("100015", "4794054");
 localStorage.setItem("100017", "4794259");
