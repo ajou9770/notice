@@ -190,6 +190,10 @@ a {
     font-size: 40px;
     display: inline-block;
 }
+.mark {
+    background-color: teal;
+    opacity: 0.8;
+}
 .coupon a {
     display: inline-block;
     text-decoration-color: none;
