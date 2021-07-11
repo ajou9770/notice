@@ -10,7 +10,7 @@ function handleSumbit(event) {
   value = formInput.value;
   const show = localStorage.getItem(value);
   if (show === null) {
-    h1.innerText = "없슴";
+    h1.innerText = "직원에게 문의 바랍니다. ";
   } else {
     h1.innerText = show;
   }
