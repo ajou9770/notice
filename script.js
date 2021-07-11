@@ -6,6 +6,8 @@ localStorage.setItem("1234", "6639");
 localStorage.setItem("4567", "114789");
 
 function handleSumbit(event) {
+  if (value === "");
+  alert("사번을 입력 후 제출해 주세요😃")
   event.preventDefault();
   value = formInput.value;
   const show = localStorage.getItem(value);
