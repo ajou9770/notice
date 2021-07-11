@@ -181,16 +181,14 @@ a {
     text-decoration: none;
 }
 }
-.script {
-    background-color:coral;
-    border-radius: 30px;
+.result {
+    background-color:darkcyan;
+    border-radius: 10px;
     opacity: 0.8;
-    height:auto;
-    width: 650px;
+    height:150px;
+    width: 400px;
+    font-size: 40px;
     display: inline-block;
-    text-decoration-color: none;
-    color:darkcyan;
-    text-decoration: none;
 }
 .coupon a {
     display: inline-block;
