@@ -6,11 +6,11 @@ localStorage.setItem("1234", "6639");
 localStorage.setItem("4567", "114789");
 
 function handleSumbit(event) {
-  if (value === "") {
-  alert("사번을 입력 후 제출해 주세요😃");
-  }
-  event.preventDefault();
+   event.preventDefault();
   value = formInput.value;
+  if (value === "") {
+    alert("사번을 입력 후 제출해 주세요😃");
+    }
   const show = localStorage.getItem(value);
   if (show === null) {
     h1.innerText = "[직원에게 문의 바랍니다.]";
