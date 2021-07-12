@@ -2,7 +2,7 @@ const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
-const clock = document.querySelector("h2#clock");
+const clock = document.querySelector("h3#clock");
 
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("1998001", "4795484");
@@ -18,7 +18,7 @@ function getClock() {
   const minutes = String(date.getMinutes()).padStart(2,"0");
   const seconds = String(date.getSeconds()).padStart(2,"0");
   
-  clock.innerText = `▣ 현재 시각  ${hours}:${minutes}:${seconds}`;
+  clock.innerText = `⏰ 현재 시각  ${hours}:${minutes}:${seconds}`;
 }
 
 getClock();
