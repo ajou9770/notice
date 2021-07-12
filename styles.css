@@ -271,14 +271,14 @@ form {
 }
 .form-input-one {
 width: 60%;
-height: 40px;
-font-size: 20px;
+height: 30px;
+font-size: 15px;
 font-weight: 600;
 margin-right: 10px;
 }
 .form-input-two {
     width: 35%;
-height: 45px;
+height: 35px;
 font-weight: 600;
-font-size: 20px;
+font-size: 15px;
 }
