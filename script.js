@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
+const clock = document.querySelector("h2#clock");
 
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("1998001", "4795484");
@@ -10,6 +11,13 @@ localStorage.setItem("2007003", "4798180");
 localStorage.setItem("2008001", "13915701");
 localStorage.setItem("2000003", "4795888");
 localStorage.setItem("105116", "4796917");
+
+function getClock() {
+  const date = new Date();
+  clock.innerText = `▣ 현재 시각  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+}
+getClock();
+setInterval(getClock, 1000);
 
 function handleSumbit(event) {
   event.preventDefault(); 
