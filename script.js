@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h1 = document.querySelector("h1");
 
+// ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("1998001", "4795484");
 localStorage.setItem("2003001", "4796584");
 localStorage.setItem("2007003", "4798180");
