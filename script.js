@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
-const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
+const h3 = document.querySelector("h3");
 const clock = document.querySelector("h3#clock");
 
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
@@ -31,11 +31,11 @@ function handleSumbit(event) {
   const show = localStorage.getItem(value);
   if(value === "") {
     alert("사번을 입력 후 제출해 주세요😃"); 
-    h1.innerText="";
+    h2.innerText="";
   }else if(show === null) {
-    h1.innerText = "[조회되지 않네요😥 신협으로 문의 바랍니다.👌]";
+    h2.innerText = "[조회되지 않네요😥 신협으로 문의 바랍니다.👌]";
   } else {
-    h1.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
+    h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
   formInput.value = "";
 }
