@@ -1,6 +1,7 @@
 const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
 
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("1998001", "4795484");
@@ -11,7 +12,7 @@ localStorage.setItem("2000003", "4795888");
 localStorage.setItem("105116", "4796917");
 
 function handleSumbit(event) {
-   event.preventDefault();
+  event.preventDefault(); 
   value = formInput.value;
   const show = localStorage.getItem(value);
   if(value === "") {
@@ -24,5 +25,4 @@ function handleSumbit(event) {
   }
   formInput.value = "";
 }
-
 form.addEventListener("submit", handleSumbit);
