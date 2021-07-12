@@ -14,9 +14,15 @@ localStorage.setItem("105116", "4796917");
 
 function getClock() {
   const date = new Date();
-  clock.innerText = `▣ 현재 시각  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  const hours = String(date.getHours()).padStart(2,"0");
+  const minutes = String(date.getMinutes()).padStart(2,"0");
+  const seconds = String(date.getSeconds()).padStart(2,"0");
+  
+  clock.innerText = `▣ 현재 시각  ${hours}:${minutes}:${seconds}`;
 }
+
 getClock();
+
 setInterval(getClock, 1000);
 
 function handleSumbit(event) {
