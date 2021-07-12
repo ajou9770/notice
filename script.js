@@ -40,3 +40,5 @@ function handleSumbit(event) {
   formInput.value = "";
 }
 form.addEventListener("submit", handleSumbit);
+
+document.addEventListener('contextmenu', event => event.preventDefault());
