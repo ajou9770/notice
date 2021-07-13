@@ -20,7 +20,7 @@
         ☞ 조합원 번호가 조회되지 않는 경우 아래 상담톡 또는 신협(☎6052,6971)으로 문의 바랍니다.<br/>
         📢 타인의 정보를 도용할 경우, 개인정보보호법에 의거 처벌 받을 수 있습니다.<br/>
         ☞ 이 사이트는 크롬(Chrome)에 최적화 되어 있습니다. </h3>
-            <div
+        <div
   id="kakao-talk-channel-chat-button"
   data-channel-public-id="_dfhkK"
   data-title="consult"
@@ -35,20 +35,20 @@
 <span><b>※보안상 마우스 우측버튼 사용 불가합니다.</b></span>
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>    
 <script src="script.js"></script>
-    <script>
-        window.kakaoAsyncInit = function() {
-          Kakao.Channel.createChatButton({
-            container: '#kakao-talk-channel-chat-button',
-          });    
-        };
-       
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'kakao-js-sdk');
-      </script>
-  </body>
+<script>
+  window.kakaoAsyncInit = function() {
+    Kakao.Channel.createChatButton({
+      container: '#kakao-talk-channel-chat-button',
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'kakao-js-sdk');
+</script>
+    
 </html>
