@@ -2,7 +2,6 @@ const form = document.querySelector("form");
 const formInput = form.querySelector("input:first-child");
 const h2 = document.querySelector("h2");
 const h3 = document.querySelector("h3");
-const clock = document.querySelector("h3#clock");
 
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("110914", "21736933");
@@ -2767,53 +2766,40 @@ localStorage.setItem("803014", "19565562");
 localStorage.setItem("803260", "4794037");
 localStorage.setItem("1998001", "4795484");
 localStorage.setItem("2000003", "4795888");
-localStorage.setItem("114130", "025933831");
-localStorage.setItem("113730", "025934592");
-localStorage.setItem("112790", "025940456");
-localStorage.setItem("113195", "025940607");
-localStorage.setItem("112792", "025940753");
-localStorage.setItem("500527", "025941384");
-localStorage.setItem("113846", "025943544");
-localStorage.setItem("112628", "025943833");
-localStorage.setItem("112276", "025945055");
-localStorage.setItem("113800", "025953895");
-localStorage.setItem("114113", "025962279");
-localStorage.setItem("114112", "025969167");
-localStorage.setItem("109029", "025969401");
-localStorage.setItem("113861", "025970753");
-localStorage.setItem("500955", "025974288");
-localStorage.setItem("114158", "025985935");
-localStorage.setItem("114025", "025990072");
-localStorage.setItem("114149", "025999083");
-localStorage.setItem("112444", "026001644");
-localStorage.setItem("113418", "026001966");
-localStorage.setItem("113673", "026005228");
-localStorage.setItem("113186", "026005254");
-localStorage.setItem("114155", "026009766");
-localStorage.setItem("114039", "026013345");
-localStorage.setItem("114162", "026013514");
-localStorage.setItem("114223", "026018936");
-localStorage.setItem("114140", "026027151");
-localStorage.setItem("113964", "026027611");
-localStorage.setItem("113971", "026041984");
-localStorage.setItem("112972", "026045956");
-localStorage.setItem("114044", "026050769");
-localStorage.setItem("104300", "026051291");
-localStorage.setItem("114199", "026056421");
-localStorage.setItem("101121", "024826949");
-
-function getClock() {
-  const date = new Date();
-  const hours = String(date.getHours()).padStart(2,"0");
-  const minutes = String(date.getMinutes()).padStart(2,"0");
-  const seconds = String(date.getSeconds()).padStart(2,"0");
-  
-  clock.innerText = `⏰ 지금은 ${hours}시 ${minutes}분 ${seconds}초 입니다`;
-}
-
-getClock();
-
-setInterval(getClock, 1000);
+localStorage.setItem("114130", "25933831");
+localStorage.setItem("113730", "25934592");
+localStorage.setItem("112790", "25940456");
+localStorage.setItem("113195", "25940607");
+localStorage.setItem("112792", "25940753");
+localStorage.setItem("500527", "25941384");
+localStorage.setItem("113846", "25943544");
+localStorage.setItem("112628", "25943833");
+localStorage.setItem("112276", "25945055");
+localStorage.setItem("113800", "25953895");
+localStorage.setItem("114113", "25962279");
+localStorage.setItem("114112", "25969167");
+localStorage.setItem("109029", "25969401");
+localStorage.setItem("113861", "25970753");
+localStorage.setItem("500955", "25974288");
+localStorage.setItem("114158", "25985935");
+localStorage.setItem("114025", "25990072");
+localStorage.setItem("114149", "25999083");
+localStorage.setItem("112444", "26001644");
+localStorage.setItem("113418", "26001966");
+localStorage.setItem("113673", "26005228");
+localStorage.setItem("113186", "26005254");
+localStorage.setItem("114155", "26009766");
+localStorage.setItem("114039", "26013345");
+localStorage.setItem("114162", "26013514");
+localStorage.setItem("114223", "26018936");
+localStorage.setItem("114140", "26027151");
+localStorage.setItem("113964", "26027611");
+localStorage.setItem("113971", "26041984");
+localStorage.setItem("112972", "26045956");
+localStorage.setItem("114044", "26050769");
+localStorage.setItem("104300", "26051291");
+localStorage.setItem("114199", "26056421");
+localStorage.setItem("101121", "24826949");
 
 function handleSumbit(event) {
   event.preventDefault(); 
