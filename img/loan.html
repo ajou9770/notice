@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>보증보험료 계산하기</title>
+    <style>
+      .in {
+        width: 30%;
+        height: 50px;
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .in-term {
+        width: 10%;
+        height: 50px;
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .out {
+          width: 20%;
+          height: 55px;
+          font-size: 25px;
+          font-weight: 600;
+      }
+      .submit {
+          margin-top: 20px;
+      }
+      .dan {
+        font-size: 30px;
+        font-weight: 700; 
+      }
+    </style>
+  </head>
+  <body>
+      <span><h2>1.대출금액을 입력하세요</h2></span>
+    <form>
+      <input class="in" type="number" required /><span class="dan"> 원</span>
+      <h2><span>2.대출기간을 입력하세요</span></h2>
+      <input class="in-term" type="number" required/><span class="dan"> 년</span><br/>
+      <div class="submit"><input class="out" type="submit"></div>
+    </form><br/>
+    <h1></h1>
+    <script>
+      const calInput = document.querySelector(".in");
+      const h = document.querySelector("h1");
+      const calForm = document.querySelector("form");
+      const term = document.querySelector(".in-term")
+
+      function cal(event) {
+        event.preventDefault();
+        const value = calInput.value;
+        const te = term.value;
+        if(te > 5) {
+           return alert("5년 까지만 입력하세요~~~😜")
+        }
+        let calculate = Math.round(value *1.1* 0.002317*te/10)*10;
+        if(calculate <10000) {
+            calculate = 10000;
+          return h.innerText =`최소 보증보험료 ${calculate.toLocaleString("ko-KR")} 원입니다`
+        }
+        h.innerText = `보증보험료는 ${calculate.toLocaleString("ko-KR")} 원입니다`;
+      }
+    
+      calForm.addEventListener("submit", cal);
+    </script>
+  </body>
+</html>
