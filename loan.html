@@ -6,7 +6,7 @@
     <title>보증보험료 계산하기</title>
     <style>
       .in {
-        width: 50%;
+        width: 30%;
         height: 50px;
         font-size: 30px;
         font-weight: 500;
@@ -93,7 +93,7 @@
       <div class="calin">
             <span><h2>1.대출금액을 입력하세요</h2></span>
     <form>
-      <input class="in" type="number" required /><span class="dan"> 원</span>
+      <input class="in" type="number" required /><span class="dan"> 만원</span>
       <h2><span>2.대출기간을 입력하세요</span></h2>
       <input class="in-term" type="number" required/><span class="dan"> 년</span><br/>
       <div class="submit"><input class="out" type="submit"></div>
@@ -112,14 +112,14 @@
       function cal(event) {
         event.preventDefault();
         const value = calInput.value;
-        if(value < 1000000) {
+        if(value < 100) {
            return alert("대출금액은 100만원 이상 입력해 주세요~~👌")
         }
         const te = term.value;
         if(te > 5) {
            return alert("5년 까지만 입력하세요~~~😜")
         }
-        let calculate = Math.round(value *1.1* 0.002317*te/10)*10;
+        let calculate = Math.round(value *10000*1.1* 0.002317*te/10)*10;
         if(calculate <10000) {
             calculate = 10000;
           return h.innerText =`최소 보증보험료 ${calculate.toLocaleString("ko-KR")} 원입니다`
