@@ -112,6 +112,9 @@
       function cal(event) {
         event.preventDefault();
         const value = calInput.value;
+        if(value < 1000000) {
+           return alert("100만원 이상 입력해 주세요~~👌")
+        }
         const te = term.value;
         if(te > 5) {
            return alert("5년 까지만 입력하세요~~~😜")
