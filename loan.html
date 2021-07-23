@@ -30,20 +30,37 @@
         font-size: 30px;
         font-weight: 700; 
       }
+      .calin {
+          height: auto;
+          width: 500px;
+          background-color: wheat;
+          opacity: 0.8;
+          padding-left: 10px;
+          border-radius: 10px;
+      }
+      .result {
+          height: auto;
+          width: 500px;
+          background-color:thistle;
+          opacity: 0.8;
+          padding-left: 10px;
+          border-radius: 10px;
+      }
     </style>
   </head>
   <body>
       <span><h2>[생활안정자금 보증보험료 계산 하기]</h2>
         <h2>☞ 상환방법: 만기일시 상환<br/>
             ※원금분할상환은 별도 문의 바랍니다. </h2></span>      
-      <span><h2>1.대출금액을 입력하세요</h2></span>
+      <div class="calin">
+            <span><h2>1.대출금액을 입력하세요</h2></span>
     <form>
       <input class="in" type="number" required /><span class="dan"> 원</span>
       <h2><span>2.대출기간을 입력하세요</span></h2>
       <input class="in-term" type="number" required/><span class="dan"> 년</span><br/>
       <div class="submit"><input class="out" type="submit"></div>
-    </form><br/>
-    <h1></h1>
+    </form><br/></div>
+    <div class="result"><h1></h1></div>
     <script>
       const calInput = document.querySelector(".in");
       const h = document.querySelector("h1");
