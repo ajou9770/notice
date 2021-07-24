@@ -128,6 +128,9 @@
         if(value < 100) {
            return alert("대출금액은 100만원 이상 입력해 주세요~~👌")
         }
+        if(value > 10000) {
+           return alert("대출금액은 1억원 이하로 입력해 주세요~~👌")
+        }
         const te = term.value;
         if(te > 5) {
            return alert("5년 까지만 입력하세요~~~😜")
@@ -138,7 +141,7 @@
           return h.innerText =`최소 보증보험료 ${calculate.toLocaleString("ko-KR")} 원입니다`
         }
         h.innerText = `▶ 보증보험료는 ${calculate.toLocaleString("ko-KR")} 원입니다`;
-      }
+      } 
 
       calForm.addEventListener("submit", cal);
     </script>
