@@ -199,14 +199,18 @@
         </select>
         <div class="submit"><input class="out" type="submit" /></div>
         <h3>
-          <mark>※ 중도상환할 경우는 남은 기간의 보험료는 환급됩니다.</mark>
+          <mark>※ 신협은 대출금 중도상환 수수료가 없습니다. </mark>
         </h3>
       </form>
     </div><br/>
     <div class="result">
       <h1></h1></div>
       <h1 class="resultmile"></h1>
-    </div>
+    </div><br/>
+    <h3>
+      <mark>※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
+      ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 지급됩니다. </mark>
+    </h3><br/>
     <div class="mile">
       <a href="http://ajou9770.github.io/usertip/loan.html">
         <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
@@ -260,7 +264,7 @@
       )}원잆니다. 합계는 ${(firstValue + secondValue).toLocaleString(
         "ko-KR"
       )}입니다.`;
-      hTwo.innerHTML = `이용고배당으로 매년 환급되는 금액은 약 ${thirdValue.toLocaleString(
+      hTwo.innerHTML = `대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
         "ko-KR"
       )}원입니다.`;
       window.scrollTo(0, document.body.scrollHeight);
