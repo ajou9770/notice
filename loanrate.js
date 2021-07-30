@@ -20,8 +20,8 @@
       Math.round((((oneValue * 0.027) / 365) * 30) / 10) * 10;
     let thirdValue = Math.round((oneValue * 0.0045) / 2 / 10) * 10;
     
-    if (calInput.value < 10 || calInput.value >20000) {
-      return alert("최소 대출 금액은 10만원 최대 대출 금액은 2억원 입니다~~👌");
+    if (calInput.value < 100 || calInput.value >20000) {
+      return alert("최소 대출 금액은 100만원 최대 대출 금액은 2억원 입니다~~👌");
     }
 
     if (twoValue < 1) {
