@@ -207,42 +207,55 @@
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 <script>
   const hOne = document.querySelector(".result h1:nth-child(1)");
-  const hTwo = document.querySelector(".resultmile");
+  const hTwo = document.querySelector(".result h1:nth-child(2)");
   const calInput = document.querySelector(".in");
   const calForm = document.querySelector("form");
+  const sum = document.querySelector(".submit");
   const year = document.querySelector(".in-year");
-  const date = document.querySelector(".in-date")
+  const date = document.querySelector(".in-date");
   const selectOne = document.querySelector(".selectMethod");
   const selectTwo = document.querySelector(".selectPp");
-
   function cal(event) {
     event.preventDefault();
-    const oneValue = calInput.value*10000;
-    const twoValueYear = parseInt(year.value)*12;
+    const oneValue = calInput.value * 10000;
+    const twoValueYear = parseInt(year.value) * 12;
     const twoValueDate = parseInt(date.value);
     const twoValue = twoValueYear + twoValueDate;
     const threeValue = selectOne.value;
     const fourValue = selectTwo.value;
-    let firstValue = Math.round(oneValue/twoValue/10)*10;
-    let secondValue = Math.round(oneValue*0.027/365*30/10)*10;
-    let thirdValue = Math.round(oneValue * 0.0045/2/10)*10
-    if(parseInt(threeValue) === 1){
+    let firstValue = Math.round(oneValue / twoValue / 10) * 10;
+    let secondValue =
+      Math.round((((oneValue * 0.027) / 365) * 30) / 10) * 10;
+    let thirdValue = Math.round((oneValue * 0.0045) / 2 / 10) * 10;
+    if (calInput.value < 10) {
+      return alert("최소 대출 금액은 10만원 입니다.");
+    }
+    if (parseInt(threeValue) === 1) {
       firstValue = 0;
-      thirdValue = Math.round(thirdValue*2/10)*10;
-    } 
-    if(parseInt(fourValue) === 1) {
-       secondValue = Math.round(oneValue*0.025/365*30/10)*10;
+      thirdValue = Math.round((thirdValue * 2) / 10) * 10;
     }
-    if(twoValue > 60){
-      return hOne.innerHTML = `대출기간은 총 5년입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다.`
+    if (parseInt(fourValue) === 1) {
+      secondValue = Math.round((((oneValue * 0.025) / 365) * 30) / 10) * 10;
     }
-    window.scrollTo(0,400);
-    hOne.innerHTML = `☞월분할 상환원금은 ${firstValue.toLocaleString("ko-KR")}원 이고, 
-    월이자는 약 ${secondValue.toLocaleString("ko-KR")}원입니다. 
-    원리금 합산(월부담금)은 약 ${(firstValue+secondValue).toLocaleString("ko-KR")}원 입니다.`;
-    hTwo.innerHTML = `☞대출금관련 이용고배당으로 매년(2월경) 약 ${thirdValue.toLocaleString("ko-KR")}원을 돌려 받습니다.`;
-} 
+    if (twoValue > 60) {
+      hOne.innerHTML = `대출기간은 총 5년입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다.`;
+      window.scrollTo(0, document.body.scrollHeight);
+    } else {
+      hOne.innerHTML = `월분할상환원금${firstValue.toLocaleString(
+        "ko-KR"
+      )}원 이고, 월이자는 약 ${secondValue.toLocaleString(
+        "ko-KR"
+      )}원잆니다. 합계는 ${(firstValue + secondValue).toLocaleString(
+        "ko-KR"
+      )}입니다.`;
+      hTwo.innerHTML = `이용고배당으로 매년 환급되는 금액은 약 ${thirdValue.toLocaleString(
+        "ko-KR"
+      )}원입니다.`;
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  }
   calForm.addEventListener("submit", cal);
 </script>
+
   </body>
 </html>
