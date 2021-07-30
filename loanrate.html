@@ -152,59 +152,71 @@
     </style>
   </head>
   <body>
-    <div class="title"> 월 대출원리금 계산 하기</div>
-    <h3>☞ 이자는 최저(우대)금리기준 <br/>
-        ※ 참조합원:으뜸이 / 신용평점등급: 1~2등급(평점) </h3></span>      
-  <div class="calin">
-        <span><h2>1.대출금액을 입력하세요</h2></span>
-<form>
-  <input class="in" type="number" required /><span class="dan"> 만원</span>
-  <h2><span>2.대출기간을 입력하세요</span></h2>
-  <select class="in-year" style="height: 50px;">
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-</select>
-<span class="dan">년</span>
-<select class="in-date" style="height: 50px;">
-  <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-</select>
-<span class="dan">개월</span>
-  <h2>3. 상환 방법 및 최초대출 여부를 선택하세요.</h2>
-<select class="selectMethod" style="height: 50px;">
-    <option value="1">일시상환</option>
-    <option value="2">분할상환</option>
-</select>
-<select class="selectPp" style="height: 50px;">
-  <option value="1">최초대출해당됨(0.2%우대)</option>
-  <option value="2">해당없음(기대출이력 있음)</option>
-</select>
-  <div class="submit"><input class="out" type="submit"></div><br/>
-  <h2><mark>※ 개인신용평점, 우대조건 등에 따라 다를 수 있습니다. </mark></h2>
-</form><br/></div><br/>
-<div class="result">
-  <h1></h1></div>
-  <h1 class="resultmile"></h1>
-  <h2><mark>※ 이용고배당은 1년 동안의 대출평잔과 기타 이용실적 기준으로 산출됨<br/>
-  ☞대출기간이 1년 미만인 경우는 산출된 금액보다 적을 수 있습니다. </mark></h2>
-<div class="mile">
-<a href="http://ajou9770.github.io/usertip/loan.html"> <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기 </i></a><br/>
-</div>
-<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+    <div class="title">보증보험료 계산 하기</div>
+    <h2>
+      ☞ 상환방법: 만기일시 상환<br />
+      ※원금분할상환은 별도 문의 바랍니다.
+    </h2>
+    <div class="calin">
+      <h2>1.대출금액을 입력하세요</h2>
+      <form>
+        <input class="in" type="number" required /><span class="dan">
+          만원</span
+        >
+        <h2><span>2.대출기간을 입력하세요</span></h2>
+        <select class="in-year" style="height: 50px">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <span>년</span>
+        <select class="in-date" style="height: 50px">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+        </select>
+        <span>월</span>
+        <h2>상환 방법 및 대출 이력을 선택하세요.</h2>
+        <select class="selectMethod" style="height: 50px">
+          <option value="1">일시상환</option>
+          <option value="2">분할상환</option>
+        </select>
+        <select class="selectPp" style="height: 50px">
+          <option value="1">최초대출</option>
+          <option value="2">해당없음(기대출이력 있음)</option>
+        </select>
+        <div class="submit"><input class="out" type="submit" /></div>
+        <h3>
+          <mark>※ 중도상환할 경우는 남은 기간의 보험료는 환급됩니다.</mark>
+        </h3>
+      </form>
+    </div>
+    <div class="result">
+      <h1></h1>
+      <h1></h1>
+    </div>
+    <div class="mile">
+      <a href="http://ajou9770.github.io/usertip/loan.html">
+        <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
+      </a>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+
 <script>
   const hOne = document.querySelector(".result h1:nth-child(1)");
   const hTwo = document.querySelector(".result h1:nth-child(2)");
