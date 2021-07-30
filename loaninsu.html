@@ -161,8 +161,8 @@
   const calInput = document.querySelector(".in");
   const h = document.querySelector("h1");
   const calForm = document.querySelector("form");
-  const term = document.querySelector(".in-term")
-  const select = document.querySelector("select");
+  const term = document.querySelector(".in-term");
+  const methods = document.querySelector(".selectMethod");
 
   function cal(event) {
     event.preventDefault();
@@ -174,21 +174,16 @@
        return alert("대출금액은 1억원 이하로 입력해 주세요~~👌")
     }
     const te = term.value;
-    if(te > 5) {
-       return alert("5년 까지만 입력하세요~~~😜")
-    }
     let calculate = Math.round(value *10000*1.1* 0.002317*te/10)*10;
     if(calculate <10000) {
         calculate = 10000;
     } 
-    if(parseInt(select.value) === 1) {
+    if(parseInt(methods.value) === 1) {
         return h.innerText = `일시상환 보증 보험료는 ${calculate.toLocaleString("ko-KR")}입니다`;
-    } else {
-        return h.innerText = `분할상환 보증 보험료는 약 ${Math.round(calculate*0.55 < 10000 ? 10000 : Math.round(calculate*0.55/10)*10).toLocaleString("ko-KR")}입니다.`;
-        window.scrollTo(0, document.body.scrollHeight);    
-      }
+    } else{
+        return h.innerText = `분할상환 보증 보험료는 약 ${Math.round(calculate*0.55 < 10000 ? 10000 : Math.round(calculate*0.55/10)*10).toLocaleString("ko-KR")}입니다.`;  
+    }
 } 
-
   calForm.addEventListener("submit", cal);
 </script>
   </body>
