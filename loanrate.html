@@ -257,14 +257,14 @@
       hOne.innerHTML = `대출기간은 총 5년입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다.`;
       window.scrollTo(0, document.body.scrollHeight);
     } else {
-      hOne.innerHTML = `월분할상환원금${firstValue.toLocaleString(
+      hOne.innerHTML = `☞ 월분할상환원금${firstValue.toLocaleString(
         "ko-KR"
       )}원 이고, 월이자는 약 ${secondValue.toLocaleString(
         "ko-KR"
       )}원잆니다. 매월 원리금 합계액은 약 ${(firstValue + secondValue).toLocaleString(
         "ko-KR"
       )}원 입니다.`;
-      hTwo.innerHTML = `대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
+      hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
         "ko-KR"
       )}원입니다.`;
       window.scrollTo(0, document.body.scrollHeight);
