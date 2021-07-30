@@ -33,16 +33,16 @@
       hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
       window.scrollTo(0, document.body.scrollHeight);
     } else {
-      hOne.innerHTML = `☞ 월분할상환원금${firstValue.toLocaleString(
+      hOne.innerHTML = `☞ 월분할상환원금 ${firstValue.toLocaleString(
         "ko-KR"
-      )}원, 월이자는 약 ${secondValue.toLocaleString(
+      )} 원, 월이자는 약 ${secondValue.toLocaleString(
         "ko-KR"
-      )}원 입니다. [매월 원리금 합계액은 약 ${(firstValue + secondValue).toLocaleString(
+      )} 원 입니다. [매월 원리금 합계액은 약 ${(firstValue + secondValue).toLocaleString(
         "ko-KR"
-      )}원 입니다.]`;
+      )} 원 입니다.]`;
       hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
         "ko-KR"
-      )}원으로 예상 됩니다.`;
+      )} 원으로 예상 됩니다.`;
       window.scrollTo(0, document.body.scrollHeight);
     }
   }
