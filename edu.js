@@ -6,7 +6,7 @@ const h3 = document.querySelector("h3");
 // ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
 localStorage.setItem("100159", "032392014004");
 localStorage.setItem("100316", "032392013002");
-localStorage.setItem("100816", "032392014005");
+localStorage.setItem("100189", "032392014005");
 localStorage.setItem("103828", "032392014003");
 localStorage.setItem("100459", "032392014006");
 localStorage.setItem("100029", "032392018001");
