@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <title>보증보험료 계산하기</title>
+    <title>대출 원금.이자 계산하기</title>
     <style>
       body {
         display: flex;
@@ -99,7 +99,7 @@
     </style>
   </head>
   <body>
-    <div class="title"> 보증보험료 계산 하기</div><br/>
+    <div class="title"> 대출금 원금(이자) 계산 하기</div><br/>
   <div class="calin">
         <span><h2>1.대출금액을 입력하세요</h2></span>
 <form>
@@ -138,14 +138,14 @@
     if(te > 5) {
        return alert("5년 까지만 입력하세요~~~😜")
     }
-    let calculate = Math.round(value *10000*1.1* 0.002317*te/10)*10;
-    if(calculate <10000) {
-        calculate = 10000;
+    let calculate = Math.round(value *10000*0.027/365*30/10)*10;
+    if(calculate <1000) {
+        calculate = 1000;
     } 
     if(parseInt(select.value) === 1) {
-        return h.innerText = `일시상환 보증 보험료는 ${calculate.toLocaleString("ko-KR")}입니다`;
+        return h.innerText = `일시상환이자는 ${calculate.toLocaleString("ko-KR")}입니다`;
     } else {
-        return h.innerText = `분할상환 보증 보험료는 약 ${Math.round(calculate*0.55 < 10000 ? 10000 : Math.round(calculate*0.55/10)*10).toLocaleString("ko-KR")}입니다.`;
+        return h.innerText = ` 월분할상환 원금은 ${Math.round(value / te)}이고 이자는 ${math.round(value*0.027/10*10).toLocaleString("ko-KR")}입니다.`;
     }
 } 
 
