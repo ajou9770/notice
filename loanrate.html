@@ -236,7 +236,7 @@
     if(twoValue > 60){
       return hOne.innerHTML = `대출기간은 총 5년입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다.`
     }
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo(0,250);
     hOne.innerHTML = `☞월분할 상환원금은 ${firstValue.toLocaleString("ko-KR")}원 이고, 
     월이자는 약 ${secondValue.toLocaleString("ko-KR")}원입니다. 
     원리금 합산(월부담금)은 약 ${(firstValue+secondValue).toLocaleString("ko-KR")}원 입니다.`;
