@@ -101,6 +101,7 @@
       .resultmile {
         height: auto;
         width: 400px;
+        color:chocolate;
         border-width: 5px 2px;
         border-color: teal wheat;
         border-style: solid;
@@ -254,7 +255,7 @@
       secondValue = Math.round((((oneValue * 0.025) / 365) * 30) / 10) * 10;
     }
     if (twoValue > 60) {
-      hOne.innerHTML = `대출기간은 총 5년입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다.`;
+      hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 지금 입력하신 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 다시 입력해 주세요~~😜`;
       window.scrollTo(0, document.body.scrollHeight);
     } else {
       hOne.innerHTML = `☞ 월분할상환원금${firstValue.toLocaleString(
