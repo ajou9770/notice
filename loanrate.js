@@ -43,7 +43,7 @@
         "ko-KR"
       )} 원, 월이자는 약 ${secondValue.toLocaleString(
         "ko-KR"
-      )} 원 입니다. [매월 원리금 합계액은 약 ${(firstValue + secondValue).toLocaleString(
+      )} 원 입니다. [1회차 원리금 합계액은 약 ${(firstValue + secondValue).toLocaleString(
         "ko-KR"
       )} 원 입니다.]`;
       hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
