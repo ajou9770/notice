@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <title>월 대출 원리금 계산하기</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="none total_money_modal">
+      <div class="icon">
+      </div>
+    </div>
+    <div class="title">월 대출 원리금 계산 </div>
+    <h3>
+      ☞ 이자는 최저(우대)금리 기준(현재, 2.5%~2.7%)<br />
+      ☞ 참조합원:으뜸이 / 신용평점(등급):1~2등급기준
+    </h3>
+    <div class="calin">
+      <h2>1.대출금액을 입력하세요</h2>
+      <form>
+        <input class="in" type="number" required /><span class="dan">
+          만원</span
+        >
+        <h2><span>2.대출기간을 선택해 주세요</span></h2>
+        <select class="in-year" style="height: 50px">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <span class="dan">년</span>
+        <select class="in-date" style="height: 50px">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+        </select>
+        <span class="dan">개월</span>
+        <h2>3.상환 방법 및 최초대출 여부를 선택하세요.</h2>
+        <select class="selectMethod" style="height: 50px">
+          <option value="1">일시상환</option>
+          <option value="2">분할상환</option>
+        </select>
+        <select class="selectPp" style="height: 50px">
+          <option value="1">최초대출(0.2%우대)</option>
+          <option value="2">해당없음(기대출이력 있음)</option>
+        </select>
+        <div class="outline">
+        <div class="submit">
+          <input class="out" value=계산하기 type="submit" />
+        </div>
+        </div>
+        <h3>
+          <mark>※ 신협은 대출금 중도상환 수수료가 없습니다. </mark>
+        </h3>
+      </form>
+    </div>
+    <div class="result">
+      <h1 style="margin-bottom:0;"></h1>
+      <span class="none total_money_watch">자세히 보기</span>
+    </div>
+      <h3><mark>☞ 원금(균등)분할상환은 매월 원금이 상환(감소)되는 만큼 이자가 감소됩니다. </mark></h3>
+      <h1 class="resultmile"></h1>
+    </div>
+    <h3>
+      <mark>※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
+      ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 지급됩니다. </mark>
+    </h3>
+    <div class="loaninsu">
+    <a href="http://ajou9770.github.io/notice/loaninsu.html">
+       보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
+    </a></div>
+    <div class="mile">
+      <a href="http://ajou9770.github.io/usertip/loan.html">
+        <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
+      </a>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+<script src="rateplus.js"></script>
+  </body>
+</html>
