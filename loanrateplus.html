@@ -192,6 +192,16 @@
 .total_money_watch:hover {
   text-decoration: underline;
 }
+.seetermrate {
+ display: flex;
+ border-width: 3px 1px;
+ border-style: solid;
+ border-color: blue goldenrod;
+ margin-right: 10px;
+ font-size: 25px;
+ font-weight: 600;
+ justify-content: center;
+}
 .total_money_modal {
   position: absolute;
   top: 50px;
@@ -268,7 +278,8 @@
     </div>
     <div class="result">
       <h1 style="margin-bottom:0;"></h1>
-      <span class="none total_money_watch">자세히 보기</span>
+      <div class="seetermrate">
+      <span class="none total_money_watch">회차별 원리금 보기</span></div>
     </div>
       <h3><mark>☞ 원금(균등)분할상환은 매월 원금이 상환(감소)되는 만큼 이자가 감소됩니다. </mark></h3>
       <h1 class="resultmile"></h1>
@@ -353,7 +364,7 @@
       modal.innerHTML = "";
       if (parseInt(threeValue) === 2) {
         modalFont.classList.remove("none");
-        for (var i = 1; i < twoValue + 1; i++) {
+        for (var i = 2; i < twoValue + 1; i++) {
           let number = i;
           oneValue = oneValue - firstValue;
           if (parseInt(fourValue) === 2) {
@@ -386,12 +397,12 @@
       modal.classList.add("none");
     });
     modalFont.addEventListener("click", () => {
-      if (modalFont.innerText === "자세히 보기") {
+      if (modalFont.innerText === "회차별 원리금 보기") {
         modal.classList.remove("none");
-        modalFont.innerText = "자세히 보기 끄기";
+        modalFont.innerText = "회차별 원리금 닫기";
       } else {
         modal.classList.add("none");
-        modalFont.innerText = "자세히 보기";
+        modalFont.innerText = "회차별 원리금 보기";
       }
     });
     calForm.addEventListener("submit", cal);</script>
