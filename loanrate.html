@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <title>대출금 계산기</title>
-   <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css">-->
+    <title>월 대출 원리금 계산하기</title>
     <style>
-  body {
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,14 +52,7 @@
   font-weight: 600;
 }
 .level {
-  width: 75%;
-  height: 50px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.whatYouCal {
-  width: 70%;
+  width: 80%;
   height: 50px;
   border-radius: 10px;
   font-size: 20px;
@@ -114,7 +106,7 @@
 .result {
   height: auto;
   width: 410px;
-  border-width: 2px 2px 5px 2px;
+  border-width: 5px 2px;
   border-color: teal wheat;
   border-style: solid;
   text-align: left;
@@ -127,7 +119,7 @@
   height: auto;
   width: 410px;
   color: chocolate;
-  border-width: 2px 2px 2px 2px;
+  border-width: 5px 2px;
   border-color: teal wheat;
   border-style: solid;
   text-align: left;
@@ -145,9 +137,9 @@
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-  font-size: 30px;
+  font-size: 33px;
   font-weight: 600;
-  background-color:ivory;
+  background-color: thistle;
   opacity: 0.8;
   padding-left: 10px;
   border-radius: 10px;
@@ -210,22 +202,21 @@
   text-decoration: underline;
 }
 .seetermrate {
-  display: flex;
-  width: 380px;
-  font-weight: 600;
-  height: auto;
-  border-width: 1px 1px;
-  border-style: solid;
-  border-color: whitesmoke;
-  margin-right: 10px;
-  align-items: center;
-  justify-content: center;
+ display: flex;
+ width: 380px;
+ font-weight: 600;
+ height: auto;
+ border-width: 1px 1px;
+ border-style: solid;
+ border-color: whitesmoke;
+ margin-right: 10px;
+ align-items: center;
+ justify-content: center;
 }
 .total_money_modal {
   position: absolute;
-  top: 540px;
-  font-size: x-large;
-  padding-left: 10px;
+  top: 350px;
+  font-size: large;
   width: 400px;
   height: 800px;
   overflow-y: scroll;
@@ -234,32 +225,20 @@
 }
 .none {
   display: none;
-}
-    </style>
+}  
+  </style>
   </head>
   <body>
     <div class="none total_money_modal">
       <div class="icon">
       </div>
     </div>
-    <div class="title">월부담 대출 원리금 또는<br/>보증보험료 조회  </div>
+    <div class="title">월 대출 원리금 계산 </div>
     <h3>
-      ☞ 월 대출원리금 기준 :우대금리 + 개인신용등급(2.5% ~ 2.9%)반영<br />
-      ☞ 보증보험료는 보증서 담보대출을 받을 경우 최초 1회 부과 됩니다.<br/>
-      ※ 보증서담보대출 중도상환시 남은 기간의 보증보험료는 환급됨. 
+      ☞ 이자는 최저(우대)금리 기준(현재, 2.5% ~ 2.7%)<br />
+      ☞ 신용평점(등급):1~2등급(우수) / 3~5등급(일반)
     </h3>
     <div class="calin">
-      <h2>☞ 조회 하실 항목을 선택해 주세요</h2>
-      <div>
-      <select style="height: 50px" class="whatYouCal">
-        <option value="1">
-          월 대출 원리금(+이용고배당)
-        </option>
-        <option value="2">
-          보증금담보대출 보증보험료
-        </option>
-      </select>
-      </div>
       <h2>1.대출금액을 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
@@ -289,20 +268,20 @@
           <option value="10">10</option>
           <option value="11">11</option>
         </select>
-        <span class="dan asdf">개월</span>
-        <h2 class="selectThree">3.상환 방법 및 최초대출 여부를 선택하세요.</h2>
+        <span class="dan">개월</span>
+        <h2>3.상환 방법 및 최초대출 여부를 선택하세요.</h2>
         <select class="selectMethod" style="height: 50px">
-          <option value="1">만기일시</option>
-          <option value="2">원금분할</option>
+          <option value="1">일시상환</option>
+          <option value="2">분할상환</option>
         </select>
         <select class="selectPp" style="height: 50px">
           <option value="1">최초대출(0.2%우대)</option>
           <option value="2">해당없음(기대출이력 있음)</option>
         </select>
-        <h2 class="selectFour">4. 본인의 개인신용평점(등급)을 선택하세요.</h2>
+        <h2>4.본인의 개인신용평점(등급)을 선택하세요.</h2>
         <select class="level" style="height: 50px">
-          <option value="1">우수등급/상위20%이내(1~2등급)</option>
-          <option value="2">보통등급/상위50%이내(3~5등급)</option>
+          <option value="1">우수등급/상위 20%이내(1~2등급)</option>
+          <option value="2">일반등급/상위 50%이내(3~5등급)</option>
         </select>
         <div class="outline">
         <div class="submit">
@@ -310,7 +289,7 @@
         </div>
         </div>
         <h3 class="mark_one">
-        ※ 산출된 금액은 참고용으로, 실제 적용금리는 신용등급(평점), 월일수 등에 따라 변경 될 수 있습니다.</h3>
+          ※ 산출된 금액은 참고용으로, 실제 적용금리는 신용등급(평점), 월일수 등에 따라 변경 될 수 있습니다.</h3>
       </form>
     </div>
     <div class="result">
@@ -326,6 +305,10 @@
       ※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
       ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 지급됩니다.
     </h3>
+    <div class="loaninsu">
+    <a href="http://ajou9770.github.io/notice/loaninsu.html">
+       보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
+    </a></div>
     <div class="mile">
       <a href="http://ajou9770.github.io/usertip/loan.html">
         <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
@@ -335,9 +318,9 @@
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
+
 <script>
-  const resultBox = document.querySelector(".result");
- const whatMoney = document.querySelector(".result h1:nth-child(1)");
+const whatMoney = document.querySelector(".result h1:nth-child(1)");
 const hOne = document.querySelector(".result h1:nth-child(2)");
 const hTwo = document.querySelector(".resultmile");
 const calInput = document.querySelector(".in");
@@ -356,9 +339,6 @@ const markOne = document.querySelector(".mark_one");
 const markTwo = document.querySelector(".mark_two");
 const markThree = document.querySelector(".mark_three");
 const whatYouCal = document.querySelector(".whatYouCal");
-const threeFont = document.querySelector(".selectThree");
-const fourFont = document.querySelector('.selectFour')
-const removeDan = document.querySelector(".asdf");
 
 function cal(event) {
   event.preventDefault();
@@ -388,18 +368,18 @@ function cal(event) {
   }
   if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `적용금리는 ${BASE_NUM * 100}% 입니다.`;
   } else if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM + 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
   } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM - 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
   } else {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `적용금리는 ${BASE_NUM * 100}% 입니다.`;
   }
   if (twoValue > 60) {
     hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
@@ -476,67 +456,6 @@ modalFont.addEventListener("click", () => {
     modalFont.innerText = "▶회차별 원리금 보기◀";
   }
 });
-
-function calculate(event) {
-  event.preventDefault();
-  const value = calInput.value;
-  if (value < 100) {
-    return alert("대출금액은 100만원 이상 입력해 주세요~~👌");
-  }
-  if (value > 10000) {
-    return alert("대출금액은 1억원 이하로 입력해 주세요~~👌");
-  }
-  const te = year.value;
-  let calculate = Math.round((value * 10000 * 1.1 * 0.002317 * te) / 10) * 10;
-  if (calculate < 10000) {
-    calculate = 10000;
-  }
-  if (parseInt(selectOne.value) === 1) {
-    return (hTwo.innerText = `일시상환 보증 보험료는 ${calculate.toLocaleString(
-      "ko-KR"
-    )}입니다`);
-  } else {
-    window.scrollTo(0, document.body.scrollHeight);
-    return (hTwo.innerText = `분할상환 보증 보험료는 약 ${Math.round(
-      calculate * 0.55 < 10000
-        ? 10000
-        : Math.round((calculate * 0.55) / 10) * 10
-    ).toLocaleString("ko-KR")}입니다.`);
-  }
-}
-calForm.addEventListener("submit", cal);
-
-calForm.addEventListener("submit", cal);
-
-function change() {
-  if (parseInt(whatYouCal.value) === 2) {
-   removeDan.classList.add("none");
-    resultBox.classList.add("none");
-    threeFont.classList.add("none");
-    fourFont.classList.add("none");
-    level.classList.add("none");
-    date.classList.add("none");
-    selectTwo.classList.add("none");
-    markOne.classList.add("none");
-    markTwo.classList.add("none");
-    markThree.classList.add("none");
-    calForm.addEventListener("submit", calculate);
-  } else {
-    removeDan.classList.remove("none");
-    resultBox.classList.remove("none");
-    threeFont.classList.remove("none");
-    fourFont.classList.remove("none");
-    level.classList.remove("none");
-    date.classList.remove("none");
-    selectTwo.classList.remove("none");
-    markOne.classList.remove("none");
-    markTwo.classList.remove("none");
-    markThree.classList.remove("none");
-    calForm.addEventListener("submit", cal);
-  }
-}
-
-whatYouCal.addEventListener("change", change); 
-</script>
+calForm.addEventListener("submit", cal);</script>
   </body>
 </html>
