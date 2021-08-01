@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <title>월 대출 원리금 계산하기</title>
+    <title>대출금 계산기</title>
+   <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css">-->
     <style>
-body {
+  body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,6 +47,20 @@ body {
 }
 .selectMethod {
   width: 35%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.level {
+  width: 75%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.whatYouCal {
+  width: 70%;
   height: 50px;
   border-radius: 10px;
   font-size: 20px;
@@ -130,7 +145,7 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-  font-size: 33px;
+  font-size: 25px;
   font-weight: 600;
   background-color: thistle;
   opacity: 0.8;
@@ -195,21 +210,22 @@ body {
   text-decoration: underline;
 }
 .seetermrate {
- display: flex;
- width: 400px;
- font-weight: 600;
- height: auto;
- border-width: 3px 1px;
- border-style: solid;
- border-color: blue goldenrod;
- margin-right: 10px;
- align-items: center;
- justify-content: center;
+  display: flex;
+  width: 380px;
+  font-weight: 600;
+  height: auto;
+  border-width: 1px 1px;
+  border-style: solid;
+  border-color: whitesmoke;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
 }
 .total_money_modal {
   position: absolute;
-  top: 50px;
-  font-size: large;
+  top: 100px;
+  font-size: x-large;
+  padding-left: 10px;
   width: 400px;
   height: 800px;
   overflow-y: scroll;
@@ -218,20 +234,32 @@ body {
 }
 .none {
   display: none;
-}  
-  </style>
+}
+    </style>
   </head>
   <body>
     <div class="none total_money_modal">
       <div class="icon">
       </div>
     </div>
-    <div class="title">월 대출 원리금 계산 </div>
+    <div class="title">월부담 대출 원리금 또는<br/>보증보험료 조회  </div>
     <h3>
-      ☞ 이자는 최저(우대)금리 기준(현재, 2.5%~2.7%)<br />
-      ☞ 참조합원:으뜸이 / 신용평점(등급):1~2등급기준
+      ☞ 월 대출원리금 기준 :우대금리 + 개인신용등급(2.5% ~ 2.9%)반영<br />
+      ☞ 보증보험료는 보증서 담보대출을 받을 경우 최초 1회 부과 됩니다.<br/>
+      ※ 보증서담보대출 중도상환시 남은 기간의 보증보험료는 환급됨. 
     </h3>
     <div class="calin">
+      <h2>☞ 조회 하실 항목을 선택해 주세요</h2>
+      <div>
+      <select style="height: 50px" class="whatYouCal">
+        <option value="1">
+          월 대출 원리금(이용고배당)
+        </option>
+        <option value="2">
+          보증금담보대출 보증보험료
+        </option>
+      </select>
+      </div>
       <h2>1.대출금액을 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
@@ -261,8 +289,8 @@ body {
           <option value="10">10</option>
           <option value="11">11</option>
         </select>
-        <span class="dan">개월</span>
-        <h2>3.상환 방법 및 최초대출 여부를 선택하세요.</h2>
+        <span class="dan asdf">개월</span>
+        <h2 class="selectThree">3.상환 방법 및 최초대출 여부를 선택하세요.</h2>
         <select class="selectMethod" style="height: 50px">
           <option value="1">일시상환</option>
           <option value="2">분할상환</option>
@@ -271,32 +299,34 @@ body {
           <option value="1">최초대출(0.2%우대)</option>
           <option value="2">해당없음(기대출이력 있음)</option>
         </select>
+        <h2 class="selectFour">4. 본인의 개인신용평점(등급)을 선택하세요.</h2>
+        <select class="level" style="height: 50px">
+          <option value="1">우수등급/상위20%이내(1~2등급)</option>
+          <option value="2">보통등급/상위50%이내(3~5등급)</option>
+        </select>
         <div class="outline">
         <div class="submit">
           <input class="out" value=계산하기 type="submit" />
         </div>
         </div>
-        <h3>
-          <mark>※ 신협은 대출금 중도상환 수수료가 없습니다. </mark>
+        <h3 class="mark_one">
+          <mark>※ 산출된 금액은 참고용으로, 실제 적용금리는 신용등급(평점), 월일수 등에 따라 변경 될 수 있습니다. </mark>
         </h3>
       </form>
     </div>
     <div class="result">
-      <h1 style="margin-bottom:0;"></h1>
+      <h1></h1>
+      <h1 style="margin-bottom:0;"></h1><br/>
       <div class="seetermrate">
-      <span class="none total_money_watch">회차별 원리금 보기</span></div>
+      <span class="none total_money_watch">▶회차별 원리금 보기◀</span><br/><br/></div><br/>
     </div>
-      <h3><mark>☞ 원금(균등)분할상환은 매월 원금이 상환(감소)되는 만큼 이자가 감소됩니다. </mark></h3>
+      <h3 class="mark_two"><mark>☞ 원금(균등)분할상환은 매월 원금이 상환(감소)되는 만큼 이자가 감소됩니다. </mark></h3>
       <h1 class="resultmile"></h1>
     </div>
-    <h3>
+    <h3 class="mark_three">
       <mark>※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
       ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 지급됩니다. </mark>
     </h3>
-    <div class="loaninsu">
-    <a href="http://ajou9770.github.io/notice/loaninsu.html">
-       보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
-    </a></div>
     <div class="mile">
       <a href="http://ajou9770.github.io/usertip/loan.html">
         <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
@@ -306,110 +336,208 @@ body {
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
-<script>const hOne = document.querySelector(".result h1:nth-child(1)");
-    const hTwo = document.querySelector(".resultmile");
-    const calInput = document.querySelector(".in");
-    const calForm = document.querySelector("form");
-    const sum = document.querySelector(".submit");
-    const year = document.querySelector(".in-year");
-    const date = document.querySelector(".in-date");
-    const selectOne = document.querySelector(".selectMethod");
-    const selectTwo = document.querySelector(".selectPp");
-    const modal = document.querySelector(".total_money_modal");
-    const modalFont = document.querySelector(".total_money_watch");
-    const icon = document.querySelector(".icon");
-    
-    function cal(event) {
-      event.preventDefault();
-    
-      let oneValue = calInput.value * 10000;
-      const twoValueYear = parseInt(year.value) * 12;
-      const twoValueDate = parseInt(date.value);
-      const twoValue = twoValueYear + twoValueDate;
-      const threeValue = selectOne.value;
-      const fourValue = selectTwo.value;
-    
-      let firstValue = Math.round(oneValue / twoValue / 10) * 10;
-      let secondValue = Math.round((((oneValue * 0.027) / 365) * 30) / 10) * 10;
-      let thirdValue = Math.round((oneValue * 0.0045) / 2 / 10) * 10;
-    
-      if (calInput.value < 100 || calInput.value > 20000) {
-        return alert("최소 대출 금액은 100만원 최대 대출 금액은 2억원 입니다~~👌");
-      }
-    
-      if (twoValue < 1) {
-        return alert("대출 기간을 선택해 주세요~~😜");
-      }
-    
-      if (parseInt(threeValue) === 1) {
-        modalFont.classList.add("none");
-        firstValue = 0;
-        thirdValue = Math.round((thirdValue * 2) / 10) * 10;
-      }
-    
-      if (parseInt(fourValue) === 1) {
-        secondValue = Math.round((((oneValue * 0.025) / 365) * 30) / 10) * 10;
-      }
-      if (twoValue > 60) {
-        hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
-        window.scrollTo(0, document.body.scrollHeight);
+<script>
+  const resultBox = document.querySelector(".result");
+ const whatMoney = document.querySelector(".result h1:nth-child(1)");
+const hOne = document.querySelector(".result h1:nth-child(2)");
+const hTwo = document.querySelector(".resultmile");
+const calInput = document.querySelector(".in");
+const calForm = document.querySelector("form");
+const sum = document.querySelector(".submit");
+const year = document.querySelector(".in-year");
+const date = document.querySelector(".in-date");
+const selectOne = document.querySelector(".selectMethod");
+const selectTwo = document.querySelector(".selectPp");
+const modal = document.querySelector(".total_money_modal");
+const modalFont = document.querySelector(".total_money_watch");
+const icon = document.querySelector(".icon");
+const level = document.querySelector(".level");
+const BASE_NUM = 0.027;
+const markOne = document.querySelector(".mark_one");
+const markTwo = document.querySelector(".mark_two");
+const markThree = document.querySelector(".mark_three");
+const whatYouCal = document.querySelector(".whatYouCal");
+const threeFont = document.querySelector(".selectThree");
+const fourFont = document.querySelector('.selectFour')
+const removeDan = document.querySelector(".asdf");
+
+function cal(event) {
+  event.preventDefault();
+  let oneValue = calInput.value * 10000;
+  const twoValueYear = parseInt(year.value) * 12;
+  const twoValueDate = parseInt(date.value);
+  const twoValue = twoValueYear + twoValueDate;
+  const threeValue = selectOne.value;
+  const fourValue = selectTwo.value;
+
+  let firstValue = Math.round(oneValue / twoValue / 10) * 10;
+  let secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
+  let thirdValue = Math.round((oneValue * 0.0045) / 2 / 10) * 10;
+
+  if (calInput.value < 100 || calInput.value > 20000) {
+    return alert("최소 대출 금액은 100만원 최대 대출 금액은 2억원 입니다~~👌");
+  }
+
+  if (twoValue < 1) {
+    return alert("대출 기간을 선택해 주세요~~😜");
+  }
+
+  if (parseInt(threeValue) === 1) {
+    modalFont.classList.add("none");
+    firstValue = 0;
+    thirdValue = Math.round((thirdValue * 2) / 10) * 10;
+  }
+  if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
+    secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+  } else if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
+    secondValue =
+      Math.round((((oneValue * (BASE_NUM + 0.002)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
+  } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
+    secondValue =
+      Math.round((((oneValue * (BASE_NUM - 0.002)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
+  } else {
+    secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+  }
+  if (twoValue > 60) {
+    hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
+    window.scrollTo(0, document.body.scrollHeight);
+  } else {
+    hOne.innerHTML = `☞ 월분할상환원금 ${firstValue.toLocaleString(
+      "ko-KR"
+    )} 원, 월이자는 약 ${secondValue.toLocaleString(
+      "ko-KR"
+    )} 원 입니다. [1회차 원리금 합계액은 약 ${(
+      firstValue + secondValue
+    ).toLocaleString("ko-KR")} 원 입니다.]`;
+    hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
+      "ko-KR"
+    )} 원으로 예상 됩니다.`;
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  modal.innerHTML = "";
+  if (parseInt(threeValue) === 2) {
+    const div = document.createElement("div");
+    const span = document.createElement("span");
+    span.innerText = `1개월차 약  ${(firstValue + secondValue).toLocaleString(
+      "ko-KR"
+    )}원`;
+    div.appendChild(span);
+    modal.appendChild(div);
+    modalFont.classList.remove("none");
+    for (var i = 2; i < twoValue + 1; i++) {
+      let number = i;
+      oneValue = oneValue - firstValue;
+      if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
+        let money = firstValue + ((oneValue * 0.029) / 365) * 30;
+        let cleanMoney = Math.round(money / 10) * 10;
+        const div = document.createElement("div");
+        const span = document.createElement("span");
+        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
+          "ko-KR"
+        )}원`;
+        div.appendChild(span);
+        modal.appendChild(div);
+      } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
+        let money = firstValue + ((oneValue * 0.025) / 365) * 30;
+        let cleanMoney = Math.round(money / 10) * 10;
+        const div = document.createElement("div");
+        const span = document.createElement("span");
+        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
+          "ko-KR"
+        )}원`;
+        div.appendChild(span);
+        modal.appendChild(div);
       } else {
-        hOne.innerHTML = `☞ 월분할상환원금 ${firstValue.toLocaleString(
+        let money = firstValue + ((oneValue * 0.027) / 365) * 30;
+        let cleanMoney = Math.round(money / 10) * 10;
+        const div = document.createElement("div");
+        const span = document.createElement("span");
+        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
           "ko-KR"
-        )} 원, 월이자는 약 ${secondValue.toLocaleString(
-          "ko-KR"
-        )} 원 입니다. [1회차 원리금 합계액은 약 ${(
-          firstValue + secondValue
-        ).toLocaleString("ko-KR")} 원 입니다.]`;
-        hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
-          "ko-KR"
-        )} 원으로 예상 됩니다.`;
-        window.scrollTo(0, document.body.scrollHeight);
-      }
-      modal.innerHTML = "";
-      if (parseInt(threeValue) === 2) {
-        modalFont.classList.remove("none");
-        for (var i = 2; i < twoValue + 1; i++) {
-          let number = i;
-          oneValue = oneValue - firstValue;
-          if (parseInt(fourValue) === 2) {
-            console.log(oneValue);
-            let money = firstValue + ((oneValue * 0.027) / 365) * 30;
-            let cleanMoney = Math.round(money / 10) * 10;
-            const div = document.createElement("div");
-            const span = document.createElement("span");
-            span.innerText = `${number}개월차 원리금은 ${cleanMoney.toLocaleString(
-              "ko-KR"
-            )}입니다.`;
-            div.appendChild(span);
-            modal.appendChild(div);
-          } else {
-            console.log(oneValue);
-            let money = firstValue + ((oneValue * 0.025) / 365) * 30;
-            let cleanMoney = Math.round(money / 10) * 10;
-            const div = document.createElement("div");
-            const span = document.createElement("span");
-            span.innerText = `${number}개월차 원리금은 ${cleanMoney.toLocaleString(
-              "ko-KR"
-            )}입니다.`;
-            div.appendChild(span);
-            modal.appendChild(div);
-          }
-        }
+        )}원`;
+        div.appendChild(span);
+        modal.appendChild(div);
       }
     }
-    icon.addEventListener("click", () => {
-      modal.classList.add("none");
-    });
-    modalFont.addEventListener("click", () => {
-      if (modalFont.innerText === "회차별 원리금 보기") {
-        modal.classList.remove("none");
-        modalFont.innerText = "회차별 원리금 닫기";
-      } else {
-        modal.classList.add("none");
-        modalFont.innerText = "회차별 원리금 보기";
-      }
-    });
-    calForm.addEventListener("submit", cal);</script>
+  }
+}
+icon.addEventListener("click", () => {
+  modal.classList.add("none");
+});
+modalFont.addEventListener("click", () => {
+  if (modalFont.innerText === "▶회차별 원리금 보기◀") {
+    modal.classList.remove("none");
+    modalFont.innerText = "▶회차별 원리금 닫기◀";
+  } else {
+    modal.classList.add("none");
+    modalFont.innerText = "▶회차별 원리금 보기◀";
+  }
+});
+
+function calculate(event) {
+  event.preventDefault();
+  const value = calInput.value;
+  if (value < 100) {
+    return alert("대출금액은 100만원 이상 입력해 주세요~~👌");
+  }
+  if (value > 10000) {
+    return alert("대출금액은 1억원 이하로 입력해 주세요~~👌");
+  }
+  const te = year.value;
+  let calculate = Math.round((value * 10000 * 1.1 * 0.002317 * te) / 10) * 10;
+  if (calculate < 10000) {
+    calculate = 10000;
+  }
+  if (parseInt(selectOne.value) === 1) {
+    return (hTwo.innerText = `일시상환 보증 보험료는 ${calculate.toLocaleString(
+      "ko-KR"
+    )}입니다`);
+  } else {
+    window.scrollTo(0, document.body.scrollHeight);
+    return (hTwo.innerText = `분할상환 보증 보험료는 약 ${Math.round(
+      calculate * 0.55 < 10000
+        ? 10000
+        : Math.round((calculate * 0.55) / 10) * 10
+    ).toLocaleString("ko-KR")}입니다.`);
+  }
+}
+calForm.addEventListener("submit", cal);
+
+calForm.addEventListener("submit", cal);
+
+function change() {
+  if (parseInt(whatYouCal.value) === 2) {
+   removeDan.classList.add("none");
+    resultBox.classList.add("none");
+    threeFont.classList.add("none");
+    fourFont.classList.add("none");
+    level.classList.add("none");
+    date.classList.add("none");
+    selectTwo.classList.add("none");
+    markOne.classList.add("none");
+    markTwo.classList.add("none");
+    markThree.classList.add("none");
+    calForm.addEventListener("submit", calculate);
+  } else {
+    removeDan.classList.remove("none");
+    resultBox.classList.remove("none");
+    threeFont.classList.remove("none");
+    fourFont.classList.remove("none");
+    level.classList.remove("none");
+    date.classList.remove("none");
+    selectTwo.classList.remove("none");
+    markOne.classList.remove("none");
+    markTwo.classList.remove("none");
+    markThree.classList.remove("none");
+    calForm.addEventListener("submit", cal);
+  }
+}
+
+whatYouCal.addEventListener("change", change); 
+</script>
   </body>
 </html>
