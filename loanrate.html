@@ -369,18 +369,18 @@ function cal(event) {
   }
   if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
   } else if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM + 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
   } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM - 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
   } else {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
   }
   if (twoValue > 60) {
     hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
