@@ -167,34 +167,55 @@
 </div>
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
 <script>
-  const calInput = document.querySelector(".in");
-  const h = document.querySelector("h1");
-  const calForm = document.querySelector("form");
-  const term = document.querySelector(".in-term");
-  const methods = document.querySelector(".selectMethod");
+const calInput = document.querySelector(".in");
+const h = document.querySelector("h1");
+const calForm = document.querySelector("form");
+const term = document.querySelector(".in-term");
+const methods = document.querySelector(".selectMethod");
 
-  function cal(event) {
-    event.preventDefault();
-    const value = calInput.value;
-    if(value < 100) {
-       return alert("대출금액은 100만원 이상 입력해 주세요~~👌")
+function cal(event) {
+  event.preventDefault();
+  let value = calInput.value * 10000;
+  let allMoney = calInput.value * 10000;
+  if (value < 1000000) {
+    return alert("대출금액은 100만원 이상 입력해 주세요~~👌");
+  }
+  if (value > 100000000) {
+    return alert("대출금액은 1억원 이하로 입력해 주세요~~👌");
+  }
+  const te = term.value;
+  let calculate = Math.round((value * 1.1 * 0.002371 * te) / 10) * 10;
+  let result = (calculate / 365) * 30;
+  let arr = [];
+  if (calculate < 10000) {
+    calculate = 10000;
+  }
+  if (parseInt(methods.value) === 1) {
+    window.scrollTo(0, document.body.scrollHeight);
+    return (h.innerText = `☞ 일시상환 보증 보험료는 ${calculate.toLocaleString(
+      "ko-KR"
+    )}입니다`);
+  } else {
+    arr.push(((value * 1.1 * 0.002371) / 366) * 30);
+    const test = te * 12;
+    for (var i = 0; i < test; i++) {
+      value = value - allMoney / test;
+      result = Math.floor((((value * 1.1 * 0.002371) / 366) * 30) / 10) * 10;
+      arr.push(result);
     }
-    if(value > 10000) {
-       return alert("대출금액은 1억원 이하로 입력해 주세요~~👌")
-    }
-    const te = term.value;
-    let calculate = Math.round(value *10000*1.1* 0.002317*te/10)*10;
-    if(calculate <10000) {
-        calculate = 10000;
-    } 
-    if(parseInt(methods.value) === 1) {
-        return h.innerText = `☞ 일시상환 보증 보험료는 ${calculate.toLocaleString("ko-KR")}입니다`;
-    } else{
-      window.scrollTo(0, document.body.scrollHeight);
-        return h.innerText = `☞ 분할상환 보증 보험료는 약 ${Math.round(calculate*0.53 < 10000 ? 10000 : Math.round(calculate*0.53/10)*10).toLocaleString("ko-KR")}입니다.`;  
-      }
-} 
-  calForm.addEventListener("submit", cal);
+    const lastReulst = arr.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+    calculate = lastReulst;
+    window.scrollTo(0, document.body.scrollHeight);
+    return (h.innerText = `☞ 분할상환 보증 보험료는 약 ${
+      Math.floor(calculate < 10000)
+        ? 10000
+        : (Math.floor(calculate / 10) * 10).toLocaleString("ko-KR")
+    }입니다.`);
+  }
+}
+calForm.addEventListener("submit", cal);
 </script>
   </body>
 </html>
