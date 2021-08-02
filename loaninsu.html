@@ -192,9 +192,9 @@ function cal(event) {
   }
   if (parseInt(methods.value) === 1) {
     window.scrollTo(0, document.body.scrollHeight);
-    return (h.innerText = `☞ 일시상환 보증 보험료는 ${calculate.toLocaleString(
+    return (h.innerText = `☞ 만기일시상환 보증 보험료는 ${calculate.toLocaleString(
       "ko-KR"
-    )}입니다`);
+    )}원 입니다`);
   } else {
     arr.push(((value * 1.1 * 0.002371) / 366) * 30);
     const test = te * 12;
@@ -208,11 +208,11 @@ function cal(event) {
     }, 0);
     calculate = lastReulst;
     window.scrollTo(0, document.body.scrollHeight);
-    return (h.innerText = `☞ 분할상환 보증 보험료는 약 ${
+    return (h.innerText = `☞ 원금분할상환 보증 보험료는 약 ${
       Math.floor(calculate < 10000)
         ? 10000
         : (Math.floor(calculate / 10) * 10).toLocaleString("ko-KR")
-    }입니다.`);
+    }원 입니다.`);
   }
 }
 calForm.addEventListener("submit", cal);
