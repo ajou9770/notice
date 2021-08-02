@@ -191,7 +191,7 @@
         return h.innerText = `☞ 일시상환 보증 보험료는 ${calculate.toLocaleString("ko-KR")}입니다`;
     } else{
       window.scrollTo(0, document.body.scrollHeight);
-        return h.innerText = `☞ 분할상환 보증 보험료는 약 ${Math.round(calculate*0.55 < 10000 ? 10000 : Math.round(calculate*0.55/10)*10).toLocaleString("ko-KR")}입니다.`;  
+        return h.innerText = `☞ 분할상환 보증 보험료는 약 ${Math.round(calculate*0.53 < 10000 ? 10000 : Math.round(calculate*0.53/10)*10).toLocaleString("ko-KR")}입니다.`;  
       }
 } 
   calForm.addEventListener("submit", cal);
