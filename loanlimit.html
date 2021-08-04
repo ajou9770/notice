@@ -368,18 +368,22 @@
         if (parseInt(oneLevel.value) > 1) {
           workTime.classList.add("none");
           workTimeTwo.classList.remove("none");
+          workTimeThee.classList.add("none");
         } else {
           workTime.classList.remove("none");
           workTimeTwo.classList.add("none");
+          workTimeThee.classList.add("none");
         }
       }
       function dateChangeTwo() {
         if (parseInt(twoLevel.value) > 1) {
           workTimeThree.classList.remove("none");
+          workTimeTwo.classList.add("none");
           workTime.classList.add("none");
         } else {
           workTime.classList.remove("none");
           workTimeThree.classList.add("none");
+          workTimeTwo.classList.add("none");
         }
       }
       oneLevel.addEventListener("change", dateChange);
