@@ -351,6 +351,7 @@
         caculat(4, 2, 40000, 40000, 25000);
         caculat(4, 3, 40000, 40000, 20000);
       }
+
       function change() {
         if (parseInt(job.value) === 2) {
           oneLevel.classList.remove("none");
@@ -364,15 +365,16 @@
           alert("교원인지 직원인지 선택하세요");
         }
       }
+
       function dateChange() {
         if (parseInt(oneLevel.value) > 1) {
           workTime.classList.add("none");
           workTimeTwo.classList.remove("none");
-          workTimeThee.classList.add("none");
+          workTimeThree.classList.add("none");
         } else {
           workTime.classList.remove("none");
           workTimeTwo.classList.add("none");
-          workTimeThee.classList.add("none");
+          workTimeThree.classList.add("none");
         }
       }
       function dateChangeTwo() {
