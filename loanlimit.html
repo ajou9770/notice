@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>대출한도 조회 하기</title>
     <style>
     body {
   display: flex;
@@ -17,19 +17,25 @@
   margin-right: 20px;
   margin-bottom: 20px;
 }
+
 .none {
         display: none;
+}
+.resultbd {
+    border-width: 5px 2px;
+    border-color: aquamarine ivory;
+    border-style: solid;
 }
     </style>
   </head>
   <body>
-    <h2>교원 또는 직원 선택</h2>
+    <h2>1. 교원 또는 직원 선택</h2>
     <select class="job" style="height: 50px">
       <option value="1">선택하기</option>
       <option value="2">직원</option>
       <option value="3">교원</option>
     </select>
-    <h2>직급을 선택하세요</h2>
+    <h2>2. 직급을 선택하세요</h2>
     <select class="level" style="height: 50px">
       <option value="1">5급 이상</option>
       <option value="2">6급</option>
@@ -42,7 +48,7 @@
       <option value="3">(인턴)전공의</option>
       <option value="4">특임 교원</option>
     </select>
-    <h2>의료원 재직 기간을 선택하세요</h2>
+    <h2>3. 의료원 재직 기간을 선택하세요</h2>
     <select class="work" style="height: 50px">
       <option value="1">5년 이상</option>
       <option value="2">2년 이상 5년 미만</option>
@@ -54,15 +60,17 @@
       <option value="3">1년 이상~2년미만</option>
       <option value="4">입사일~1년 미만</option>
     </select>
-    <select class="work_three none" style="height: 50px">
+    <select class="work_three none" style="height: 50px; font-size:x-large;">
       <option value="1">2년 이상</option>
       <option value="2">1년 이상~2년미만</option>
       <option value="3">입사일~1년미만</option>
     </select>
-    <h2>타 기관(은행) 기대출 신용대출금(마이너스통장 약정금액 포함)</h2>
-    <input class="different_money" type="number" value="0" />
+    <h2>4. 타 기관(은행) 기대출 신용대출금(마이너스통장 약정금액 포함)</h2>
+    <div style="display: flex; font-size: x-large; align-items: center;">
+    <input class="different_money" style="display: inline-block; height: 40px;" type="number" value="0" />
     <span>만원</span>
-    <h2>현재, 부동산(전세,보증서 등)담보대출이 있으면 선택 하세요</h2>
+    </div>
+    <h2>5. 현재, 부동산(전세,보증서 등)담보대출이 있으면 선택 하세요</h2>
     <select class="high_money" style="height: 50px">
       <option value="1">없음~2억원미만</option>
       <option value="2">2억원 이상~3억원미만</option>
@@ -70,15 +78,18 @@
       <option value="4">4억원 이상~5억원미만</option>
       <option value="5">5억원 이상</option>
     </select>
-    <h2>본인의 신용평점(등급)을 선택 하세요</h2>
+    <h2>6. 본인의 신용평점(등급)을 선택 하세요</h2>
     <select class="credit" style="height: 50px">
       <option value="1">1등급 ~ 5등급</option>
       <option value="2">6등급 이하</option></select
     ><br /><br />
-    <div class="resultdiv">
-      <button class="submit">대출한도 보기</button>
-    </div>
-    <h1 class="result"></h1>
+      <button class="submit" style="height: 40px; font-size:x-large">대출한도 보기 <i class="fas fa-chevron-right fa-small"></i></button>
+      <div class="resultbd"><h2 class="result"></h2></div>
+    <h3>※ 보증대출한도는 교원공제회 서울보증대출 등 기대출금이 있을 경우 한도가 변경(감소)될 수 있습니다. <br/><br/>        ※ 상기의 대출한도는 입력하는 조건에 따른 한도로 실제적용 한도는 다를 수 있음. </h3>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       const job = document.querySelector(".job");
       const submitBtn = document.querySelector(".submit");
@@ -137,9 +148,9 @@
             if (combine < 0) {
               combine = 0;
             }
-            resultFont.innerHTML = `신용한도는 ${(combine / 10).toLocaleString(
+            resultFont.innerHTML = `신용대출 한도는 ${(combine / 10).toLocaleString(
               "ko-KR"
-            )}만원, 보증한도는 ${((life + lifePlus) / 10).toLocaleString(
+            )}만원, 보증대출 한도는 ${((life + lifePlus) / 10).toLocaleString(
               "ko-KR"
             )}만원  총 한도는 ${(
               (life + lifePlus + combine) /
@@ -176,9 +187,9 @@
             if (combine < 0) {
               combine = 0;
             }
-            resultFont.innerHTML = ` 신용한도는 ${(combine / 10).toLocaleString(
+            resultFont.innerHTML = ` 신용대출 한도는 ${(combine / 10).toLocaleString(
               "ko-KR"
-            )}만원, 보증한도는 ${((life + lifePlus) / 10).toLocaleString(
+            )}만원, 보증대출 한도는 ${((life + lifePlus) / 10).toLocaleString(
               "ko-KR"
             )}만원, 총 한도는 ${(
               (life + lifePlus + combine) /
