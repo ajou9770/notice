@@ -182,7 +182,10 @@
         let defaultCreditBorrow = 100000;
         let creditBorrowOne = 100000;
         let creditBorrowTwo = 100000;
-        const differentMoney = parseInt(different.value) * 10;
+        let differentMoney = parseInt(different.value) * 10;
+        if (different.value === "") {
+          differentMoney = 0;
+        }
         const oneValue = parseInt(oneLevel.value);
         const twoValue = parseInt(workTime.value);
         const twoTwoValue = parseInt(workTimeTwo.value);
@@ -291,7 +294,10 @@
         let defaultCreditBorrow = 100000;
         let creditBorrowOne = 100000;
         let creditBorrowTwo = 100000;
-        const differentMoney = parseInt(different.value) * 10;
+        let differentMoney = parseInt(different.value) * 10;
+        if (different.value === "") {
+          differentMoney = 0;
+        }
         const oneValue = parseInt(twoLevel.value);
         const twoValue = parseInt(workTime.value);
         const threeValue = parseInt(credit.value);
