@@ -22,9 +22,12 @@
         display: none;
 }
 .resultbd {
-    border-width: 4px 2px;
-    border-color: aquamarine ivory;
+    border-width: 4px;
+    border-color: aquamarine;
     border-style: solid;
+    color: chocolate;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .loaninsu {
   background-color:indianred;
@@ -130,9 +133,9 @@
       <option value="2">6등급 이하</option></select
     ><br /><br />
       <button class="submit" style="height: 40px; font-size:x-large">대출한도 보기 <i class="fas fa-arrow-down fa-small"></i></button><br/>
-      <h3>※ 조회가 안될 경우 아래 새로고침 후 다시 조회하세요~~👌</h3>
+            <div class="resultbd"><h2 class="result"></h2></div>
+            <h3>※ 조회가 안될 경우 아래 새로고침 후 다시 조회하세요~~👌</h3>
       <button onclick="window.location.reload()" style="height:40px; font-size:large">새로고침 <i class="fas fa-sync-alt fa-small"></i></button><br/>
-      <div class="resultbd"><h2 class="result"></h2></div>
     <h3>※ 보증대출한도는 교원공제회 서울보증대출 등 기대출금이 있을 경우 한도가 변경(감소)될 수 있습니다. <br/><br/>        
         ※ 상기의 대출한도는 입력한 조건에 따른 한도이므로 실제 적용 한도는 다를 수 있음. </h3>
         <div class="loaninsu">
