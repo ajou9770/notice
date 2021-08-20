@@ -66,7 +66,7 @@ body {
   font-weight: 600;
 }
 .out {
-  width: 30%;
+  width: 60%;
   border-radius: 10px;
   border-width: 2px 6px 6px 2px;
   height: 55px;
@@ -247,28 +247,35 @@ body {
         >
         <h2><i class="fas fa-caret-right fa-lg"></i>대출거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
         <!--산출식: 대출금 * 0.0025*10000-->
-        <h2>2.연간 적금 평균잔액을 입력하세요</h2>
+        <h2>2.연간 요구불(입출금)예금 평균잔액을 입력하세요</h2>
+      <form>
+        <input class="in" type="number" required /><span class="dan">
+          만원</span
+        >
+        <h2><i class="fas fa-caret-right fa-lg"></i>적금거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
+        <!--산출식: 요구불평균잔액 * 0.0012*10000-->
+        <h2>3.연간 적금 평균잔액을 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
           만원</span
         >
         <h2><i class="fas fa-caret-right fa-lg"></i>적금거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
         <!--산출식: 적금평균잔액 * 0.0045*10000-->
-        <h2>3.신협 체크카드 연간 사용액을 입력하세요</h2>
+        <h2>4.신협 체크카드 연간 사용액을 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
           만원</span
         >
         <h2><i class="fas fa-caret-right fa-lg"></i>체크카드 이용 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
         <!--산출식: 연간사용액 * 0.0085*10000-->
-        <h2>4.월평균 자동이체 건수를 입력하세요</h2>
+        <h2>5.월평균 자동이체 건수를 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
           건</span
         >
         <h2><i class="fas fa-caret-right fa-lg"></i>자동이체 거래 실적의 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
         <!--산출식: 자동이체건수 * 8000-->
-        <h2>5.월평균 신협공제(보험)료 납입금액을 입력하세요</h2>
+        <h2>6.월평균 신협공제(보험)료 납입금액을 입력하세요</h2>
       <form>
         <input class="in" type="number" required /><span class="dan">
           원</span
@@ -279,15 +286,20 @@ body {
           ※ 산출된 이용고 배당액은 참고용으로, 실제 이용고배당은 당해년도 사업수익 및 실제 이용실적에 따라 변경 될 수 있습니다.</h3>
       </form>
     </div>
+    <div class="outline">
+        <div class="submit">
+          <input class="out" value=총이용고배당계산 type="submit" />
+        </div>
+        </div><br/>
     <div class="result">
-        <h2><i class="fas fa-caret-right fa-lg"></i>총 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 상기 항목 1번~5번 합계-->
+        <h2><i class="fas fa-caret-right fa-lg"></i>총 이용고 배당액은 약 "_________"원 입니다.</h2>
+        <!--산출식: 상기 항목 1번~6번 합계-->
+    </div><br/>
         <div class="mile">
       <a href="http://ajou9770.github.io/usertip/mile.html">
         <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
       </a>
-    </div>
-    <script
+        <script
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
