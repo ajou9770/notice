@@ -66,9 +66,11 @@ body {
   font-weight: 600;
 }
 .out {
-  width: 60%;
+  width: 40%;
   border-radius: 10px;
-  border-width: 2px 6px 6px 2px;
+  border-width: 5px 2px;
+  border-color: teal wheat;
+  border-style: solid;
   height: 55px;
   font-size: 25px;
   font-weight: 600;
@@ -106,10 +108,12 @@ body {
 .result {
   height: auto;
   width: 410px;
-  border-width: 5px 2px;
+  border-width: 4px 2px;
   border-color: teal wheat;
   border-style: solid;
   text-align: left;
+  color: tomato;
+  font-weight: 600;
   background-color: whitesmoke;
   opacity: 0.8;
   padding-left: 10px;
@@ -225,221 +229,147 @@ body {
   z-index: 1;
 }
 .none {
-  display: none;
-}  
-  </style>
+        display: none;
+        text-decoration: none;
+        font-weight: 600;
+        color: cadetblue;
+      }
+      h4 {
+        cursor: pointer;
+        text-decoration: underline;
+      } 
+    </style>
   </head>
   <body>
-    <div class="none total_money_modal">
-      <div class="icon">
-      </div>
-    </div>
-    <div class="title">이용고배당 산출 예시 </div>
-    <h3>
-      ☞ 이용실적에 따른 대략적인 이용고 배당 예시 <br />
-      ☞ 거래항목: 대출, 예.적금, 체크카드, 자동이체, 보험료 납입실적
-    </h3>
-    <div class="calin">
-      <h2>1.연간 대출금 평균잔액을 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          만원</span
-        >
-        <h2><i class="fas fa-caret-right fa-lg"></i>대출거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 대출금 * 0.0025*10000-->
-        <h2>2.연간 요구불(입출금)예금 평균잔액을 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          만원</span>        
-        <h2><i class="fas fa-caret-right fa-lg"></i>요구불예금 거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 요구불평균잔액 * 0.0012*10000-->
-        <h2>3.연간 적금 평균잔액을 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          만원</span
-        >
-        <h2><i class="fas fa-caret-right fa-lg"></i>적금거래 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 적금평균잔액 * 0.0045*10000-->
-        <h2>4.신협 체크카드 연간 사용액을 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          만원</span
-        >
-        <h2><i class="fas fa-caret-right fa-lg"></i>체크카드 이용 실적에 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 연간사용액 * 0.0085*10000-->
-        <h2>5.월평균 자동이체 건수를 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          건</span
-        >
-        <h2><i class="fas fa-caret-right fa-lg"></i>자동이체 거래 실적의 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 자동이체건수 * 8000-->
-        <h2>6.월평균 신협공제(보험)료 납입금액을 입력하세요</h2>
-      <form>
-        <input class="in" type="number" required /><span class="dan">
-          원</span
-        >
-        <h2><i class="fas fa-caret-right fa-lg"></i>신협공제(보험)납입 실적의 따른 이용고 배당액은 약 "_________"원 입니다.</h2><br>
-        <!--산출식: 신협공제(보험)료 납입금액 * 0.035-->
-         <h3 class="mark_one">
-          ※ 산출된 이용고 배당액은 참고용으로, 실제 이용고배당은 당해년도 사업수익 및 실제 이용실적에 따라 변경 될 수 있습니다.</h3>
-      </form>
-    </div>
-    <div class="outline">
-        <div class="submit">
-          <input class="out" value=총이용고배당계산 type="submit" />
-        </div>
-        </div><br/>
-    <div class="result">
-        <h2><i class="fas fa-caret-right fa-lg"></i>총 이용고 배당액은 약 "_________"원 입니다.</h2>
-        <!--산출식: 상기 항목 1번~6번 합계-->
-    </div><br/>
-        <div class="mile">
-      <a href="http://ajou9770.github.io/usertip/mile.html">
-        <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
-      </a>
-        <script
+    <header>
+      <div class="title">이용고 배당 산출 예시</div><br/>
+    </header>
+    <nav>
+      <div>※이용실적에 따른 대략적인 이용고 배당 예시</div>
+      <div>※거래항목: 대출,예.적금, 체크카드, 자동이체, 보험료 납입실적</div><br/>
+    </nav>
+    <main>
+      <form class="form">
+        <section>
+          <div>1.연간 대출금 평균잔액을 입력하세요</div>
+          <input id="one" style="height: 40px" type="number" />
+          <span>만원</span><br/>
+        </section><br/>
+        <section>
+          <div>2.연간 요구불(입출금)예금 평균잔액을 입력하세요</div>
+          <input id="two" style="height: 40px" type="number" />
+          <span>만원</span><br/>
+        </section><br/>
+        <section>
+          <div>3.연간 적금 평균잔액을 입력하세요</div>
+          <input id="three" style="height: 40px" type="number" />
+          <span>만원</span><br/>
+        </section><br/>
+        <section>
+          <div>4.신협 체크카드 연간 사용액을 입력하세요</div>
+          <input id="four" style="height: 40px" type="number" />
+          <span>만원</span><br/>
+        </section><br/>
+        <section>
+          <div>5.월평균 자동(납부)이체 건수를 입력하세요</div>
+          <span
+        >※ 공과금, 보험료, 카드대금결제 등 계좌 자동납부실적을 말함</span
+      ><br/>
+          <input id="five" style="height: 40px" type="number" />
+          <span>건</span><br/>
+        </section><br/>
+        <section>
+          <div>6.월평균 신협공제(보험)료 납입금액을 입력하세요</div>
+          <input id="six" style="height: 40px" type="number" />
+          <span>만원</span>
+        </section><br/>
+        <input class="out" id="form" type="submit" value="총이용고배당계산 ▶"/>
+      </form><br/>
+      <span
+        >※ 산출된 이용고 배당액은 참고용으로, 실제 이용고배당은 당해년도
+        사업수익 및 실제 이용실적에 따라 변경 될 수 있습니다.</span
+      >
+    </main>
+    <footer>
+      <div class="result">
+      <h2></h2></div>
+      <h4 class="none" style="opacity: 0.8">☞ 항목별 이용고배당 보기</h4>
+      <div class="result">
+      <aside id="detail" class="none"></aside></div><br/>
+      <div class="mile"><a href="http://ajou9770.github.io/usertip/mile.html"><i class="fas fa-chevron-left fa-lg"></i>이전화면 돌아가기</a></div>
+    </footer>
+    <script
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const one = document.getElementById("one");
+      const two = document.getElementById("two");
+      const three = document.getElementById("three");
+      const four = document.getElementById("four");
+      const five = document.getElementById("five");
+      const six = document.getElementById("six");
+      const form = document.querySelector("form");
+      const h2 = document.querySelector("h2");
+      const h4 = document.querySelector("h4");
+      const closeBtn = document.querySelector("#detail_close span");
+      const aside = document.querySelector("aside");
 
-<script>
-const whatMoney = document.querySelector(".result h1:nth-child(1)");
-const hOne = document.querySelector(".result h1:nth-child(2)");
-const hTwo = document.querySelector(".resultmile");
-const calInput = document.querySelector(".in");
-const calForm = document.querySelector("form");
-const sum = document.querySelector(".submit");
-const year = document.querySelector(".in-year");
-const date = document.querySelector(".in-date");
-const selectOne = document.querySelector(".selectMethod");
-const selectTwo = document.querySelector(".selectPp");
-const modal = document.querySelector(".total_money_modal");
-const modalFont = document.querySelector(".total_money_watch");
-const icon = document.querySelector(".icon");
-const level = document.querySelector(".level");
-const BASE_NUM = 0.027;
-const markOne = document.querySelector(".mark_one");
-const markTwo = document.querySelector(".mark_two");
-const markThree = document.querySelector(".mark_three");
-const whatYouCal = document.querySelector(".whatYouCal");
+      aside.detail = false;
 
-function cal(event) {
-  event.preventDefault();
-  let oneValue = calInput.value * 10000;
-  const twoValueYear = parseInt(year.value) * 12;
-  const twoValueDate = parseInt(date.value);
-  const twoValue = twoValueYear + twoValueDate;
-  const threeValue = selectOne.value;
-  const fourValue = selectTwo.value;
-
-  let firstValue = Math.round(oneValue / twoValue / 10) * 10;
-  let secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-  let thirdValue = Math.round((oneValue * 0.0045) / 2 / 10) * 10;
-
-  if (calInput.value < 100 || calInput.value > 20000) {
-    return alert("최소 대출 금액은 100만원 최대 대출 금액은 2억원 입니다~~👌");
-  }
-
-  if (twoValue < 1) {
-    return alert("대출 기간을 선택해 주세요~~😜");
-  }
-
-  if (parseInt(threeValue) === 1) {
-    modalFont.classList.add("none");
-    firstValue = 0;
-    thirdValue = Math.round((thirdValue * 2) / 10) * 10;
-  }
-  if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
-    secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
-  } else if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
-    secondValue =
-      Math.round((((oneValue * (BASE_NUM + 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
-  } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
-    secondValue =
-      Math.round((((oneValue * (BASE_NUM - 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
-  } else {
-    secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
-  }
-  if (twoValue > 60) {
-    hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
-    window.scrollTo(0, document.body.scrollHeight);
-  } else {
-    hOne.innerHTML = `☞ 월분할상환원금 ${firstValue.toLocaleString(
-      "ko-KR"
-    )} 원, 월이자는 약 ${secondValue.toLocaleString(
-      "ko-KR"
-    )} 원 입니다. [1회차 원리금 합계액은 약 ${(
-      firstValue + secondValue
-    ).toLocaleString("ko-KR")} 원 입니다.]`;
-    hTwo.innerHTML = `☞ 대출관련 이용고배당으로 매년(2월) 환급되는 금액은 약 ${thirdValue.toLocaleString(
-      "ko-KR"
-    )} 원으로 예상 됩니다.`;
-    window.scrollTo(0, document.body.scrollHeight);
-  }
-  modal.innerHTML = "";
-  if (parseInt(threeValue) === 2) {
-    const div = document.createElement("div");
-    const span = document.createElement("span");
-    span.innerText = `1개월차 약  ${(firstValue + secondValue).toLocaleString(
-      "ko-KR"
-    )}원`;
-    div.appendChild(span);
-    modal.appendChild(div);
-    modalFont.classList.remove("none");
-    for (var i = 2; i < twoValue + 1; i++) {
-      let number = i;
-      oneValue = oneValue - firstValue;
-      if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
-        let money = firstValue + ((oneValue * 0.029) / 365) * 30;
-        let cleanMoney = Math.round(money / 10) * 10;
+      function create(ele) {
         const div = document.createElement("div");
         const span = document.createElement("span");
-        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
-          "ko-KR"
-        )}원`;
+        span.innerText = ele;
         div.appendChild(span);
-        modal.appendChild(div);
-      } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
-        let money = firstValue + ((oneValue * 0.025) / 365) * 30;
-        let cleanMoney = Math.round(money / 10) * 10;
-        const div = document.createElement("div");
-        const span = document.createElement("span");
-        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
-          "ko-KR"
-        )}원`;
-        div.appendChild(span);
-        modal.appendChild(div);
-      } else {
-        let money = firstValue + ((oneValue * 0.027) / 365) * 30;
-        let cleanMoney = Math.round(money / 10) * 10;
-        const div = document.createElement("div");
-        const span = document.createElement("span");
-        span.innerText = `${number}개월차 약  ${cleanMoney.toLocaleString(
-          "ko-KR"
-        )}원`;
-        div.appendChild(span);
-        modal.appendChild(div);
+        aside.appendChild(div);
       }
-    }
-  }
-}
-icon.addEventListener("click", () => {
-  modal.classList.add("none");
-});
-modalFont.addEventListener("click", () => {
-  if (modalFont.innerText === "▶회차별 원리금 보기◀") {
-    modal.classList.remove("none");
-    modalFont.innerText = "▶회차별 원리금 닫기◀";
-  } else {
-    modal.classList.add("none");
-    modalFont.innerText = "▶회차별 원리금 보기◀";
-  }
-});
-calForm.addEventListener("submit", cal);</script>
+
+      function onSubmit(event) {
+        event.preventDefault();
+        aside.innerHTML = "";
+        const oneValue = one.value * 10000;
+        const twoValue = two.value * 10000;
+        const threeValue = three.value * 10000;
+        const fourValue = four.value * 10000;
+        const fiveValue = five.value;
+        const sixValue = six.value * 10000;
+        const calOne = oneValue * 0.0025;
+        const calTwo = twoValue * 0.0012;
+        const calThree = threeValue * 0.0045;
+        const calFour = fourValue * 0.0085;
+        const calFive = fiveValue * 8000;
+        const calSix = sixValue * 0.035;
+        const calFinal =
+        calOne + calTwo + calThree + calFour + calFive + calSix;
+        h2.innerText = `▶총이용고 배당액은 약 ${(Math.round(calFinal / 10) * 10).toLocaleString(
+          "ko-KR")}원 입니다`;
+        create(`1.대출거래 실적 이용고 배당액은 약 ${(Math.round(calOne / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`2.요구불예금 이용 실적 이용고 배당액은 약 ${(Math.round(calTwo / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`3.적금 거래 이용 실적 이용고 배당액은 약 ${(Math.round(calThree / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`4.체크카드 이용 실적 이용고 배당액은 약 ${(Math.round(calFour / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`5.자동이체 이용 실적 이용고 배당액은 약 ${(Math.round(calFive / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`6.신협공제(보험) 이용 실적 이용고 배당액은 약 ${(Math.round(calSix / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        h4.classList.remove("none");
+      }
+      function showDetail() {
+        if (aside.detail === false) {
+          aside.detail = true;
+          h4.innerText = "☞ 항목별 이용고배당액 닫기";
+        } else {
+          aside.detail = false;
+          h4.innerText = "☞ 항목별 이용고배당액 보기";
+        }
+        if (aside.detail === true) {
+          aside.classList.remove("none");
+        } else {
+          aside.classList.add("none");
+        }
+      }
+
+      h4.addEventListener("click", showDetail);
+
+      form.addEventListener("submit", onSubmit);
+    </script>
   </body>
 </html>
