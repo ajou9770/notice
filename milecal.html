@@ -303,7 +303,7 @@ h4 {
         const calSix = sixValue * 0.035;
         const calFinal =
         calOne + calTwo + calThree + calFour + calFive + calSix;
-        h2.innerText = `▶총이용고 배당액은 약 ${(Math.round(calFinal / 10) * 10).toLocaleString(
+        h2.innerText = `▶총이용고 (예상)배당액은 약 ${(Math.round(calFinal / 10) * 10).toLocaleString(
           "ko-KR")}원 입니다`;
         create(`1.대출거래 이용고 배당액 약 ${(Math.round(calOne / 10) * 10).toLocaleString("ko-KR")}원` );
         create(`2.요구불예금 이용고 배당액 약 ${(Math.round(calTwo / 10) * 10).toLocaleString("ko-KR")}원`);
