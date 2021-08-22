@@ -193,7 +193,10 @@ h4 {
   border-radius: 10px;
   font-size: 25px;
   font-weight: 500;
-}             
+}   
+.none {
+  display: none;
+}          
     </style>
   </head>
   <body>
@@ -245,8 +248,8 @@ h4 {
     </main>
     <footer>
       <div class="result">
-      <h2></h2></div>
-      <h4 class="none" style="opacity: 0.8">☞ 항목별 이용고배당 보기</h4>
+      <h2 id="h2"></h2></div>
+      <h4 id="h4" class="none" style="opacity: 0.8">☞ 항목별 이용고배당 보기</h4>
       <div class="result">
       <aside id="detail" class="none"></aside></div><br/>
       <div class="mile"><a href="http://ajou9770.github.io/usertip/mile.html"><i class="fas fa-chevron-left fa-lg"></i>이전화면 돌아가기</a></div>
@@ -263,10 +266,9 @@ h4 {
       const five = document.getElementById("five");
       const six = document.getElementById("six");
       const form = document.querySelector("form");
-      const h2 = document.querySelector("h2");
-      const h4 = document.querySelector("h4");
-      const closeBtn = document.querySelector("#detail_close span");
-      const aside = document.querySelector("aside");
+      const h2 = document.querySelector("#h2");
+      const h4 = document.querySelector("#h4");
+      const aside = document.querySelector("#detail");
 
       aside.detail = false;
 
@@ -297,18 +299,18 @@ h4 {
         calOne + calTwo + calThree + calFour + calFive + calSix;
         h2.innerText = `▶총이용고 배당액은 약 ${(Math.round(calFinal / 10) * 10).toLocaleString(
           "ko-KR")}원 입니다`;
-        create(`1.대출거래 실적 이용고 배당액은 약 ${(Math.round(calOne / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
-        create(`2.요구불예금 이용 실적 이용고 배당액은 약 ${(Math.round(calTwo / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
-        create(`3.적금 거래 이용 실적 이용고 배당액은 약 ${(Math.round(calThree / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
-        create(`4.체크카드 이용 실적 이용고 배당액은 약 ${(Math.round(calFour / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
-        create(`5.자동이체 이용 실적 이용고 배당액은 약 ${(Math.round(calFive / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
-        create(`6.신협공제(보험) 이용 실적 이용고 배당액은 약 ${(Math.round(calSix / 10) * 10).toLocaleString("ko-KR")}원 입니다.`);
+        create(`1.대출거래 이용고 배당액 약 ${(Math.round(calOne / 10) * 10).toLocaleString("ko-KR")}원` );
+        create(`2.요구불예금 이용고 배당액 약 ${(Math.round(calTwo / 10) * 10).toLocaleString("ko-KR")}원`);
+        create(`3.적금 거래 이용고 배당액 약 ${(Math.round(calThree / 10) * 10).toLocaleString("ko-KR")}원`);
+        create(`4.체크카드 이용고 배당액 약 ${(Math.round(calFour / 10) * 10).toLocaleString("ko-KR")}원`);
+        create(`5.자동(납부)이체 이용고 배당액 약 ${(Math.round(calFive / 10) * 10).toLocaleString("ko-KR")}원`);
+        create(`6.신협공제(보험) 이용고 배당액 약 ${(Math.round(calSix / 10) * 10).toLocaleString("ko-KR")}원`);
         h4.classList.remove("none");
       }
       function showDetail() {
         if (aside.detail === false) {
           aside.detail = true;
-          h4.innerText = "☞ 항목별 이용고배당액 보기";
+          h4.innerText = "☞ 항목별 이용고배당액 닫기";
         } else {
           aside.detail = false;
           h4.innerText = "☞ 항목별 이용고배당액 보기";
