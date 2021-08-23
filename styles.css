@@ -48,12 +48,13 @@ div {
     margin-bottom: 5px;
 }
 .mileapple {
-    display:list-item;
+    display:inline-block;
     background-color:ivory;
     border-radius: 10px;
     border: 5px solid ivory;
     padding: 15px;
     box-shadow: cornflowerblue;
+    padding-left: 10px;
     text-align: left;
     justify-content: left;
     opacity: 0.8;
