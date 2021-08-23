@@ -237,6 +237,10 @@ a {
     background-color: teal;
     opacity: 0.8;
 }
+mark.mint {
+    background-color: mediumspringgreen;
+    background: linear-gradient(to top, mediumspringgreen 20%, transparent 30%);
+}
 .coupon a {
     display: inline-block;
     text-decoration-color: none;
