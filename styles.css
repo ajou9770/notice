@@ -216,9 +216,9 @@ a {
     text-decoration: none;
 }
 .mileapple a {
-    display: inline-block;
+    display:inline-table;
     text-decoration-color: none;
-    color:coral;
+    color:mediumslateblue;
     text-decoration: none;
 }
 }
