@@ -216,7 +216,7 @@ a {
     text-decoration: none;
 }
 .mileapple a {
-    display:inline-table;
+    display:inline-flexbox;
     text-decoration-color: none;
     color:mediumslateblue;
     text-decoration: none;
