@@ -196,11 +196,11 @@ function cal(event) {
       "ko-KR"
     )}원 입니다`);
   } else {
-    arr.push(((value * 1.1 * 0.002317) / 366) * 30);
+    arr.push(((value * 1.1 * 0.002317) / 365) * 30.42);
     const test = te * 12;
     for (var i = 0; i < test; i++) {
       value = value - allMoney / test;
-      result = Math.floor((((value * 1.1 * 0.002317) / 366) * 30) / 10) * 10;
+      result = Math.floor((((value * 1.1 * 0.002317) / 365) * 30.42) / 10) * 10;
       arr.push(result);
     }
     const lastReulst = arr.reduce(function (accumulator, currentValue) {
