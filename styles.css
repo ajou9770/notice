@@ -186,6 +186,7 @@ div {
     color: black;
 }
 a {
+    display: inline-block;
     text-decoration-color: none;
     color:white;
     text-decoration: none;
