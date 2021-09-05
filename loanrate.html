@@ -412,7 +412,7 @@ function cal(event) {
       let number = i;
       oneValue = oneValue - firstValue;
       if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
-        let money = firstValue + ((oneValue * 0.029) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.031) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
@@ -422,7 +422,7 @@ function cal(event) {
         div.appendChild(span);
         modal.appendChild(div);
       } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
-        let money = firstValue + ((oneValue * 0.025) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.027) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
@@ -432,7 +432,7 @@ function cal(event) {
         div.appendChild(span);
         modal.appendChild(div);
       } else {
-        let money = firstValue + ((oneValue * 0.027) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.029) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
