@@ -236,7 +236,7 @@ body {
     </div>
     <div class="title">월 대출 상환원리금 및<br/>이용고배당 예시 </div>
     <h3>
-      ☞ 이자는 최저(우대)금리 기준(현재, 2.5% ~ 2.7%)<br />
+      ☞ 이자는 최저(우대)금리 기준(2021.9.6 현재, 2.6% ~ 3.1%)<br />
       ☞ 신용평점(등급):1~2등급(우수) / 3~5등급(일반)
     </h3>
     <div class="calin">
@@ -367,20 +367,33 @@ function cal(event) {
     firstValue = 0;
     thirdValue = Math.round((thirdValue * 2) / 10) * 10;
   }
-  if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
+  if(parseInt(threeValue)===2 && parseInt(fourValue)===1 && parseInt(level.value)===1){
+    secondValue = Math.round((((oneValue * (BASE_NUM-0.003)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 2.6% 입니다.`;
+  } else if(parseInt(threeValue)===2 && parseInt(fourValue)===2 && parseInt(level.value)===1){
+    secondValue = Math.round((((oneValue * (BASE_NUM-0.001)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 2.8% 입니다.`;
+  } else if(parseInt(threeValue)===2 && parseInt(fourValue)===1 && parseInt(level.value)===2){
+    secondValue = Math.round((((oneValue * (BASE_NUM-0.001)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 2.8% 입니다.`;
+  } else if(parseInt(threeValue)===2 && parseInt(fourValue)===2 && parseInt(level.value)===2){
+    secondValue = Math.round((((oneValue * (BASE_NUM+0.001)) / 365) * 30) / 10) * 10;
+    whatMoney.innerText = `✔적용금리는 3.0% 입니다.`;
+  }
+  else if (parseInt(fourValue) === 1 && parseInt(level.value) === 2) {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 2.9% 입니다.`;
   } else if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM + 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM + 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 3.1% 입니다.`;
   } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
     secondValue =
       Math.round((((oneValue * (BASE_NUM - 0.002)) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${(BASE_NUM - 0.002) * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 2.7% 입니다.`;
   } else {
     secondValue = Math.round((((oneValue * BASE_NUM) / 365) * 30) / 10) * 10;
-    whatMoney.innerText = `✔적용금리는 ${BASE_NUM * 100}% 입니다.`;
+    whatMoney.innerText = `✔적용금리는 2.9% 입니다.`;
   }
   if (twoValue > 60) {
     hOne.innerHTML = `대출기간은 최장 5년까지 입니다. 입력하신 대츨 기간은 ${year.value}년 ${twoValueDate}개월 입니다. 5년 이내로 입력해 주세요~~😜`;
@@ -412,7 +425,7 @@ function cal(event) {
       let number = i;
       oneValue = oneValue - firstValue;
       if (parseInt(fourValue) === 2 && parseInt(level.value) === 2) {
-        let money = firstValue + ((oneValue * 0.031) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.030) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
@@ -422,7 +435,7 @@ function cal(event) {
         div.appendChild(span);
         modal.appendChild(div);
       } else if (parseInt(fourValue) === 1 && parseInt(level.value) === 1) {
-        let money = firstValue + ((oneValue * 0.027) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.026) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
@@ -432,7 +445,7 @@ function cal(event) {
         div.appendChild(span);
         modal.appendChild(div);
       } else {
-        let money = firstValue + ((oneValue * 0.029) / 365) * 30;
+        let money = firstValue + ((oneValue * 0.028) / 365) * 30;
         let cleanMoney = Math.round(money / 10) * 10;
         const div = document.createElement("div");
         const span = document.createElement("span");
