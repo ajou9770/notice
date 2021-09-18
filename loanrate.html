@@ -332,7 +332,7 @@
           );
         }
         if (amountValue < 10 * 10000 || amountValue > 20000 * 10000) {
-          return alert(`최소 10만원 최대 2억원 까지 대출할수 있습니다.`);
+          return alert(`1항의 대출금액 입력범위는 최소 10만원 ~ 최대 20000만원(2억원) 입니다.`);
         }
         if (methodValue === 1) {
           detail.classList.add(CLASS_NONE);
