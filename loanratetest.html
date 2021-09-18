@@ -355,15 +355,15 @@
           const rateMoney =
             Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
           const refundMoney = Math.round((amountValue * 0.0045) / 10) * 10;
-          rate.innerText = `적용금리는 ${
+          rate.innerText = `✔ 적용금리는 ${
             Math.floor(BASE_RATE * 100 * 10) / 10 === 3
               ? "3.0"
               : Math.floor(BASE_RATE * 100 * 10)/10
           }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
-          result.innerText = `월이자는 약${rateMoney.toLocaleString(
+          result.innerText = `▶ 월이자는 약${rateMoney.toLocaleString(
             "ko-kr"
           )}원입니다.`;
-          dividend.innerText = `대출관련 이용고배당액으로 약 ${refundMoney.toLocaleString(
+          dividend.innerText = `▶ 대출관련 이용고배당액으로 약 ${refundMoney.toLocaleString(
             "ko-kr"
           )}원을 받으실 수 있습니다.`;
         }
@@ -392,11 +392,11 @@
           const monthMoney = Math.round(amountValue / allMonth / 10) * 10;
           let rateMoney =
             Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
-          result.innerText = `월이자는 약${rateMoney.toLocaleString(
+          result.innerText = `▶ 월이자는 약${rateMoney.toLocaleString(
             "ko-kr"
           )}원, 월상환액은 약 ${monthMoney.toLocaleString(
             "ko-kr"
-          )}원  1회차 원리금 합계액은 약 ${(monthMoney + rateMoney).toLocaleString(
+          )}원, 1회차 원리금 합계액은 약 ${(monthMoney + rateMoney).toLocaleString(
             "ko-kr"
           )}원`;
           const div = document.createElement("div");
@@ -414,15 +414,16 @@
             ).toLocaleString("ko-kr")} 원`;
             aside.appendChild(div);
           }
-          rate.innerText = `적용금리는 ${
+          rate.innerText = `✔ 적용금리는 ${
             Math.floor(BASE_RATE * 100 * 10) / 10 === 3
               ? "3.0"
               : Math.floor(BASE_RATE * 100 * 10)/10
           }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
-          dividend.innerText = `대출관련 이용고배당으로 약 ${refundMoney.toLocaleString(
+          dividend.innerText = `✔ 대출관련 이용고배당으로 약 ${refundMoney.toLocaleString(
             "ko-kr"
           )}원을 받으실 수 있습니다.`;
         }
+        window.scrollTo(0, document.body.scrollHeight);
       }
 
       const onOff = () => {
@@ -431,7 +432,7 @@
           aside.classList.add(CLASS_NONE);
           detail.innerText = "☞ 회차별 원리금 조회하기";
         } else {
-          window.scrollTo(0, document.body.scrollHeight);
+          window.scrollTo(0, -document.body.scrollHeight);
           detail.on = true;
           aside.classList.remove(CLASS_NONE);
           detail.innerText = "☞ 회차별 원리금 닫기";
