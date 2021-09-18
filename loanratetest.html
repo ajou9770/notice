@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>월 대출 원리금 계산하기</title>
+    <style>
+      body {
+        height: 100vh;
+      }
+      input {
+        height: 50px;
+      }
+      select {
+        height: 50px;
+      }
+      aside {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 800px;
+        overflow-y: scroll;
+        background-color: aqua;
+      }
+      #period_year {
+        width: 4%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #period_month {
+        width: 4%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .dan {
+        width: 35%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #amount {
+        width: 7%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #method {
+        width: 13%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #change {
+        width: 13%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #whether {
+        width: 15%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #rating {
+        width: 20%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .cal {
+        width: 40%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #submit {
+        margin-top: 20px;
+        width: 450px;
+        background-color: cadetblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: larger;
+        height: auto;
+        display: flex;
+        justify-content: center;
+      }
+      .result {
+       height: auto;
+       width: 410px;
+       color: blue;
+       border-width: 5px 2px;
+       border-color: teal wheat;
+       border-style: solid;
+       text-align: left;
+       background-color: whitesmoke;
+       opacity: 0.8;
+       padding-left: 10px;
+       border-radius: 10px;
+     }
+     .seetermrate {
+      display: flex;
+      width: 380px;
+      font-weight: 600;
+      color: blue;
+      height: auto;
+      border-width: 1px 1px;
+      border-style: solid;
+      border-color: whitesmoke;
+      margin-right: 10px;
+      align-items: center;
+      justify-content: center;
+     }
+     .resultmile {
+      height: auto;
+      width: 410px;
+      color: chocolate;
+      font-size: 25px;
+      border-width: 5px 2px;
+      border-color: teal wheat;
+      border-style: solid;
+      text-align: left;
+      background-color: whitesmoke;
+      opacity: 0.8;
+      padding-left: 10px;
+      border-radius: 10px;
+     }
+      .none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>✅ 기본조건: 신협 급여이체 및 참조합원(으뜸이 등급) (선)적용 가정</h2>
+    <form>
+      <section>
+        <h2>1.대출금액을 입력하세요</h2>
+        <input id="amount" type="number" required />
+        <span class="dan">만원</span>
+      </section>
+      <section>
+        <h2>2. 대출기간을 선택해 주세요</h2>
+        <select id="period_year">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <span class="dan">년</span>
+        <select id="period_month">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+        </select>
+        <span class="dan">개월</span>
+      </section>
+      <section>
+        <h2>3. 상환 방법을 선택하세요.</h2>
+        <select id="method">
+          <option value="1">일시상환</option>
+          <option value="2">분활상환(0.1%우대)</option>
+        </select>
+      </section>
+      <section>
+        <h2>4. 금리변동주기(변동금리 또는 고정금리)을 선택하세요</h2>
+        <select id="change">
+          <option value="1">3개월 변동</option>
+          <option value="2">6개월 변동</option>
+          <option value="3">12개월 변동(0.1% 가산)</option>
+          <option value="4">고정 금리(0.2% 가산)</option>
+        </select>
+      </section>
+      <section>
+        <h2>5. 신협 최초 대출 여부를 선택하세요.</h2>
+        <select id="whether">
+          <option value="1">신협최초대출(0.1%우대)</option>
+          <option value="2">해당없음(기대출이력있음)</option>
+        </select>
+        <h3>※ 최초대출 대상자: 입사일기준 1년 미만 조합원</h3>
+      </section>
+      <section>
+        <h2>6. 본인의 개인신용평점을 선택하세요.</h2>
+        <select id="rating">
+          <option value="1">우수등급/평점 880점 ~ 1,000점</option>
+          <option value="2">일반등급/평점 740점 ~ 849점</option>
+        </select>
+      </section>
+      <br />
+      <section id="submit">
+        <input class="cal" type="submit" value="계산하기" />
+      </section>
+      <h3>※ 산출된 금리 및 원리금은 참고용으로만 활용바랍니다.</h3>
+    </form>
+    <div class="result">
+    <main class="none">
+      <h2 id="rate"></h2>
+      <h2 id="result"></h2></div>
+      <div class="seetermrate">
+      <h2 id="detail" class="none">☞ 회차별 원리금 조회하기</h2></div>
+      <h2 class="resultmile" id="dividend"></h2>
+    </main>
+    <aside class="none"></aside>
+    <script>
+      const form = document.querySelector("form");
+      const aside = document.querySelector("aside");
+      const main = document.querySelector("main");
+      const amount = form.querySelector("#amount");
+      const periodYear = form.querySelector("#period_year");
+      const periodMonth = form.querySelector("#period_month");
+      const method = form.querySelector("#method");
+      const rating = form.querySelector("#rating");
+      const whether = form.querySelector("#whether");
+      const change = form.querySelector("#change");
+      const rate = document.querySelector("#rate");
+      const result = document.querySelector("#result");
+      const detail = document.querySelector("#detail");
+      const dividend = document.querySelector("#dividend");
+      const CLASS_NONE = "none";
+      detail.on = false;
+
+      function calculate(evemt) {
+        event.preventDefault();
+        aside.innerHTML = "";
+        let BASE_RATE = 0.029;
+        detail.on = false;
+        main.classList.remove(CLASS_NONE);
+        let amountValue = amount.value * 10000;
+        const periodYearValue = parseInt(periodYear.value);
+        const periodMonthValue = parseInt(periodMonth.value);
+        const allMonth = periodYearValue * 12 + periodMonthValue;
+        const methodValue = parseInt(method.value);
+        const whetherValue = parseInt(whether.value);
+        const ratingValue = parseInt(rating.value);
+        const changeValue = parseInt(change.value);
+        if (allMonth > 60 || allMonth < 1) {
+          return alert(
+            `최소 1개월에서 최대 60개월(5년)까지 대출 받으실수 있습니다. 지금 ${allMonth}를 입력하셧습니다.`
+          );
+        }
+        if (amountValue < 10 * 10000 || amountValue > 20000 * 10000) {
+          return alert(`최소 10만원 최대 2억원 까지 대출할수 있습니다.`);
+        }
+        if (methodValue === 1) {
+          detail.classList.add(CLASS_NONE);
+          //일시 상환일때
+          if (whetherValue === 1) {
+            // 신협 최초대출 일때
+            BASE_RATE = BASE_RATE - 0.001;
+          }
+          if (ratingValue === 2) {
+            // 일반등급일떄
+            BASE_RATE = BASE_RATE + 0.002;
+          }
+          if (changeValue === 3) {
+            // 금리 12개월로 바꿀떄
+            BASE_RATE = BASE_RATE + 0.001;
+          }
+          if (changeValue === 4) {
+            // 금리 고정으로 바꿀때
+            BASE_RATE = BASE_RATE + 0.002;
+          }
+          const rateMoney =
+            Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
+          const refundMoney = Math.round((amountValue * 0.0045) / 10) * 10;
+          rate.innerText = `적용금리는 ${
+            Math.floor(BASE_RATE * 100 * 10) / 10 === 3
+              ? "3.0"
+              : Math.floor(BASE_RATE * 100 * 10)/10
+          }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
+          result.innerText = `월이자는 약${rateMoney.toLocaleString(
+            "ko-kr"
+          )}원입니다.`;
+          dividend.innerText = `대출관련 이용고배당액으로 약 ${refundMoney.toLocaleString(
+            "ko-kr"
+          )}원을 받으실 수 있습니다.`;
+        }
+
+        if (methodValue === 2) {
+          detail.classList.remove(CLASS_NONE);
+          // 분할상환일때
+          BASE_RATE = BASE_RATE - 0.001;
+          if (whetherValue === 1) {
+            // 신협 최초대출 일때
+            BASE_RATE = BASE_RATE - 0.001;
+          }
+          if (ratingValue === 2) {
+            // 일반등급일떄
+            BASE_RATE = BASE_RATE + 0.002;
+          }
+          if (changeValue === 3) {
+            // 금리 12개월로 바꿀떄
+            BASE_RATE = BASE_RATE + 0.001;
+          }
+          if (changeValue === 4) {
+            // 금리 고정으로 바꿀때
+            BASE_RATE = BASE_RATE + 0.002;
+          }
+          const refundMoney = Math.round((amountValue * 0.0045) / 2 / 10) * 10;
+          const monthMoney = Math.round(amountValue / allMonth / 10) * 10;
+          let rateMoney =
+            Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
+          result.innerText = `월이자는 약${rateMoney.toLocaleString(
+            "ko-kr"
+          )}원, 월상환액은 약 ${monthMoney.toLocaleString(
+            "ko-kr"
+          )}원  월리금 합계액은 약 ${(monthMoney + rateMoney).toLocaleString(
+            "ko-kr"
+          )}원`;
+          const div = document.createElement("div");
+          div.innerText = `1회차 원리금은 약 ${(
+            monthMoney + rateMoney
+          ).toLocaleString("ko-kr")}원 `;
+          aside.appendChild(div);
+          for (let i = 2; i < allMonth + 1; i++) {
+            amountValue = amountValue - monthMoney;
+            rateMoney =
+              Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
+            const div = document.createElement("div");
+            div.innerText = `${i}회차 원리금은 약 ${(
+              monthMoney + rateMoney
+            ).toLocaleString("ko-kr")} 원`;
+            aside.appendChild(div);
+          }
+          rate.innerText = `적용금리는 ${
+            Math.floor(BASE_RATE * 100 * 10) / 10 === 3
+              ? "3.0"
+              : Math.floor(BASE_RATE * 100 * 10)/10
+          }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
+          dividend.innerText = `대출관련 이용고배당으로 약 ${refundMoney.toLocaleString(
+            "ko-kr"
+          )}원을 받으실 수 있습니다.`;
+        }
+      }
+
+      const onOff = () => {
+        if (detail.on === true) {
+          detail.on = false;
+          aside.classList.add(CLASS_NONE);
+          detail.innerText = "☞ 회차별 원리금 조회하기";
+        } else {
+          window.scrollTo(0, document.body.scrollHeight);
+          detail.on = true;
+          aside.classList.remove(CLASS_NONE);
+          detail.innerText = "☞ 회차별 원리금 닫기";
+        }
+      };
+      detail.addEventListener("click", onOff);
+      form.addEventListener("submit", calculate);
+    </script>
+    <script
+    src="https://kit.fontawesome.com/6478f529f2.js"
+    crossorigin="anonymous"
+  ></script>
+  </body>
+</html>
