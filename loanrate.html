@@ -433,6 +433,7 @@
           aside.classList.add(CLASS_NONE);
           detail.innerText = "☞ 회차별 원리금 조회하기";
         } else {
+          window.scrollTo(0, -document.body.scrollHeight);
           detail.on = true;
           aside.classList.remove(CLASS_NONE);
           detail.innerText = "☞ 회차별 원리금 닫기";
