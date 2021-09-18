@@ -327,7 +327,7 @@
         const changeValue = parseInt(change.value);
         if (allMonth > 60 || allMonth < 1) {
           return alert(
-            `최소 1개월에서 최대 60개월(5년)까지 대출 받으실수 있습니다. 지금 ${allMonth}를 입력하셧습니다.`
+            `2항의 대출기간은 1개월 ~ 60개월(5년)사이를 선택해 주세요. 지금은 ${allMonth}개월이 선택되었습니다.`
           );
         }
         if (amountValue < 10 * 10000 || amountValue > 20000 * 10000) {
