@@ -303,12 +303,12 @@ mark.mint {
 }
 .back {
     background-color:indigo;
-    border-radius: 30px;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
     opacity: 0.8;
-    height: 70px;
+    height: 50px;
     width: auto;
     font-size:25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
