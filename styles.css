@@ -218,6 +218,12 @@ div {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.notice {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: left;
+    color: blue;
+}
 .channel a {
     color: black;
 }
