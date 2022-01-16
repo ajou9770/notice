@@ -152,7 +152,7 @@ div {
     background-color:darkcyan;
     border-radius: 10px;
     opacity: 0.8;
-    height: 60px;
+    height: auto;
     width: 340px;
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
