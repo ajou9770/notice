@@ -158,6 +158,7 @@ div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:whitesmoke;
     font-weight: 700;
+    padding: 10px;
     margin-bottom: 5px;
 }
 .draw {
