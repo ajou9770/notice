@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>총회 경품행사 추첨하기</title>
     <style>
     form {
@@ -25,6 +25,10 @@
     <input type="button" value="추첨하기 " onClick="rand();">
     </form>
     </div>
+    <div id="current_date"></p>
+        <script>
+        document.getElementById("current_date").innerHTML = Date();
+        </script>
     <script>
         function rand() {
         tot=17 // 자료수
@@ -91,6 +95,6 @@
         document.write("</table>");
         document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:9pt;text-align:right"></font></a></div>');
         }
-         </script>
-    </BODY>
+        </script>
+         </BODY>
     </HTML>
