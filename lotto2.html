@@ -714,18 +714,27 @@
               array.push(lotto);
               arr = arr.filter((item) => item !== lotto);
             }
-            console.log(array.length);
+            console.log(arr);
       }
 
       function tableGenerate(arr, table) {
         arr.map((item, index) => {
-          const realIndex = index + 1;
-          const tr = document.createElement("tr");
-          tdGenerate(realIndex, tr);
-          tdGenerate(item.name, tr);
-          tdGenerate(item.number, tr);
-          tdGenerate(item.phone, tr);
+            const tr = document.createElement("tr");
+            const realIndex = index + 1;
+            if(item === undefined){
+                const re = arr[Math.floor(Math.random()*arr.length+1)]
+                tdGenerate(realIndex, tr);
+          tdGenerate(re.name, tr);
+          tdGenerate(re.number, tr);
+          tdGenerate(re.phone, tr);
           table.appendChild(tr);
+            } else {
+                tdGenerate(realIndex, tr);
+                tdGenerate(item.name, tr);
+                tdGenerate(item.number, tr);
+                tdGenerate(item.phone, tr);
+                table.appendChild(tr);
+            }
         });
       }
 
