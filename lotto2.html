@@ -5,19 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>총회경품(설문)응모 추첨프로그램</title>
-    <style></style>
+    <style>
+    .table {
+        color:blue;
+        background-color: wheat;
+        width: auto;
+        padding: 5px;
+        margin: 5px;
+    }
+    #btn {
+       background-color: tomato;
+       font-size: 30px;
+       font-weight: 600;
+       border-top: 2px;
+       border-right: 6px;
+       border-bottom: 6px;
+       border-color: turquoise;
+       border-style: solid;
+       width: 200px;
+       height: 50px;
+       margin-left: 5px;
+    }
+    </style>
   </head>
   <body>
-    <h1>총회 경품 추첨 프로그램</h1>
+    <h2>신협 제28차 정기총회 경품 추첨 프로그램</h2>
     <div>
       <span># 대상(1명): 50만원 상품권</span>
       <span># 1등(3명): 30만원 상품권</span>
       <span># 2등(30명): 5만원 상품권</span>
       <span># 3등(260명): 1만원권 모바일 상품권</span>
-    </div>
-    <button id="btn">추첨하기</button>
-    <div>
-      <h1 id="bigLottoPerson"></h1>
+    </div><br/>
+    <button id="btn">🎁 추첨하기</button>
+    <br/><br/>
+    <div class="table">
+      <h2 id="bigLottoPerson"></h2>
     </div>
     <table id="bigTable" border="1">
       <th>번호</th>
@@ -25,8 +47,8 @@
       <th>사원번호</th>
       <th>핸드폰번호</th>
     </table>
-    <div>
-      <h1 id="firstLottoPerson"></h1>
+    <div class="table">
+      <h2 id="firstLottoPerson"></h2>
     </div>
     <table id="firstTable" border="1">
       <th>번호</th>
@@ -35,7 +57,7 @@
       <th>핸드폰번호</th>
     </table>
     <div id="celebrateSecond">
-      <h1>2등 당첨자는 아래표와 같습니다</h1>
+      <h2 class="table">2등 당첨자는 아래와 같습니다</h2>
     </div>
     <table id="secondTable" border="1">
       <th>번호</th>
@@ -44,7 +66,7 @@
       <th>핸드폰번호</th>
     </table>
     <div id="celebratethird">
-      <h1>3등 당첨자는 아래표와 같습니다</h1>
+      <h2 class="table">3등 당첨자는 아래와 같습니다</h2>
     </div>
     <table id="thirdTable" border="1">
       <th>번호</th>
