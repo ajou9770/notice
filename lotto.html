@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+        <title>총회 경품행사 추첨하기</title>
+    <style>
+    form {
+        background-color: aquamarine;
+        width: 120px;
+        text-align: center;
+        height: auto;
+        padding: 10px;
+        font-size: larger;
+    }    
+    </style>
+    <span><b>총회 경품 추첨 프로그램 </b></span><br/>
+    <br/>
+    <span> # 대상(1명): 50만원 상품권<br/>
+        # 1등(3명): 30만원 상품권<br/>
+        # 2등(30명): 5만원 상품권<br/>
+        # 3등(260명): 1만원권 모바일 상품권
+    </span>
+    <br/><br/>
+    <form name="form">
+    <input type="button" value="추첨하기 " onClick="rand();">
+    </form>
+    </div>
+    <script>
+        function rand() {
+        tot=17 // 자료수
+        cnt=5; // 추첨인원
+        data=new Array(tot);
+        
+    data[1]=new Array("111284", "1033976387");
+    data[2]=new Array("113681", "1044424059");
+    data[3]=new Array("111319", "1083805360");
+    data[4]=new Array("112792", "1068040423");
+    data[5]=new Array("108732", "1099054169");
+    data[6]=new Array("113058", "1088139434");
+    data[7]=new Array("113348", "1022149872");
+    data[8]=new Array("110015", "1048076200");
+    data[9]=new Array("109556", "1025048171");
+    data[10]=new Array("112794", "1089140559");
+    data[11]=new Array("111422", "1088874956");
+    data[12]=new Array("111039", "1083979297");
+    data[13]=new Array("105288", "1099186670");
+    data[14]=new Array("107809", "1089818328");
+    data[15]=new Array("113397", "1033288372");
+    data[16]=new Array("104990", "1064104172");
+    data[17]=new Array("109492", "1090692594");
+        
+        head="<br><br><font color=blue size=4><b>총회경품(설문조사)이벤트 당첨자 명단[대상(1명)]</b></font><br><br>";
+        head+="<table border=1 cellspacing=0 width=591 bordercolordark=white bordercolorlight=#A0ACA0>";
+        head+="<tr><td align=center><font size=2>No.<td align=center><font size=2>사원번호(조합원번호)</td><td align=center><font size=2>핸드폰번호</td></tr>";
+        
+        lot=new Array(tot);
+        lot[1]=0;
+        
+        for (i=1;i<=cnt;i++)
+        {
+            flag=0;
+            while(flag==0) {
+            result=Math.floor(Math.random()*tot+1);
+            
+            for(j=1;j<=i;j++) {
+               if (result==lot[j]) {
+                  flag=0;
+                  break;
+               } else {
+                  flag=1;
+               }
+            }
+            
+            }
+               lot[i]=result;
+        }
+        temp=0;
+        for (i=1;i<=cnt-1;i++)  {
+        for (j=i+1;j<=cnt;j++) {
+            if (lot[i]>lot[j]) {
+                temp=lot[i];
+                lot[i]=lot[j];
+                lot[j]=temp;
+            }
+        }
+        }
+        document.write(head)
+        for (i=1;i<=cnt;i++)  {
+            document.write("<tr><td align=center><font size=2>",i,"</td><td align=center><font size=2>",data[lot[i]][0],"</td><td><font size=2>&nbsp;<a href="+data[lot[i]][2]+" target=_blank>"+data[lot[i]][1]+"</td>");
+            }
+        document.write("</table>");
+        document.write('<div style="height:35; width=590; margin:10 10 0 0;font-size:9pt;text-align:right"></font></a></div>');
+        }
+        </script>
+    </BODY>
+    </HTML>
