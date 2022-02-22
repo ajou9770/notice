@@ -72,7 +72,7 @@
       <th>핸드폰번호</th>
     </table>
     <div id="celebrateSecond">
-      <h2 class="table">2등 당첨자는 아래와 같습니다</h2>
+      <h2 class="table">2등(30명) 당첨 조합원</h2>
     </div>
     <table id="secondTable" border="1">
       <th>번호</th>
@@ -81,7 +81,7 @@
       <th>핸드폰번호</th>
     </table>
     <div id="celebratethird">
-      <h2 class="table">3등 당첨자는 아래와 같습니다</h2>
+      <h2 class="table">3등(260명) 당첨 조합원</h2>
     </div>
     <table id="thirdTable" border="1">
       <th>번호</th>
@@ -2311,8 +2311,8 @@ console.log("first",arr,bigLotto,firstLotto,secondLotto,thirdLotto)
         tableGenerate(firstLotto, firstTable);
         tableGenerate(secondLotto, secondTable);
         tableGenerate(thirdLotto, thirdTable);
-        bigLottoPerson.innerText = `대상 당첨자는 ${bigLotto[0].name}입니다.`;
-        firstLottoPerson.innerText = `1등 당첨자는 ${firstLotto[0].name}, ${firstLotto[1].name}, ${firstLotto[2].name} 입니다.`;
+        bigLottoPerson.innerText = `대상(1명) 당첨 조합원은 "${bigLotto[0].name}" 입니다.`;
+        firstLottoPerson.innerText = `1등(3명) 당첨 조합원은 "${firstLotto[0].name}, ${firstLotto[1].name}, ${firstLotto[2].name}" 입니다.`;
       }
 
       btn.addEventListener("click", btnClick);
