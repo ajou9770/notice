@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>총회 경품행사 추첨하기</title>
+        <title>이벤트 추첨하기</title>
     <style>
     form {
         background-color: aquamarine;
@@ -14,11 +14,8 @@
         font-size: larger;
     }    
     </style>
-    <h2><b>총회 경품 추첨 프로그램 </b></h2>
-    <span> # 대상(1명): 50만원 상품권<br/>
-        # 1등(3명): 30만원 상품권<br/>
-        # 2등(30명): 5만원 상품권<br/>
-        # 3등(260명): 1만원권 모바일 상품권
+    <h2><b>장보고 체크카드 발급 이벤트 </b></h2>
+    <span> # 3월 추첨(30명): 스벅 커피 모바일 기프티권<br/>
     </span>
     <br/><br/>
     <form name="form">
@@ -31,8 +28,8 @@
         </script>
     <script>
         function rand() {
-        tot=17 // 자료수
-        cnt=3; // 추첨인원
+        tot=50 // 자료수
+        cnt=30; // 추첨인원
         data=new Array(tot);
         
     data[1]=new Array("111284", "1033976387");
@@ -52,8 +49,8 @@
     data[15]=new Array("113397", "1033288372");
     data[16]=new Array("104990", "1064104172");
     data[17]=new Array("109492", "1090692594");
-        
-        head="<br><br><font color=blue size=4><b>총회경품(설문조사)이벤트 당첨자 명단 [대상(1명)]</b></font><br><br>";
+         
+        head="<br><br><font color=blue size=4><b> 장보고 체크카드 발급이벤트 추첨결과(30명)</b></font><br><br>";
         head+="<table border=1 cellspacing=0 width=350 bordercolordark=white bordercolorlight=#A0ACA0>";
         head+="<tr><td align=center><font size=2>No.<td align=center><font size=2>사원번호(조합원번호)</td><td align=center><font size=2>핸드폰번호</td></tr>";
         
