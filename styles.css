@@ -335,11 +335,14 @@ font-weight: 600;
 margin-right: 10px;
 }
 .form-input-two {
-    width: 35%;
+width: 35%;
 height: 35px;
 font-weight: 600;
 font-size: 15px;
 }
+.form-input-two:active {
+   transform: scale(0.98);
+    }
 .loaninsu {
     background-color:indianred;
     text-align: center;
