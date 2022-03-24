@@ -134,7 +134,8 @@ div {
     justify-content: center;
     vertical-align: middle;
     background-color:darkcyan;
-    border-radius: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
     opacity: 0.8;
     height: 90px;
     width: 350px;
