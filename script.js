@@ -2986,3 +2986,5 @@ function handleSumbit(event) {
 form.addEventListener("submit", handleSumbit);
 
 document.addEventListener('contextmenu', event => event.preventDefault());
+
+  
