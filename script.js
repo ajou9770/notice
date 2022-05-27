@@ -2977,7 +2977,7 @@ function handleSumbit(event) {
     alert("사번을 입력 후 제출해 주세요😃"); 
     h2.innerText="";
   }else if(show === null) {
-    h2.innerText = "[조회되지 않네요😥 신협으로 문의 바랍니다.👌]";
+    h2.innerText = `["${value}"는 조회되지 않습니다. 2022년 4월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
   } else {
     h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
@@ -2987,4 +2987,13 @@ form.addEventListener("submit", handleSumbit);
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
+  const submitInput = document.querySelector(".form-input-two");
+  const Input_value = form-input-one.value;
+
+  function handleClick() {
+    alert(`${Input_value}로 입력하셨습니다. 2022년 4월 30일기준 가입 조합원 기준으로 조회 가능합니다. 조회가 되지 않을 경우 신협(☏4939)로 문의 주세요`);
+  }
+  
+  submitInput.addEventListener("click", handleClick);  
+  
   
