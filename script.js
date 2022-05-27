@@ -2977,7 +2977,7 @@ function handleSumbit(event) {
     alert("사번을 입력 후 제출해 주세요😃"); 
     h2.innerText="";
   }else if(show === null) {
-    h2.innerText = `["${value}"는 조회되지 않습니다. 2022년 4월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
+    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 4월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
   } else {
     h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
