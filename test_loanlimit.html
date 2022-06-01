@@ -177,6 +177,19 @@ body {
 mark.mint {
     background-color: mediumspringgreen;
     background: linear-gradient(to top, mediumspringgreen 20%, transparent 30%);
+}
+option {
+    font-size: larger;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.income {
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: 600;
+    padding-left: 10px;
 }            
     </style>
   </head>
@@ -237,10 +250,10 @@ mark.mint {
       <option value="2">일반 평점미만(740점 미만)</option></select
     >
     <h4>※ NCB(나이스 신용평가) 개인신용평점 기준 </h4>
-    <br/>
     <h3>7.마지막으로 본인의 연봉을 선택하세요 </h3>
-    <select class="income" style="height: 50px">
-      <option value="1">4,000만원</option>
+    <input class="income", type="number", placeholder="연봉입력", required><br/>
+    <!--<select class="income" style="height: 50px">
+      <option value="1">선택하기</option>
       <option value="2">4,500만원</option>
       <option value="3">5,000만원</option>
       <option value="3">5,500만원</option>
@@ -252,7 +265,7 @@ mark.mint {
       <option value="10">8,500만원</option>
       <option value="11">9,000만원</option>
       <option value="12">9,500만원</option>
-      <option value="1">1억원이상</option></select>
+      <option value="1">1억원이상</option></select><br/>-->
     <!--<h3><mark class="mint">※조합의 법정 예대율 기준에 따라, 현재 총대출한도가 50%이내로 제한되오니 자세한 한도는 신협으로 문의 바랍니다.[만기에 따른 기한연장(재대출)은 제외) </mark></h3><br/>-->
       <button class="submit" style="height: 40px; width: 250px; font-size:large">(추가)대출한도 조회 하기 <i class="fas fa-mouse fa-small"></i></button><br/>
             <div class="resultbd"><h2 class="result"></h2></div>
