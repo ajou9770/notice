@@ -3010,6 +3010,24 @@ localStorage.setItem("113974", "27352764");
 localStorage.setItem("114830", "27311112");
 localStorage.setItem("114790", "27353179");
 localStorage.setItem("114775", "27332976");
+localStorage.setItem("114135", "26863716");
+localStorage.setItem("111663", "26927090");
+localStorage.setItem("704910", "26926305");
+localStorage.setItem("114371", "26983758");
+localStorage.setItem("114485", "26885997");
+localStorage.setItem("114050", "26949488");
+localStorage.setItem("111733", "26965311");
+localStorage.setItem("111908", "26958379");
+localStorage.setItem("704950", "26975882");
+localStorage.setItem("113686", "26958423");
+localStorage.setItem("112773", "26981852");
+localStorage.setItem("114101", "26872701");
+localStorage.setItem("113959", "26882295");
+localStorage.setItem("113019", "26986113");
+localStorage.setItem("113615", "26894509");
+localStorage.setItem("113898", "26900103");
+localStorage.setItem("114518", "26928084");
+localStorage.setItem("114361", "26899790");
 
 function handleSumbit(event) {
   event.preventDefault(); 
@@ -3019,7 +3037,7 @@ function handleSumbit(event) {
     alert("사번을 입력 후 제출해 주세요😃"); 
     h2.innerText="";
   }else if(show === null) {
-    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 4월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
+    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 6월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
   } else {
     h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
@@ -3033,7 +3051,7 @@ document.addEventListener('contextmenu', event => event.preventDefault());
   const Input_value = form-input-one.value;
 
   function handleClick() {
-    alert(`${Input_value}로 입력하셨습니다. 2022년 4월 30일기준 가입 조합원 기준으로 조회 가능합니다. 조회가 되지 않을 경우 신협(☏4939)로 문의 주세요`);
+    alert(`${Input_value}로 입력하셨습니다. 2022년 6월 30일기준 가입 조합원 기준으로 조회 가능합니다. 조회가 되지 않을 경우 신협(☏4939)로 문의 주세요`);
   }
   
   submitInput.addEventListener("click", handleClick);  
