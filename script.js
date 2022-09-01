@@ -3074,6 +3074,18 @@ localStorage.setItem("114834", "27551114");
 localStorage.setItem("114907", "27539330");
 localStorage.setItem("114933", "27544575");
 localStorage.setItem("113437", "27621147");
+localStorage.setItem("114364", "26833208");
+localStorage.setItem("113831", "27772784");
+localStorage.setItem("114390", "27768846");
+localStorage.setItem("108287", "27767952");
+localStorage.setItem("114813", "27615726");
+localStorage.setItem("114948", "27738617");
+localStorage.setItem("114818", "27695953");
+localStorage.setItem("114310", "27809792");
+localStorage.setItem("114680", "27789045");
+localStorage.setItem("114958", "27774249");
+localStorage.setItem("114653", "27690228");
+localStorage.setItem("114755", "27773303");
 
 function handleSumbit(event) {
   event.preventDefault(); 
@@ -3083,7 +3095,7 @@ function handleSumbit(event) {
     alert("사번을 입력 후 제출해 주세요😃"); 
     h2.innerText="";
   }else if(show === null) {
-    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 7월 31일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
+    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 8월 31일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
   } else {
     h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
