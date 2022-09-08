@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>특판몰 구매 조합원 경품 추첨</title>
+    <style>
+    .table {
+        color:blue;
+        background-color: wheat;
+        width: auto;
+        padding: 5px;
+        margin: 5px;
+    }
+    #btn {
+       background-color: rgb(71, 26, 168);
+       font-size: 30px;
+       font-weight: 600;
+       border-style: none;
+       color: aliceblue;
+       width: 200px;
+       height: 50px;
+       margin-left: 5px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      font-family:fantasy;
+      font-weight: 500;
+      margin-left: 5px;
+    }
+    .lul {
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="lul">
+    <h2>신협 추석특판몰 구매 조합원 경품 추첨</h2>
+  </div>
+    <div class="content">
+      <span>✔️ 대상(1명): 10만원 상품권</span>
+      <span>✔️ 1등(2명): 5만원 상품권</span>
+      <span>✔️ 2등(10명): 3만원 상품권</span>
+      <span>✔️ 3등 추첨없음.</span>
+    </div><br/>
+    <div class="lul">
+    <button id="btn">🎁 추첨하기</button>
+    </div>
+    <br/>
+      <div class="table">
+      <h2 id="bigLottoPerson"></h2>
+    </div>
+    <table id="bigTable" border="1">
+      <th>번호</th>
+      <th>아이디</th>
+      <th>성명</th>
+      <th>핸드폰번호</th>
+    </table>
+    <div id="celebrateSecond">
+        <h2 class="table">1등(2명) 당첨 조합원</h2>
+      </div>
+      <table id="firstTable" border="1">
+        <th>번호</th>
+        <th>아이디</th>
+        <th>성명</th>
+        <th>핸드폰번호</th>
+    </table> 
+    <div id="celebratethird">
+        <h2 class="table">2등(10명) 당첨 조합원</h2>
+      </div>   
+    <table id="secondTable" border="1">
+        <th>번호</th>
+        <th>아이디</th>
+        <th>성명</th>
+        <th>핸드폰번호</th>
+    </table>
+    <div id="celebratethird">
+        <h2 class="table">3등() 추첨없음</h2>
+      </div> 
+    <table id="thirdTable" style="border:none; color: aliceblue;"  border="1">
+        <th>번호</th>
+        <th>아이디</th>
+        <th>성명</th>
+        <th>핸드폰번호</th>
+    </table>
+    <script>
+      const baseArr = [
+      {name:"조합원1",number:"0040948",phone:"01053964842"},
+      {name:"조합원2",number:"0052058",phone:"01087285488"},
+      {name:"조합원3",number:"01033353482",phone:"01033353482"},
+{name:"조합원4",number:"018359607",phone:"01053178916"},
+{name:"조합원5",number:"024288821",phone:"01047655159"},
+{name:"조합원6",number:"025136433",phone:"01087202363"},
+{name:"조합원7",number:"025567485",phone:"01065026642"},
+{name:"조합원8",number:"100021",phone:"01087552400"},
+{name:"조합원9",number:"100025",phone:"01062533298"},
+{name:"조합원10",number:"100027",phone:"01087751215"},
+{name:"조합원11",number:"100028",phone:"01063430485"},
+{name:"조합원12",number:"100029",phone:"01097385925"},
+{name:"조합원13",number:"100034",phone:"01046543152"},
+{name:"조합원14",number:"100036",phone:"01064725161"},
+{name:"조합원15",number:"100043",phone:"01067691114"},
+{name:"조합원16",number:"100085",phone:"01045819567"},
+{name:"조합원17",number:"100093",phone:"01091282410"},
+{name:"조합원18",number:"100094",phone:"01090960084"},
+{name:"조합원19",number:"100122",phone:"01072227632"},
+{name:"조합원20",number:"100124",phone:"01058797994"},
+{name:"조합원21",number:"100129",phone:"01099662192"},
+{name:"조합원22",number:"100137",phone:"01064741448"},
+{name:"조합원23",number:"100153",phone:"0103002939"},
+{name:"조합원24",number:"100154",phone:"01066143060"},
+{name:"조합원25",number:"100156",phone:"01055005331"},
+{name:"조합원26",number:"100159",phone:"01081640306"},
+{name:"조합원27",number:"100161",phone:"01090758074"},
+{name:"조합원28",number:"100163",phone:"01077555563"},
+{name:"조합원29",number:"100168",phone:"01087747759"},
+{name:"조합원30",number:"100177",phone:"01025957138"},
+{name:"조합원31",number:"100178",phone:"01045028245"},
+{name:"조합원32",number:"100181",phone:"01053975340"},
+{name:"조합원33",number:"100193",phone:"01082159980"},
+{name:"조합원34",number:"100226",phone:"01053957843"},
+{name:"조합원35",number:"100247",phone:"01052634439"},
+{name:"조합원36",number:"100248",phone:"01047056827"},
+{name:"조합원37",number:"100271",phone:"01090136286"},
+{name:"조합원38",number:"100278",phone:"01089629496"},
+{name:"조합원39",number:"100281",phone:"01071412635"},
+{name:"조합원40",number:"100316",phone:"01027359787"},
+{name:"조합원41",number:"100318",phone:"01072253829"},
+{name:"조합원42",number:"100322",phone:"01047541860"},
+{name:"조합원43",number:"100323",phone:"01042596669"},
+{name:"조합원44",number:"100328",phone:"01050453954"},
+{name:"조합원45",number:"100335",phone:"01032755785"},
+{name:"조합원46",number:"100341",phone:"01033121991"},
+{name:"조합원47",number:"100342",phone:"01040734657"},
+{name:"조합원48",number:"100343",phone:"01021245940"},
+{name:"조합원49",number:"100345",phone:"01073079373"},
+{name:"조합원50",number:"100352",phone:"01052074206"},
+{name:"조합원51",number:"100357",phone:"01047522389"},
+{name:"조합원52",number:"100365",phone:"01090676366"},
+{name:"조합원53",number:"100372",phone:"01062206328"},
+{name:"조합원54",number:"100373",phone:"01030093337"},
+{name:"조합원55",number:"100377",phone:"01079374488"},
+{name:"조합원56",number:"100384",phone:"01022345924"},
+{name:"조합원57",number:"100386",phone:"01041321856"},
+{name:"조합원58",number:"100390",phone:"01031221069"},
+{name:"조합원59",number:"100393",phone:"01077325426"},
+{name:"조합원60",number:"100397",phone:"01042292120"},
+{name:"조합원61",number:"100399",phone:"01023193748"},
+{name:"조합원62",number:"100402",phone:"01057055449"},
+{name:"조합원63",number:"100403",phone:"01030113870"},
+{name:"조합원64",number:"100404",phone:"01032512248"},
+{name:"조합원65",number:"100405",phone:"01098972189"},
+{name:"조합원66",number:"100408",phone:"01025708492"},
+{name:"조합원67",number:"100409",phone:"01095750615"},
+{name:"조합원68",number:"100422",phone:"01043229505"},
+{name:"조합원69",number:"100423",phone:"01030209984"},
+{name:"조합원70",number:"100425",phone:"01023897869"},
+{name:"조합원71",number:"100430",phone:"01033537743"},
+{name:"조합원72",number:"100432",phone:"01033703713"},
+{name:"조합원73",number:"100440",phone:"01072083801"},
+{name:"조합원74",number:"100441",phone:"01027345054"},
+{name:"조합원75",number:"100442",phone:"01026688524"},
+{name:"조합원76",number:"100444",phone:"01047333710"},
+{name:"조합원77",number:"100445",phone:"01087115943"},
+{name:"조합원78",number:"100446",phone:"01053808379"},
+{name:"조합원79",number:"100449",phone:"01090345396"},
+{name:"조합원80",number:"100450",phone:"01087225581"},
+{name:"조합원81",number:"100452",phone:"01071926046"},
+{name:"조합원82",number:"100454",phone:"01050933693"},
+{name:"조합원83",number:"100457",phone:"01054956067"},
+{name:"조합원84",number:"100459",phone:"01023309356"},
+{name:"조합원85",number:"100461",phone:"01052053388"},
+{name:"조합원86",number:"100463",phone:"01051092783"},
+{name:"조합원87",number:"100464",phone:"01057103749"},
+{name:"조합원88",number:"100466",phone:"01097035261"},
+{name:"조합원89",number:"100467",phone:"01030991019"},
+{name:"조합원90",number:"100469",phone:"01087804330"},
+{name:"조합원91",number:"100470",phone:"01037588023"},
+{name:"조합원92",number:"100475",phone:"01052089104"},
+{name:"조합원93",number:"100481",phone:"01036699643"},
+{name:"조합원94",number:"100483",phone:"01022567803"},
+{name:"조합원95",number:"100485",phone:"01040186046"},
+{name:"조합원96",number:"100486",phone:"01091787130"},
+{name:"조합원97",number:"100488",phone:"01050590537"},
+{name:"조합원98",number:"100489",phone:"01027772215"},
+{name:"조합원99",number:"100492",phone:"01031827400"},
+{name:"조합원100",number:"100493",phone:"01044574443"},
+{name:"조합원101",number:"100495",phone:"01090439445"},
+{name:"조합원102",number:"100496",phone:"01063615169"},
+{name:"조합원103",number:"100501",phone:"01072335456"},
+{name:"조합원104",number:"100509",phone:"01062054550"},
+{name:"조합원105",number:"100518",phone:"01083131773"},
+{name:"조합원106",number:"100519",phone:"01037040583"},
+{name:"조합원107",number:"100526",phone:"01051276190"},
+{name:"조합원108",number:"100529",phone:"01045833310"},
+{name:"조합원109",number:"100541",phone:"01072591888"},
+{name:"조합원110",number:"100549",phone:"01097768402"},
+{name:"조합원111",number:"100555",phone:"01079328696"},
+{name:"조합원112",number:"100573",phone:"01058785724"},
+{name:"조합원113",number:"100574",phone:"01027612956"},
+{name:"조합원114",number:"100587",phone:"01096604917"},
+{name:"조합원115",number:"100590",phone:"01091599962"},
+{name:"조합원116",number:"100593",phone:"01064709930"},
+{name:"조합원117",number:"100602",phone:"01073720402"},
+{name:"조합원118",number:"100605",phone:"01051584645"},
+{name:"조합원119",number:"100610",phone:"01034393630"},
+{name:"조합원120",number:"100614",phone:"01043176317"},
+{name:"조합원121",number:"100615",phone:"01032937475"},
+{name:"조합원122",number:"100617",phone:"01062890824"},
+{name:"조합원123",number:"100618",phone:"01033828241"},
+{name:"조합원124",number:"100619",phone:"01091867861"},
+{name:"조합원125",number:"100621",phone:"01042359011"},
+{name:"조합원126",number:"100624",phone:"01088644449"},
+{name:"조합원127",number:"100632",phone:"01089564531"},
+{name:"조합원128",number:"100633",phone:"01037402018"},
+{name:"조합원129",number:"100635",phone:"01034776079"},
+{name:"조합원130",number:"100636",phone:"01046307695"},
+{name:"조합원131",number:"100637",phone:"01023939672"},
+{name:"조합원132",number:"100639",phone:"01040747137"},
+{name:"조합원133",number:"100641",phone:"01033071431"},
+{name:"조합원134",number:"100643",phone:"01083545872"},
+{name:"조합원135",number:"100645",phone:"01050950573"},
+{name:"조합원136",number:"100646",phone:"01090897527"},
+{name:"조합원137",number:"100649",phone:"01053363753"},
+{name:"조합원138",number:"100651",phone:"01028395836"},
+{name:"조합원139",number:"100652",phone:"01071813068"},
+{name:"조합원140",number:"100656",phone:"01075997627"},
+{name:"조합원141",number:"100657",phone:"01042227679"},
+{name:"조합원142",number:"100658",phone:"01022414632"},
+{name:"조합원143",number:"100659",phone:"01033952370"},
+{name:"조합원144",number:"100660",phone:"01046124870"},
+{name:"조합원145",number:"100661",phone:"01027000714"},
+{name:"조합원146",number:"100663",phone:"01037284196"},
+{name:"조합원147",number:"100668",phone:"01087220602"},
+{name:"조합원148",number:"100671",phone:"01049387833"},
+{name:"조합원149",number:"100676",phone:"01089677527"},
+{name:"조합원150",number:"100677",phone:"01093274214"},
+{name:"조합원151",number:"100678",phone:"01029238785"},
+{name:"조합원152",number:"100682",phone:"01091255502"},
+   
+        ];
+      const btn = document.getElementById("btn");
+      const bigTable = document.getElementById("bigTable");
+      const firstTable = document.getElementById("firstTable");
+      const secondTable = document.getElementById("secondTable");
+      const thirdTable = document.getElementById("thirdTable");
+      const bigLottoPerson = document.getElementById("bigLottoPerson");
+      const firstLottoPerson = document.getElementById("firstLottoPerson");
+
+     let arr = baseArr;
+     
+      let bigLotto = [];
+      let firstLotto = [];
+      let secondLotto = [];
+      let thirdLotto = [];
+
+      function tdGenerate(value, tr) {
+        const td = document.createElement("td");
+        td.innerText = value;
+        tr.appendChild(td);
+      }
+
+      function lottoGenerate(how, array) {
+          for (i = 0; i < how; i++) {
+              const lotto = arr[Math.floor(Math.random() * arr.length + 1)];
+              array.push(lotto);
+              arr = arr.filter((item) => item !== lotto);
+            }
+            console.log(arr);
+      }
+
+      function tableGenerate(arr, table) {
+        arr.map((item, index) => {
+            const tr = document.createElement("tr");
+            const realIndex = index + 1;
+            if(item === undefined){
+                const re = arr[Math.floor(Math.random()*arr.length+1)]
+                tdGenerate(realIndex, tr);
+          tdGenerate(re.name, tr);
+          tdGenerate(re.number, tr);
+          tdGenerate(re.phone, tr);
+          table.appendChild(tr);
+            } else {
+                tdGenerate(realIndex, tr);
+                tdGenerate(item.name, tr);
+                tdGenerate(item.number, tr);
+                tdGenerate(item.phone, tr);
+                table.appendChild(tr);
+            }
+        });
+      }
+
+      function btnClick() {
+        bigTable.innerHTML = "";
+      firstTable.innerHTML = "";
+        secondTable.innerHTML = "";
+        thirdTable.innerHTML = "";
+        arr = baseArr;
+bigLotto = [];
+firstLotto = [];
+secondLotto = [];
+thirdLotto=[];
+console.log("first",arr,bigLotto,firstLotto,secondLotto,thirdLotto)
+        /*for (i = 0; i < 2000; i++) {
+          const randomNum = Math.random() * 200;
+          const randomObj = {
+            name: "test",
+            number: randomNum,
+            phone: randomNum,
+          };
+          arr.push(randomObj);
+        }*/
+        lottoGenerate(1, bigLotto);
+        lottoGenerate(2, firstLotto);
+        lottoGenerate(10, secondLotto);
+        lottoGenerate(0, thirdLotto);
+        console.log("third",arr,bigLotto,firstLotto,secondLotto,thirdLotto)
+        tableGenerate(bigLotto, bigTable);
+        tableGenerate(firstLotto, firstTable);
+        tableGenerate(secondLotto, secondTable);
+        tableGenerate(thirdLotto, thirdTable);
+        bigLottoPerson.innerText = `대상(1명) 당첨 조합원은 "${bigLotto[0].name}" 입니다.`;
+        firstLottoPerson.innerText = `1등(3명) 당첨 조합원은 "${firstLotto[0].name}, ${firstLotto[1].name}, ${firstLotto[2].name}" 입니다.`;
+      }
+      btn.addEventListener("click", btnClick);
+       </script>   
+  </body>
+</html>
