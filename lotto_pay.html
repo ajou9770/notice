@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>특판몰 무통입금 결제 조합원 경품 추첨</title>
+    <style>
+      .table {
+        color: blue;
+        background-color: wheat;
+        width: auto;
+        padding: 5px;
+        margin: 5px;
+      }
+      #btn {
+        background-color: rgb(71, 26, 168);
+        font-size: 30px;
+        font-weight: 600;
+        border-style: none;
+        color: aliceblue;
+        width: 200px;
+        height: 50px;
+        margin-left: 5px;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        font-family: fantasy;
+        font-weight: 500;
+        margin-left: 5px;
+      }
+      .lul {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lul">
+      <h2>신협 추석특판몰 구매 조합원 경품 추첨</h2>
+    </div>
+    <div class="content">
+      <span>✔️ 대상(0명):</span>
+      <span>✔️ 1등(0명): </span>
+      <span>✔️ 추첨(10명): 스타벅스 모바일기프티콘 </span>
+      <span>✔️ 3등 추첨없음.</span>
+    </div>
+    <br />
+    <div class="lul">
+      <button id="btn">🎁 추첨하기</button>
+    </div>
+    <br />
+    <div class="table">
+      <h2 id="bigLottoPerson"></h2>
+    </div>
+    <table id="bigTable" border="1">
+      <th>번호</th>
+      <th>아이디</th>
+      <th>성명</th>
+      <th>핸드폰번호</th>
+    </table>
+    <div id="celebrateSecond">
+      <h2 class="table"></h2>
+    </div>
+    <table id="firstTable" border="1">
+      <th>번호</th>
+      <th>아이디</th>
+      <th>성명</th>
+      <th>핸드폰번호</th>
+    </table>
+    <div id="celebratethird">
+      <h2 class="table">추첨(10명) 스타벅스 모바일 기프티콘 </h2>
+    </div>
+    <table id="secondTable" border="1">
+      <th>번호</th>
+      <th>아이디</th>
+      <th>성명</th>
+      <th>핸드폰번호</th>
+    </table>
+    <div id="celebratethird">
+      <h2 class="table">3등() 추첨없음</h2>
+    </div>
+    <table id="thirdTable" style="border: none; color: aliceblue" border="1">
+      <th>번호</th>
+      <th>아이디</th>
+      <th>성명</th>
+      <th>핸드폰번호</th>
+    </table>
+    <script>
+      const baseArr = [
+      { name:"2082628203@k", number:"1004 p",phone:"010-5127-6190"},
+{ name:"2075313394@k", number:"Darkpaladin",phone:"010-4312-6584"},
+{ name:"2085386355@k", number:"Mihyang",phone:"010-8579-2190"},
+{ name:"2075323950@k", number:"sea~♡",phone:"010-2762-7401"},
+{ name:"1997745402@k", number:"YJ",phone:"010-2508-6563"},
+{ name:"2402458645@k", number:"강다윤",phone:"010-9243-3175"},
+{ name:"2075326843@k", number:"강은지",phone:"010-4134-5923"},
+{ name:"googyo90", number:"구교훈",phone:"010-7502-1187"},
+{ name:"2085431610@k", number:"권동훈",phone:"010-6313-8753"},
+{ name:"2076922636@k", number:"권미정",phone:"010-2990-1290"},
+{ name:"kmkim1126", number:"김경민",phone:"010-9886-5751"},
+{ name:"2075405416@k", number:"김미옥",phone:"010-4313-3611"},
+{ name:"2082568257@k", number:"김민재",phone:"010-4670-7445"},
+{ name:"2006279670@k", number:"김빅토리아 준서지민맘(국제진료센터)",phone:"010-9334-1348"},
+{ name:"2082564033@k", number:"김상섭",phone:"010-5101-2401"},
+{ name:"2087992943@k", number:"김석영",phone:"010-2010-9325"},
+{ name:"2076074699@k", number:"김선목",phone:"010-8686-1363"},
+{ name:"2011700029@k", number:"김선옥",phone:"010-4938-6574"},
+{ name:"2085068974@k", number:"김영신",phone:"010-3019-8207"},
+{ name:"2400427188@k", number:"김예진",phone:"010-6335-2962"},
+{ name:"empathy99", number:"김유아",phone:"010-9609-3585"},
+{ name:"2087054829@k", number:"김재호",phone:"010-8354-5872"},
+{ name:"2077482306@k", number:"김정호",phone:"010-9128-2410"},
+{ name:"2080078670@k", number:"김지혜",phone:"010-2952-1744"},
+{ name:"kvmflxlk", number:"김하예진",phone:"010-8707-2546"},
+{ name:"johnmilton", number:"김형욱",phone:"010-8524-5926"},
+{ name:"2401727493@k", number:"김혜민",phone:"010-5032-7245"},
+{ name:"2411598715@k", number:"김화정",phone:"010-8872-2337"},
+{ name:"2076097131@k", number:"김효은",phone:"010-9354-3559"},
+{ name:"ghj2153", number:"김효정",phone:"010-9553-2152"},
+{ name:"2075465150@k", number:"담비",phone:"010-8268-2112"},
+{ name:"entjfls", number:"두서린",phone:"010-6224-5349"},
+{ name:"2088080102@k", number:"류",phone:"010-2963-4728"},
+{ name:"2075571013@k", number:"명옥",phone:"010-8527-1185"},
+{ name:"clscn7014", number:"목미성",phone:"010-2274-7084"},
+{ name:"2409394236@k", number:"문혜미",phone:"010-8843-8550"},
+{ name:"2083892031@k", number:"미니미니",phone:"010-6744-9357"},
+{ name:"2075566427@k", number:"믿음 소망 사랑",phone:"010-9288-5751"},
+{ name:"2085415861@k", number:"박경연",phone:"010-3185-4677"},
+{ name:"parkdami1", number:"박다미",phone:"010-9612-3132"},
+{ name:"snfjs83", number:"박소현",phone:"010-2724-9237"},
+{ name:"tmdgml0118", number:"박승희",phone:"010-2237-0558"},
+{ name:"2077978603@k", number:"박종호",phone:"010-3182-7400"},
+{ name:"2075324401@k", number:"박준성",phone:"010-8728-5488"},
+{ name:"2088462340@k", number:"박지영",phone:"010-3004-5086"},
+{ name:"2075314119@k", number:"박창환",phone:"010-5467-3931"},
+{ name:"2077067144@k", number:"박희숙",phone:"010-3549-2280"},
+{ name:"gmlwn411", number:"박희주",phone:"010-6234-7597"},
+{ name:"bsm3777", number:"변상미",phone:"010-9045-9039"},
+{ name:"2079244428@k", number:"서다정",phone:"010-7228-4779"},
+{ name:"bdsjmin", number:"서정민",phone:"010-9288-5428"},
+{ name:"2075317049@k", number:"서천호",phone:"010-4630-7695"},
+{ name:"2088586263@k", number:"선영",phone:"010-8924-1112"},
+{ name:"2084735219@k", number:"송석규",phone:"010-7208-3801"},
+{ name:"2076296934@k", number:"송지현",phone:"010-9102-3443"},
+{ name:"2077404393@k", number:"수갱♡",phone:"010-8788-7192"},
+{ name:"2075858712@k", number:"신정미",phone:"010-2522-7793"},
+{ name:"2082392045@k", number:"아라",phone:"010-9117-4313"},
+{ name:"2077374368@k", number:"안재현",phone:"010-4423-7567"},
+{ name:"2084909528@k", number:"영민",phone:"010-8864-4449"},
+{ name:"dooyi9", number:"오두이",phone:"010-9361-8270"},
+{ name:"2077021015@k", number:"유나현",phone:"010-3825-6131"},
+{ name:"2085511581@k", number:"유민지",phone:"010-7273-9208"},
+{ name:"2087202819@k", number:"유희재",phone:"010-5580-6322"},
+{ name:"2075572668@k", number:"윤일심",phone:"010-5131-3498"},
+{ name:"2085379814@k", number:"윤정",phone:"010-2678-0316"},
+{ name:"2006508433@k", number:"이남경",phone:"010-6522-5640"},
+{ name:"2075468111@k", number:"이미영",phone:"010-7221-6575"},
+{ name:"2400419664@k", number:"이민정",phone:"010-2521-3136"},
+{ name:"2075493080@k", number:"이선미",phone:"010-6528-2248"},
+{ name:"2085777459@k", number:"이소영",phone:"010-9519-7260"},
+{ name:"2075330719@k", number:"이소희",phone:"010-7202-3657"},
+{ name:"wel308la", number:"이순애",phone:"010-8292-4906"},
+{ name:"2077911880@k", number:"이신옥",phone:"010-4539-0581"},
+{ name:"birt0703", number:"이영심",phone:"010-2700-0714"},
+{ name:"2007326565@k", number:"이영아",phone:"010-8121-8417"},
+{ name:"mileyee1", number:"이예림",phone:"010-9445-2514"},
+{ name:"1996883759@k", number:"이용림",phone:"010-6354-2163"},
+{ name:"jungi9", number:"이유정",phone:"010-4936-9920"},
+{ name:"drej5856", number:"이은주",phone:"010-8962-9496"},
+{ name:"anna0171", number:"이인기",phone:"010-2556-8557"},
+{ name:"1996906943@k", number:"이정민",phone:"010-3042-5563"},
+{ name:"2076480425@k", number:"이정원",phone:"010-2571-8892"},
+{ name:"dlwndud469", number:"이주영",phone:"010-9299-7079"},
+{ name:"2087987042@k", number:"이지현",phone:"010-7307-9373"},
+{ name:"futurist21", number:"이지현",phone:"010-7307-9373"},
+{ name:"clever05", number:"이채령",phone:"010-9171-1791"},
+{ name:"2006448384@k", number:"이현영",phone:"010-4799-0107"},
+{ name:"2075574928@k", number:"이혜경",phone:"010-8718-1003"},
+{ name:"loveflower00", number:"장애화",phone:"010-2741-0789"},
+{ name:"2082122193@k", number:"전정임",phone:"010-2818-2943"},
+{ name:"2076081686@k", number:"정망래",phone:"010-3004-6173"},
+{ name:"roosy33", number:"정서진",phone:"010-4229-2120"},
+{ name:"2078398347@k", number:"정승교",phone:"010-5095-0573"},
+{ name:"junghyuk89", number:"정재혁",phone:"010-4634-6948"},
+{ name:"2093664838@k", number:"정정화",phone:"010-2777-6797"},
+{ name:"2085803067@k", number:"조혜정",phone:"010-5615-6619"},
+{ name:"2076216000@k", number:"최성희",phone:"010-5303-2776"},
+{ name:"hyoni429", number:"최지현",phone:"010-6417-4056"},
+{ name:"cjc5412", number:"최진철",phone:"010-2114-0471"},
+{ name:"subin76", number:"하수빈",phone:"010-6243-7517"},
+{ name:"1996883759@k", number:"한진희(서연맘)",phone:"010-6354-2163"},
+{ name:"yadyham", number:"함윤아",phone:"010-7273-7054"},
+{ name:"2081141912@k", number:"향선",phone:"010-4362-0227"},
+{ name:"jarameee", number:"허유진",phone:"010-4128-4066"},
+{ name:"2404650107@k", number:"홍석주",phone:"010-9979-2070"},
+{ name:"cp0224", number:"홍찬표",phone:"010-8769-2524"},
+{ name:"2075574653@k", number:"홍혜전",phone:"010-3382-8241"},
+{ name:"sanju6752", number:"황산주",phone:"010-3911-6752"},
+{ name:"2075346100@k", number:"흥종",phone:"010-4949-2018"},
+{ name:"khspeed", number:"김기헌",phone:"010-8731-3090"},
+];
+
+      const btn = document.getElementById("btn");
+      const bigTable = document.getElementById("bigTable");
+      const firstTable = document.getElementById("firstTable");
+      const secondTable = document.getElementById("secondTable");
+      const thirdTable = document.getElementById("thirdTable");
+      const bigLottoPerson = document.getElementById("bigLottoPerson");
+      const firstLottoPerson = document.getElementById("firstLottoPerson");
+
+      let arr = baseArr;
+
+      let bigLotto = [];
+      let firstLotto = [];
+      let secondLotto = [];
+      let thirdLotto = [];
+
+      function tdGenerate(value, tr) {
+        const td = document.createElement("td");
+        td.innerText = value;
+        tr.appendChild(td);
+      }
+
+      function lottoGenerate(how, array) {
+        for (i = 0; i < how; i++) {
+          const lotto = arr[Math.floor(Math.random() * arr.length + 1)];
+          array.push(lotto);
+          arr = arr.filter((item) => item !== lotto);
+        }
+        console.log(arr);
+      }
+
+      function tableGenerate(arr, table) {
+        arr.map((item, index) => {
+          const tr = document.createElement("tr");
+          const realIndex = index + 1;
+          if (item === undefined) {
+            const re = arr[Math.floor(Math.random() * arr.length + 1)];
+            tdGenerate(realIndex, tr);
+            tdGenerate(re.name, tr);
+            tdGenerate(re.number, tr);
+            tdGenerate(re.phone, tr);
+            table.appendChild(tr);
+          } else {
+            tdGenerate(realIndex, tr);
+            tdGenerate(item.name, tr);
+            tdGenerate(item.number, tr);
+            tdGenerate(item.phone, tr);
+            table.appendChild(tr);
+          }
+        });
+      }
+
+      function btnClick() {
+        bigTable.innerHTML = "";
+        firstTable.innerHTML = "";
+        secondTable.innerHTML = "";
+        thirdTable.innerHTML = "";
+        arr = baseArr;
+        bigLotto = [];
+        firstLotto = [];
+        secondLotto = [];
+        thirdLotto = [];
+        console.log(
+          "first",
+          arr,
+          bigLotto,
+          firstLotto,
+          secondLotto,
+          thirdLotto
+        );
+        /*for (i = 0; i < 2000; i++) {
+                      const randomNum = Math.random() * 200;
+                      const randomObj = {
+                        name: "test",
+                        number: randomNum,
+                        phone: randomNum,
+                      };
+                      arr.push(randomObj);
+                    }*/
+        lottoGenerate(0, bigLotto); /* 추첨인원 기입 */
+        lottoGenerate(0, firstLotto);
+        lottoGenerate(10, secondLotto);
+        lottoGenerate(0, thirdLotto);
+        console.log(
+          "third",
+          arr,
+          bigLotto,
+          firstLotto,
+          secondLotto,
+          thirdLotto
+        );
+        tableGenerate(bigLotto, bigTable);
+        tableGenerate(firstLotto, firstTable);
+        tableGenerate(secondLotto, secondTable);
+        tableGenerate(thirdLotto, thirdTable);
+        bigLottoPerson.innerText = `대상(1명) 10만원 상품권 당첨 ID는"${bigLotto[0].name}" 입니다.`;
+        firstLottoPerson.innerText = `1등(2명) 5만원 상품권 당첨 ID는 "${firstLotto[0].name}, ${firstLotto[1].name}, ${firstLotto[2].name}" 입니다.`;
+      }
+      btn.addEventListener("click", btnClick);
+    </script>
+  </body>
+</html>
+SM
