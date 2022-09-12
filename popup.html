@@ -19,21 +19,20 @@
         margin: 0;
         box-sizing: border-box;
       }
-       .popup {
-        background-color: white;
+       #popup {
+        background-color: rgba(70, 67, 95, 0.623);
         color: #2c3d51;
-        width: 420px;
-        padding: 30px 40px;
+        width: 450px;
+        padding: 10px;
         position: absolute;
         transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;
-        border-radius: 8px;
         font-family: "Poppins", sans-serif;
-        display: none;
+        display: inline-flexbox;
         text-align: center;
       }
-      .popup button {
+      #popup button {
         display: block;
         margin: 0 0 20px auto;
         background-color: transparent;
@@ -47,10 +46,10 @@
         outline: none;
         cursor: pointer;
       }
-      .popup h2 {
+      #popup h2 {
         margin-top: -20px;
       }
-      .popup p {
+      #popup p {
         font-size: 20px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: justify;
@@ -60,6 +59,19 @@
       }
       h2 {
         font-family: Arial, Helvetica, sans-serif;
+      }
+      .inside {
+        display: inline-block;
+        width: auto;
+        color: #2c3d51;
+        font-size: large;
+        text-align: initial;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 10px;
+        height: auto;
+        background-color: white;
       }
       body {
             display:flex;
@@ -77,7 +89,7 @@
             flex-direction: column;
             text-align: end;
             border-color: black;            
-            border-radius: 10px;
+            border-radius: none;
             justify-content: center;
             align-items: center;
             color: seashell;
@@ -463,8 +475,10 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
               }
             #infomodal_input {
               width: 100%;
+              height: 70px;
               padding: 10px;
               font-size:20px;
+              margin-top: 10xp;
               color: black;
               background-color: goldenrod;
               font-weight:650;  
@@ -632,32 +646,31 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
          </div>
        </div>
       </aside>
-      <!--<section id="infomodalBox">
+      <section id="infomodalBox">
         <aside id="infomodal">
           <div></div>
          <span> 교직원의 아주대의료원 신협 이용편의 제공을 위해, 이용방법 및 혜택을 정리하였습니다. 
-            잠깐 둘러 보시면 신협 이용에 많은 도움이 되실 것입니다. 아울러, 신입교직원은 🎁월컴쿠폰(심플퀴즈응모)도 신청하세요. </span>
-            <div id="infomodal_input">
-            <div>
-              <label for="infoinput" style="font-size:x-large; font-weight: 600;">하루동안 안보기</label>
-              <input id="infoinput" type="checkbox" />
-            </div>
+            잠깐 둘러 보시면 신협 이용에 많은 도움이 되실 것입니다. 아울러, 신입교직원은 🎁월컴쿠폰(심플퀴즈응모)도 신청하세요. </span><br/>
+            <label for="infoinput" style="font-size:x-large; font-weight: 600;">하루동안 안보기</label>
+            <input id="infoinput" type="checkbox" />
             <button id="infobtn">닫기</button>
-          </div>
-        </aside>
-      </section>-->
-    <div class="popup">
-      <h2>아주대의료원 입사를 진심으로 🎉축하 드립 니다.</h2>
-      <p>
+            </aside>
+      </section>
+   <!-- <div id="popup">
+      <div class="inside">
+      아주대의료원 입사를 진심으로 🎉축하 드립 니다.<br/><br/>
+    
         아주대의료원 신협은 아주대학교 및 의료원 교직원이 100% 출자하여 설립.
-        운영하고 있는 비영리 상호부조의 금융기관입니다. 의료원 신협은
-        교직원(조합원)의 금융후생복리 증진을 위해 운영되고 있으며 조합에서
-        발생되는 사업 수익은 100% 조합원에게 배당 등으로 돌려 드리고 있습니다.
+        운영하고 있는 비영리 상호부조의 금융기관입니다.<br/> 
+        의료원 신협은 교직원(조합원)의 금융후생복리 증진을 위해 운영되고 있으며 조합에서
+        발생되는 사업 수익은 100% 조합원에게 배당 등으로 돌려 드리고 있습니다.<br/>
         여기서 신협 가입 및 이용방법을 자세히 보실 수 있습니다.
-      </p>
-      <div style="display: inline-flexbox">
-        <!--<a href="#">확인</a>-->
-        <button id="close">✔</button>
+      <div style="display: inline-flexbox ">
+        <div style="cursor: pointer; color: brown; text-decoration: none; background-color: bisque; padding: 10px;"> 
+			  <span id="close"> 닫기  ✔ </span> 
+				</div>
+        <a href="#">확인</a>-->
+        </div>
       </div>
     </div>
     <script>
@@ -741,12 +754,12 @@ window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfxgfI_MATNKBsG
     <script type="text/javascript">
       window.addEventListener("load", function () {
         setTimeout(function open(event) {
-          document.querySelector(".popup").style.display = "block";
+          document.querySelector("#popup").style.display = "block";
         }, 2000);
       });
 
       document.querySelector("#close").addEventListener("click", function () {
-        document.querySelector(".popup").style.display = "none";
+        document.querySelector("#popup").style.display = "none";
       });
     </script>
   </body>
