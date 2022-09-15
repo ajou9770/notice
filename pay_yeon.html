@@ -83,19 +83,13 @@ body {
   justify-content: end;
   font-size: 15px;
   font-weight: 600;
-}
-button {
-  font-size:small;
-}
+} 
 </style>
 </head>
  
 <body>   
     <br>
     <h4 style="font-weight: 600;"> # 2022년도 개인별 급여내역 (기본급 3.5% 인상, 휴가수당 50만원 신설,군필수당:기본급의 1/30)</h4>
-    <!--<p style="font-size: 20px; font-weight: 600;"># password <input type="password" width="100px" value="비번입력">
-    <button id="submit" type="submit" style="font-size:15px">제출하기</button>
-    -->
     <div class="dan"><단위: 천원></div>
     <div class="row">
         <table id="example-table-2" width="100%" class="table table-bordered table-hover text-center" style="none">
@@ -119,26 +113,26 @@ button {
             </thead>
             <tbody>                
                 <tr>
-                    <td><h4 style="font-weight: 600;">김설호</h4>
-                    <td>4급10호/상무</td>
-                    <td>4,065</td>
-                    <td>1,778</td>
-                    <td>500</td>
-                    <td>100</td>
-                    <th>120 </th>
-                    <th>135</th>
-                    <th>0</th>
-                    <th>40</th>
-                    <th>50</th>
-                    <th>6,788</th>
-                    <th>2,000</th>
+                    <td><h4 style="font-weight: 600;">이연주</h4>
+                        <td>5급10호/부장</td>
+                        <td>3,531</td>
+                        <td>1,545</td>
+                        <td>150</td>
+                        <td>100</td>
+                        <th>120 </th>
+                        <th>0</th>
+                        <th>118</th>
+                        <th>20</th>
+                        <th>50</th>
+                        <th>5,634</th>
+                        <th>2,000</th>
                 </tr>
              </tbody>
         </table>
         <div class="col-lg-12" id="ex2_Result1" ></div> 
         <div class="col-lg-12" id="ex2_Result2" ></div> 
     </div>
-    <div id="example-table-2">
+    
     <span id="barcode" style="CURSOR: hand" onclick = "if(codebox.style.display==`none`)
     {codebox.style.display=``; barcode.innerText = `호봉표 닫기▲`} else {codebox.style.display = `none`; 
    barcode.innerText = `🔍2022 호봉표 보기▼`}">🔍2022 호봉표 보기 ▼</span>
@@ -149,18 +143,8 @@ button {
    {loanbox.style.display=``; loancode.innerText = `연급여표 닫기▲`} else {loanbox.style.display = `none`; 
    loancode.innerText = `🔍2022 연급여표 보기▼`}">🔍2022 연급여표 보기 ▼</span>
    <div id="loanbox" style="display: none"><iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe></div>
-   </div>
    <br/><br/>
    <button onclick="print_current_page()">🖨️print</button>
-   <script>
-    $(function(){
-      if("input.value=ajou2130++"){
-        document.getElementById("example-table-2").style.display = "";
-      }else{//조건 1이 아닐떄
-        document.getElementById("example-table-2").style.display = "none";
-      }
-    })
-        </script>
    <script>
         function print_current_page() 
         {
