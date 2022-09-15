@@ -128,7 +128,7 @@ button {
     <button id="submit" type="submit" style="font-size:15px" onclick="submitClick()">Login</button>
     <hr>
     <h5 style="font-size: 17px; font-weight:600;">📑급여지급(공제)상세내역</h5>
-    <div class="dan"><단위: 천원></div>
+    <div class="dan"><단위: 원></div>
     <div class="row">
         <table id="example-table-2" width="100%" class="table table-bordered table-hover text-center" style="none">
             <thead>
@@ -151,20 +151,21 @@ button {
             </thead>
             <tbody>                
                 <tr>
-                    <td><h4 style="font-weight: 600;">김설호</h4>
-                    <td>4급10호/상무</td>
-                    <td>4,414</td>
-                    <td>2,431</td>
-                    <td>500</td>
-                    <td>100</td>
-                    <th>120 </th>
-                    <th>135</th>
-                    <th>0</th>
-                    <th>40</th>
-                    <th>50</th>
-                    <th>0</th>
-                    <th>7,790</th>
-                    <th>인상 소급분 포함</th>
+                    <td><h4 style="font-weight: 600;">이연주</h4>
+                    <td>5급10호/부장</td>
+                    <td title="소급분 307,200원 포함" style="color:teal; font-weight: 600;">3,837,900</td>
+<td title="소급분 134,400원 + (휴가비)500,000원 포함" style="color:teal; font-weight: 600;">2,179,080</td>
+<td >150,000</td>
+<td>100,000</td>
+<td>120,000</td>
+<td></td>
+<td>127,930</td>
+<td>20,000</td>
+<td>50,000</td>
+<td>1,590</td>
+<td>6,586,500</td>
+<td>인상소급분포함</td>
+
                 </tr>
              </tbody>
         </table>
@@ -191,18 +192,19 @@ button {
           <tbody>                
               <tr>
                   <td><h4 style="font-weight: 600;">공제내역</h4>
-                  <td>249</td>
-                  <td>238</td>
-                  <td>29</td>
-                  <td>59</td>
-                  <td>500</td>
-                  <th>0 </th>
-                  <th>50</th>
-                  <th>20</th>
-                  <th>58</th>
-                  <th>0</th>
-                  <th>1,202</th>
-                  <th><mark>6,588</mark></th>
+                    <td>248,850</td>
+                    <td>230,290</td>
+                    <td>28,130</td>
+                    <td>55,070</td>
+                    <td>400,000</td>
+                    <td></td>
+                    <td>40,000</td>
+                    <td>15,000</td>
+                    <td>25,200</td>
+                    <td></td>
+                    <td>1,042,540</td>
+                    <td>5,543,960</td>
+                    
               </tr>
            </tbody>
       </table>
@@ -228,7 +230,7 @@ button {
     const subMit = document.getElementById("submit");
     const h3 = document.createElement("h3");
     var inputValue = document.getElementById("info");
-    var actualPw = "1"
+    var actualPw = "ajou2130++"
     function submitClick(){
       console.log("done");
             
