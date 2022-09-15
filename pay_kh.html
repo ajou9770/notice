@@ -49,6 +49,7 @@ body {
     margin: 10px;
 }
 #barcode {
+    display: none;
   width:300px;
   height: 65px; 
   padding: 10px;
@@ -64,6 +65,7 @@ body {
   border: 3px solid whitesmoke;
 } 
 #loancode {
+    display: none;
   width:250px;
   height: 65px; 
   padding: 10px;
@@ -83,6 +85,9 @@ body {
   justify-content: end;
   font-size: 15px;
   font-weight: 600;
+}
+#example-table-2 {
+  display: none;
 } 
 </style>
 </head>
@@ -90,6 +95,8 @@ body {
 <body>   
     <br>
     <h4 style="font-weight: 600;"> # 2022년도 개인별 급여내역 (기본급 3.5% 인상, 휴가수당 50만원 신설,군필수당:기본급의 1/30)</h4>
+    <p style="font-size: 20px; font-weight: 600;"># password <input id="info" type="password" width="100px" placeholder="비번을 입력하세요">
+        <button id="submit" type="submit" style="font-size:15px" onclick="submitClick()">로그인</button>
     <div class="dan"><단위: 천원></div>
     <div class="row">
         <table id="example-table-2" width="100%" class="table table-bordered table-hover text-center" style="none">
@@ -113,7 +120,7 @@ body {
             </thead>
             <tbody>                
                 <tr>
-                    <td><h4 style="font-weight: 600;">이정민</h4>
+                    <td><h4 style="font-weight: 600;">김기헌</h4>
                         <td>6급10호/과장</td>
                         <td>2,975</td>
                         <td>1,301</td>
@@ -145,6 +152,25 @@ body {
    <div id="loanbox" style="display: none"><iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe></div>
    <br/><br/>
    <button onclick="print_current_page()">🖨️print</button>
+   <script>
+    const subMit = document.getElementById("submit");
+    const h3 = document.createElement("h3");
+    var inputValue = document.getElementById("info");
+    var actualPw = "ajou2130++"
+    function submitClick(){
+      console.log("done");
+            
+      var inputPw = this.inputValue.value
+      if(inputPw == actualPw ){
+        alert("password가 일치합니다.");
+        document.getElementById("example-table-2").style.display = "block";
+        document.getElementById("barcode").style.display = "block";
+        document.getElementById("loancode").style.display = "block";
+      } if(inputPw !== actualPw ) {
+        alert("password가 다르거나 미입력됨");
+      } 
+    }
+   </script>
    <script>
         function print_current_page() 
         {

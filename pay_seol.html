@@ -49,6 +49,7 @@ body {
     margin: 10px;
 }
 #barcode {
+  display: none;
   width:300px;
   height: 65px; 
   padding: 10px;
@@ -64,6 +65,7 @@ body {
   border: 3px solid whitesmoke;
 } 
 #loancode {
+  display: none;
   width:250px;
   height: 65px; 
   padding: 10px;
@@ -87,15 +89,17 @@ body {
 button {
   font-size:small;
 }
+#example-table-2 {
+  display: none;
+}
 </style>
 </head>
  
 <body>   
     <br>
     <h4 style="font-weight: 600;"> # 2022년도 개인별 급여내역 (기본급 3.5% 인상, 휴가수당 50만원 신설,군필수당:기본급의 1/30)</h4>
-    <!--<p style="font-size: 20px; font-weight: 600;"># password <input type="password" width="100px" value="비번입력">
-    <button id="submit" type="submit" style="font-size:15px">제출하기</button>
-    -->
+    <p style="font-size: 20px; font-weight: 600;"># password <input id="info" type="password" width="100px" placeholder="비번을 입력하세요">
+    <button id="submit" type="submit" style="font-size:15px" onclick="submitClick()">Login</button>
     <div class="dan"><단위: 천원></div>
     <div class="row">
         <table id="example-table-2" width="100%" class="table table-bordered table-hover text-center" style="none">
@@ -113,8 +117,7 @@ button {
                     <th>가족수당</th>
                     <th>자격수당</th>
                     <th><mark>월정급여</mark> </th>
-                    <th>명절,휴가비(년)
-                    </th>
+                    <th>명절,휴가비(년)</th>
                 </tr>
             </thead>
             <tbody>                
@@ -138,7 +141,6 @@ button {
         <div class="col-lg-12" id="ex2_Result1" ></div> 
         <div class="col-lg-12" id="ex2_Result2" ></div> 
     </div>
-    <div id="example-table-2">
     <span id="barcode" style="CURSOR: hand" onclick = "if(codebox.style.display==`none`)
     {codebox.style.display=``; barcode.innerText = `호봉표 닫기▲`} else {codebox.style.display = `none`; 
    barcode.innerText = `🔍2022 호봉표 보기▼`}">🔍2022 호봉표 보기 ▼</span>
@@ -149,18 +151,28 @@ button {
    {loanbox.style.display=``; loancode.innerText = `연급여표 닫기▲`} else {loanbox.style.display = `none`; 
    loancode.innerText = `🔍2022 연급여표 보기▼`}">🔍2022 연급여표 보기 ▼</span>
    <div id="loanbox" style="display: none"><iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe></div>
-   </div>
    <br/><br/>
    <button onclick="print_current_page()">🖨️print</button>
+   
    <script>
-    $(function(){
-      if("input.value=ajou2130++"){
-        document.getElementById("example-table-2").style.display = "";
-      }else{//조건 1이 아닐떄
-        document.getElementById("example-table-2").style.display = "none";
-      }
-    })
-        </script>
+    const subMit = document.getElementById("submit");
+    const h3 = document.createElement("h3");
+    var inputValue = document.getElementById("info");
+    var actualPw = "ajou2130++"
+    function submitClick(){
+      console.log("done");
+            
+      var inputPw = this.inputValue.value
+      if(inputPw == actualPw ){
+        alert("password가 일치합니다.");
+        document.getElementById("example-table-2").style.display = "block";
+        document.getElementById("barcode").style.display = "block";
+        document.getElementById("loancode").style.display = "block";
+      } if(inputPw !== actualPw ) {
+        alert("password가 다르거나 입력되지 않았습니다");
+      } 
+    }
+   </script>
    <script>
         function print_current_page() 
         {
