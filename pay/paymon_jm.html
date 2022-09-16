@@ -124,8 +124,9 @@ button {
 <body>   
     <br>
     <h4 style="font-weight: 600;"> # 2022년 9월 급여 명세표</h4>
-    <p style="font-size: 20px; font-weight: 600;"># password <input id="info" type="password" width="100px" placeholder="비번을 입력하세요">
+    <div id="passinput"><p style="font-size: 20px; font-weight: 600;"># password <input id="info" type="password" width="100px" placeholder="비번을 입력하세요">
     <button id="submit" type="submit" style="font-size:15px" onclick="submitClick()">Login</button>
+    </div>
     <hr>
     <h5 style="font-size: 17px; font-weight:600;">📑급여지급(공제)상세내역</h5>
     <div class="dan"><단위: 원></div>
@@ -241,7 +242,8 @@ button {
         document.getElementById("example-table-3").style.display = "block";
         document.getElementById("barcode").style.display = "block";
         document.getElementById("loancode").style.display = "block";
-      } if(inputPw !== actualPw ) {
+        document.getElementById("passinput").style.display = "none";  
+    } if(inputPw !== actualPw ) {
         alert("password가 다르거나 입력되지 않았습니다");
       } 
     }
