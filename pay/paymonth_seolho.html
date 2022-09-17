@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <!-- bootstrap CSS -->
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 5px;
+      }
+      .dropbtn {
+        background-color: #04aa6d;
+        color: white;
+        width: 450px;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 35px;
+        font-weight: 600;
+        border: none;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 450px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+      th {
+        display: inline-flexbox;
+        justify-content: center;
+        text-align: center;
+      }
+      body {
+        margin: 10px;
+      }
+      div {
+        padding: 10px;
+      }
+      #barcode {
+        font-size: 17px;
+        font-weight: 600;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 250px;
+        height: 65px;
+        padding: 10px;
+        border: 3px solid darkblue white;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: rgba(172, 58, 32, 0.772);
+        color: whitesmoke;
+        text-align: center;
+      }
+      #codebox {
+        width: 95%;
+        border: 3px solid whitesmoke;
+      }
+      #loancode {
+        font-size: 17px;
+        font-weight: 600;
+        width: 250px;
+        height: 65px;
+        padding: 10px;
+        border: 3px solid darkblue white;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: rgb(10, 54, 117);
+        color: whitesmoke;
+        text-align: center;
+      }
+      #loanbox {
+        width: 95%;
+        border: 3px solid whitesmoke;
+      }
+      .dan {
+        display: flex;
+        justify-content: end;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      button {
+        font-size: medium;
+        font-weight: 600;
+      }
+      #submit {
+        border-radius: 5px;
+      }
+      #submit:active {
+        transform: scale(0.97);
+      }
+      #info {
+        border-radius: 5px;
+        width: 100px;
+        font-size: 15px;
+      }
+      #nameinput {
+        border-radius: 5px;
+        font-size: 15px;
+        width: 100px;
+      }
+      select {
+        border: solid 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: 600;
+        height: auto;
+        width: auto;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      #paytable {
+        display: none;
+      }
+      #month-nine {
+        display: none;
+      }
+      #month-ten {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="font-weight: 600; color: teal">
+      # 2022년 개인별 급여 명세표 조회
+    </h3>
+    <div id="passinput">
+      <p style="font-size: 20px; font-weight: 600">
+        성명
+        <input id="nameinput" type="text" placeholder="" />
+        password
+        <input id="info" type="password" placeholder="" />
+        <button
+          id="submit"
+          type="submit"
+          style="font-size: 15px"
+          onclick="submitClick()"
+        >
+          Login
+        </button>
+      </p>
+    </div>
+    <div id="paytable">
+      <br />
+      <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
+        <option value="0" selected="selected">급여지급월 선택</option>
+        <option value="9">2022년 9월</option>
+        <option value="10">2022년 10월</option>
+        <option value="11">2022년 11월</option>
+      </select>
+      <hr />
+      <h5 style="font-size: 17px; font-weight: 600">
+        📑급여지급(공제)상세내역
+      </h5>
+      <div id="month-nine">
+        <div class="dan"><단위: 천원></div>
+        <div class="row">
+          <table
+            id="example-table-2"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>성명</th>
+                <th>직급/직책</th>
+                <th>기본급</th>
+                <th>상여금</th>
+                <th>직책수당</th>
+                <th>경리출납</th>
+                <th>장기근속</th>
+                <th>군필수당</th>
+                <th>보건수당</th>
+                <th>가족수당</th>
+                <th>자격수당</th>
+                <th>시간외수당</th>
+                <th><mark>지급계</mark></th>
+                <th>비 고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">김설호</h4></td>
+                <td>4급10호/상무</td>
+                <td
+                  title="소급분 348,900원포함"
+                  style="color: teal; font-weight: 600"
+                >
+                  4,414
+                </td>
+                <td
+                  title="소급분 152,650 + (휴가비)500,000원 포함"
+                  style="color: teal; font-weight: 600"
+                >
+                  2,431
+                </td>
+                <td>500</td>
+                <td>100</td>
+                <th>120</th>
+                <th>135</th>
+                <th>0</th>
+                <th>40</th>
+                <th>50</th>
+                <th>0</th>
+                <th>7,790</th>
+                <th>인상 소급분 포함</th>
+              </tr>
+            </tbody>
+          </table>
+          <h5>※ 9월급여명세에는 2022년도 급여 소급정산분이 포함되어 있음.</h5>
+          <br />
+          <table
+            id="example-table-3"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>국민연금</th>
+                <th>건강보험</th>
+                <th>장기요양</th>
+                <th>고용보험</th>
+                <th>소득세</th>
+                <th>연말정산</th>
+                <th>지방소득세</th>
+                <th>직원상조회</th>
+                <th>식대공제</th>
+                <th>기타공제</th>
+                <th><mark>공제계</mark></th>
+                <th>실지급액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">공제내역</h4></td>
+                <td>249</td>
+                <td>238</td>
+                <td>29</td>
+                <td>59</td>
+                <td>500</td>
+                <th>0</th>
+                <th>50</th>
+                <th>20</th>
+                <th>58</th>
+                <th>0</th>
+                <th>1,202</th>
+                <th><mark>6,588</mark></th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--<div class="col-lg-12" id="ex2_Result1"></div>
+          <div class="col-lg-12" id="ex2_Result2"></div>-->
+        <hr />
+      </div>
+      <!--여기까지 9월급여명세 div -->
+      <div id="month-ten">
+        <div class="dan"><단위: 천원></div>
+        <div class="row">
+          <table
+            id="example-table-2"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>성명</th>
+                <th>직급/직책</th>
+                <th>기본급</th>
+                <th>상여금</th>
+                <th>직책수당</th>
+                <th>경리출납</th>
+                <th>장기근속</th>
+                <th>군필수당</th>
+                <th>보건수당</th>
+                <th>가족수당</th>
+                <th>자격수당</th>
+                <th>시간외수당</th>
+                <th><mark>지급계</mark></th>
+                <th>비 고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">김설호</h4></td>
+                <td>4급10호/상무</td>
+                <td>5000</td>
+                <td>6000</td>
+                <td>500</td>
+                <td>100</td>
+                <th>120</th>
+                <th>135</th>
+                <th>0</th>
+                <th>40</th>
+                <th>50</th>
+                <th>0</th>
+                <th>7,790</th>
+                <th>인상 소급분 포함</th>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table
+            id="example-table-3"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>국민연금</th>
+                <th>건강보험</th>
+                <th>장기요양</th>
+                <th>고용보험</th>
+                <th>소득세</th>
+                <th>연말정산</th>
+                <th>지방소득세</th>
+                <th>직원상조회</th>
+                <th>식대공제</th>
+                <th>기타공제</th>
+                <th><mark>공제계</mark></th>
+                <th>실지급액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">공제내역</h4></td>
+                <td>249</td>
+                <td>238</td>
+                <td>29</td>
+                <td>59</td>
+                <td>500</td>
+                <th>0</th>
+                <th>50</th>
+                <th>20</th>
+                <th>58</th>
+                <th>0</th>
+                <th>1,202</th>
+                <th><mark>6,588</mark></th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-lg-12" id="ex2_Result1"></div>
+          <div class="col-lg-12" id="ex2_Result2"></div>
+        </div>
+        <hr />
+      </div>
+      <!-- 여기까지 #paytavle-->
+      <span
+        id="barcode"
+        style="cursor: hand"
+        onclick="if(codebox.style.display==`none`)
+    {codebox.style.display=``; barcode.innerText = `호봉표 닫기▲`} else {codebox.style.display = `none`; 
+   barcode.innerText = `🔍2022 호봉표 보기▼`}"
+        >🔍2022 호봉표 보기 ▼</span
+      >
+      <div id="codebox" style="display: none">
+        <iframe src="img/2022pay_base.jpg" width="750" height="600px"></iframe>
+      </div>
+      <br /><br />
+
+      <span
+        id="loancode"
+        style="cursor: hand"
+        onclick="if(loanbox.style.display==`none`)
+   {loanbox.style.display=``; loancode.innerText = `연급여표 닫기▲`} else {loanbox.style.display = `none`; 
+   loancode.innerText = `🔍2022 연급여표 보기▼`}"
+        >🔍2022 연급여표 보기 ▼</span
+      >
+      <div id="loanbox" style="display: none">
+        <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
+      </div>
+    </div>
+
+    <button onclick="print_current_page()">🖨️print</button>
+
+    <script>
+      const inputValue = document.getElementById("info");
+
+      function submitClick() {
+        console.log("done");
+        var actualPw = "1";
+        var inputPw = inputValue.value;
+
+        if (inputPw == actualPw) {
+          const nameInput = document.getElementById("nameinput");
+          var nameValue = nameInput.value;
+          alert(nameValue + "님 환영합니다.");
+
+          document.getElementById("paytable").style.display = "block";
+          document.getElementById("passinput").style.display = "none";
+        }
+        /*if (inputPw == actualPw)
+        if (month_Ten) {
+          alert ("password가 일치합니다");
+          do.getElementById("month_ten").style.display = "block";
+          document.getElementById("barcode").style.display = "block";
+          document.getElementById("loancode").style.display = "block";
+          document.getElementById("passinput").style.display = "none";
+        }*/
+        if (inputPw !== actualPw) {
+          alert("password가 다르거나 입력되지 않았습니다");
+        }
+      }
+    </script>
+    <script>
+      function changeLangSelect() {
+        console.log("done");
+        var langSelect = document.getElementById("selectbox");
+        var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+        if (selectValue == "9") {
+          document.getElementById("month-nine").style.display = "block";
+          document.getElementById("month-ten").style.display = "none";
+        }
+        if (selectValue == "10") {
+          document.getElementById("month-nine").style.display = "none";
+          document.getElementById("month-ten").style.display = "block";
+        }
+        if (selectValue == "0") {
+          alert("🚨급여 지급월을 선택하세요~~");
+          document.getElementById("month-nine").style.display = "none";
+          document.getElementById("month-ten").style.display = "none";
+        }
+        if (selectValue == "11") {
+          document.getElementById("month-nine").style.display = "none";
+          document.getElementById("month-ten").style.display = "none";
+          alert("🚨아직 급여 지급전입니다. 📆11월 17일 지급예정");
+        }
+      }
+    </script>
+    <script>
+      /*아래, 우측마우스 클릭 잠금 */
+      /*document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+      document.addEventListener(`contextmenu`, (event) =>
+        alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
+      );*/
+      function print_current_page() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

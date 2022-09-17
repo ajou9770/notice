@@ -173,133 +173,264 @@
 
     <hr />
     <h5 style="font-size: 17px; font-weight: 600">📑급여지급(공제)상세내역</h5>
-    <div class="dan"><단위: 천원></div>
-    <div class="row">
-      <table
-        id="example-table-2"
-        width="100%"
-        class="table table-bordered table-hover text-center"
-        style="none"
-      >
-        <thead>
-          <tr>
-            <th>성명</th>
-            <th>직급/직책</th>
-            <th>기본급</th>
-            <th>상여금</th>
-            <th>직책수당</th>
-            <th>경리출납</th>
-            <th>장기근속</th>
-            <th>군필수당</th>
-            <th>보건수당</th>
-            <th>가족수당</th>
-            <th>자격수당</th>
-            <th>시간외수당</th>
-            <th><mark>지급계</mark></th>
-            <th>비 고</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><h4 style="font-weight: 600">김설호</h4></td>
-            <td>4급10호/상무</td>
-            <td
-              title="소급분 348,900원포함"
-              style="color: teal; font-weight: 600"
-            >
-              4,414
-            </td>
-            <td
-              title="소급분 152,650 + (휴가비)500,000원 포함"
-              style="color: teal; font-weight: 600"
-            >
-              2,431
-            </td>
-            <td>500</td>
-            <td>100</td>
-            <th>120</th>
-            <th>135</th>
-            <th>0</th>
-            <th>40</th>
-            <th>50</th>
-            <th>0</th>
-            <th>7,790</th>
-            <th>인상 소급분 포함</th>
-          </tr>
-        </tbody>
-      </table>
-      <h5>※ 9월급여명세에는 2022년도 급여 소급정산분이 포함되어 있음.</h5>
-      <br />
-      <table
-        id="example-table-3"
-        width="100%"
-        class="table table-bordered table-hover text-center"
-        style="none"
-      >
-        <thead>
-          <tr>
-            <th>구분</th>
-            <th>국민연금</th>
-            <th>건강보험</th>
-            <th>장기요양</th>
-            <th>고용보험</th>
-            <th>소득세</th>
-            <th>연말정산</th>
-            <th>지방소득세</th>
-            <th>직원상조회</th>
-            <th>식대공제</th>
-            <th>기타공제</th>
-            <th><mark>공제계</mark></th>
-            <th>실지급액</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><h4 style="font-weight: 600">공제내역</h4></td>
-            <td>249</td>
-            <td>238</td>
-            <td>29</td>
-            <td>59</td>
-            <td>500</td>
-            <th>0</th>
-            <th>50</th>
-            <th>20</th>
-            <th>58</th>
-            <th>0</th>
-            <th>1,202</th>
-            <th><mark>6,588</mark></th>
-          </tr>
-        </tbody>
-      </table>
-      <div class="col-lg-12" id="ex2_Result1"></div>
-      <div class="col-lg-12" id="ex2_Result2"></div>
-    </div>
-    <hr />
-    <span
-      id="barcode"
-      style="cursor: hand"
-      onclick="if(codebox.style.display==`none`)
+    <div id="month_nine">
+      <div class="dan"><단위: 천원></div>
+      <div class="row">
+        <table
+          id="example-table-2"
+          width="100%"
+          class="table table-bordered table-hover text-center"
+          style="none"
+        >
+          <thead>
+            <tr>
+              <th>성명</th>
+              <th>직급/직책</th>
+              <th>기본급</th>
+              <th>상여금</th>
+              <th>직책수당</th>
+              <th>경리출납</th>
+              <th>장기근속</th>
+              <th>군필수당</th>
+              <th>보건수당</th>
+              <th>가족수당</th>
+              <th>자격수당</th>
+              <th>시간외수당</th>
+              <th><mark>지급계</mark></th>
+              <th>비 고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h4 style="font-weight: 600">김설호</h4></td>
+              <td>4급10호/상무</td>
+              <td
+                title="소급분 348,900원포함"
+                style="color: teal; font-weight: 600"
+              >
+                4,414
+              </td>
+              <td
+                title="소급분 152,650 + (휴가비)500,000원 포함"
+                style="color: teal; font-weight: 600"
+              >
+                2,431
+              </td>
+              <td>500</td>
+              <td>100</td>
+              <th>120</th>
+              <th>135</th>
+              <th>0</th>
+              <th>40</th>
+              <th>50</th>
+              <th>0</th>
+              <th>7,790</th>
+              <th>인상 소급분 포함</th>
+            </tr>
+          </tbody>
+        </table>
+        <h5>※ 9월급여명세에는 2022년도 급여 소급정산분이 포함되어 있음.</h5>
+        <br />
+        <table
+          id="example-table-3"
+          width="100%"
+          class="table table-bordered table-hover text-center"
+          style="none"
+        >
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>국민연금</th>
+              <th>건강보험</th>
+              <th>장기요양</th>
+              <th>고용보험</th>
+              <th>소득세</th>
+              <th>연말정산</th>
+              <th>지방소득세</th>
+              <th>직원상조회</th>
+              <th>식대공제</th>
+              <th>기타공제</th>
+              <th><mark>공제계</mark></th>
+              <th>실지급액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h4 style="font-weight: 600">공제내역</h4></td>
+              <td>249</td>
+              <td>238</td>
+              <td>29</td>
+              <td>59</td>
+              <td>500</td>
+              <th>0</th>
+              <th>50</th>
+              <th>20</th>
+              <th>58</th>
+              <th>0</th>
+              <th>1,202</th>
+              <th><mark>6,588</mark></th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-lg-12" id="ex2_Result1"></div>
+        <div class="col-lg-12" id="ex2_Result2"></div>
+      </div>
+      <hr />
+      <span
+        id="barcode"
+        style="cursor: hand"
+        onclick="if(codebox.style.display==`none`)
     {codebox.style.display=``; barcode.innerText = `호봉표 닫기▲`} else {codebox.style.display = `none`; 
    barcode.innerText = `🔍2022 호봉표 보기▼`}"
-      >🔍2022 호봉표 보기 ▼</span
-    >
-    <div id="codebox" style="display: none">
-      <iframe src="img/2022pay_base.jpg" width="750" height="600px"></iframe>
-    </div>
-    <br /><br />
+        >🔍2022 호봉표 보기 ▼</span
+      >
+      <div id="codebox" style="display: none">
+        <iframe src="img/2022pay_base.jpg" width="750" height="600px"></iframe>
+      </div>
+      <br /><br />
 
-    <span
-      id="loancode"
-      style="cursor: hand"
-      onclick="if(loanbox.style.display==`none`)
+      <span
+        id="loancode"
+        style="cursor: hand"
+        onclick="if(loanbox.style.display==`none`)
    {loanbox.style.display=``; loancode.innerText = `연급여표 닫기▲`} else {loanbox.style.display = `none`; 
    loancode.innerText = `🔍2022 연급여표 보기▼`}"
-      >🔍2022 연급여표 보기 ▼</span
-    >
-    <div id="loanbox" style="display: none">
-      <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
+        >🔍2022 연급여표 보기 ▼</span
+      >
+      <div id="loanbox" style="display: none">
+        <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
+      </div>
     </div>
-    <br /><br />
+    <!--여기까지 9월급여명세 div -->
+    <div id="month_ten">
+      <div class="dan"><단위: 천원></div>
+      <div class="row">
+        <table
+          id="example-table-2"
+          width="100%"
+          class="table table-bordered table-hover text-center"
+          style="none"
+        >
+          <thead>
+            <tr>
+              <th>성명</th>
+              <th>직급/직책</th>
+              <th>기본급</th>
+              <th>상여금</th>
+              <th>직책수당</th>
+              <th>경리출납</th>
+              <th>장기근속</th>
+              <th>군필수당</th>
+              <th>보건수당</th>
+              <th>가족수당</th>
+              <th>자격수당</th>
+              <th>시간외수당</th>
+              <th><mark>지급계</mark></th>
+              <th>비 고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h4 style="font-weight: 600">김설호</h4></td>
+              <td>4급10호/상무</td>
+              <td
+                title="소급분 348,900원포함"
+                style="color: teal; font-weight: 600"
+              >
+                4,414
+              </td>
+              <td
+                title="소급분 152,650 + (휴가비)500,000원 포함"
+                style="color: teal; font-weight: 600"
+              >
+                2,431
+              </td>
+              <td>500</td>
+              <td>100</td>
+              <th>120</th>
+              <th>135</th>
+              <th>0</th>
+              <th>40</th>
+              <th>50</th>
+              <th>0</th>
+              <th>7,790</th>
+              <th>인상 소급분 포함</th>
+            </tr>
+          </tbody>
+        </table>
+        <h5>※ 9월급여명세에는 2022년도 급여 소급정산분이 포함되어 있음.</h5>
+        <br />
+        <table
+          id="example-table-3"
+          width="100%"
+          class="table table-bordered table-hover text-center"
+          style="none"
+        >
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>국민연금</th>
+              <th>건강보험</th>
+              <th>장기요양</th>
+              <th>고용보험</th>
+              <th>소득세</th>
+              <th>연말정산</th>
+              <th>지방소득세</th>
+              <th>직원상조회</th>
+              <th>식대공제</th>
+              <th>기타공제</th>
+              <th><mark>공제계</mark></th>
+              <th>실지급액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h4 style="font-weight: 600">공제내역</h4></td>
+              <td>249</td>
+              <td>238</td>
+              <td>29</td>
+              <td>59</td>
+              <td>500</td>
+              <th>0</th>
+              <th>50</th>
+              <th>20</th>
+              <th>58</th>
+              <th>0</th>
+              <th>1,202</th>
+              <th><mark>6,588</mark></th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-lg-12" id="ex2_Result1"></div>
+        <div class="col-lg-12" id="ex2_Result2"></div>
+      </div>
+      <hr />
+      <span
+        id="barcode"
+        style="cursor: hand"
+        onclick="if(codebox.style.display==`none`)
+      {codebox.style.display=``; barcode.innerText = `호봉표 닫기▲`} else {codebox.style.display = `none`; 
+     barcode.innerText = `🔍2022 호봉표 보기▼`}"
+        >🔍2022 호봉표 보기 ▼</span
+      >
+      <div id="codebox" style="display: none">
+        <iframe src="img/2022pay_base.jpg" width="750" height="600px"></iframe>
+      </div>
+      <br /><br />
+
+      <span
+        id="loancode"
+        style="cursor: hand"
+        onclick="if(loanbox.style.display==`none`)
+     {loanbox.style.display=``; loancode.innerText = `연급여표 닫기▲`} else {loanbox.style.display = `none`; 
+     loancode.innerText = `🔍2022 연급여표 보기▼`}"
+        >🔍2022 연급여표 보기 ▼</span
+      >
+      <div id="loanbox" style="display: none">
+        <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
+      </div>
+    </div>
+    <!-- 여기까지 10월 급여 명세-->
     <button onclick="print_current_page()">🖨️print</button>
     <script type="text/jabascript">
       document.getElementById("month").innerHTML = "월:" + parseInt(day.getMonth()+1);
