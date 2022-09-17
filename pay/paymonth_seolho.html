@@ -153,6 +153,14 @@
       #month-ten {
         display: none;
       }
+      .bottom {
+        display: flex;
+        justify-content: center;
+      }
+      .bottom.h3 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>
@@ -411,7 +419,16 @@
       <hr />
       <button onclick="print_current_page()">🖨️print</button>
     </div>
-
+    <div class="bottom">
+      <h3
+        style="
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-weight: 600;
+        "
+      >
+        아주대학교의료원신용협동조합
+      </h3>
+    </div>
     <script>
       const inputValue = document.getElementById("info");
 
