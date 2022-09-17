@@ -159,6 +159,7 @@
     <h3 style="font-weight: 600; color: teal">
       # 2022년 개인별 급여 명세표 조회
     </h3>
+    <hr />
     <div id="passinput">
       <p style="font-size: 20px; font-weight: 600; color: gray">
         성명
@@ -185,10 +186,10 @@
         <option value="12">2022년 12월</option>
       </select>
       <hr />
-      <h5 style="font-size: 17px; font-weight: 600">
-        📑급여지급(공제)상세내역
-      </h5>
       <div id="month-nine">
+        <h5 style="font-size: 17px; font-weight: 600">
+          📑급여지급(공제)상세내역
+        </h5>
         <div class="dan"><단위: 천원></div>
         <div class="row">
           <table
@@ -380,9 +381,9 @@
             </tbody>
           </table>
         </div>
-        <hr />
+        <!-- 여기까지 #paytavle-->
       </div>
-      <!-- 여기까지 #paytavle-->
+      <h4 id="payzero"></h4>
       <span
         id="barcode"
         style="cursor: hand"
@@ -407,9 +408,9 @@
       <div id="loanbox" style="display: none">
         <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
       </div>
+      <hr />
+      <button onclick="print_current_page()">🖨️print</button>
     </div>
-    <hr />
-    <button onclick="print_current_page()">🖨️print</button>
 
     <script>
       const inputValue = document.getElementById("info");
@@ -461,7 +462,6 @@
         }
         if (selectValue == "10" || selectValue == "11" || selectValue == "12") {
           document.getElementById("month-nine").style.display = "none";
-          document.getElementById("month-ten").style.display = "none";
           alert(
             "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
           );
@@ -470,12 +470,12 @@
     </script>
     <script>
       /*아래, 우측마우스 클릭 잠금 */
-      /*document.addEventListener("contextmenu", (event) =>
+      document.addEventListener("contextmenu", (event) =>
         event.preventDefault()
       );
       document.addEventListener(`contextmenu`, (event) =>
         alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
-      );*/
+      );
       function print_current_page() {
         window.print();
       }
