@@ -378,12 +378,12 @@
     </script>
     <script>
       /*아래, 우측마우스 클릭 잠금 */
-      /*document.addEventListener("contextmenu", (event) =>
-         event.preventDefault()
-       );
-       document.addEventListener(`contextmenu`, (event) =>
-         alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
-       );*/
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+      document.addEventListener(`contextmenu`, (event) =>
+        alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
+      );
       function print_current_page() {
         window.print();
       }
