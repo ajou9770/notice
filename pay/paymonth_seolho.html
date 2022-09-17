@@ -107,7 +107,16 @@
       }
       button {
         font-size: medium;
+        width: 100px;
         font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        border-width: 1px 3px 3px 1px;
+        border-radius: 5px;
+        border-style: solid;
+      }
+      button:active {
+        transform: scale(0.98);
+        box-shadow: rgba(0, 0, 0, 0.2);
       }
       #submit {
         border-radius: 5px;
@@ -151,7 +160,7 @@
       # 2022년 개인별 급여 명세표 조회
     </h3>
     <div id="passinput">
-      <p style="font-size: 20px; font-weight: 600">
+      <p style="font-size: 20px; font-weight: 600; color: gray">
         성명
         <input id="nameinput" type="text" placeholder="" />
         password
@@ -173,6 +182,7 @@
         <option value="9">2022년 9월</option>
         <option value="10">2022년 10월</option>
         <option value="11">2022년 11월</option>
+        <option value="12">2022년 12월</option>
       </select>
       <hr />
       <h5 style="font-size: 17px; font-weight: 600">
@@ -402,7 +412,7 @@
         <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
       </div>
     </div>
-
+    <hr />
     <button onclick="print_current_page()">🖨️print</button>
 
     <script>
@@ -416,7 +426,7 @@
         if (inputPw == actualPw) {
           const nameInput = document.getElementById("nameinput");
           var nameValue = nameInput.value;
-          alert(nameValue + "님 환영합니다.");
+          alert(nameValue + "선생님 환영합니다.");
 
           document.getElementById("paytable").style.display = "block";
           document.getElementById("passinput").style.display = "none";
@@ -444,19 +454,21 @@
           document.getElementById("month-nine").style.display = "block";
           document.getElementById("month-ten").style.display = "none";
         }
-        if (selectValue == "10") {
+        /*if (selectValue == "10") {
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "block";
-        }
+        }*/
         if (selectValue == "0") {
           alert("🚨급여 지급월을 선택하세요~~");
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "none";
         }
-        if (selectValue == "11") {
+        if (selectValue == "10" || selectValue == "11" || selectValue == "12") {
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "none";
-          alert("🚨아직 급여 지급전입니다. 📆11월 17일 지급예정");
+          alert(
+            "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
+          );
         }
       }
     </script>
