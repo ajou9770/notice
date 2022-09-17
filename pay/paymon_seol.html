@@ -127,12 +127,30 @@
         border-radius: 5px;
         font-size: 15px;
       }
+      select {
+        border: solid 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: 600;
+        height: auto;
+        width: auto;
+        padding: 5px;
+        border-radius: 5px;
+      }
     </style>
   </head>
 
   <body>
     <br />
-    <h4 style="font-weight: 600"># 2022년 9월 급여 명세표</h4>
+    <h4 style="font-weight: 600"># 2022년 급여 명세표</h4>
+    <select name="month">
+      <option id="nine" value="2022년 9월" selected="selected">
+        2022년 9월
+      </option>
+      <option id="ten" value="2022년 10월">2022년 10월</option>
+      <option id="eleven" value="2022년 11월">2022년 11월</option>
+      <option id="towele" value="2022년 12월">2022년 12월</option>
+    </select>
     <div id="passinput">
       <p style="font-size: 20px; font-weight: 600">
         # password
