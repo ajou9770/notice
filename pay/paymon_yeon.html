@@ -317,9 +317,11 @@
         <iframe src="img/2022pay_year.jpg" width="750" height="600px"></iframe>
       </div>
       <hr />
-      <button onclick="print_current_page()">🖨️print</button>
-    </div>
-
+      <div id="print&email">
+        <button onclick="print_current_page()">🖨️print</button>
+        <button><a href="mailto:ajou9770@ajoucu.page?subject=안녕하세요? 급여관련 질의 드립니다. " style="color:black; text-decoration: none;">📧문의</a>
+        </button>
+        </div>
     <script>
       const inputValue = document.getElementById("info");
 
@@ -367,6 +369,7 @@
           alert("🚨급여 지급월을 선택하세요~~");
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "none";
+          document.getElementById("print&email").style.display = "block";
         }
         if (selectValue == "10" || selectValue == "11" || selectValue == "12") {
           document.getElementById("month-nine").style.display = "none";
@@ -385,6 +388,7 @@
         alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
       );
       function print_current_page() {
+        document.getElementById("print&email").style.display = "none";
         window.print();
       }
     </script>
