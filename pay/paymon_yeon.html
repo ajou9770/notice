@@ -163,7 +163,7 @@
     <div id="passinput">
       <p style="font-size: 20px; font-weight: 600; color: gray">
         성명
-        <input id="nameinput" type="text" placeholder="" />
+        <input id="nameinput" type="text" placeholder="이연주" />
         password
         <input id="info" type="password" placeholder="" />
         <button
@@ -331,8 +331,8 @@
         if (inputPw == actualPw) {
           const nameInput = document.getElementById("nameinput");
           var nameValue = nameInput.value;
-          alert(nameValue + "선생님 환영합니다.");
-
+          /*alert(nameValue + "선생님 환영합니다.");*/
+          alert("이연주님 환영합니다.");
           document.getElementById("paytable").style.display = "block";
           document.getElementById("passinput").style.display = "none";
         }
