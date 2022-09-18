@@ -324,25 +324,26 @@
                 <th>자격수당</th>
                 <th>시간외수당</th>
                 <th><mark>지급계</mark></th>
-                <th>비 고</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><h4 style="font-weight: 600">김설호</h4></td>
                 <td>4급10호/상무</td>
-                <td>5000</td>
-                <td>6000</td>
+                <td title="4급 10호 기본급"
+                style="color: teal; font-weight: 600">4,065</td>
+                <td title="기본급*43.75%(525%/12), 식대 10만원포함"
+                style="color: teal; font-weight: 600">1,778</td>
                 <td>500</td>
                 <td>100</td>
                 <th>120</th>
-                <th>135</th>
+                <th title="기본급 * 1/30"
+                style="color: teal; font-weight: 600">135</th>
                 <th>0</th>
                 <th>40</th>
                 <th>50</th>
                 <th>0</th>
-                <th>7,790</th>
-                <th>인상 소급분 포함</th>
+                <th>6,788</th>
               </tr>
             </tbody>
           </table>
@@ -384,7 +385,7 @@
                 <th>58</th>
                 <th>0</th>
                 <th>1,202</th>
-                <th><mark>6,588</mark></th>
+                <th><mark>5,586</mark></th>
               </tr>
             </tbody>
           </table>
@@ -418,7 +419,9 @@
       </div>
       <hr />
       <button onclick="print_current_page()">🖨️print</button>
-    </div>
+      <button><a href="mailto:ajou9770@ajoucu.page?안녕하세요,급여관련 질의 드립니다. " style="color:black; text-decoration: none;">📧문의</a>
+      </button>
+      </div>
     <div class="bottom">
       <h3
         style="
@@ -468,17 +471,18 @@
           document.getElementById("month-nine").style.display = "block";
           document.getElementById("month-ten").style.display = "none";
         }
-        /*if (selectValue == "10") {
+        if (selectValue == "10") {
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "block";
-        }*/
+        }
         if (selectValue == "0") {
           alert("🚨급여 지급월을 선택하세요~~");
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "none";
         }
-        if (selectValue == "10" || selectValue == "11" || selectValue == "12") {
+        if (selectValue == "11" || selectValue == "12") {
           document.getElementById("month-nine").style.display = "none";
+          document.getElementById("month-ten").style.display = "none";
           alert(
             "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
           );
