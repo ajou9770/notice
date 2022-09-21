@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    color: #555;   
+   } 
+  body {
+    background-image: url('./data/codestates-motif.png');
+  }
+  /*
+    Calculator styles
+  */
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .calculator {
+    background-color: #396083;
+    width: 320px;
+    height: 500px;
+    border-radius: 25px;
+    padding: 30px 20px;
+    box-shadow: 8px 8px 0 #141b21;
+  }
+  .calculator__display--bare {
+    display: none;
+    /*display: flex;*/
+    justify-content: space-between;
+    background-color: rgb(255,255,255,0.8);
+    text-align: center;
+    vertical-align: middle;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: px;
+    padding: 25px 40px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+  .calculator__display--bare > span {
+    display: inline-block;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size : 15px;
+  }
+  .calculator__display--intermediate {
+    /*display: none; 이 줄을 모두 지우면 intermediate, advanced 테스트를 하실 수 있습니다.*/
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 25px 15px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+  .calculator__buttons {
+    width: 100%;
+    height: 330px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .clear__and__enter {
+    height: 50px;
+    margin: 20px;
+  }
+  .clear__and__enter > button {
+    border-radius: 25px;
+    width: 104px;
+    height: 40px;
+    background-color: #eee;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+  }
+  .clear__and__enter > button:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    position: relative;
+    top:2px;
+  }
+  .clear__and__enter > button:hover {
+    background-color: #ffa9a9;
+  }
+  .button__row {
+    height: 50px;
+    margin: 10px;
+  }
+  .button__row > button {
+    width: 50px;
+    height: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+    background-color: #eee;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+  }
+  
+  .button__row > button:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    position: relative;
+    top:2px;
+  }
+  
+  .button__row > button:hover {
+    background-color: #ffa9a9;
+  }
+  
+  .button__row > .operator {
+    color: #fff;
+    background-color: #343c58;
+  }
+  .button__row > .double {
+    width: 104px;
+  }
+  
+  .button__row > .isPressed {
+    color:#FC7174;
+  }
+  .logo {
+    width: 150px;
+    position: fixed;
+    padding: 30px;
+    bottom: 0px;
+    right: 0px;
+  }
