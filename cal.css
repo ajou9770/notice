@@ -131,8 +131,8 @@
   }
   .logo {
     width: 150px;
-    position: fixed;
-    padding: 30px;
+    position: relative;
+    padding: 10px;
     bottom: 0px;
     right: 0px;
   }
