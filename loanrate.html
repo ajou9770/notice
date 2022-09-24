@@ -400,7 +400,7 @@ a:active {
           rate.innerText = `✔ 적용금리는 ${
             Math.floor(BASE_RATE * 100 * 10) / 10 === 3
               ? "3.0"
-              : Math.ceil(BASE_RATE * 100 * 10)/10
+              : Math.ceil(BASE_RATE * 100 * 10)/10   // 금리적용이 다를 경우 "floor"또는 "ceil" 로 조정 요함. 
           }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
           result.innerText = `▶ 월이자는 약 ${rateMoney.toLocaleString(
             "ko-kr"
