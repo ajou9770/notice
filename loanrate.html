@@ -263,6 +263,7 @@ a:active {
         </select>
         <span class="dan">개월</span>
       </section>
+      <h3><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">※신용대출 일시상환은 대출기간은 최장 2년까지 입니다. </mark></h3>
       <section>
         <h2>3. 상환 방법을 선택하세요.</h2>
         <select id="method">
@@ -360,6 +361,7 @@ a:active {
         const whetherValue = parseInt(whether.value);
         const ratingValue = parseInt(rating.value);
         const changeValue = parseInt(change.value);
+
         if (allMonth > 60 || allMonth < 1) {
           return alert(
             `2항의 대출기간은 1개월 ~ 60개월(5년)사이를 선택해 주세요. 지금은 ${allMonth}개월이 선택되었습니다.`
@@ -368,9 +370,12 @@ a:active {
         if (amountValue < 10 * 10000 || amountValue > 20000 * 10000) {
           return alert(`1항의 대출금액 입력범위는 최소 10만원 ~ 최대 20000만원(2억원) 입니다.`);
         }
+        console.log(methodValue)
         if (methodValue === 1) {
           detail.classList.add(CLASS_NONE);
           //일시 상환일때
+          console.log("1번이 작동");
+          console.log(BASE_RATE)
           if (whetherValue === 1) {
             // 신협 최초대출 일때
             BASE_RATE = BASE_RATE - 0.001;
@@ -387,13 +392,15 @@ a:active {
             // 금리 고정으로 바꿀때
             BASE_RATE = BASE_RATE + 0.002;
           }
+          console.log(BASE_RATE)
+          console.log(Math.floor(BASE_RATE * 100 * 10)/10)
           const rateMoney =
             Math.round((((amountValue * BASE_RATE) / 365) * 30) / 10) * 10;
           const refundMoney = Math.round((amountValue * 0.0050) / 10) * 10;
           rate.innerText = `✔ 적용금리는 ${
             Math.floor(BASE_RATE * 100 * 10) / 10 === 3
               ? "3.0"
-              : Math.floor(BASE_RATE * 100 * 10)/10
+              : Math.ceil(BASE_RATE * 100 * 10)/10   // 금리적용이 다를 경우 "floor"또는 "ceil" 로 조정 요함. 
           }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
           result.innerText = `▶ 월이자는 약 ${rateMoney.toLocaleString(
             "ko-kr"
@@ -401,12 +408,11 @@ a:active {
           dividend.innerText = `▶ 대출관련 이용고배당액으로 약 ${refundMoney.toLocaleString(
             "ko-kr"
           )}원을 받으실 수 있습니다.`;
-        }
-
-        if (methodValue === 2) {
+        } else if (methodValue === 2) {
           detail.classList.remove(CLASS_NONE);
           // 분할상환일때
           BASE_RATE = BASE_RATE - 0.001;
+          console.log("2번이 작동");
           if (whetherValue === 1) {
             // 신협 최초대출 일때
             BASE_RATE = BASE_RATE - 0.001;
@@ -452,7 +458,7 @@ a:active {
           rate.innerText = `✔ 적용금리는 ${
             Math.floor(BASE_RATE * 100 * 10) / 10 === 3
               ? "3.0"
-              : Math.floor(BASE_RATE * 100 * 10)/10
+              : Math.ceil(BASE_RATE * 100 * 10)/10
           }% 입니다`; // 곱하기 100은 금리 보기 쉽게 나타내려고 한거
           dividend.innerText = `✔ 대출관련 이용고배당으로 약 ${refundMoney.toLocaleString(
             "ko-kr"
