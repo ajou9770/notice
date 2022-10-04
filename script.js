@@ -3086,6 +3086,34 @@ localStorage.setItem("114680", "27789045");
 localStorage.setItem("114958", "27774249");
 localStorage.setItem("114653", "27690228");
 localStorage.setItem("114755", "27773303");
+localStorage.setItem("114855", "27462706");
+localStorage.setItem("114895", "27829163");
+localStorage.setItem("115006", "27846221");
+localStorage.setItem("114939", "27913425");
+localStorage.setItem("115055", "27941724");
+localStorage.setItem("115009", "27825584");
+localStorage.setItem("114902", "27885358");
+localStorage.setItem("114973", "27890101");
+localStorage.setItem("115045", "27844854");
+localStorage.setItem("115048", "27854500");
+localStorage.setItem("114308", "27930864");
+localStorage.setItem("114098", "27875530");
+localStorage.setItem("115019", "27846365");
+localStorage.setItem("113120", "27904937");
+localStorage.setItem("115020", "27825610");
+localStorage.setItem("115022", "27840786");
+localStorage.setItem("113114", "27923909");
+localStorage.setItem("114955", "27840626");
+localStorage.setItem("114740", "27936739");
+localStorage.setItem("115046", "27864034");
+localStorage.setItem("114219", "27872909");
+localStorage.setItem("114962", "27913619");
+localStorage.setItem("115047", "27844505");
+localStorage.setItem("114963", "27913758");
+localStorage.setItem("115027", "27825603");
+localStorage.setItem("115032", "27891919");
+localStorage.setItem("114506", "27864037");
+localStorage.setItem("113115", "27876861");
 
 function handleSumbit(event) {
   event.preventDefault(); 
@@ -3095,7 +3123,7 @@ function handleSumbit(event) {
     alert("사번을 입력 후 제출해 주세요😃"); 
     h2.innerText="";
   }else if(show === null) {
-    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 8월 31일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
+    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 9월 30일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
   } else {
     h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
   }
