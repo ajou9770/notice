@@ -225,6 +225,30 @@
 a:active {
         transform: scale(0.98);
         }
+        .backButton {
+	box-shadow: 3px 4px 0px 0px #1564ad;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:4px;
+  text-align: center;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:25px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:3px 1px 0px #528ecc;
+}
+.backButton:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.backButton:active {
+	position:relative;
+	top:1px;
+}       
     </style>
   </head>
   <body>
@@ -324,11 +348,10 @@ a:active {
       <a href="http://ajou9770.github.io/notice/loaninsu.html">
          보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
       </a></div><br/>
-      <div class="mile">
-        <a href="http://ajou9770.github.io/usertip/loan.html">
+        <a href="http://ajou9770.github.io/usertip/loan.html" class="backButton">
           <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
         </a>
-      </div><br/>
+    <br/>
     <script>
       const form = document.querySelector("form");
       const aside = document.querySelector("aside");
