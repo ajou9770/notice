@@ -42,10 +42,15 @@ button:active {
     font-size: 10px;
     font-weight: 400;
 }
-.mark {
-   background: linear-gradient(to top, mediumspringgreen 10%, transparent 20%);
+.time {
+   background: linear-gradient(to top, rgb(218, 118, 132) 5%, transparent 15%);
+   color:rgb(5, 58, 59);
 }
-    </style>
+.place {
+   background: linear-gradient(to top, rgb(218, 118, 132) 5%, transparent 15%);
+   color:rgb(190, 72, 72);
+} 
+ </style>
 </head>
 <body>
     <img src="img/camp_221014.jpg">
@@ -55,13 +60,13 @@ button:active {
         헌혈로 사랑을 실천하실 수 있습니다 
         의료원노동조합 헌혈데이 사랑나눔 헌혈캠페인에 동참해 주세요.<br/><br/>
                 
-        <b><mark class="mark"></a>✔️ 일시: 2022.10.14(금) 09:30~16:30(점심시간: 11시~12시) </mark><br/>
+        <b><mark class="time"></a>✔️ 일시: 2022.10.14(금) 09:30~16:30(점심시간: 11시~12시) </mark><br/>
         🚩 장소: 치과병원 앞 헌혈버스<br/> 
         📢 코로나확진시 격리해제일로부터 10일 경과되면 헌혈가능합니다. <br/>
         📢 헌혈당일 아침식사는 든든하게 하시고 좋은 컨디션을 유지하세요.<br/>
         🎁 헌혈에 동참하신 조합원에게 기념품(현장) 및 "모바일 ☕스벅커피교환권"을 드립니다.<br/>
             (현장에서 참가조합원 성명 및 연락처 등 기재필요.)</b><br/><br/>
-        ☎️ 문의: 신협 원내 6438, 6052 <a href="tel:0312196438" style="font: weigh 600px; color:rgb(5, 58, 59); text-decoration: none;"> 📞 전화걸기 </a><br/>
+        ☎️ 문의: 신협 원내 6438, 6052 <b><span onclick="Confirm()" style="color:rgb(5, 58, 59); text-decoration: none;"> 📞 전화걸기 </span></b><br/>
         ♧ 신협에서는 헌혈캠페인에 소정의 기념품을 후원하고 있습니다. <br/><br/>
         <h3>☞ 헌혈참가전 사전 <a href="https://www.bloodinfo.net/emi_bldqualify.do">전자문진</a>을 통해 대기시간을 단축 하실 수 있습니다.</h3>
         <div style="text-align: center;">
@@ -72,10 +77,10 @@ button:active {
     </span>
     <br/>
     <div class="footer"> 
-        <footer><h2>&copy ajou9770@ajoucu.page 아주대의료원신협 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
+        <footer><h2>&copy ajou9770@ajoucu.page <a href="http://ajou9770.github.io/usertip"> 아주대의료원신협 </a> 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
         </div>
         <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>   
-    <script>
+    <!--<script>
         const qus = document.querySelector(".qus");
            
         function handleClickQus() {
@@ -83,6 +88,16 @@ button:active {
         }
         
         qus.addEventListener("click", handleClickQus);
-    </script>  
+    </script>-->
+    <script>
+        function Confirm() {
+            if (window.confirm("⚠ 업무시간은 평일 8:30~17:00까지 입니다.  전화 연결 하시겠습니까?")) {
+            document.location.href = "tel:031-219-6052" 
+        } else {
+            console.log("cancel")
+        } 
+       }
+    </script>
+
     </body>
 </html>
