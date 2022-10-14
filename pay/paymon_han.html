@@ -289,9 +289,111 @@
             </tbody>
           </table>
         </div>
-        <!-- 여기까지 #paytavle-->
-      </div>
-      <h4 id="payzero"></h4>
+        </div>
+       <!-- 여기까지 9월급여-->
+       <div id="month-ten">
+        <h5 style="font-size: 17px; font-weight: 600">
+          📑급여지급(공제)상세내역
+        </h5>
+        <div class="dan"><단위: 원></div>
+        <div class="row">
+          <table
+            id="example-table-2"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>성명</th>
+                <th>직급/직책</th>
+                <th>기본급</th>
+                <th>상여금</th>
+                <th>직책수당</th>
+                <th>경리출납</th>
+                <th>장기근속</th>
+                <th>군필수당</th>
+                <th>보건수당</th>
+                <th>가족수당</th>
+                <th>자격수당</th>
+                <th>시간외수당</th>
+                <th><mark>지급계</mark></th>
+                <th>비 고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">한진희</h4></td>
+                <td>6급15호/차장</td>
+                <td>
+                  3,188,600
+                </td>
+                <td
+                  title="급량비 100,000원 포함"
+                  style="color: teal; font-weight: 600"
+                >
+                  1,395,010
+                </td>
+                <td>150,000</td>
+                <td>100,000</td>
+                <td>100,000</td>
+                <td></td>
+                <td>106,290</td>
+                <td>20,000</td>
+                <td>50,000</td>
+                <td></td>
+                <td>5,109,900</td>
+                </tr>
+            </tbody>
+          </table>
+          <br />
+          <table
+            id="example-table-3"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>국민연금</th>
+                <th>건강보험</th>
+                <th>장기요양</th>
+                <th>고용보험</th>
+                <th>소득세</th>
+                <th>연말정산</th>
+                <th>지방소득세</th>
+                <th>직원상조회</th>
+                <th>식대공제</th>
+                <th>기타공제</th>
+                <th><mark>공제계</mark></th>
+                <th>실지급액</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><h4 style="font-weight: 600">공제내역</h4></td>
+                <td>246,330</td>
+                <td title="정산보험료 8,340원 포함"
+                style="color: teal; font-weight: 600">202,330</td>
+                <td title="정산보험료 960원 포함"
+                style="color: teal; font-weight: 600">24,760</td>
+                <td>49,950</td>
+                <td></td>
+                <td>220,000</td>
+                <td>22,000</td>
+                <td>15,000</td>
+                <td></td>
+                <td></td>
+                <td>780,370</td>
+                <td>4,329,530</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        <!-- 여기까지 10월 급여-->
+        <h4 id="payzero"></h4>
       <span
         id="barcode"
         style="cursor: hand"
@@ -364,18 +466,20 @@
           document.getElementById("month-ten").style.display = "none";
           document.getElementById("print&email").style.display = "block";
         }
-        /*if (selectValue == "10") {
+        if (selectValue == "10") {
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "block";
-        }*/
+          document.getElementById("print&email").style.display = "block";
+        }
         if (selectValue == "0") {
           alert("🚨급여 지급월을 선택하세요~~");
           document.getElementById("month-nine").style.display = "none";
           document.getElementById("month-ten").style.display = "none";
           document.getElementById("print&email").style.display = "block";
         }
-        if (selectValue == "10" || selectValue == "11" || selectValue == "12") {
+        if (selectValue == "11" || selectValue == "12") {
           document.getElementById("month-nine").style.display = "none";
+          document.getElementById("month-ten").style.display = "none";
           document.getElementById("print&email").style.display = "block";
           alert(
             "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
