@@ -89,25 +89,30 @@
         font-weight: 600;
       }
       #rating {
-        width: 50%;
+        width: 90%;
         height: 50px;
         border-radius: 10px;
         font-size: 20px;
         font-weight: 600;
       }
       .cal {
-        width: 40%;
+        width: 150px;
         height: 50px;
         border-radius: 10px;
         font-size: 20px;
         font-weight: 600;
       }
+      .cal :active {
+        transform: scale(0.98);
+      }
       #submit {
         margin-top: 20px;
         margin-left: 10px;
         margin-right: 10px;
-        width: 400px;
-        background-color: cadetblue;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        background-color: rgb(3, 34, 35);
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
         font-size: larger;
@@ -247,12 +252,12 @@ a:active {
 	background-color:#79bbff;
 	border-radius:4px;
   text-align: center;
-  width: 90%;
+  width: 85%;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:20px;
+	font-size:17px;
 	font-weight:bold;
 	padding:12px 44px;
 	text-decoration:none;
@@ -286,10 +291,10 @@ a:active {
 	display:inline-block;
   text-align: center;
 	cursor:pointer;
-  width: 90%;
+  width: 85%;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:20px;
+	font-size:17px;
 	font-weight:bold;
 	padding:12px 37px;
 	text-decoration:none;
@@ -302,7 +307,33 @@ a:active {
 .Button_blue a:active {
 	position:relative;
 	top:1px;
-}        
+}
+.Button_blue {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+  text-align: center;
+	cursor:pointer;
+  width: 50%;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.Button_blue a :hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.Button_blue a :active {
+	position:relative;
+	top:1px;
+}         
     </style>
   </head>
   <body>
@@ -376,10 +407,8 @@ a:active {
           <option value="1">우량 평점구간: 880점 ~ 1,000점</option>
           <option value="2">일반 평점구간: 740점 ~ 879점</option>
         </select>
-      </section>
-      <section id="submit">
-        <input class="cal" type="submit" value="계산하기(￦)" />
-      </section>
+      </section><hr>
+        <input class="Button_blue" type="submit" value="계산하기(￦)" />
       <h3>※ 산출된 금리 및 원리금은 참고용으로만 활용바랍니다.</h3>
     </form>
     <div class="result">
