@@ -184,6 +184,7 @@ mark.mint {
 	background-color:#79bbff;
 	border-radius:4px;
   text-align: center;
+  width: 55%;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -212,7 +213,33 @@ mark.mint {
     border-top: solid gray 2px;
     border-bottom: solid gray 2px;
     padding: 10px;
-    }           
+    }
+    .Button_blue a {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+  text-align: center;
+	cursor:pointer;
+  width: 55%;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.Button_blue a:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.Button_blue a:active {
+	position:relative;
+	top:1px;
+}           
     </style>
   </head>
   <body>
@@ -284,22 +311,22 @@ mark.mint {
       <button onclick="window.location.reload()" style="height:40px; font-size:large">새로고침 <i class="fas fa-sync-alt fa-small"></i></button><br/>
            --><h3>※ 보증대출한도는 교직원공제회 생활안정자금 등 타기관 보증보험대출 합산 1억5천만원 한도내 </h3>
         
-        <div class="loaninsu">
+        <div class="Button_blue">
             <a href="http://ajou9770.github.io/notice/loanrate.html">
                 금리 및 월 상환 원리금 조회하기<i class="fas fa-chevron-right fa-lg"></i>
-             </a></div> 
-        <div class="loaninsu">
+             </a></div><hr> 
+        <div class="Button_blue">
         <a href="http://ajou9770.github.io/notice/loaninsu.html">
             보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
-         </a></div>
-         <div class="loaninsu">
+         </a></div><hr> 
+         <div class="Button_blue">
             <a href="https://ajou9770.github.io/notice/sgicsign.html">
               보증대출 개인정보동의 및 전자서명 안내 <i class="fas fa-chevron-right fa-lg"></i>
              </a></div><br/>
          
             <a href="http://ajou9770.github.io/usertip/loan.html" class="backButton">
               <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기
-            </a>
+            </a><br/>
       <script
       src="https://kit.fontawesome.com/6478f529f2.js"
       crossorigin="anonymous"
