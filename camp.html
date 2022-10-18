@@ -49,6 +49,15 @@ button:active {
 .place {
    background: linear-gradient(to top, rgb(218, 118, 132) 5%, transparent 15%);
    color:rgb(190, 72, 72);
+}
+.qus {
+    padding: 10px; 
+    font-size: large; 
+    align-items: center;
+    font-weight: 600; 
+    color: teal;
+    border-radius: 10px; 
+    border-color: beige;
 } 
  </style>
 </head>
@@ -69,13 +78,13 @@ button:active {
            </b><br/><br/>
         ☎️ 문의: 신협 원내 6438, 6052 <b><span onclick="Confirm()" style="color:rgb(5, 58, 59); text-decoration: none;"> 📞 전화걸기 </span></b><br/>
         ♧ 신협에서는 헌혈캠페인에 소정의 기념품을 후원하고 있습니다. <br/><br/>
-        <h3>☞ 헌혈참가전 사전 <a href="https://www.bloodinfo.net/emi_bldqualify.do">전자문진</a>을 통해 대기시간을 단축 하실 수 있습니다.</h3>
+        <h3>☞ 헌혈참가전 사전 <span onclick="qus()" style="color: teal;">전자문진</span>을 통해 대기시간을 단축 하실 수 있습니다.</h3>
         <div style="text-align: center;">
-        <button class="qus" style="padding: 10px; font-size: large; align-items: center; border-radius: 10px; border-color: beige;">
-        <a href="https://www.bloodinfo.net/emi_bldqualify.do">📑전자문진 바로가기<i class="fas fa-chevron-right fa-lg"></i></a> 
+        <button onclick="qus()" class="qus">
+        📑전자문진 바로가기<i class="fas fa-chevron-right fa-lg"></i> 
         </button><br/><hr>
-        <button  onclick="coupon()" class="qus" style=" padding: 10px; font-size: large; align-items: center; border-radius: 10px; border-color: beige;">
-            <a href="#">🎫모바일 커피쿠폰 신청 하기<i class="fas fa-chevron-right fa-lg"></i></a> 
+        <button  onclick="coupon()" class="qus">
+            🎫모바일 커피쿠폰 신청 하기<i class="fas fa-chevron-right fa-lg"></i> 
             </button>
         </div>
     </span>
@@ -84,19 +93,19 @@ button:active {
         <footer><h2>&copy ajou9770@ajoucu.page <a href="http://ajou9770.github.io/usertip"> 아주대의료원신협 </a> 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
         </div>
         <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>   
-    <!--<script>
-        const qus = document.querySelector(".qus");
-           
-        function handleClickQus() {
-            alert("📢전자문진은 헌혈 2일전(10월 12일~)부터 헌혈 당일까지 유효 합니다.");
-        }
-        
-        qus.addEventListener("click", handleClickQus);
-    </script>-->
+        <script>
+         function qus() {
+            if(window.confirm("📢전자문진은 헌혈 2일전부터 헌혈 당일까지 유효 합니다. 진행하시겠습니까?")){
+            document.location.href ="https://www.bloodinfo.net/emi_bldqualify.do" 
+            } else {
+             console.log("cancel")
+            }
+        }       
+    </script>
     <script>
         function coupon() {
             if(window.confirm("⚠️헌혈참가 하셨나요? 커피 쿠폰 신청 하시겠습니까?")){
-            document.location.href = "#"
+            document.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSecTG3pE60dX1yX0m9JhA9Xq9dWCQWfcwcVDgz_GG_lFirtUg/viewform?usp=sf_link"
             } else {
             console.log("신청취소")
         }
