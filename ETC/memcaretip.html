@@ -45,6 +45,17 @@ display: inline-flexbox;
 border-radius: 10px;
 border: 3px solid teal;
 }
+a {
+    text-decoration: none;
+}
+button {
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border-style: none;
+}
     </style>
 </head>
 <body>
@@ -61,17 +72,53 @@ border: 3px solid teal;
 <h3>1. 조합 명절 비대면 특판몰 운영 사례 </h3>
 <iframe src="https://drive.google.com/file/d/1T-BcY3efnVL32Yg8fcyxAKlqasSuZ3dB/preview" 
     width="auto" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
-
 <hr>
-<a href="https://ajou9770.github.io/notice/ETC/tip_camp.html"><h3>2. 조합 사회공헌활동(헌혈캠페인) 사례</h3></a>
+<a href="https://ajou9770.github.io/notice/ETC/tip_camp.html" style="text-decoration: none;"><h3>2. 조합 사회공헌활동(헌혈캠페인) 사례</h3></a>
 <div style="text-align: center;">
 <h3>🔎 본 사이트 접속  QR코드 </h3>
 <img src="img/membercare_qr.jpg"/ width="200px" height="200px">
 </div>
-<br/>
 </div>
+<h3> 🔎궁금한 사항이 있으시면 ? </h3>
+<button onclick="callon()"> 📞전화문의 </button>
+<button><a href="mailto:ajou9770@ajoucu.page">📨Email문의 </a></button>
+<div 
+id="kakao-talk-channel-chat-button"
+data-channel-public-id="_dfhkK"
+data-title="consult"
+data-size="small"
+data-color="yellow"
+data-shape="mobile"
+data-support-multiple-densities="true"
+width="80px"
+height="40px"
+></div>
+
 <!--<div id="icon">
 <a href="mailto:ajou9770@ajoucu.page" style="font-size: 15px; color: whitesmoke; text-decoration: none;">📨문의하기</a>
 </div>-->
+<script>
+    function callon() {
+        if(window.confirm("통화가능시간은 평일 8:30~17:00까지입니다. , 전화앱 연결 할까요?")){
+        document.location.href="tel:031-219-6438"} 
+        else {
+            console.log("cancel")
+        }
+    }
+</script>
+<script>
+    window.kakaoAsyncInit = function() {
+      Kakao.Channel.createChatButton({
+        container: '#kakao-talk-channel-chat-button',
+      });    
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'kakao-js-sdk');
+  </script>
 </body>
 </html>
