@@ -35,12 +35,19 @@ button:active {
     transform: scale(0.98);
     color: tomato;
 } 
-.footer {
-    widows: 100px;
+.div_footer {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+footer {
+    widows: 100px;
+    display: inline-flex;
     position: absolute bottom;
+    flex-direction: column;
     height:auto;
-    padding-left: 5px;
+    padding: 5px;
     bottom:5px;
     border-radius: 10px;
     border: 3px solid darkcyan;
@@ -127,10 +134,10 @@ data-color="yellow"
 data-shape="mobile"
 data-support-multiple-densities="true"
 ></div></div>
-    <div class="footer"> 
-        <footer><h2> <a href="http://ajou9770.github.io/usertip" style="font-size: 20px;">아주대의료원신협</a><span onclick="Confirm()">💻 가입(금융상담):219-6052,6971</span>
+    <div class="div_footer"> 
+    <footer><h2> <a href="http://ajou9770.github.io/usertip" style="font-size: 20px;">아주대의료원신협</a><span onclick="Confirm()">💻 가입(금융상담):219-6052,6971</span>
         ⛳ 본관 지하2층 유전체자원센타옆 </h2></footer>
-        </div>
+    </div>
         <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>   
         <!--<script>
          function qus() {
