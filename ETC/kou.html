@@ -86,7 +86,6 @@
                 <th style="text-align: center;">적요</th>
                 <th style="text-align: center;">출금액</th>
                 <th style="text-align: center;">잔액</th>
-                <th style="text-align: center;">비 고</th>
               </tr>
             </thead>
             <tbody>
@@ -97,38 +96,34 @@
                 <td></td>
                 <td></td>
                 <th>872,298</th>
-                <th></th>  
               <tr>
                 <td><h4 style="font-weight: 600">입금</h4></td>
                 <td>회비(자동이체)</td>
                 <td title="원내회원 및 권세혁 10명 월100,000원 * 11개월"
-                style="color: teal; font-weight: 600">1,100,000</td>
+                style="color: teal; font-weight: 600" onclick="kou_01()">1,100,000</td>
                 <td>출금</td>
                 <td>김상섭회원자녀결혼</td>
                 <td>100,000</td>
                 <th>1,872,298</th>
-                <th></th>
               </tr>
               <td><h4 style="font-weight: 600">입금</h4></td>
                 <td>회비
                     (원외회원 5명)</td>
                 <td title="권명호,정재영,박수영,김동석,손병욱 5명"
-                style="color: teal; font-weight: 600">600,000</td>
+                style="color: teal; font-weight: 600" onclick="kou_02()">600,000</td>
                 <td>출금</td>
                 <td>권명호회원 입원</td>
                 <td>32,000</td>
                 <th>2,440,298</th>
-                <th></th>
                 <tr>
                     <td><h4 style="font-weight: 600">입금</h4></td>
                     <td>정기예금만기<br/>
                         +이자 149천원 포함</td>
-                    <td title=" 2018.11~2022.11 * 4년" style="color: teal; font-weight: 600">2,149,144</td>
+                    <td title=" 2018.11~2022.11 * 4년" style="color: teal; font-weight: 600" onclick="kou_03()">2,149,144</td>
                     <td>출금</td>
                     <td>설선물</td>
                     <td>528,000</td>
                     <th>4,061,442</th>
-                    <th></th>    
                 </tr>
                     <tr>
                     <td><h4 style="font-weight: 600">입금</h4></td>
@@ -140,7 +135,6 @@
                         (민어94,000*16명)</td>
                     <td>1,504,000</td>
                     <th>2,557,442</th>
-                    <th></th>
                     </tr> 
                     <tr>
                         <td><h4 style="font-weight: 600">입금</h4></td>
@@ -152,7 +146,6 @@
                             (1년/4.83%/신협)</td>
                         <td>1,000,000</td>
                         <th>1,557,442</th>
-                        <th></th>
                         <tr>
                             <td><h4 style="font-weight: 600">입금</h4></td>
                             <td>기타예금이자</td>
@@ -162,18 +155,15 @@
                             <td>SMS이용료 등 수수료 출금</td>
                             <td>4,000</td>
                             <th>1,553,672</th>
-                            <th></th>    
                         </tr>
                         <tr>
                             <td><h4 style="font-weight: 600">소계</h4></td>
                             <td>입금계</td>
-                            <td title=" 요구불예금 이자"
-                            style="color: teal; font-weight: 600">3,849,414</td>
+                            <td style="color: blue; font-weight: 600; font-size: 18px;">3,849,414</td>
                             <td>출금계</td>
                             <td>출금계</td>
-                            <td>3,168,040</td>
-                            <th>1,553,672</th>
-                            <th></th>    
+                            <td style="color: red; font-weight: 600; font-size: 18px;">3,168,040</td>
+                            <th style="color: black; font-weight: 600; font-size: 20px;">1,553,672</th> 
             </tbody>
           </table>
          <h4 id="payzero"></h4>
@@ -189,6 +179,17 @@
         <iframe src="img/kou_2022.jpg" width="100%" height="600px"></iframe>
       </div>
       <br /><br />
+      <script>
+        function kou_01() {
+          alert("원내 회원 10명 매월 1만원 자동이체 회비 납입")
+        }
+        function kou_02() {
+          alert("원외 회원: 권명호,정재영,박수영,김동석,손병욱 5명 회비 납입")
+        }
+        function kou_03() {
+          alert("원금 2,000,000원 + 이자 149,144원 입금(만기 인출")
+        }
+      </script>
       <!--
         <span
         id="loancode"
@@ -282,7 +283,7 @@
           );
         }
       }
-    </script>-->
+    </script>
     <script>
       /*아래, 우측마우스 클릭 잠금 */
       document.addEventListener("contextmenu", (event) =>
@@ -295,6 +296,6 @@
         document.getElementById("print&email").style.display = "none";
         window.print();
       }
-    </script>
+    </script>-->
   </body>
 </html>
