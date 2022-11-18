@@ -18,7 +18,7 @@
             margin: 5px;
         }
         #barcode {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -31,6 +31,15 @@
     background-color: rgba(172, 58, 32, 0.772);
     color: whitesmoke;
     text-align: center;
+  }
+  td {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  th {
+    font-size: 20px;
+    font-weight: 600;
+    color: grey;
   }
     </style>
   </head>
@@ -66,10 +75,12 @@
       </select>
       <hr />-->
       <div id="month-nine">
-        <h5 style="font-size: 17px; font-weight: 600">
-          📑2022년 고우회 수입.지출내역(2022.1.1 ~ 11.18)
-        </h5>
-        <div class="dan">(단위: 원)</div>
+        <h3 style="font-weight: 600">
+          📑2022년 고우회 수입.지출내역(2022.1.1 ~ 11.18)<br/>
+        <h4 style="font-weight: 600; text-align: end;" >(단위:원)</h4>
+        
+        </h3>
+        
         <div class="row">
         <table
             id="example-table-2"
@@ -79,7 +90,7 @@
           >
             <thead>
               <tr>
-                <th  style="text-align: center;">구분</th>
+                <th style="text-align: center;">구분</th>
                 <th style="text-align: center;">적요</th>
                 <th style="text-align: center;">입금액</th>
                 <th style="text-align: center;">구분</th>
@@ -95,7 +106,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <th>872,298</th>
+                <th style="text-align: end;">872,298</th>
               <tr>
                 <td><h4 style="font-weight: 600">입금</h4></td>
                 <td>회비(자동이체)</td>
@@ -104,7 +115,7 @@
                 <td>출금</td>
                 <td>김상섭회원자녀결혼</td>
                 <td>100,000</td>
-                <th>1,872,298</th>
+                <th style="text-align: end;">1,872,298</th>
               </tr>
               <td><h4 style="font-weight: 600">입금</h4></td>
                 <td>회비
@@ -114,7 +125,7 @@
                 <td>출금</td>
                 <td>권명호회원 입원</td>
                 <td>32,000</td>
-                <th>2,440,298</th>
+                <th style="text-align: end;">2,440,298</th>
                 <tr>
                     <td><h4 style="font-weight: 600">입금</h4></td>
                     <td>정기예금만기<br/>
@@ -123,7 +134,7 @@
                     <td>출금</td>
                     <td>설선물</td>
                     <td>528,000</td>
-                    <th>4,061,442</th>
+                    <th style="text-align: end;">4,061,442</th>
                 </tr>
                     <tr>
                     <td><h4 style="font-weight: 600">입금</h4></td>
@@ -134,7 +145,7 @@
                     <td>추석선물<br/>
                         (민어94,000*16명)</td>
                     <td>1,504,000</td>
-                    <th>2,557,442</th>
+                    <th style="text-align: end;">2,557,442</th>
                     </tr> 
                     <tr>
                         <td><h4 style="font-weight: 600">입금</h4></td>
@@ -145,7 +156,7 @@
                         <td>정기예금<br/>
                             (1년/4.83%/신협)</td>
                         <td>1,000,000</td>
-                        <th>1,557,442</th>
+                        <th style="text-align: end;">1,557,442</th>
                         <tr>
                             <td><h4 style="font-weight: 600">입금</h4></td>
                             <td>기타예금이자</td>
@@ -154,16 +165,16 @@
                             <td>출금</td>
                             <td>SMS이용료 등 수수료 출금</td>
                             <td>4,000</td>
-                            <th>1,553,672</th>
+                            <th style="text-align: end;">1,553,672</th>
                         </tr>
                         <tr>
                             <td><h4 style="font-weight: 600">소계</h4></td>
                             <td>입금계</td>
-                            <td style="color: blue; font-weight: 600; font-size: 18px;">3,849,414</td>
+                            <td style="color: blue; font-weight: 600; font-size: 18px; text-align: end;">3,849,414</td>
                             <td>출금계</td>
                             <td>출금계</td>
-                            <td style="color: red; font-weight: 600; font-size: 18px;">3,168,040</td>
-                            <th style="color: black; font-weight: 600; font-size: 20px;">1,553,672</th> 
+                            <td style="color: red; font-weight: 600; font-size: 18px; text-align: end;">3,168,040</td>
+                            <th style="color: black; font-weight: 600; font-size: 20px; text-align: end;">1,553,672</th> 
             </tbody>
           </table>
           <h3 style="font-weight: 600;"># 고우회 회비 현 잔액: 정기예금 1,000,000원 + 입출금 1,553,672 = <mark>2,553,672원(2022.11.18기준)</mark> </h3>
@@ -183,10 +194,10 @@
       <h3 style="font-weight: 600;"> 🎉 고우회 회비 통장 계좌번호: 신협 132-073-985735(김설호:고우회) </h3>
       <script>
         function kou_01() {
-          alert("원내 회원 10명 매월 1만원 자동이체 회비 납입")
+          alert("원내 회원 9명 및 권세혁 10명 매월 1만원 자동이체 회비 납입액")
         }
         function kou_02() {
-          alert("원외 회원: 권명호,정재영,박수영,김동석,손병욱 5명 회비 납입")
+          alert("원외 회원: 권명호,정재영,박수영,김동석,손병욱 회원 5명 회비 납입")
         }
         function kou_03() {
           alert("원금 2,000,000원 + 이자 149,144원 입금(만기 인출")
