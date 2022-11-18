@@ -68,7 +68,7 @@ function handleSumbit(event) {
       alert("전화번호 입력 후 제출해 주세요😃"); 
       h2.innerText="";
     }else if(show === null) {
-      h2.innerText = `["${value}" 선생님은 찾을수가 없네요😢. 대상 조합원이 아닙니다👌]`;
+      h2.innerText = `["${value}" 이 핸드폰 번호에 일치하는 조합원은 찾을수가 없네요😢. 대상 조합원이 아닌 것으로 파악됩니다.👌]`;
     } else {
       h2.innerText =`[${show} 선생님은 우대금리 적용 대상자 입니다]`;
     }
