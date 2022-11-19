@@ -55,6 +55,7 @@ table {
     font-family: sans-serif;
     font-size: .8rem;
     margin: 10px;
+    margin-right: 10px;
 }
 
 td {
@@ -62,6 +63,7 @@ td {
     padding: 5px 10px;
     font-size: 30px;
     text-align: center;
+    margin-right: 10px;
 }
 th {
     border: 1px solid rgb(190, 190, 190);
@@ -70,8 +72,8 @@ th {
     color: #e4f0f5;
     text-align: center;
     background-color: #3f87a6;
+    margin-right: 10px;
 }
-
 td {
     text-align: center;
 }
@@ -198,11 +200,11 @@ td {
                   <td>3,168,040</td>
                  </tfoot>
                  </table>
-          <h2 style="font-weight: 600;"># 회비 현 잔액(22.11.18기준): 정기예금 1,000,000원 + 입출금 1,553,672 = <mark>2,553,672원</mark> </h2>
+          <h2 style="font-weight: 600; margin: 10px;"># 회비 현 잔액(22.11.18기준): 정기예금 1,000,000원 + 입출금 1,553,672 = <mark>2,553,672원</mark> </h2>
       <hr>
       <span
         id="barcode"
-        style="cursor: hand"
+        style="cursor: hand; margin: 10px;"
         onclick="if(codebox.style.display==`none`)
     {codebox.style.display=``; barcode.innerText = `통장원장 닫기▲`} else {codebox.style.display = `none`; 
    barcode.innerText = `🔍통장원장 보기▼`}"
@@ -212,7 +214,7 @@ td {
         <iframe src="img/kou_2022.jpg" width="100%" height="800px"></iframe>
       </div>
       <br /><br/>
-      <h3 style="font-weight: 600;"> 🎉 고우회 회비 통장 계좌번호: 신협 132-073-985735(김설호:고우회) </h3>
+      <h3 style="font-weight: 600; margin: 10px;"> 🎉 고우회 회비 통장 계좌번호: 신협 132-073-985735(김설호:고우회) </h3>
       <script>
         function kou_01() {
           alert("원내 회원 9명 및 권세혁 10명 매월 1만원 자동이체 회비 납입액")
