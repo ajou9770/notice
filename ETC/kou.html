@@ -34,15 +34,46 @@
     color: whitesmoke;
     text-align: center;
   }
-  td {
-    font-size: 18px;
-    font-weight: 600;
-  }
-  th {
+  tfoot {
+    background-color: #3f87a6;
+    color: #fff;
+}
+
+tbody {
+    background-color: #e4f0f5;
+}
+
+caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+}
+
+td {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
     font-size: 20px;
-    font-weight: 600;
-    color: grey;
-  }
+    text-align: center;
+}
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #e4f0f5;
+    text-align: center;
+    background-color: #3f87a6;
+}
+
+td {
+    text-align: center;
+}
     </style>
   </head>
   <body>
@@ -92,93 +123,80 @@
           >
             <thead>
               <tr>
-                <th style="text-align: center;">구분</th>
-                <th style="text-align: center;">적요</th>
-                <th style="text-align: center;">입금액</th>
-                <th style="text-align: center;">구분</th>
-                <th style="text-align: center;">적요</th>
-                <th style="text-align: center;">출금액</th>
-                <th style="text-align: center;">잔액</th>
+                <th>2022년 수입 내역</th>
+                <th scope="col">입금액</th>
               </tr>
             </thead>
             <tbody>
-                <td><h4 style="font-weight: 600">입금</h4></td>
-                <td> 전기이월</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <th style="text-align: end;">872,298</th>
+                <td><h4 style="font-weight: 600">전기이월</h4></td>
+                <td> 872,298</td>
               <tr>
-                <td><h4 style="font-weight: 600">입금</h4></td>
                 <td>회비(자동이체)</td>
-                <td title="원내회원 및 권세혁 10명 월100,000원 * 11개월"
-                style="color: teal; font-weight: 600" onclick="kou_01()">1,100,000</td>
-                <td>출금</td>
-                <td>김상섭회원자녀결혼</td>
-                <td>100,000</td>
-                <th style="text-align: end;">1,872,298</th>
+                <td style="color: teal; font-weight: 600" onclick="kou_01()">1,100,000</td>
               </tr>
-              <td><h4 style="font-weight: 600">입금</h4></td>
-                <td>회비
-                    (원외회원 5명)</td>
-                <td title="권명호,정재영,박수영,김동석,손병욱 5명"
-                style="color: teal; font-weight: 600" onclick="kou_02()">600,000</td>
-                <td>출금</td>
-                <td>권명호회원 입원</td>
-                <td>32,000</td>
-                <th style="text-align: end;">2,440,298</th>
-                <tr>
-                    <td><h4 style="font-weight: 600">입금</h4></td>
-                    <td>정기예금만기<br/>
-                        +이자 149천원 포함</td>
-                    <td title=" 2018.11~2022.11 * 4년" style="color: teal; font-weight: 600" onclick="kou_03()">2,149,144</td>
-                    <td>출금</td>
-                    <td>설선물</td>
-                    <td>528,000</td>
-                    <th style="text-align: end;">4,061,442</th>
+              <tr>
+                <td>회비(원외회원 5명)</td>
+                <td style="color: teal; font-weight: 600" onclick="kou_02()">600,000</td>
                 </tr>
-                    <tr>
-                    <td><h4 style="font-weight: 600">입금</h4></td>
-                    <td>-</td>
-                    <td title=""
-                    style="color: teal; font-weight: 600">-</td>
-                    <td>출금</td>
-                    <td>추석선물<br/>
-                        (민어94,000*16명)</td>
-                    <td>1,504,000</td>
-                    <th style="text-align: end;">2,557,442</th>
-                    </tr> 
-                    <tr>
-                        <td><h4 style="font-weight: 600">입금</h4></td>
-                        <td>-</td>
-                        <td title=""
-                        style="color: teal; font-weight: 600">-</td>
-                        <td>출금</td>
-                        <td>정기예금<br/>
-                            (1년/4.83%/신협)</td>
-                        <td>1,000,000</td>
-                        <th style="text-align: end;">1,557,442</th>
+                <tr>
+                    <td>정기예금만기 + 이자 149천원 포함</td>
+                    <td style="color: teal; font-weight: 600" onclick="kou_03()">2,149,144</td>
+                </tr>
                         <tr>
-                            <td><h4 style="font-weight: 600">입금</h4></td>
                             <td>기타예금이자</td>
-                            <td title=" 요구불예금 이자"
-                            style="color: teal; font-weight: 600">230</td>
-                            <td>출금</td>
-                            <td>SMS이용료 등 수수료 출금</td>
-                            <td>4,000</td>
-                            <th style="text-align: end;">1,553,672</th>
+                            <td style="color: teal; font-weight: 600">230</td>
+                        </tr>
+                 </tbody>       
+                 <tfoot>
+                  <th>입금계</th>
+                  <td>4,721,672</td>
+                 </tfoot>
+                 </table>
+                 <table
+            id="example-table-2"
+            width="100%"
+            class="table table-bordered table-hover text-center"
+            style="none"
+          >
+            <thead>
+              <tr>
+                <th>2022년 지출 내역</th>
+                <th scope="col">출금액</th>
+              </tr>
+            </thead>
+            <tbody>
+                <td>김상섭회원 자녀결혼경조금</td>
+                <td style="color: teal; font-weight: 600">100,000</td>
+              <tr>
+                <td>권명호회원 입원 병문안</td>
+                <td style="color: teal; font-weight: 600" onclick="kou_01()">32,000</td>
+              </tr>
+              <tr>
+                <td>설선물(33,000원 * 16명)</td>
+                <td style="color: teal; font-weight: 600" onclick="kou_02()">528,000</td>
+                </tr>
+                <tr>
+                    <td>추석선물(민어굴비 94,000 * 16명)</td>
+                    <td style="color: teal; font-weight: 600" onclick="kou_03()">1,504,000</td>
+                </tr>
+                        <tr>
+                            <td>정기예탁 (1년/4.83%/신협)</td>
+                            <td style="color: teal; font-weight: 600">1,000,000</td>
                         </tr>
                         <tr>
-                            <td><h4 style="font-weight: 600">소계</h4></td>
-                            <td>입금계</td>
-                            <td style="color: blue; font-weight: 600; font-size: 18px; text-align: end;">3,849,414</td>
-                            <td>출금계</td>
-                            <td>출금계</td>
-                            <td style="color: red; font-weight: 600; font-size: 18px; text-align: end;">3,168,040</td>
-                            <th style="color: black; font-weight: 600; font-size: 20px; text-align: end;">1,553,672</th> 
-            </tbody>
-          </table>
+                          <td>SMS이용료 등 수수료</td>
+                          <td style="color: teal; font-weight: 600">4,000</td>
+                      </tr>
+                 </tbody>
+                 <tfoot style="background-color: teal;">
+                  <th>잔액(정기예금 1,000천원 + 입출금통장 1,554천원) </th>
+                  <td style="font-size: 25px;">2,553,672</td>
+                 </tfoot>       
+                 <tfoot>
+                  <th>출금계</th>
+                  <td>3,168,040</td>
+                 </tfoot>
+                 </table>
           <h3 style="font-weight: 600;"># 회비 현 잔액(22.11.18기준): 정기예금 1,000,000원 + 입출금 1,553,672 = <mark>2,553,672원</mark> </h3>
       <hr>
       <span
