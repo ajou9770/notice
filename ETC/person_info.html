@@ -4,65 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <!-- bootstrap CSS -->
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet", href="info.css">
     <title>경조비등 개인 참고사항</title>
-    <style>
-      #icon { 
-            border: none;
-            width: auto;
-            height: 30px;
-            font-size: 10px;
-            padding-left: 5px;
-            padding-right: 5px;
-            position: relative;
-            bottom: 5px;
-            left: 10px;
-            border-radius: 10px;
-            line-height: 40px;
-            text-align: left;
-            color: black;
-            font-weight: bold;    
-         }
-         #barcode {
-width:auto;
-height: 65px; 
-padding-top: 10px;
-padding-left: 10px;
-padding-right: 10px;
-border: 3px solid darkblue white; 
-margin:5px; 
-border-radius:5px;
-background-color: teal;
-color: whitesmoke;
-text-align: center;
-}
-#codebox {
-width: auto;
-text-align: center;
-align-items: center;
-flex-direction: column;
-display: inline-flexbox;
-border-radius: 10px;
-border: 3px solid teal;
-}
-a {
-    text-decoration: none;
-}
-button {
-    font-weight: 600;
-    font-size: 20px;
-    width: 150px;
-    height: 60px;
-    margin-bottom: 10px;
-    padding: 5px;
-    margin-left: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 5px;
-    border-style: none;
-}
-span {
-  margin-left: 10px;
-}
-    </style>
 </head>
 <body>
   <!-- 숨기기 프레임 
@@ -72,21 +25,138 @@ span {
     <div id="codebox" style="display: none">
         <iframe src="https://drive.google.com/file/d/1T-BcY3efnVL32Yg8fcyxAKlqasSuZ3dB/preview" 
         width="680" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
-    </div> -->    
-    
-<div style="display: flex; flex-direction: column;">
+    </div> -->
+    <div id="passinput">
+      <p style="font-size: 20px; font-weight: 600; color: gray">
+         # password 입력
+        <input id="info" type="password" placeholder="" />
+        <button
+          id="submit"
+          type="submit"
+          style="font-size: 15px"
+          onclick="submitClick()"
+        >
+          Login
+        </button>
+      </p>
+    </div>
+
+    <div id="paytable">
+        <br />
+        <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
+          <option value="0" selected="selected">🔎찾고자 하는 정보를 선택하세요~~</option>
+          <option value="1"># 어머니 경조금 내역</option>
+          <option value="2"># 의료원경조휴가&경조금 기준</option>
+          <option value="3"># 고우회 경조금 지급기준</option>
+        </select>
+        </div> 
+        <hr />
+
+<div style="display: none; flex-direction: column;" id="info_box">
+<div id="info_mompay">    
 <h3># 어머니 경조비 수령 내역 </h3>
 <iframe src="https://drive.google.com/file/d/1gE3gAxCIBvV9UIlga9BUaaJuKb-4iJ2E/preview" 
-    width="auto" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    width="98%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
+</div>
+<div id="info_payguide">
 <h3>#의료원 경조휴가&경조금 지급기준(2022.11기준)</h3>
 <iframe src="https://drive.google.com/file/d/1OWJZehOZV3QJRt0wFRb22-Bep_I6b_K9/preview" 
-    width="auto" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    width="98%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
+</div>
+<div id="info_koupay">
 <h3># 고우회 경조비 지급기준 </h3>
 <iframe src="https://drive.google.com/file/d/1zh0XSS3lfi4HKTtv6jZmCX1s_VLoimeh/preview" 
-    width="auto" height="250" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    width="98%" height="250" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
+</div>
 <a href="http://ajou9770.github.io/usertip/post.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🚛 실시간 배송 조회 </a>
+</div>
+<script>
+  const inputValue = document.getElementById("info");
+
+  function submitClick() {
+    console.log("done");
+    var actualPw = "1";
+    var inputPw = inputValue.value;
+
+    if (inputPw == actualPw) {
+      alert("어서 오세요~~");
+      document.getElementById("paytable").style.display = "block";
+      document.getElementById("passinput").style.display = "none";
+      document.getElementById("info_box").style.display = "block";
+    }
+    /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
+
+    /*if (inputPw == actualPw) 
+    if (month_Ten) {
+      alert ("password가 일치합니다");
+      do.getElementById("month_ten").style.display = "block";
+      document.getElementById("barcode").style.display = "block";
+      document.getElementById("loancode").style.display = "block";
+      document.getElementById("passinput").style.display = "none";
+    }*/
+    if (inputPw !== actualPw) {
+      alert("password가 다르거나 입력되지 않았습니다");
+    }
+  }
+</script>
+
+<script>
+    function changeLangSelect() {
+      console.log("done");
+      var langSelect = document.getElementById("selectbox");
+      var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+      if (selectValue == "1") {
+        document.getElementById("info_mompay").style.display = "block";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+
+      }
+      if (selectValue == "2") {
+        console.log("10월 선택")
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "block";
+        document.getElementById("info_koupay").style.display = "none";
+      }
+      if (selectValue == "3") {
+        console.log("11월 선택")
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "block";
+      }
+      if (selectValue == "0") {
+        alert("  선택하세요 ");
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+    }
+    /*  if (selectValue == "12") {
+        document.getElementById("month-nine").style.display = "none";
+        document.getElementById("month-ten").style.display = "none";
+        document.getElementById("month-11").style.display = "none";
+        document.getElementById("print&email").style.display = "block";
+        alert(
+          "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
+        );
+      }
+    }*/
+  }
+  </script>
+  <!--<script>
+    /*아래, 우측마우스 클릭 잠금 */
+    document.addEventListener("contextmenu", (event) =>
+      event.preventDefault()
+    );
+    document.addEventListener(`contextmenu`, (event) =>
+      alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
+    );
+    function print_current_page() {
+      document.getElementById("print&email").style.display = "none";
+      window.print();
+    }
+  </script>-->
 </body>
 </html>
