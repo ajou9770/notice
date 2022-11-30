@@ -57,26 +57,28 @@
     </style>
   </head>
   <body>
+    <h1 style="text-align: center;">| 2022년 조합원 이용고 배당 안내 |</h1>
     <div id="passinput">
     <p>    
-         ⚠ password
-        <input id="info" type="password" style="ime-mode:active;" placeholder="" />
+        <span style="font-size: x-large; font-weight: 600; color: #5f5454;">password: </span>
+        <input id="info" type="password" style="ime-mode:active;" placeholder="" required/>
         <button
           id="submit"
           type="submit"
-          style="font-size: 15px"
+          style="font-size: large; font-weight: 600; padding: 3px; color: #5f5454;"
           onclick="submitClick()"
         >
           ✔Login
         </button>
         </p>
-        </div>
+        </div> 
         <div id="myTablebox">
-    <h2 style="text-align: center;">| 조합원 이용고 배당 안내 |</h2>
     <h3>  🔎 조합원 성명, 핸드폰번호 또는 사번으로 조회 하세요.</h3>
-    <span>※ 일부만 입력해도 조회 할 수 있습니다.</span><hr>
+    <span style="font-weight: 600;">※ 일부만 입력해도 조회 할 수 있습니다.</span><hr>
         <input id="myInput" type="text" ime-mode="active;">
         <br>
+        <h3> 🤷‍♂️ 2022년 이용고배당은 2023년 2월 총회 배당율 확정후 지급 됩니다.    
+        </h3>
         <h3 style="text-align: right; color: #706464;">(단위:원)</h3> 
         <table>
             <thead>
@@ -110,15 +112,15 @@
                 </tbody>
             </thead>
         </table>
-     <h3> 🤷‍♂️ 2022년 이용고배당은 2월 총회 배당율 확정후 지급 됩니다.    
-     </h3>
     </div>
+    <h2 style="text-align: center;">아주대학교의료원신용협동조합
+    </h2>
     <script>
         const inputValue = document.getElementById("info");
   
         function submitClick() {
           console.log("done");
-          var actualPw = "1";
+          var actualPw = "1111";
           var inputPw = inputValue.value;
   
           if (inputPw == actualPw) {
@@ -139,7 +141,7 @@
             document.getElementById("passinput").style.display = "none";
           }*/
           if (inputPw !== actualPw) {
-            alert("password가 다르거나 입력되지 않았습니다");
+            alert(inputValue.value +` 로 입력 되었네요. 패스워드 확인후 입력 바랍니다`);
           }
         }
       </script>
