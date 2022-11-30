@@ -20,7 +20,7 @@
     <style>
         table {
             font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
+            border-collapse:collapse;
             width: 100%;
         }
         td {
@@ -36,6 +36,14 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        #myInput {
+            background-color: #f4f8f8;
+            height: 40px;
+            width: 150px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: large;
+        }
     </style>
   </head>
   <body>
@@ -43,31 +51,35 @@
     <p>  조합원 성명, 핸드폰번호 또는 사번으로 조회 하세요.</p>
         <input id="myInput" type="text" placeholder="search..">
         <br><br>
-
+        <h3 style="text-align: right; color: #706464;">(단위:원)</h3> 
         <table>
             <thead>
                 <tr>
                     <th>성명</th>
                     <th>핸드폰번호</th>
                     <th>사원번호</th>
+                    <th>이용고배당</th>
                 </tr>
                 </thead>
                 <tbody id="myTable">
-                    <tr><td>김준호</td><td>01012345678</td><td>114512</td></tr>
+                    <tr><td>김준호</td><td>01012345678</td><td>114512</td><td style="text-align:right">125,000</td></tr>
                     <tr>
                         <td>김설호</td>
                         <td>01071186639</td>
                         <td>800431</td>
+                        <td style="text-align:right">1,125,000</td>
                     </tr>
                     <tr>
                         <td>허민수</td>
                         <td>01045612536</td>
                         <td>101456</td>
+                        <td style="text-align:right">453,000</td>
                     </tr>
                     <tr>
                         <td>김범준</td>
                         <td>01022223333</td>
                         <td>111222</td>
+                        <td style="text-align:right">225,000</td>
                     </tr>
                 </tbody>
             </thead>
