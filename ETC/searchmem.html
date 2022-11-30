@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      var jq =  $.noConflict();  // 이것을 앞에 정의하면, 아니면 변수(jq)를 만들어 쓸수 있음
+      jq(document).ready(function () { 
+        jq("#myInput").on("keyup", function () {
+            var value = jq(this).val().toLowerCase();
+            jq("#myTable tr").filter(function() {
+            jq(this).toggle(jq(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });   
+    </script>
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+        th {
+            border: 2px double #dddddd;
+            text-align: center;
+            padding: 10px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+  </head>
+  <body>
+    <h2> 조합원 현황</h2>
+    <p>  조합원 성명, 핸드폰번호 또는 사번으로 조회 하세요.</p>
+        <input id="myInput" type="text" placeholder="search..">
+        <br><br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>성명</th>
+                    <th>핸드폰번호</th>
+                    <th>사원번호</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr><td>김준호</td><td>01012345678</td><td>114512</td></tr>
+                    <tr>
+                        <td>김설호</td>
+                        <td>01071186639</td>
+                        <td>800431</td>
+                    </tr>
+                    <tr>
+                        <td>허민수</td>
+                        <td>01045612536</td>
+                        <td>101456</td>
+                    </tr>
+                    <tr>
+                        <td>김범준</td>
+                        <td>01022223333</td>
+                        <td>111222</td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+     <p> Note that we start the search in tbody, to prevent filtering the table headers   
+    </p>
+  </body>
+</html>
+
+</head>
+<body>
+    
+</body>
+</html>
