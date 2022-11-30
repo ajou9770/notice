@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="korea">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,9 @@
     });   
     </script>
     <style>
+        #myTablebox {
+            display: none;
+        }
         table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse:collapse;
@@ -39,18 +42,40 @@
         #myInput {
             background-color: #f4f8f8;
             height: 40px;
-            width: 150px;
+            width: 200px;
             border-radius: 5px;
             padding: 5px;
             font-size: large;
         }
+        #info {
+            height: 30px;
+            width: 100px;
+        }
+        body {
+            padding: 10px;
+        }
     </style>
   </head>
   <body>
-    <h2> 조합원 현황</h2>
-    <p>  조합원 성명, 핸드폰번호 또는 사번으로 조회 하세요.</p>
-        <input id="myInput" type="text" placeholder="search..">
-        <br><br>
+    <div id="passinput">
+    <p>    
+         ⚠ password
+        <input id="info" type="password" value="seek" style="ime-mode:active;" placeholder="" />
+        <button
+          id="submit"
+          type="submit"
+          style="font-size: 15px"
+          onclick="submitClick()"
+        >
+          ✔Login
+        </button>
+        </p>
+        </div>
+        <div id="myTablebox">
+    <h2 style="text-align: center;"> 조합원 이용고 배당 안내</h2>
+    <h3>  🔎 조합원 성명, 핸드폰번호 또는 사번으로 조회 하세요.</h3>
+        <input id="myInput" type="text" ime-mode="active;">
+        <br>
         <h3 style="text-align: right; color: #706464;">(단위:원)</h3> 
         <table>
             <thead>
@@ -84,13 +109,51 @@
                 </tbody>
             </thead>
         </table>
-     <p> Note that we start the search in tbody, to prevent filtering the table headers   
-    </p>
+     <h3> 🤷‍♂️ 2022년 이용고배당은 2월 총회 배당율 확정후 지급 됩니다.    
+     </h3>
+    </div>
+    <script>
+        const inputValue = document.getElementById("info");
+  
+        function submitClick() {
+          console.log("done");
+          var actualPw = "1";
+          var inputPw = inputValue.value;
+  
+          if (inputPw == actualPw) {
+            if(window.confirm("⚠ 업무외 또는 불법으로 활용할 경우 '개인정보법'위반으로 처벌 받을 수 있습니다.  진행 하시겠습니까?")){
+            document.getElementById("myTablebox").style.display = "block";
+            document.getElementById("passinput").style.display = "none";    
+            } else {
+                alert("접속이 취소 되었습니다")
+            }  
+        }  
+          
+          /*if (inputPw == actualPw)
+          if (month_Ten) {
+            alert ("password가 일치합니다");
+            do.getElementById("month_ten").style.display = "block";
+            document.getElementById("barcode").style.display = "block";
+            document.getElementById("loancode").style.display = "block";
+            document.getElementById("passinput").style.display = "none";
+          }*/
+          if (inputPw !== actualPw) {
+            alert("password가 다르거나 입력되지 않았습니다");
+          }
+        }
+      </script>
+      <script>
+        /*아래, 우측마우스 클릭 잠금 */
+        document.addEventListener("contextmenu", (event) =>
+          event.preventDefault()
+        );
+        document.addEventListener(`contextmenu`, (event) =>
+          alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
+        );
+        function print_current_page() {
+          document.getElementById("print&email").style.display = "none";
+          window.print();
+        }
+      </script>
   </body>
-</html>
-
-</head>
-<body>
-    
-</body>
 </html>
