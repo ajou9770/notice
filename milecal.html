@@ -82,7 +82,7 @@ body {
   height: auto;
   width: auto;
   border-width: 4px 2px;
-  border-color: teal wheat;
+  border-color: whitesmoke;
   border-style: solid;
   text-align: left;
   color:chocolate;
@@ -99,7 +99,7 @@ body {
   height: auto;
   width: auto;
   border-width: 4px 2px;
-  border-color: teal wheat;
+  border-color: whitesmoke;
   border-style: solid;
   text-align: left;
   color:tomato;
@@ -366,6 +366,7 @@ h4:active {
         create(`5.자동(납부)이체 이용 배당 약 ${(Math.round(calFive / 10) * 10).toLocaleString("ko-KR")}원`);
         create(`6.신협공제(보험) 이용 배당 약 ${(Math.round(calSix / 10) * 10).toLocaleString("ko-KR")}원`);
         h4.classList.remove("none");
+        window.scrollTo({ top: 1000, behavior: "smooth" });
       }
       function showDetail() {
         if (aside.detail === false) {
