@@ -62,15 +62,15 @@ button:active {
  </style>
 </head>
 <body>
-    <img src="img/camp_221014.jpg">
-    <h3 style="text-align: center;">[2022년 3차 신협 사회공헌캠페인]</h3>
+    <img src="img/camp_221216.jpg" style="border-radius: 10px;">
+    <h3 style="text-align: center;">[2022년 4차 신협 사회공헌캠페인]</h3>
     <span class>
             
         헌혈로 사랑을 실천하실 수 있습니다 
         의료원노동조합 헌혈데이 사랑나눔 헌혈캠페인에 동참해 주세요.<br/><br/>
                 
-        <b><mark class="time"></a>✔️ 일시: 2022.10.14(금) 09:30~16:30(점심시간: 11시~12시) </mark><br/>
-        🚩 장소: 치과병원 앞 헌혈버스<br/> 
+        <b><mark class="time"></a>✔️ 일시: 2022.12.16(금) 09:30~16:30(점심시간: 11시~12시) </mark><br/>
+        🚩 장소: 치과병원 앞 헌혈버스(2대 예정)<br/> 
         📢 코로나확진시 격리해제일로부터 10일 경과되면 헌혈가능합니다. <br/>
         📢 헌혈당일 아침식사는 든든하게 하시고 좋은 컨디션을 유지하세요.<br/>
         🎁 헌혈에 동참하신 조합원에게 기념품(현장) 및 "모바일 ☕스벅커피교환권"을 드립니다.
@@ -83,7 +83,7 @@ button:active {
         <button onclick="qus()" class="qus">
         📑전자문진 바로가기<i class="fas fa-chevron-right fa-lg"></i> 
         </button><br/><hr>
-        <button  onclick="coupon()" class="qus">
+        <button  onclick="coupon()" class="qus" style="background-color: tomato; color: whitesmoke;">
             🎫(헌혈 후)모바일 커피쿠폰 신청 하기<i class="fas fa-chevron-right fa-lg"></i> 
             </button>
         </div>
@@ -104,8 +104,8 @@ button:active {
     </script>
     <script>
         function coupon() {
-            if(window.confirm("⚠️헌혈참가 하셨나요? 커피 쿠폰 신청 하시겠습니까?")){
-            document.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSecTG3pE60dX1yX0m9JhA9Xq9dWCQWfcwcVDgz_GG_lFirtUg/viewform?usp=sf_link"
+            if(window.confirm("⚠️헌혈에 성공 하셨나요?  감사쿠폰을 신청 하시겠습니까?")){
+            document.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?usp=sf_link"
             } else {
             console.log("신청취소")
         }
@@ -113,7 +113,7 @@ button:active {
     </script>
     <script>
         function Confirm() {
-            if (window.confirm("⚠ 업무시간은 평일 8:30~17:00까지 입니다.  전화 연결 하시겠습니까?")) {
+            if (window.confirm("⚠ 업무시간은 평일 8:30~17:00까지 입니다.  전화앱으로 이동 하시겠습니까?")) {
             document.location.href = "tel:031-219-6052" 
         } else {
             console.log("cancel")
