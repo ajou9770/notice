@@ -283,6 +283,7 @@ function cal(event) {
         : (Math.floor(calculate / 10) * 10).toLocaleString("ko-KR")
     }원 입니다.`);
   }
+  window.scrollTo({ top: 1000, behavior: "smooth" });
 }
 calForm.addEventListener("submit", cal);
 </script>
