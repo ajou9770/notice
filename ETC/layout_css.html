@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Lay out</title>
+    <style>
+     #head {
+        background-color: aliceblue;
+        text-align: center;
+        padding: 10px;
+     }
+     .topnav {
+        overflow: hidden;
+        background-color: rgb(148, 171, 185);
+        display: block;
+        border-radius: 5px;
+     }
+     .topnav a {
+        float: left;
+        font-weight: 600;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+     }
+     .topnav a:hover {
+        background-color: #ddd;
+        color:black;
+     }
+     .column {
+        float: left;
+        width: 100%;
+        padding: 15px;
+        margin: 10px;
+     }
+     .row {
+        content: "";
+        display: table;
+        clear: both;
+     }
+
+     @media screen and (max-width:600px) {
+        .colum {
+            width: 98%;
+        }
+     }
+     .footer {
+        background-color: #f1f1f1;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+     }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <h2> This is head</h2>
+    </div>
+    <div class="topnav">
+        <a href="#">아주대의료원신협소개</a>
+        <a href="#">영업시간및 위치</a>
+        <a href="#">인터넷/모바일 뱅킹</a>
+        <a href="#">신협특판몰</a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2> Column </h2>
+            <p>Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+            </p>
+        </div>
+
+        <div class="column">
+            <h2> Column </h2>
+            <p>Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+            </p>
+        </div>
+
+        <div class="column">
+            <h2> Column </h2>
+            <p>Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+                Move the mouse over the text below to open the dropdown content.
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        Footer
+    </div>
+
+</body>
+</html>
