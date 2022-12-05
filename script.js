@@ -3132,7 +3132,47 @@ localStorage.setItem("114908", "27963926");
 localStorage.setItem("107605", "28007487");
 localStorage.setItem("113449", "28047742");
 localStorage.setItem("115098", "27994589");
-// 2022년 10월 가입조합원 업데이타 (22.11.1)
+localStorage.setItem("114495", "28198061");
+localStorage.setItem("115050", "28415781");
+localStorage.setItem("110406", "28217633");
+localStorage.setItem("114002", "28217566");
+localStorage.setItem("114991", "28177974");
+localStorage.setItem("115102", "28281818");
+localStorage.setItem("500146", "28205304");
+localStorage.setItem("705006", "28212866");
+localStorage.setItem("110306", "28219766");
+localStorage.setItem("114267", "28204894");
+localStorage.setItem("110771", "28219645");
+localStorage.setItem("703593", "28198936");
+localStorage.setItem("110696", "22101250");
+localStorage.setItem("114706", "28217759");
+localStorage.setItem("115107", "28421247");
+localStorage.setItem("114901", "28271225");
+localStorage.setItem("114726", "28307395");
+localStorage.setItem("101472", "28371122");
+localStorage.setItem("113431", "28304020");
+localStorage.setItem("115016", "28311225");
+localStorage.setItem("701253", "25834037");
+localStorage.setItem("110229", "28216151");
+localStorage.setItem("110385", "21237374");
+localStorage.setItem("501120", "28215034");
+localStorage.setItem("113201", "28211938");
+localStorage.setItem("115079", "28271243");
+localStorage.setItem("114357", "28206247");
+localStorage.setItem("114698", "28201223");
+localStorage.setItem("113738", "28176640");
+localStorage.setItem("115117", "28301198");
+localStorage.setItem("108253", "28220604");
+localStorage.setItem("114179", "28241895");
+localStorage.setItem("115095", "28201256");
+localStorage.setItem("113053", "28212411");
+localStorage.setItem("112113", "24582567");
+localStorage.setItem("114254", "28200756");
+localStorage.setItem("114866", "28421947");
+localStorage.setItem("114073", "28216320");
+localStorage.setItem("114884", "28197593");
+localStorage.setItem("112221", "28203626");
+// 2022년 11월 가입조합원 업데이타 (22.12.5)
 
 function handleSumbit(event) {
   event.preventDefault(); 
