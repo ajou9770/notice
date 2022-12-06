@@ -95,5 +95,15 @@
         Footer
     </div>
 
+    <button id="btn" onclick="changeNum()">Number change</button>
+
+    <script>
+    const date = new Date(Date.UTC(2022, 12, 6, 3, 23, 16, 738));
+// Results below assume UTC timezone - your results may vary
+    const newdate = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'full', timeStyle: 'long'}).format(date)
+    console.log(newdate);
+// Expected output "Sunday, 20 December 2020 at 14:23:16 GMT+11"
+    </script>
+
 </body>
 </html>
