@@ -91,7 +91,7 @@
       document.getElementById("paytable").style.display = "block";
       document.getElementById("passinput").style.display = "none";
       document.getElementById("info_box").style.display = "block";
-      document.getElementById("pay_send").style.display = "none";
+      document.getElementById("info_paysend").style.display = "none";
     }
     /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
 
@@ -119,6 +119,7 @@
         document.getElementById("info_mompay").style.display = "block";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
 
       }
       if (selectValue == "2") {
@@ -126,12 +127,13 @@
         document.getElementById("info_mompay").style.display = "none";
         document.getElementById("info_payguide").style.display = "block";
         document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
       }
       if (selectValue == "3") {
-        console.log("11월 선택")
         document.getElementById("info_mompay").style.display = "none";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "block";
+        document.getElementById("info_paysend").style.display = "none";
       }
       if (selectValue == "4") {
         document.getElementById("info_mompay").style.display = "none";
@@ -144,7 +146,7 @@
         document.getElementById("info_mompay").style.display = "none";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "none";
-        document.getElementById("info_send").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
     }
     /*  if (selectValue == "12") {
         document.getElementById("month-nine").style.display = "none";
