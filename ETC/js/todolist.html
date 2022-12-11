@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Todo List</title>
+    <style>
+      body {
+        margin-left: 10px;
+      }
+      button {
+        margin-left: 10px;
+      }
+    </style>
   </head>
   <body>
+    <body class="w3-contanier">
     <h3>✔To do List!!</h3>
     <form id="todo-form">
-      <input type="text" placeholder="write here todo list" />
+      <input class="w3-input "type="text" placeholder="write here todo list" style="width:60%; height: auto; padding: 15px;"/>
     </form>
-    <ul id="todo-list"></ul>
+    <hr>
+    <ul class="w3-ul" id="todo-list"></ul>
     <script src="todo.js"></script>
   </body>
 </html>
