@@ -11,8 +11,10 @@ function saveToDos() {
 
 function deleteToDo(event) {
   const li = event.target.parentElement; // parentElement 는 이벤트 요소의 부모 요소임.
-  console.log(li.id);
+  console.log(typeof li.id);
   li.remove(); // 요소의 부모  element를 삭제함. 
+  toDos  = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -21,7 +23,7 @@ function paintToDo(newTodo) {
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   const button = document.createElement("button");
-  button.innerText = "   ✂";
+  button.innerText = "   ❌";
   button.addEventListener("click", deleteToDo);
   li.appendChild(span); // li 는 span 을 가진다 ( span  는 li에 속한다)
   li.appendChild(button);
