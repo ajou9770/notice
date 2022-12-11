@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <title>W3 Javascript </title>
+<style>
+    div, button {
+     border-radius: 10px; 
+     margin-bottom: 15px;
+     margin-top: 15px; 
+     margin-right: 10px; 
+    }
+    div:hover {
+      transform: scale(0.97);
+    }
+    button:hover {
+      transform: scale(0.98);
+    }  
+</style>
+</head>
+<body class="w3-container w3-auto">
+   <button onclick="w3.hide('#div_one, #btn_Hide')" class="w3-button w3-blue" id="btn_Hide">div-1숨기기</button>
+   <button onclick="w3.show('#div_one, #btn_Hide')" class="w3-button w3-red" id="btn_Show">div-1보이기</button>   
+<hr style="border: 2px dashed red;">
+   <div id="div_one" class="w3-container w3-yellow">
+    <h3>this dis Div-one content</h3>
+    <p>이것은 div_one 내용입니다. </p>
+   </div>
+   <div id="div_two" class="w3-container w3-green">
+    <h3>this dis Div-two content</h3>
+    <p>이것은 div_two 내용입니다. </p>
+   </div>
+   </body>
+</html>
