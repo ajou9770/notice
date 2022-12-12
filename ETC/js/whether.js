@@ -157,7 +157,7 @@ function PositionSelect() {
                function onGeoError() {
                  alert("Can't your positin and whether infomation");
                }
-          }
+          }   
           if (selectValue == "4") {
             console.log("문경시 선택");
             document.getElementById("here").style.display = "none";
