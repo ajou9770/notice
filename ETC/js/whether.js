@@ -9,7 +9,7 @@ function onGeoOk (position) {
     //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
     const lat = position.coords.latitude; // 위도  위치를 가져오다. 
     const lon = position.coords.longitude;
-    console.log("You are live in ", lat, lon);
+    console.log("You are search for ", lat, lon);
     const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     console.log(url);
     fetch(url)
@@ -60,7 +60,7 @@ function PositionSelect() {
             //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
             const lat = 37.19972; // 위도  위치를 가져오다. 
             const lon = 126.83139;
-            console.log("You are live in ", lat, lon);
+            console.log("You are search for ", lat, lon);
             const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
             console.log(url);
             fetch(url)
@@ -97,7 +97,7 @@ function PositionSelect() {
             //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
             const lat = 37.26389; // 위도  위치를 가져오다. 
             const lon = 127.02861;
-            console.log("You are live in ", lat, lon);
+            console.log("You are search for ", lat, lon);
             const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
             console.log(url);
             fetch(url)
@@ -134,7 +134,7 @@ function PositionSelect() {
                 //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
                 const lat = 37.56667; // 위도  위치를 가져오다. 
                 const lon = 126.97806;
-                console.log("You are live in ", lat, lon);
+                console.log("You are search for ", lat, lon);
                 const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                 console.log(url);
                 fetch(url)
@@ -170,7 +170,7 @@ function PositionSelect() {
                 //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
                 const lat = 36.58611; // 위도  위치를 가져오다. 
                 const lon = 128.18611;
-                console.log("You are live in ", lat, lon);
+                console.log("You are search for ", lat, lon);
                 const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                 console.log(url);
                 fetch(url)
