@@ -67,17 +67,23 @@ function PositionSelect() {
                .then((response) => response.json())
                .then((data) => {
                 const weather = document.querySelector("#weather_state");
-                const city = document.querySelector("#city");
-                const wind = document.querySelector("#wind");
-                const state = document.querySelector("#state");
-                const feel_weather = document.querySelector("#feel_like");
-                const name = data.name;
-                
-                weather.innerText = data.main.temp;
-                wind.innerText = data.wind.speed;
-                state.innerText = data.weather[0].main;
-                city.innerText = name;
-                feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
             });
           }
            function onGeoError() {
@@ -104,17 +110,23 @@ function PositionSelect() {
                .then((response) => response.json())
                .then((data) => {
                 const weather = document.querySelector("#weather_state");
-                const city = document.querySelector("#city");
-                const wind = document.querySelector("#wind");
-                const state = document.querySelector("#state");
-                const feel_weather = document.querySelector("#feel_like");
-                const name = data.name;
-                
-                weather.innerText = data.main.temp;
-                wind.innerText = data.wind.speed;
-                state.innerText = data.weather[0].main;
-                city.innerText = name;
-                feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
             });
          }
            function onGeoError() {
@@ -141,17 +153,23 @@ function PositionSelect() {
                    .then((response) => response.json())
                    .then((data) => {
                     const weather = document.querySelector("#weather_state");
-                    const city = document.querySelector("#city");
-                    const wind = document.querySelector("#wind");
-                    const state = document.querySelector("#state");
-                    const feel_weather = document.querySelector("#feel_like");
-                    const name = data.name;
-                    
-                    weather.innerText = data.main.temp;
-                    wind.innerText = data.wind.speed;
-                    state.innerText = data.weather[0].main;
-                    city.innerText = name;
-                    feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
                 });
              }
                function onGeoError() {
@@ -177,17 +195,23 @@ function PositionSelect() {
                    .then((response) => response.json())
                    .then((data) => {
                     const weather = document.querySelector("#weather_state");
-                    const city = document.querySelector("#city");
-                    const wind = document.querySelector("#wind");
-                    const state = document.querySelector("#state");
-                    const feel_weather = document.querySelector("#feel_like");
-                    const name = data.name;
-                    
-                    weather.innerText = data.main.temp;
-                    wind.innerText = data.wind.speed;
-                    state.innerText = data.weather[0].main;
-                    city.innerText = name;
-                    feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
                 });
              }
                function onGeoError() {
@@ -213,17 +237,23 @@ function PositionSelect() {
                        .then((response) => response.json())
                        .then((data) => {
                         const weather = document.querySelector("#weather_state");
-                        const city = document.querySelector("#city");
-                        const wind = document.querySelector("#wind");
-                        const state = document.querySelector("#state");
-                        const feel_weather = document.querySelector("#feel_like");
-                        const name = data.name;
-                        
-                        weather.innerText = data.main.temp;
-                        wind.innerText = data.wind.speed;
-                        state.innerText = data.weather[0].main;
-                        city.innerText = name;
-                        feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
                     });
                  }
                    function onGeoError() {
@@ -249,17 +279,23 @@ function PositionSelect() {
                            .then((response) => response.json())
                            .then((data) => {
                             const weather = document.querySelector("#weather_state");
-                            const city = document.querySelector("#city");
-                            const wind = document.querySelector("#wind");
-                            const state = document.querySelector("#state");
-                            const feel_weather = document.querySelector("#feel_like");
-                            const name = data.name;
-                            
-                            weather.innerText = data.main.temp;
-                            wind.innerText = data.wind.speed;
-                            state.innerText = data.weather[0].main;
-                            city.innerText = name;
-                            feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
                         });
                      }
                        function onGeoError() {
@@ -285,17 +321,23 @@ function PositionSelect() {
                                .then((response) => response.json())
                                .then((data) => {
                                 const weather = document.querySelector("#weather_state");
-                                const city = document.querySelector("#city");
-                                const wind = document.querySelector("#wind");
-                                const state = document.querySelector("#state");
-                                const feel_weather = document.querySelector("#feel_like");
-                                const name = data.name;
-                                
-                                weather.innerText = data.main.temp;
-                                wind.innerText = data.wind.speed;
-                                state.innerText = data.weather[0].main;
-                                city.innerText = name;
-                                feel_weather.innerText = data.main.feels_like;
+        const feel_weather = document.querySelector("#feel_like");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
+        const wind = document.querySelector("#wind");
+        const state = document.querySelector("#state");
+        const state_Today = document.querySelector("#state_today");
+        const city = document.querySelector("#city");        
+        const name = data.name;
+        
+        weather.innerText = data.main.temp;
+        feel_weather.innerText = data.main.feels_like;
+        temp_Min.innerText = data.main.temp_min;
+        temp_Max.innerText = data.main.temp_max;
+        wind.innerText = data.wind.speed;
+        state.innerText = data.weather[0].main;
+        state_Today.innerText = data.weather[0].description;
+        city.innerText = name;
                             });
                          }
                            function onGeoError() {
