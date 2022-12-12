@@ -11,6 +11,8 @@
             font-size: 17px;
             font-weight: 600;
             padding: 10px;
+            display: block;
+            margin: auto;
         }
         span {
             font-size: large;
@@ -44,6 +46,7 @@
             background-color: antiquewhite;
             border-radius: 10px;
             font-weight: 600;
+            text-align: center;
         }
         #selectbox {
             border-radius: 5px;
@@ -58,9 +61,11 @@
     </style>
 </head>
 <body>
-    <body class="w3-contanier">
-    <h3 class="w3-button w3-teal"> 🌦 실시간 날씨 정보 가져오기  </h3>
-        <hr>
+    <body class="w3-contanier" style="margin: auto;">
+        <div style="text-align: center;">
+    <h4 class="w3-button w3-teal"> 🌦 실시간 날씨 정보 가져오기  </h4> 
+    </div>
+    <hr>
         <select id="selectbox" name="selectbox" onchange="PositionSelect()" class="w3-select w3-green" >
             <option value="0" selected="selected">🔎어느곳의 날씨가 궁금하세요?</option>
             <option value="1">🏡화성시(우리집주변)</option>
@@ -74,10 +79,14 @@
           <hr>
           <div id="here" class="w3-contanier">
           <h4>⛳현재는 지금 계신 곳을 날씨 정보입니다. </h4>
+          <br>
            </div>
         ☸ 현재온도:<span id="weather_state"> </span> ℃<br>
         🌡 현재체감온도:<span id="feel_like"> </span> ℃<br>
-        🌈 날씨: <span id="state"> </span><br>
+        🌡 최저온도:<span id="temp_min"> </span> ℃(⚠️업데이타중)<br>
+        🌡 최고온도:<span id="temp_max"> </span> ℃(⚠️업데이타중)<br>
+        🌈 현재 날씨: <span id="state"> </span><br>
+        🌈 오늘 날씨: <span id="state_today"> </span>(⚠️업데이타중)<br>
         🏴‍☠️ 바람: <span id="wind"> </span> s/m<br>
         ⛳ 위치: <span id="city"> </span><br>
         <hr>

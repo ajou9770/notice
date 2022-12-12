@@ -20,11 +20,17 @@ function onGeoOk (position) {
         const wind = document.querySelector("#wind");
         const state = document.querySelector("#state");
         const feel_weather = document.querySelector("#feel_like");
+        const state_Today = document.querySelector("#state_today");
+        const temp_Min = document.querySelector("#temp_min");
+        const temp_Max = document.querySelector("#temp_max");
         const name = data.name;
         
         weather.innerText = data.main.temp;
+        temp_Min.innerText = "15.6";
+        temp_Max.innerText = data.main.temp.temp_max;
         wind.innerText = data.wind.speed;
         state.innerText = data.weather[0].main;
+        state_Today.innerText = data.description[0];
         city.innerText = name;
         feel_weather.innerText = data.main.feels_like;
     });
