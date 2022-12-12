@@ -193,12 +193,47 @@ function PositionSelect() {
                function onGeoError() {
                  alert("Can't your positin and whether infomation");
                }
+            } 
+               if (selectValue == "5") {
+                console.log("이천시 선택");
+                document.getElementById("here").style.display = "none";
+                function onGeoOk (position) {
+                    //const lat = position.coords.latitude; // 위도  (해당되는 도시의 위도를 선택)
+                    //const lon = position.coords.longitude; // 경도 (해당되는 도사의 경도를 선택)
+                    //const lat_Value = document.querySelector("#lat.value");
+                    //const lon_Value = document.querySelector("#lon.value");
+                    //const lat = document.querySelector("#lat.value"); // 위도  위치를 가져오다. 
+                    //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
+                    const lat = 37.27222; // 위도  위치를 가져오다. 
+                    const lon = 127.43500;
+                    console.log("You are search for ", lat, lon);
+                    const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+                    console.log(url);
+                    fetch(url)
+                       .then((response) => response.json())
+                       .then((data) => {
+                        const weather = document.querySelector("#weather_state");
+                        const city = document.querySelector("#city");
+                        const wind = document.querySelector("#wind");
+                        const state = document.querySelector("#state");
+                        const feel_weather = document.querySelector("#feel_like");
+                        const name = data.name;
+                        
+                        weather.innerText = data.main.temp;
+                        wind.innerText = data.wind.speed;
+                        state.innerText = data.weather[0].main;
+                        city.innerText = name;
+                        feel_weather.innerText = data.main.feels_like;
+                    });
+                 }
+                   function onGeoError() {
+                     alert("Can't your positin and whether infomation");
+                   }   
           } // 여기까지 복사     
   
        navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-
     }
-
+    
 /*function onGeoOk (position) {
     //const lat = position.coords.latitude; // 위도  (해당되는 도시의 위도를 선택)
     //const lon = position.coords.longitude; // 경도 (해당되는 도사의 경도를 선택)
