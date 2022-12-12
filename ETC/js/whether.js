@@ -31,7 +31,7 @@ function onGeoOk (position) {
         temp_Max.innerText = data.main.temp_max;
         wind.innerText = data.wind.speed;
         state.innerText = data.weather[0].main;
-        state_Today.innerText = data.weather[2].description;
+        state_Today.innerText = data.weather[0].description;
         city.innerText = name;    
     });
  }
