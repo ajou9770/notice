@@ -229,11 +229,9 @@ function PositionSelect() {
                    function onGeoError() {
                      alert("Can't your positin and whether infomation");
                    }   
-         // 여기까지 복사     
-  
-       navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-    }
-}
+                }// 여기까지 복사     
+         navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+   }
 /*function onGeoOk (position) {
     //const lat = position.coords.latitude; // 위도  (해당되는 도시의 위도를 선택)
     //const lon = position.coords.longitude; // 경도 (해당되는 도사의 경도를 선택)
