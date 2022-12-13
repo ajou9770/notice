@@ -14,10 +14,12 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    background-color: ivory;
     vertical-align: middle;
     text-align: justify;
-    margin: 10px;  
+    margin: 10px;
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 a {
     text-decoration: none;
@@ -68,13 +70,11 @@ button:active {
     opacity: 0.2;
     z-index: -1;
     position: absolute;
-} 
+}
  </style>
 </head>
 <body style="z-index: 1;">
     <img src="img/camp_img20221216.jpg" style="border-radius: 10px;">
-    <div>
-    <img src="img/sh_happyway_bigimg_logo.jpg" class="background"/>
     <h2 style="text-align: center; text-shadow: 1px 2px 1px palevioletred; font-family:Arial, Helvetica, sans-serif;">| 2022년 4차 신협 사회공헌캠페인 |</h2>
     <span class>
             
@@ -99,7 +99,6 @@ button:active {
             </button>
         </div>
     </span>
-    </div>
     <div class="footer"> 
         <footer><h2>&copy ajou9770@ajoucu.page <a href="http://ajou9770.github.io/usertip"> 아주대의료원신협 </a> 031)219-6438 가입(금융상담):219-6052,6971</h2></footer>
         </div>
