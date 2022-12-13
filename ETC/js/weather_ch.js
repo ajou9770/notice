@@ -1,5 +1,7 @@
 const API_KEY ="5cb4f4a8cabfb7ea5c72264e6a5fd43d";
 
+alert("❤️ 本网站由 sh 为 hj 创建。");
+
 function onGeoOk (position) {
     //const lat = position.coords.latitude; // 위도  (해당되는 도시의 위도를 선택)
     //const lon = position.coords.longitude; // 경도 (해당되는 도사의 경도를 선택)
