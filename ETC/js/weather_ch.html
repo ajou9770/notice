@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>날씨 정보 가져 오기 </title>
+    <style>
+        body {
+            font-size: 17px;
+            font-weight: 600;
+            padding: 10px;
+            display: block;
+            margin: auto;
+        }
+        span {
+            font-size: large;
+            font-weight: 500;
+            color: blue;
+            border-bottom: solid 1px green;
+        }
+        button {
+            background-color: rgb(5, 30, 53); 
+            color: whitesmoke; 
+            border-radius: 10px;
+            height: 50px;
+            width: 30%;
+            box-shadow: 0px 4px 8px 0px grey;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+        }
+        button:hover {
+            transform: scale(0.98);
+        }
+        h3 {
+            background-color: blanchedalmond;
+            border-radius: 10px;
+        }
+        #here {
+            display: block;
+        }
+        h4 {
+            padding: 5px;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+        #selectbox {
+            border-radius: 5px;
+            font-size: large;
+            font-weight: 600;
+            box-shadow: 0px 6px 12px 0px grey;
+        }
+        option {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 6px 12px 0px grey;
+            font-size: medium;
+            font-weight: 600; 
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <body class="w3-contanier" style="margin: auto;">
+        <div style="text-align: center;">
+    <h4 class="w3-button w3-blue" style="text-shadow: 2px 2px 0 #444; opacity: 0.8;"> 🌦 实时天气信息 </h4> 
+    </div>
+    <hr>
+        <select id="selectbox" name="selectbox" onchange="PositionSelect()" class="w3-select w3-green" >
+            <option value="0" selected="selected">⛳ 选择查找区域 ▶️ </option>
+            <option value="1">🏡华城（我家附近）</option>
+            <option value="2">🏥水原市</option>
+            <option value="3">🏙️首尔（首都)</option>
+            <option value="4">🏞️宁安市（故乡）</option>
+            <option value="5">🏝️哈尔滨</option>
+            <option value="6">☃️芬兰赫尔辛基</option>
+            <option value="7">🏝️夏威夷火奴鲁鲁</option>
+          </select>
+          <!-- 선택된 값 도시에 따른 lat 와 lon 값 생성.-->
+          <!--⛳현재 위도는 <div id="lat"><span></span>이며</div>
+          경도는 <div id="lon"><span></span>입니다</div>-->
+          <hr>
+          <div id="here" class="w3-contanier">
+          <h4>⛳您所在位置的当前天气信息 </h4>
+          <br>
+           </div>
+        📊 当前温度:<span id="weather_state"> </span> ℃<br>
+        🌡️ 目前感觉温度:<span id="feel_like"> </span> ℃<br>
+        ☃️ 最低温度:<span id="temp_min"> </span> ℃<br>
+        🔥 最高温度:<span id="temp_max"> </span> ℃<br>
+        🌈 当前天气: <span id="state"> </span><br>
+        🌈 详细天气: <span id="state_today"> </span><br>
+        🏴‍☠️ 风: <span id="wind"> </span> s/m<br>
+        ⛳ 地点: <span id="city"> </span><br>
+        <hr>
+        <button onclick="reload()">先去</button>
+
+    <script src="weather_ch.js"></script>
+    
+    <script>
+        function reload() {
+         document.location.reload();
+        }
+    </script>
+    
+</body>
+</html>

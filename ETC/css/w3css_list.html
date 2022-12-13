@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>w3-list hide function</title>
+</head>
+<body>
+    <div class="w3-container">
+   <h2> ✔️ Today to do List </h2>
+   <p> To Close/Hide the finished item, click on the "❌"</p>
+   <ul class="w3-ul w3-card-2">
+     <li class="w3-display-container" onclick="this.style.display='none'">li 클릭시 display:none;실행 !!</li> <!li 클릭시 자체 삭제>
+    <li class="w3-display-container">x표시 클릭시 부목요소(li)display:none;실행!!<span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-transparent w3-display-right">❌</span></li> <! X 클릭시 부모요소 (li) 삭제>
+    <li class="w3-display-container">X 클릭시 부모요소 (li) 삭제!!<span onclick="this.parentElement.style.display='none'"
+        class="w3-button w3-transparent w3-display-right">❌</span></li> <! X 클릭시 부모요소 (li) 삭제>
+   </ul>
+    </div>    
+</body>
+</html>
