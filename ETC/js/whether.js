@@ -9,7 +9,7 @@ function onGeoOk (position) {
     //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
     const lat = position.coords.latitude; // 위도  위치를 가져오다. 
     const lon = position.coords.longitude;
-    console.log("You are search for ", lat, lon);
+    console.log("현재지역의 위도는 ", lat,"이며 경도는", lon,"입니다");
     const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     console.log(url);
     fetch(url)
