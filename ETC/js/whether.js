@@ -32,7 +32,9 @@ function onGeoOk (position) {
         wind.innerText = data.wind.speed;
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
-        city.innerText = name;    
+        city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;    
     });
  }
    function onGeoError() {
@@ -61,6 +63,7 @@ function PositionSelect() {
             const lat = 37.19972; // 위도  위치를 가져오다. 
             const lon = 126.83139;
             console.log("You are search for ", lat, lon);
+            
             const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
             console.log(url);
             fetch(url)
@@ -84,6 +87,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
             });
           }
            function onGeoError() {
@@ -127,6 +132,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
             });
          }
            function onGeoError() {
@@ -146,7 +153,7 @@ function PositionSelect() {
                 //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
                 const lat = 37.56667; // 위도  위치를 가져오다. 
                 const lon = 126.97806;
-                console.log("You are search for ", lat, lon);
+                console.log("You are search for ", lat, lon); 
                 const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                 console.log(url);
                 fetch(url)
@@ -170,6 +177,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                 });
              }
                function onGeoError() {
@@ -212,6 +221,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                 });
              }
                function onGeoError() {
@@ -254,6 +265,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                     });
                  }
                    function onGeoError() {
@@ -296,6 +309,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText =`⛳ ` +  name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                         });
                      }
                        function onGeoError() {
@@ -338,6 +353,8 @@ function PositionSelect() {
         state.innerText = data.weather[0].main;
         state_Today.innerText = data.weather[0].description;
         city.innerText = name;
+        const Position = document.querySelector("#position");
+        Position.innerText = `⛳ ` +  name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                             });
                          }
                            function onGeoError() {
@@ -356,7 +373,7 @@ function PositionSelect() {
                               //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
                               const lat = 18.77234; // 위도  위치를 가져오다. 
                               const lon = 98.96399;
-                              console.log("You are search for ", lat, lon);
+                              console.log("You are search for ", lat, lon);                             
                               const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                               console.log(url);
                               fetch(url)
@@ -380,6 +397,8 @@ function PositionSelect() {
           state.innerText = data.weather[0].main;
           state_Today.innerText = data.weather[0].description;
           city.innerText = name;
+          const Position = document.querySelector("#position");
+          Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
                               });
                            }
                              function onGeoError() {
