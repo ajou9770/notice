@@ -26,6 +26,12 @@
       a {
         font-size: larger;
       }
+      span {
+        font-size: large;
+        color: rgb(55, 55, 128);
+        font-weight: 600;
+        font-family: fantasy;
+      }
     </style>
 </head>
 <body>
@@ -92,6 +98,9 @@
 <a href="http://ajou9770.github.io/notice/ETC/js/wedther.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🌦실시간 날씨 조회</a>
 </div>
 </div>
+
+<span id="date"></span><span id="time"></span>
+
 <script>
   const inputValue = document.getElementById("info");
 
@@ -172,6 +181,14 @@
       }
     }*/
   }
+  </script>
+  <script>
+    setInterval(myTimer, 1000);
+    function myTimer() {
+      const t = new Date();
+      document.getElementById("time").innerHTML = t.toLocaleTimeString() + " 입니다."
+      document.getElementById("date").innerHTML = "🗓️오늘은  " + t.toLocaleDateString() + " 이고, ⌚현재 시간은";
+    }
   </script>
   <script>
     /*아래, 우측마우스 클릭 잠금 */
