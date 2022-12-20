@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet", href="info.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -87,7 +88,7 @@ img {
 <body>
     <h2 style="text-align: center;">| 2022년 문화탐방 회계 보고 |</h2>
     <hr>
-    
+  
       <div id="passinput">
       <p style="font-size: 25px; font-weight: 600; color: gray">
          # password 입력
@@ -110,13 +111,12 @@ img {
           
           </h3>
           
-          <div class="row">
+          <div class="w3-container">
           <table
               id="example-table-2"
               width="100%"
-              class="table table-bordered table-hover text-center"
-              style="none"
-            >
+              class="w3-table-all w3-card-4"
+              style="none">
               <thead>
                 <tr>
                   <th>2022년 수입 내역</th>
@@ -147,7 +147,7 @@ img {
                    <table
               id="example-table-2"
               width="100%"
-              class="table table-bordered table-hover text-center"
+              class="w3-table-all w3-card-4"
               style="none"
             >
               <thead>
@@ -170,7 +170,7 @@ img {
                    </tbody>
                    <tfoot style="background-color: teal;">
                     <th>잔액(2022.12.20기준) </th>
-                    <td style="font-size: 35px; text-align: right;">4,052,348</td>
+                    <td style="font-size: 25px; font-weight: 600; text-align: right;">4,052,348</td>
                    </tfoot>       
                    <tfoot>
                     <th>출금계</th>
@@ -179,7 +179,7 @@ img {
                    </table>
             
             <br />
-            <h3> 🧾지출증빙자료는 아래에서 선택하여 확인 가능.</h3>
+            <h2 style="font-weight: 600; font-size: x-large;"> 🧾지출증빙자료는 아래에서 선택하여 확인 가능.</h2>
             <hr>
         <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
           <option value="0" selected="selected">🔎2022회계 참고(증빙)리스트(선택)</option>
