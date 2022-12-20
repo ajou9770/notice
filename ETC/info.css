@@ -121,7 +121,8 @@ body {
     width: 100px;
   }
   select {
-    border: solid 2px;
+    border: solid 1px;
+    margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     font-weight: 600;

@@ -47,7 +47,7 @@ $(document).ready(function(){
     font-family: sans-serif;
     font-size: .8rem;
     margin: 10px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 td {
@@ -79,6 +79,9 @@ div #report {
   border-radius: 10px;
   box-shadow: 0px 4px 8px 0px grey;
 }
+img {
+  width:100%;
+}
     </style>
 </head>
 <body>
@@ -100,7 +103,7 @@ div #report {
       </p>
     </div>
 
-    <div id="paytable">
+    <div id="paytable" style="margin-right: 10px;">
         <h3 style="font-weight: 600">
             📑2022년수입.지출내역(2022.1.1 ~ 12.19)</h3><br/>
           <h3 style="font-weight: 600; text-align: end;" >(단위:원)</h3>
@@ -217,6 +220,7 @@ div #report {
     <iframe src="https://drive.google.com/file/d/1JxZqbRyI-DajzDnoq-6iv0QRAmWrYBBs/preview" width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
     <hr>
     </div>
+    <hr>
     <button style="width: 100%;
     text-align: center;
     font-size: x-large;
@@ -224,9 +228,10 @@ div #report {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px 0px grey;" onclick="btn_push()"># 감사보고서 보기/닫기</button>
-    <div id="report">
-    <iframe src="img/report_2022.jpg" width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex; text-align: center;"></iframe>
-    </div>
+    <!--<div id="report">
+    <iframe src="img/report_2022.jpg" width="100%" height="auto" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    </div>-->
+    <img src="img/report_2022.jpg" id="report" style="width: 100%; height: auto;">
     <hr>
     <!--
 <a href="http://ajou9770.github.io/usertip/post.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🚛 실시간 배송 조회 </a>
@@ -268,7 +273,7 @@ div #report {
 </script>
 <script>
   function btn_push() {
-    window.scrollTo({ top: 2000, behavior: "smooth" });
+    window.scrollTo({ top: 1000, behavior: "smooth" });
   }
 </script>
 
