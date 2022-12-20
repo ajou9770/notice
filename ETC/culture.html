@@ -83,6 +83,9 @@ div #report {
 img {
   width:100%;
 }
+th {
+  text-align: center;
+}
     </style>
 </head>
 <body>
@@ -119,8 +122,8 @@ img {
               style="none">
               <thead>
                 <tr>
-                  <th>2022년 수입 내역</th>
-                  <th scope="col">입금액</th>
+                  <th style="text-align: center;">2022년 수입 내역</th>
+                  <th scope="col" style="text-align: center;">입금액</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,8 +155,8 @@ img {
             >
               <thead>
                 <tr>
-                  <th>2022년 지출 내역</th>
-                  <th scope="col">출금액</th>
+                  <th style="text-align: center;">2022년 지출 내역</th>
+                  <th scope="col" style="text-align: center;">출금액</th>
                 </tr>
               </thead>
               <tbody>
@@ -181,7 +184,7 @@ img {
             <br />
             <h2 style="font-weight: 600; font-size: x-large;"> 🧾지출증빙자료는 아래에서 선택하여 확인 가능.</h2>
             <hr>
-        <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
+        <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: large; font-weight: 600;">
           <option value="0" selected="selected">🔎2022회계 참고(증빙)리스트(선택)</option>
           <option value="1">#2022년설선물(상품권)구입영수증</option>
           <option value="2">#2022년설선물(특판몰)사용내역</option>
