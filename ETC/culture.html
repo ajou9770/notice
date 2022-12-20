@@ -223,7 +223,7 @@ div #report {
     font-weight: 600;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 4px 8px 0px grey;"># 감사보고서 보기/닫기</button>
+    box-shadow: 0px 4px 8px 0px grey;" onclick="btn_push()"># 감사보고서 보기/닫기</button>
     <div id="report">
     <iframe src="https://drive.google.com/file/d/1aFGoit9FDzJmVmxeiTXWoTkYjagwlR_D/preview" width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
     </div>
@@ -266,6 +266,11 @@ div #report {
     }
   }
 </script>
+<script>
+  function btn_push() {
+    window.scrollTo({ top: 2000, behavior: "smooth" });
+  }
+</script>
 
 <script>
     function changeLangSelect() {
@@ -305,7 +310,7 @@ div #report {
         document.getElementById("info_koupay").style.display = "none";
         document.getElementById("info_paysend").style.display = "block";
         document.getElementById("book").style.display = "none";
-        window.scrollTo({ top: 1000, behavior: "smooth" });
+        window.scrollTo({ top: 2000, behavior: "smooth" });
       }
       if (selectValue == "5") {
         document.getElementById("info_mompay").style.display = "none";
@@ -313,7 +318,7 @@ div #report {
         document.getElementById("info_koupay").style.display = "none";
         document.getElementById("info_paysend").style.display = "none";
         document.getElementById("book").style.display = "block";
-        window.scrollTo({ top: 1000, behavior: "smooth" });
+        window.scrollTo({ top: 2000, behavior: "smooth" });
       }
       if (selectValue == "6") {
         document.getElementById("info_mompay").style.display = "none";
@@ -321,7 +326,7 @@ div #report {
         document.getElementById("info_koupay").style.display = "none";
         document.getElementById("info_paysend").style.display = "none";
         document.getElementById("book").style.display = "none";
-        window.scrollTo({ top: 1000, behavior: "smooth" });
+        window.scrollTo({ top: 2000, behavior: "smooth" });
       }
       if (selectValue == "0") {
         alert("  선택하세요 ");
