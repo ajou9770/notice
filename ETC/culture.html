@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <!-- bootstrap CSS -->
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet", href="info.css">
+    <title>문화탐방동아리 2022회계 보고</title>
+    <style>
+      a {
+        font-size: larger;
+      }
+      span {
+        font-size: large;
+        color: rgb(55, 55, 128);
+        font-weight: 600;
+        font-family: fantasy;
+      }
+  table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: .8rem;
+    margin: 10px;
+    margin-right: 10px;
+}
+
+td {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(36, 33, 33);
+    margin-right: 10px;
+}
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+    font-size: 30px;
+    color: #e4f0f5;
+    text-align: center;
+    background-color: #3f87a6;
+    margin-right: 10px;
+}
+td {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">| 2022년 문화탐방동아리 회계 보고 |</h1>
+    <hr>
+    
+      <div id="passinput">
+      <p style="font-size: 20px; font-weight: 600; color: gray">
+         # password 입력
+        <input id="info" type="password" placeholder="" />
+        <button
+          id="submit"
+          type="submit"
+          style="font-size: 15px"
+          onclick="submitClick()"
+        >
+          Login
+        </button>
+      </p>
+    </div>
+
+    <div id="paytable">
+        <h2 style="font-weight: 600">
+            📑2022년수입.지출내역(2022.1.1 ~ 11.18)</h2><br/>
+          <h3 style="font-weight: 600; text-align: end;" >(단위:원)</h3>
+          
+          </h3>
+          
+          <div class="row">
+          <table
+              id="example-table-2"
+              width="100%"
+              class="table table-bordered table-hover text-center"
+              style="none"
+            >
+              <thead>
+                <tr>
+                  <th>2022년 수입 내역</th>
+                  <th scope="col">입금액</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <td  style="color:teal; font-weight: 600">전기이월</td>
+                  <td style="color: teal;"> 5,327,896</td>
+                <tr>
+                  <td>회비(급여공제 1월~11월)</td>
+                  <td onclick="kou_01()">2,650,000</td>
+                </tr>
+                <tr>
+                  <td>회비(개별입금 1명)</td>
+                  <td onclick="kou_02()">35,000</td>
+                  </tr>
+                  <tr>
+                      <td>예금이자 </td>
+                      <td onclick="kou_03()">1,552</td>
+                  </tr>
+                   </tbody>       
+                   <tfoot>
+                    <th>입금계(전기이월제외)</th>
+                    <td>2,686,552</td>
+                   </tfoot>
+                   </table>
+                   <table
+              id="example-table-2"
+              width="100%"
+              class="table table-bordered table-hover text-center"
+              style="none"
+            >
+              <thead>
+                <tr>
+                  <th>2022년 지출 내역</th>
+                  <th scope="col">출금액</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <td>설선물(이마트상품권 등 / 1월)</td>
+                  <td style="font-weight: 600">1,487,100</td>
+                <tr>
+                  <td>회원경조사 1명(5월)</td>
+                  <td style="font-weight: 600">50,000</td>
+                </tr>
+                <tr>
+                  <td>추석선물(50,000원 * 49명 입금)</td>
+                  <td style="font-weight: 600">2,450,000</td>
+                  </tr>
+                   </tbody>
+                   <tfoot style="background-color: teal;">
+                    <th>잔액(2022.12.20기준) </th>
+                    <td style="font-size: 35px;">4,027,348</td>
+                   </tfoot>       
+                   <tfoot>
+                    <th>출금계</th>
+                    <td>3,987,100</td>
+                   </tfoot>
+                   </table>
+            <h2 style="font-weight: 600; margin: 10px;"># 동아리 회비 현 잔액(22.12.20기준): <mark> 4,027,348원</mark> </h2>
+            <br />
+            <h2>📌 지출증빙자료는 아래에서 선택하여 확인 가능.</h2>
+            <hr>
+        <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
+          <option value="0" selected="selected">🔎2022회계 참고(증빙)리스트(선택)</option>
+          <option value="1">#2022년설선물(상품권)구입영수증</option>
+          <option value="2">#2022년설선물(특판몰)사용내역</option>
+          <option value="3">#2022년추석선물(입금)내역</option>
+          <!--<option value="4">#2022년 회계감사보고서</option>-->
+          <option value="5">#동아리계좌원장내역</option>
+        </select>
+        </div> 
+
+<div style="display: none; flex-direction: column;" id="info_box">
+<div id="info_mompay">    
+<h3># 2022년설선물(상품권)구입영수증 </h3>
+<iframe src="https://drive.google.com/file/d/13NYEjv0TPEfSasQNeTwW8MBgGe6l1SgR/preview" 
+    width="100%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+<hr>
+</div>
+<div id="info_payguide">
+<h3>#2022년설선물(특판몰)사용내역</h3>
+<iframe src="https://drive.google.com/file/d/1H3eW_oKyJU1u3b9KXdzPzO535H_YfSFn/preview" 
+    width="100%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+<hr>
+</div>
+<div id="info_koupay">
+<h3>#2022년추석선물(입금)내역 </h3>
+<iframe src="https://drive.google.com/file/d/1fx4A0r9SH6cwIHg_lPpz1Cuir352mqra/preview" 
+    width="100%" height="250" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+<hr>
+</div>
+<div id="info_paysend">
+  <h3># 2022회계 감사 보고서 </h3>
+  <iframe src="#" width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+  <hr>
+  </div>
+  <div id="book">
+    <h3># 동아리통장원장내역(2022년) </h3>
+    <iframe src="https://drive.google.com/file/d/1YhJJOb_XYnwMdoltuGCoXG2xGgR-ntz4/preview" width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    <hr>
+  
+  <!--
+<a href="http://ajou9770.github.io/usertip/post.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🚛 실시간 배송 조회 </a>
+<br><br>
+<a href="http://ajou9770.github.io/notice/ETC/js/wedther.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🌦실시간 날씨 조회</a>
+</div>
+</div>-->
+<span id="date"></span><span id="time"></span>
+
+<script>
+  const inputValue = document.getElementById("info");
+
+  function submitClick() {
+    console.log("done");
+    var actualPw = "1";
+    var inputPw = inputValue.value;
+
+    if (inputPw == actualPw) {
+      document.getElementById("paytable").style.display = "block";
+      document.getElementById("passinput").style.display = "none";
+      document.getElementById("info_box").style.display = "block";
+      document.getElementById("info_paysend").style.display = "none";
+      document.getElementById("book").style.display = "none";
+    }
+    /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
+
+    /*if (inputPw == actualPw) 
+    if (month_Ten) {
+      alert ("password가 일치합니다");
+      do.getElementById("month_ten").style.display = "block";
+      document.getElementById("barcode").style.display = "block";
+      document.getElementById("loancode").style.display = "block";
+      document.getElementById("passinput").style.display = "none";
+    }*/
+    if (inputPw !== actualPw) {
+      alert("올바른 password 를 입력 바랍니다🙏");
+    }
+  }
+</script>
+
+<script>
+    function changeLangSelect() {
+      console.log("done");
+      var langSelect = document.getElementById("selectbox");
+      var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+      if (selectValue == "1") {
+        document.getElementById("info_mompay").style.display = "block";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
+        document.getElementById("book").style.display = "none";
+
+      }
+      if (selectValue == "2") {
+        console.log("10월 선택")
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "block";
+        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
+        document.getElementById("book").style.display = "none";
+      }
+      if (selectValue == "3") {
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "block";
+        document.getElementById("info_paysend").style.display = "none";
+        document.getElementById("book").style.display = "none";
+      }
+      if (selectValue == "4") {
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "block";
+        document.getElementById("book").style.display = "none";
+      }
+      if (selectValue == "5") {
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
+        document.getElementById("book").style.display = "block";
+      }
+      if (selectValue == "0") {
+        alert("  선택하세요 ");
+        document.getElementById("info_mompay").style.display = "none";
+        document.getElementById("info_payguide").style.display = "none";
+        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("info_paysend").style.display = "none";
+        document.getElementById("book").style.display = "none";
+    }
+    /*  if (selectValue == "12") {
+        document.getElementById("month-nine").style.display = "none";
+        document.getElementById("month-ten").style.display = "none";
+        document.getElementById("month-11").style.display = "none";
+        document.getElementById("print&email").style.display = "block";
+        alert(
+          "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
+        );
+      }
+    }*/
+  }
+  </script>
+  <script>
+    setInterval(myTimer, 1000);
+    function myTimer() {
+      const t = new Date();
+      document.getElementById("time").innerHTML = t.toLocaleTimeString() + " 입니다."
+      document.getElementById("date").innerHTML = "🗓️오늘은  " + t.toLocaleDateString() + " 이고, ⌚현재 시간은";
+    }
+  </script>
+  <script>
+    /*아래, 우측마우스 클릭 잠금 */
+    document.addEventListener("contextmenu", (event) =>
+      event.preventDefault()
+    );
+    document.addEventListener(`contextmenu`, (event) =>
+      alert("🚨개인정보보호를 위해 마우스 우측버튼 사용불가")
+    );
+    /*function print_current_page() {
+      document.getElementById("print&email").style.display = "none";
+      window.print();
+    }*/
+  </script>
+</body>
+</html>
