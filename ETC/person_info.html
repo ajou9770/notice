@@ -14,6 +14,7 @@
       href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet", href="info.css">
     <title>경조비등 개인 참고사항</title>
     <style>
@@ -35,14 +36,41 @@
     </style>
 </head>
 <body>
-  <!-- 숨기기 프레임 
-  <span id="barcode" style="CURSOR: hand" onclick = "if(codebox.style.display==`none`)
-    {codebox.style.display=``; barcode.innerText = `닫기▲`} else {codebox.style.display = `none`; 
-      barcode.innerText = `1. 조합명절 비대면 특판몰 운영 사례 ▼ `}"> 1. 조합 명절 비대면 특판몰 운영 사례 </span>
-    <div id="codebox" style="display: none">
-        <iframe src="https://drive.google.com/file/d/1T-BcY3efnVL32Yg8fcyxAKlqasSuZ3dB/preview" 
-        width="680" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
-    </div> -->
+  <!--여기부터 W3 로그인 모달창-->
+  <div id="modalForm"
+   class="w3-container">
+    <h2>W3.CSS Login Modal</h2>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button>
+  
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+          <img src="img/avata_topimg.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        </div>
+  
+        <form class="w3-container" action="#">
+          <div class="w3-section">
+            <label><b>Username</b></label>
+            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname">
+            <label><b>Password</b></label>
+            <input id="info" class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
+            <button onclick="submitClick()" class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+          </div>
+        </form>
+  
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+          <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- 여기까지 w3모달창-->
+
     <div id="passinput">
       <p style="font-size: 20px; font-weight: 600; color: gray">
          # password 입력
@@ -110,13 +138,13 @@
     var inputPw = inputValue.value;
 
     if (inputPw == actualPw) {
-      document.getElementById("paytable").style.display = "block";
+      document.getElementById("modalForm").style.display = "none";
       document.getElementById("passinput").style.display = "none";
+      document.getElementById("paytable").style.display = "block";
       document.getElementById("info_box").style.display = "block";
       document.getElementById("info_paysend").style.display = "none";
     }
     /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
-
     /*if (inputPw == actualPw) 
     if (month_Ten) {
       alert ("password가 일치합니다");
