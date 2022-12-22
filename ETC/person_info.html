@@ -39,7 +39,7 @@
   <!--여기부터 W3 로그인 모달창-->
   <div id="modalForm"
    class="w3-container">
-    <h2>W3.CSS Login Modal</h2>
+    <h2></h2>
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button>
   
     <div id="id01" class="w3-modal">
@@ -53,17 +53,17 @@
         <form class="w3-container" action="#">
           <div class="w3-section">
             <label><b>Username</b></label>
-            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname">
+            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="seolhokim" name="usrname">
             <label><b>Password</b></label>
             <input id="info" class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
             <button onclick="submitClick()" class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
-            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+            <input class="w3-check w3-margin-top" type="checkbox" checked=""> Remember me
           </div>
         </form>
   
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
           <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
-          <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+          <span class="w3-right w3-padding w3-hide-small">Forgot <a href="tel:010-7118-6639"> password? </a></span>
         </div>
   
       </div>
@@ -71,7 +71,7 @@
   </div>
   <!-- 여기까지 w3모달창-->
 
-    <div id="passinput">
+    <div id="passinput" style="display:none;">
       <p style="font-size: 20px; font-weight: 600; color: gray">
          # password 입력
         <input id="info" type="password" placeholder="" />
@@ -126,7 +126,7 @@
 <a href="http://ajou9770.github.io/notice/ETC/js/wedther.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🌦실시간 날씨 조회</a>
 </div>
 </div>
-
+<hr>
 <span id="date"></span><span id="time"></span>
 
 <script>
