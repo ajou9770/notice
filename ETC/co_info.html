@@ -47,27 +47,23 @@
           <option value="0" selected="selected">🔎찾고자 하는 정보를 선택하세요~~</option>
          <!--<option value="1"># </option>-->
           <option value="2"># 의료원경조휴가&경조금 기준</option>
-         <!--<option value="3"># </option>-->
+          <option value="3"># 쿠폰삼성페이등록사용안내</option>
         </select>
         </div> 
 <div style="display: none; flex-direction: column;" id="info_box">
-<div id="info_mompay">    
-<h3># 어머니 경조비 수령 내역 </h3>
-<iframe src="#" 
-    width="100%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
-</div>
 <div id="info_payguide">
 <h3>#의료원 경조휴가&경조금 지급기준(2022.11기준)</h3>
 <iframe src="https://drive.google.com/file/d/1OWJZehOZV3QJRt0wFRb22-Bep_I6b_K9/preview" 
     width="100%" height="480" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
 </div>
-<div id="info_koupay">
-<h3># 고우회 경조비 지급기준 </h3>
-<iframe src="#" 
-    width="100%" height="250" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+<div id="coupon_pay">
+<h3># 쿠폰삼성페이등록사용안내 </h3>
+<iframe src="http://ajou9770.github.io/notice/coupon_pay" 
+    width="100%" height="700px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
 <hr>
+</div>
 </div>
 <a href="http://ajou9770.github.io/usertip/post.html" style="text-decoration: none; font-size:larger; font-weight: 600;">🚛 실시간 배송 조회 </a>
 </div>
@@ -84,6 +80,7 @@
       document.getElementById("paytable").style.display = "block";
       document.getElementById("passinput").style.display = "none";
       document.getElementById("info_box").style.display = "block";
+      document.getElementById("coupon_pay").style.display = "none";
     }
     /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
 
@@ -108,28 +105,27 @@
       var selectValue = langSelect.options[langSelect.selectedIndex].value;
 
       if (selectValue == "1") {
-        document.getElementById("info_mompay").style.display = "block";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("coupon_pay").style.display = "none";
 
       }
       if (selectValue == "2") {
-        console.log("10월 선택")
-        document.getElementById("info_mompay").style.display = "none";
+        console.log("의료원경조금지급기준")
         document.getElementById("info_payguide").style.display = "block";
         document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("coupon_pay").style.display = "none";
       }
       if (selectValue == "3") {
-        console.log("11월 선택")
-        document.getElementById("info_mompay").style.display = "none";
+        console.log("쿠폰삼성페이등록등록사용안내")
         document.getElementById("info_payguide").style.display = "none";
-        document.getElementById("info_koupay").style.display = "block";
+        document.getElementById("coupon_pay").style.display = "block";
       }
       if (selectValue == "0") {
         alert("  선택하세요 ");
-        document.getElementById("info_mompay").style.display = "none";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("coupon_pay").style.display = "none";
     }
     /*  if (selectValue == "12") {
         document.getElementById("month-nine").style.display = "none";
