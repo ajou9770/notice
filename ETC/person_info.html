@@ -66,8 +66,8 @@
         </form>
   
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">취소</button>
-          <span class="w3-right w3-padding" style="font-size: small;"><a href="tel:031-219-6438"> 비밀번호를 잊어셨나요?</a> </span>
+          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-teal">취소</button>
+          <span class="w3-right w3-padding" style="font-size: small;" onclick="alert('패스워드 문의를 위해 전화앱으로 연결합니다')"><a href="tel:010-7118-6639"> 😟비밀번호를 잊어셨나요?</a> </span>
         </div>  
       </div>
     </div>
@@ -91,8 +91,8 @@
 
     <div id="paytable">
         <br />
-        <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
-          <option value="0" selected="selected">🔎찾고자 하는 정보를 선택하세요~~</option>
+        <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: larger;">
+          <option value="0" selected="selected" style="font-size: large;">🔎찾고자 하는 정보를 선택하세요~~</option>
           <option value="1"># 어머니 경조금 내역</option>
           <option value="2"># 의료원경조휴가&경조금 기준</option>
           <option value="3"># 고우회 경조금 지급기준</option>
