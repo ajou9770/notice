@@ -45,13 +45,19 @@
         <br />
         <select id="selectbox" name="selectbox" onchange="changeLangSelect()">
           <option value="0" selected="selected">🔎찾고자 하는 정보를 선택하세요~~</option>
-         <!--<option value="1"># </option>-->
+          <option value="1"># 예금거래우수조합원(우대대상조회)</option>-->
           <option value="2"># 의료원경조휴가&경조금 기준</option>
           <option value="3"># 쿠폰삼성페이등록사용안내</option>
         </select>
         </div> 
 <div style="display: none; flex-direction: column;" id="info_box">
 <hr>
+<div id="drawvip">
+  <h3># 예금거래우수조합원(우대대상)조회하기</h3>
+  <iframe src="https://ajou9770.github.io/notice/drawvip.html" 
+      width="100%" height="500px" allow="autoplay" style="border-radius: 10px; display: flex;"></iframe>
+    </div>
+      <hr>
 <div id="info_payguide">
 <h3>#의료원 경조휴가&경조금 지급기준(2022.11기준)</h3>
 <iframe src="https://drive.google.com/file/d/1OWJZehOZV3QJRt0wFRb22-Bep_I6b_K9/preview" 
@@ -81,6 +87,7 @@
       document.getElementById("passinput").style.display = "none";
       document.getElementById("info_box").style.display = "block";
       document.getElementById("coupon_pay").style.display = "none";
+      document.getElementById("drawvip").style.display = "none";
     }
     /* ☆ 초기화면 display :none 은 CSS에서 정의해줌. 
 
@@ -105,27 +112,28 @@
       var selectValue = langSelect.options[langSelect.selectedIndex].value;
 
       if (selectValue == "1") {
+        document.getElementById("drawvip").style.display = "block";
         document.getElementById("info_payguide").style.display = "none";
-        document.getElementById("info_koupay").style.display = "none";
         document.getElementById("coupon_pay").style.display = "none";
 
       }
       if (selectValue == "2") {
         console.log("의료원경조금지급기준")
         document.getElementById("info_payguide").style.display = "block";
-        document.getElementById("info_koupay").style.display = "none";
+        document.getElementById("drawvip").style.display = "none";
         document.getElementById("coupon_pay").style.display = "none";
       }
       if (selectValue == "3") {
         console.log("쿠폰삼성페이등록등록사용안내")
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("coupon_pay").style.display = "block";
+        document.getElementById("drawvip").style.display = "none";
       }
       if (selectValue == "0") {
         alert("  선택하세요 ");
         document.getElementById("info_payguide").style.display = "none";
-        document.getElementById("info_koupay").style.display = "none";
         document.getElementById("coupon_pay").style.display = "none";
+        document.getElementById("drawvip").style.display = "none";
     }
     /*  if (selectValue == "12") {
         document.getElementById("month-nine").style.display = "none";
