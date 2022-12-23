@@ -37,7 +37,8 @@
           onclick="submitClick()"
         >
           Login
-        </button>
+        </button><br>
+        <span onclick="alert('비번은 ajou출입문비번 입니다')" style="font-size: small; color: tomato;">😟패스워드가 생각이 안나면 🖱️클릭하세요!</span>
       </p>
     </div>
 
@@ -100,7 +101,7 @@
       document.getElementById("passinput").style.display = "none";
     }*/
     if (inputPw !== actualPw) {
-      alert("password가 다르거나 입력되지 않았습니다");
+      alert("password는  'ajou출입문비번' 입니다");
     }
   }
 </script>
