@@ -89,11 +89,12 @@ function PositionSelect() {
         city.innerText = name;
         const Position = document.querySelector("#position");
         Position.innerText = `⛳ ` + name + `의 위도는: ` +  lat + `이고 경도는 :` + lon + `입니다`;
-            });
+            });   
           }
            function onGeoError() {
              alert("Can't your positin and whether infomation");
            }
+
       }   
       // 여기서부터 복사 
     if (selectValue == "2") {
@@ -408,7 +409,8 @@ function PositionSelect() {
                 // 여기까지 복사     
          navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
    }
-/*function onGeoOk (position) {
+
+   /*function onGeoOk (position) {
     //const lat = position.coords.latitude; // 위도  (해당되는 도시의 위도를 선택)
     //const lon = position.coords.longitude; // 경도 (해당되는 도사의 경도를 선택)
     let lat = lat; // 위도  위치를 가져오다. 
