@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Global Clock!! </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("tbody tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
+<style>
+body {
+        text-align: center;
+    }
+.hrow td{
+padding-top: 20px;
+width: 140px;
+}
+.table_body {
+    display: inline-block;
+    text-align: right;
+}
+</style>
+</head>
+<body>
+    <h2>| 세계 도시 현재 시간표 | </h2>
+    <input id="myInput" type="text" placeholder="Search..">
+<br><br>
+    <div class="w3-container" style="display:inline-block; text-align: center;">
+      <!-- text-aligen시 display는 inline-block으로 지정.-->
+        <table class="w3-light-all" cellspacing="10px" style="text-align: center;">
+        <thead>
+            <tr class="w3-light-blue">
+                <th>City</th>
+                <th>Date&Time</th>
+            </tr>
+        </thead>
+        <tbody class="w3-light-grey">
+        <tr>
+        <td>GMT</td><td><span id="GMT"></span></td>
+        <tr><td>Vancouver</td>
+        <td><span id="Vancouver"></span></td>
+            </tr>
+            <td>San Francisco</td><td><span id="SanFrancisco"></span></td></tr>
+            <td>Seattle</td><td><span id="Seattle"></span></td>    
+        </tr>
+        <td>Los Angeles</td><td><span id="LosAngeles"></span></td>
+        </tr>
+        <td>Denver</td><td><span id="Denver"></span></td>
+        </tr>
+        <td>Mexico City</td><td><span id="MexicoCity"></span></td>
+        </tr>
+        <td>Houston</td><td><span id="Houston"></span></td>
+        </tr>
+        <td>Minneapolis</td><td><span id="Minneapolis"></span></td>
+        </tr>
+       <td>New Orleans</td><td><span id="NewOrleans"></span></td>
+        </tr>
+        <td>Chicago</td><td><span id="Chicago"></span></td>
+        </tr>
+        <td>Montgomery</td><td><span id="Montgomery"></span></td>
+        </tr>
+        <td>Indianapolis</td><td><span id="Indianapolis"></span></td>
+        </tr>
+        <td>Atlanta</td><td><span id="Atlanta"></span></td>
+        </tr>
+        <td>Detroit</td><td><span id="Detroit"></span></td>
+        </tr>
+        <td>Miami</td><td><span id="Miami"></span></td>
+        </tr>
+        <td>Washington DC</td><td><span id="WashingtonDC"></span></td>
+        </tr>
+        <td>Philadelphia</td><td><span id="Philadelphia"></span></td>
+        </tr>
+        <td>New York</td><td><span id="NewYork"></span></td>
+        </tr>
+          <td>Montreal</td><td><span id="Montreal"></span></td>
+        </tr>
+         <td>서울</td><td><span id="Seoul"></span></td>
+        </tr>
+       <td>Boston</td><td><span id="Boston"></span></td>
+    </tr>
+       <!--<td>Buenos Aires</td><td>Sao Paulo</td><td>Rio De Janeiro</td>
+        </tr>
+        <tr>
+        <td><span id="BuenosAires"></span></td><td><span id="SaoPaulo"></span></td><td><span id="RioDeJaneiro"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Lisbon</td><td>Dublin</td><td>London</td><td>Madrid</td>
+        </tr>
+        <tr>
+        <td><span id="Lisbon"></span></td><td><span id="Dublin"></span></td><td><span id="London"></span></td><td><span id="Madrid"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Barcelona</td><td>Paris</td><td>Brussels</td><td>Amsterdam</td>
+        </tr>
+        <tr>
+        <td><span id="Barcelona"></span></td><td><span id="Paris"></span></td><td><span id="Brussels"></span></td><td><span id="Amsterdam"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Frankfurt</td><td>Rome</td><td>Berlin</td><td>Prague</td>
+        </tr>
+        <tr>
+        <td><span id="Frankfurt"></span></td><td><span id="Rome"></span></td><td><span id="Berlin"></span></td><td><span id="Prague"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Vienna</td><td>Stockholm</td><td>Athens</td><td>Helsinki</td>
+        </tr>
+        <tr>
+        <td><span id="Vienna"></span></td><td><span id="Stockholm"></span></td><td><span id="Athens"></span></td><td><span id="Helsinki"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Minsk</td><td>Istanbul</td><td>Cairo</td><td>Jerusalem</td>
+        </tr>
+        <tr>
+        <td><span id="Minsk"></span></td><td><span id="Istanbul"></span></td><td><span id="Cairo"></span></td><td><span id="Jerusalem"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Beirut</td><td>Moscow</td><td>Baghdad</td><td>Dubai</td>
+        </tr>
+        <tr>
+        <td><span id="Beirut"></span></td><td><span id="Moscow"></span></td><td><span id="Baghdad"></span></td><td><span id="Dubai"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Bangkok</td><td>Jakarta</td><td>Hong Kong</td><td>Beijing</td>
+        </tr>
+        <tr>
+        <td><span id="Bangkok"></span></td><td><span id="Jakarta"></span></td><td><span id="HongKong"></span></td><td><span id="Beijing"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Shanghai</td><td>Tokyo</td><td>Melbourne</td>
+        </tr>
+        <tr>
+        <td><span id="Shanghai"></span></td><td><span id="Tokyo"></span></td><td><span id="Melbourne"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+        <td>Sydney</td><td>Brisbane</td><td>Vladivostok</td><td>Kamchatka</td>
+        </tr>
+        <tr>
+        <td><span id="Sydney"></span></td><td><span id="Brisbane"></span></td><td><span id="Vladivostok"></span></td><td><span id="Kamchatka"></span></td>
+        </tr>
+        <tr class="w3-light-grey">
+            <td>북한</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+            <td><span id="Nkorea"></span></td><td><span id="#"></span></td><td><span id="#"></span></td><td><span id="#"></span></td>
+            </tr>-->
+            </tbody>
+        </table> 
+        </div>  
+
+<script src="clock.js"></script>    
+</body>
+</html>
