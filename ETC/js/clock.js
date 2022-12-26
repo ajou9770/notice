@@ -314,7 +314,7 @@ document.getElementById("NewYork").innerHTML = worldClock(-5, "NAmerica")
 document.getElementById("Montreal").innerHTML = worldClock(-5, "NAmerica")
 document.getElementById("Seoul").innerHTML = worldClock(9, "서울")
 document.getElementById("Boston").innerHTML = worldClock(-5, "NAmerica")
-/*document.getElementById("BuenosAires").innerHTML = worldClock(-3, "BuenosAires")
+document.getElementById("BuenosAires").innerHTML = worldClock(-3, "BuenosAires")
 document.getElementById("SaoPaulo").innerHTML = worldClock(-3, "SAmerica")
 document.getElementById("RioDeJaneiro").innerHTML = worldClock(-3, "SAmerica")
 document.getElementById("Lisbon").innerHTML = worldClock(0, "Europe")
@@ -352,7 +352,7 @@ document.getElementById("Sydney").innerHTML = worldClock(10, "Australia")
 document.getElementById("Brisbane").innerHTML = worldClock(10, "Brisbane")
 document.getElementById("Vladivostok").innerHTML = worldClock(10, "Europe")
 document.getElementById("Kamchatka").innerHTML = worldClock(12, "Europe")
-document.getElementById("Nkorea").innerHTML = worldClock(9, "북한")*/
+document.getElementById("Nkorea").innerHTML = worldClock(9, "북한")
 
 setTimeout("worldClockZone()", 1000)
 }
