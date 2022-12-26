@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#clock").click(function(){
+    $("#clock_box").toggle();
+  });
+});
+</script>
     <title>날씨 정보 가져 오기 </title>
     <style>
         body {
@@ -70,6 +78,9 @@
             background: linear-gradient(to right, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
+        #clock_box {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -107,6 +118,10 @@
         🏴‍☠️ 바람: <span id="wind"> </span> s/m<br>
         ⛳ 위치: <span id="city"> </span><br>
         <hr>
+        <button id="clock">⌚현재 세계 도시별 시간 조회</button>
+        <div id="clock_box">
+          <iframe src="http://ajou9770.github.io/notice/ETC/js/clock_global" style="height:300px; width:80%;"></iframe>
+        </div>
         <button onclick="reload()">처음으로</button>
 
     <script src="whether.js"></script>
