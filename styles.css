@@ -530,3 +530,7 @@ text-align: center;
     border-bottom: solid gray 2px;
     padding: 10px;
     } 
+img {
+    width: 100%;
+    border-radius: 10px;
+}
