@@ -408,9 +408,9 @@ a:active {
         <h2>4. 금리변동주기(변동금리 또는 고정금리)을 선택하세요</h2>
         <select id="change">
           <option value="1">3개월 변동</option>
-          <option value="2">6개월 변동</option>
-          <option value="3">12개월 변동(0.1% 가산)</option>
-          <option value="4">고정 금리(0.2% 가산)</option>
+          <option value="2">6개월 변동(0.1% 가산)</option>
+          <option value="3">12개월 변동(0.2% 가산)</option>
+          <option value="4">고정 금리(0.3% 가산)</option>
         </select>
       </section>
       <section>
@@ -604,6 +604,7 @@ a:active {
             "ko-kr"
           )}원을 받으실 수 있습니다.`;
         }
+        alert("조회된 금리는 입력하신 조건에 기반한 단순 '참고용'으로 실제 적용금리와 다소 차이가 날 수 있습니다")
         window.scrollTo({ top: 1000, behavior: "smooth" });
       }
 
