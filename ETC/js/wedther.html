@@ -118,7 +118,12 @@ $(document).ready(function(){
         🏴‍☠️ 바람: <span id="wind"> </span> s/m<br>
         ⛳ 위치: <span id="city"> </span><br>
         <hr>
-        <span id="clock" onclick="clock_btn()"><b>⌚세계 주요도시 시간 조회</b></span>
+        <!--<span id="clock" onclick="clock_btn()"><b>⌚세계 주요도시 시간 조회</b></span>-->
+        <span id="clock" onclick="if(window.confirm('⌚도시별 현재시간 조회를 위해 이동하시겠습니까?')) {
+            document.location.href = 'http://ajou9770.github.io/notice/ETC/js/clock_global';
+        } else {
+        alert('취소 되었습니다');
+        }"><b>⌚세계 주요도시 시간 조회</b></span> 
         <!--<div id="clock_box">
           <iframe src="http://ajou9770.github.io/notice/ETC/js/clock_global" allow="autoplay" style="height:300px; width:100%; border-radius: 5px;"></iframe>
         </div>-->
@@ -126,7 +131,7 @@ $(document).ready(function(){
         <button onclick="reload()">처음으로</button>
 
     <script src="whether.js"></script>
-    <script>
+    <!--<script>
         function clock_btn() {
             if (window.confirm("⌚세계도시 시각 조회를 위해 이동하시겠습니까?")){
                 document.location.href = "http://ajou9770.github.io/notice/ETC/js/clock_global";
@@ -134,7 +139,7 @@ $(document).ready(function(){
                 console.log("canceled!!");
             }
         }
-    </script>
+    </script>-->
     
     <script>
         function reload() {
