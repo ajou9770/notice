@@ -86,7 +86,7 @@ th {
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">| 2022년 문화탐방 회계 보고 |</h2>
+    <h2 style="text-align: center;">| 2023년 문화탐방 회계 보고 |</h2>
     <hr>
   
       <div id="passinput">
@@ -103,12 +103,12 @@ th {
         </button>
       </p>
     </div>
-
+    
     <div id="paytable" style="margin-right: 10px;">
-      <button style="width: 50%; font-size: larger; font-weight: 600; padding: 10px;" onclick="alert('⚠️지금은 보실 수 없습니다.')"><a href="#">#2023년 회계보고</a></button>
+        <button style="width: 50%; font-size: larger; font-weight: 600; padding: 10px;"><a href="http://ajou9770.github.io/notice/ETC/culture">#전기(2022년) 회계보고</a></button>
         <hr>
         <h3 style="font-weight: 600">
-            📑2022년수입.지출내역(2022.1.1 ~ 12.19)</h3><br/>
+            📑2023년수입.지출내역(2022.1.1 ~ 12.19)</h3><br/>
           <h3 style="font-weight: 600; text-align: end;" >(단위:원)</h3>
           
           </h3>
@@ -121,7 +121,7 @@ th {
               style="none">
               <thead>
                 <tr>
-                  <th style="text-align: center;">2022년 수입 내역</th>
+                  <th style="text-align: center;">2023년 수입 내역</th>
                   <th scope="col" style="text-align: center;">입금액</th>
                 </tr>
               </thead>
@@ -143,7 +143,7 @@ th {
                    </tbody>       
                    <tfoot>
                     <th>입금계(전기이월제외)</th>
-                    <td style="text-align: right;">2,711,552</td>
+                    <td style="text-align: right; font-weight: 600;">2,711,552</td>
                    </tfoot>
                    </table>
                    <table
@@ -154,29 +154,29 @@ th {
             >
               <thead>
                 <tr>
-                  <th style="text-align: center;">2022년 지출 내역</th>
+                  <th style="text-align: center;">2023년 지출 내역</th>
                   <th scope="col" style="text-align: center;">출금액</th>
                 </tr>
               </thead>
               <tbody>
                   <td>설선물<br>(이마트상품권 등 / 1월)</td>
-                  <td style="font-weight: 600; text-align: right;">1,487,100</td>
+                  <td style="font-weight: 500; text-align: right;">1,487,100</td>
                 <tr>
                   <td>회원경조사 1명(5월)</td>
-                  <td style="font-weight: 600; text-align: right;">50,000</td>
+                  <td style="font-weight: 500; text-align: right;">50,000</td>
                 </tr>
                 <tr>
                   <td>추석선물<br>(50,000원 * 49명 입금)</td>
-                  <td style="font-weight: 600; text-align: right;">2,450,000</td>
+                  <td style="font-weight: 500; text-align: right;">2,450,000</td>
                   </tr>
                    </tbody>
                    <tfoot style="background-color: teal;">
-                    <th>잔액(2022.12.20기준) </th>
+                    <th>잔액(2023.12.30기준) </th>
                     <td style="font-size: 25px; font-weight: 600; text-align: right;">4,052,348</td>
                    </tfoot>       
                    <tfoot>
                     <th>출금계</th>
-                    <td style="text-align: right;">3,987,100</td>
+                    <td style="text-align: right; font-weight: 600;">3,987,100</td>
                    </tfoot>
                    </table>
             
@@ -184,11 +184,11 @@ th {
             <h2 style="font-weight: 600; font-size: x-large;"> 🧾지출증빙자료는 아래에서 선택하여 확인 가능.</h2>
             <hr>
         <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: large; font-weight: 600;">
-          <option value="0" selected="selected">🔎2022회계 참고(증빙)리스트(선택)</option>
-          <option value="1">#2022년설선물(상품권)구입영수증</option>
-          <option value="2">#2022년설선물(특판몰)사용내역</option>
-          <option value="3">#2022년추석선물(입금)내역</option>
-          <option value="4">#2022년추석송금내역(개별)</option>
+          <option value="0" selected="selected">🔎2023회계 참고(증빙)리스트(선택)</option>
+          <option value="1">#2023년설선물(상품권)구입영수증</option>
+          <option value="2">#2023년설선물(특판몰)사용내역</option>
+          <option value="3">#2023년추석선물(입금)내역</option>
+          <option value="4">#2023년추석송금내역(개별)</option>
           <option value="5">#동아리통장원장사본</option>
         </select>
         </div> 
@@ -335,7 +335,6 @@ th {
         window.scrollTo({ top: 2000, behavior: "smooth" });
       }
       if (selectValue == "0") {
-        alert("  선택하세요 ");
         document.getElementById("info_mompay").style.display = "none";
         document.getElementById("info_payguide").style.display = "none";
         document.getElementById("info_koupay").style.display = "none";
