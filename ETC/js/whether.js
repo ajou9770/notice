@@ -284,8 +284,8 @@ function PositionSelect() {
                         //const lon_Value = document.querySelector("#lon.value");
                         //const lat = document.querySelector("#lat.value"); // 위도  위치를 가져오다. 
                         //const lon =  document.querySelector("#lon.value"); // 경도 위치를 가져오다. 
-                        const lat = 60.17083; // 위도  위치를 가져오다. 
-                        const lon = 24.93750;
+                        const lat = 62.42671735993664; // 위도  위치를 가져오다. 
+                        const lon = 129.82464309162194;
                         console.log("You are search for ", lat, lon);
                         const url =`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                         console.log(url);
