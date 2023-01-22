@@ -37,9 +37,8 @@
         >특판몰 미사용 조합원(개별 안내 예정)</mark
       ><br /><br />
       🎁 지급 품목: CJ스팸세트(스페셜 풍성 5호)<br />
-      <a href="http://www.11st.co.kr/products/5090117252/share"
-        ><img src="img/cj05.JPG" style="width: 200px" /></a
-      ><br /><br />
+      <img src="img/cj05.JPG" style="width: 200px" onclick="Link()" />
+      <br /><br />
       📆 수령기간:<mark
         style="
           background: linear-gradient(
@@ -83,6 +82,16 @@
         js.src = "https://developers.kakao.com/sdk/js/kakao.channel.min.js";
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "kakao-js-sdk");
+    </script>
+    <script>
+      function Link() {
+        if (confirm("🎁상품에 대해 더 자세히 알아보시겠어요?") == true) {
+          document.location.href =
+            "http://www.11st.co.kr/products/5090117252/share";
+        } else {
+          console.log("cancel");
+        }
+      }
     </script>
   </body>
 </html>
