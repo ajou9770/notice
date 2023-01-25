@@ -3,15 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>2021년 결산(안) 요약 보기</title>
+    <title>2022년 결산(안) 요약 보기</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #bs, #pl, #divid {
+        display: none;
+      }
+      a {
+        font-size: larger;
+      }
+      span {
+        font-size: large;
+        color: rgb(55, 55, 128);
+        font-weight: 600;
+        font-family: fantasy;
+      }
+      #selectbox {
+        width: 60%;
+        padding: 10px;
+        font-weight: 600;
+        font-size: x-large;
+        box-shadow: 0px 4px 8px 0px grey;
+      }
+      option {
+        font-weight: 600;
+        color: teal;
+      }
+    </style>
 </head>
 <body>
-    <img src="img/bs2021.JPG"><br/>
-    <img src="img/pl2021.JPG"><br/>
-    <img src="img/7thyear.JPG"><br/>
-        <span style="font-size: 35px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">※ 보다 자세한 내용은 총회리플릿을 참조해 주세요</span><br/>
-   <!--<div class="mile">
+     <div id="paytable">
+     <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: larger; border-radius:5px;">
+      <option value="0" selected="selected" style="font-size: large;">🔎결산재무제표를 선택하세요</option>
+      <option value="1"># 2022년 요약재무상태표</option>
+      <option value="2"># 2022년 요약손익계산서</option>
+      <option value="3"># 2022년 잉여금처분(안)</option>
+    </select>
+    </div>
+    <hr>
+    <img src="img/bs_2022.jpg" id="bs"><br/>
+    <img src="img/pl_2022.jpg" id="pl"><br/>
+    <img src="img/share_2022.jpg" id="divid"><br/>
+    <!--<span style="font-size: 35px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">※ 보다 자세한 내용은 총회리플릿을 참조해 주세요</span><br/>
+   <div class="mile">
     ○ 의료원 신협에서는 5월 31일까지만 주문 받습니다.  <br/>
         이후에는 우주텍 아로마패치 쇼핑몰에서 신협 공동구매가로 구매하실 수 있습니다. <br/><br/>
          <span>○ 아래 아로마 패치 주문하기 단추를 누르시면 됩니다. <a href="https://aromapatch.co.kr/surl/P/27"> 공동구매하기 <i class="fas fa-chevron-right"></i></a><br/><br/></span>
@@ -35,11 +69,11 @@
     data-channel-public-id="_dfhkK"
     data-size="large"
     data-support-multiple-densities="true"
-  ></div><br/>-->
+  ></div><br/>
   <div style="align-items: center;">
   <div class="card">    
     <a href="https://ajou9770.github.io/notice/meet.html"> <i class="fas fa-chevron-left fa-lg"></i>이전으로 돌아가기</a>
-    </div></div>
+    </div></div>-->
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script><br/>
 </div>
 <br/><!--
@@ -64,6 +98,46 @@
     js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'kakao-js-sdk');
+</script>
+<script>
+  function changeLangSelect() {
+    console.log("done");
+    var langSelect = document.getElementById("selectbox");
+    var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+    if (selectValue == "1") {
+      document.getElementById("bs").style.display = "block";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+
+    }
+    if (selectValue == "2") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "block";
+      document.getElementById("divid").style.display = "none";
+    }
+    if (selectValue == "3") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "block";
+    }
+       if (selectValue == "0") {
+      alert("  선택하세요 ");
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+  }
+  /*  if (selectValue == "12") {
+      document.getElementById("month-nine").style.display = "none";
+      document.getElementById("month-ten").style.display = "none";
+      document.getElementById("month-11").style.display = "none";
+      document.getElementById("print&email").style.display = "block";
+      alert(
+        "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
+      );
+    }
+  }*/
+}
 </script>
 </body>
 </html>
