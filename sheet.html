@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2022년 결산(안) 요약 보기</title>
+    <title>제112차 정기이사회 주요의안 요약 정리</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      #bs, #pl, #divid {
+      #bs, #pl, #divid, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10 {
         display: none;
       }
       a {
@@ -47,16 +47,24 @@
     border-radius: 5px;
     border-style: none;
 }
+  body {
+    text-align: center;
+  } 
     </style>
 </head>
 <body>
-     <br>
+     <h2>제112차 정기이사회 결산 및 주요 의안 요약본</h2>
+     <hr style="color:black;">
      <div id="paytable">
      <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: larger; border-radius:5px;">
-      <option value="0" selected="selected" style="font-size: large;">🔎결산재무제표를 선택하세요</option>
+      <option value="0" selected="selected" style="font-size: large;">🔎2022년결산 또는 이사회 안건 선택</option>
       <option value="1"># 2022년 요약재무상태표</option>
       <option value="2"># 2022년 요약손익계산서</option>
       <option value="3"># 2022년 잉여금처분(안)</option>
+      <option value="4"># 제7호안:조합원 경조금 신설의 건</option>
+      <option value="5"># 제8호안: 조합원퇴직공로금 지급기준 변경의 건</option>
+      <option value="6"># 제9호안:출자금 일시납 및 조합원재가입 제한기준 설정</option>
+      <option value="7"># 제10호안:조합 특별회계(특판몰)이용고배당 신설의 건</option>
     </select>
     </div>
     <br>
@@ -64,9 +72,16 @@
     <img src="img/bs_2022.jpg" id="bs"/><br/>
     <img src="img/pl_2022.jpg" id="pl"/><br/>
     <img src="img/share_2022.jpg" id="divid"/>
+    <img src="img/isu_7.jpg" id="isu_7"/>
+    <br>
+    <img src="img/isu_7_1.jpg" id="isu_7_1"/>
+    <img src="img/isu_8.jpg" id="isu_8"/>
+    <img src="img/isu_9.jpg" id="isu_9"/>
+    <img src="img/isu_10.jpg" id="isu_10"/>
     <hr>
+    <div style="display: inline-block; text-align: left; color: black; ">
     <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
-    <div style="display: inline-block; text-align: left; ">
+    
 <button onclick="callon()"> 📞전화 </button>
 <button><a href="mailto:ajou9770@ajoucu.page">📨Email</a></button>
 </div>
@@ -135,23 +150,82 @@
       document.getElementById("bs").style.display = "block";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
-
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
     }
     if (selectValue == "2") {
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "block";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
     }
     if (selectValue == "3") {
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "block";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+    }
+    if (selectValue == "4") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "block";
+      document.getElementById("isu_7_1").style.display = "block";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+    }
+    if (selectValue == "5") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "block";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+    }
+    if (selectValue == "6") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "block";
+      document.getElementById("isu_10").style.display = "none";
+    }
+    if (selectValue == "7") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "block";
     }
        if (selectValue == "0") {
       alert(" 🧾 결산 재무제표를 선택해 주세요 ");
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
   }
   /*  if (selectValue == "12") {
       document.getElementById("month-nine").style.display = "none";
