@@ -33,6 +33,19 @@
         border-radius: 5px;
         box-shadow: 0px 4px 8px 0px grey;
       }
+      button {
+    font-weight: 600;
+    background-color: teal;
+    font-size: 15px;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border-style: none;
+}
     </style>
 </head>
 <body>
@@ -50,6 +63,11 @@
     <img src="img/bs_2022.jpg" id="bs"><br/>
     <img src="img/pl_2022.jpg" id="pl"><br/>
     <img src="img/share_2022.jpg" id="divid"><br/>
+    <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
+    <div style="display: inline-block; text-align: left; ">
+<button onclick="callon()"> 📞전화 </button>
+<button><a href="mailto:ajou9770@ajoucu.page">📨Email</a></button>
+</div>
     <!--<span style="font-size: 35px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">※ 보다 자세한 내용은 총회리플릿을 참조해 주세요</span><br/>
    <div class="mile">
     ○ 의료원 신협에서는 5월 31일까지만 주문 받습니다.  <br/>
@@ -144,6 +162,15 @@
     }
   }*/
 }
+</script>
+<script>
+  function callon() {
+      if(window.confirm("통화가능시간은 평일 8:30~17:00까지입니다. , 전화앱으로 연결 할까요?")){
+      document.location.href="tel:031-219-6438"} 
+      else {
+          console.log("cancel")
+      }
+  }
 </script>
 </body>
 </html>
