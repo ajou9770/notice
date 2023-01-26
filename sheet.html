@@ -6,7 +6,7 @@
     <title>제112차 정기이사회 주요의안 요약 정리</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      #bs, #pl, #divid, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10 {
+      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10 {
         display: none;
       }
       a {
@@ -61,9 +61,10 @@
       <option value="1"># 2022년 요약재무상태표</option>
       <option value="2"># 2022년 요약손익계산서</option>
       <option value="3"># 2022년 잉여금처분(안)</option>
+      <option value="8"># 제6호안: 외부감사인 선임(변경)의 건</option>
       <option value="4"># 제7호안:조합원 경조금 신설의 건</option>
       <option value="5"># 제8호안: 조합원퇴직공로금 지급기준 변경의 건</option>
-      <option value="6"># 제9호안:출자금 일시납 및 조합원재가입 제한기준 설정</option>
+      <option value="6"># 제9호안:출자금 중도인출 건 일시 납입 폐지의 건</option>
       <option value="7"># 제10호안:조합 특별회계(특판몰)이용고배당 신설의 건</option>
     </select>
     </div>
@@ -72,6 +73,7 @@
     <img src="img/bs_2022.jpg" id="bs"/><br/>
     <img src="img/pl_2022.jpg" id="pl"/><br/>
     <img src="img/share_2022.jpg" id="divid"/>
+    <img src="img/isu_6.jpg" id="isu_6"/>
     <img src="img/isu_7.jpg" id="isu_7"/>
     <br>
     <img src="img/isu_7_1.jpg" id="isu_7_1"/>
@@ -150,6 +152,7 @@
       document.getElementById("bs").style.display = "block";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
@@ -160,6 +163,7 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "block";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
@@ -170,6 +174,7 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "block";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
@@ -180,6 +185,7 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "block";
       document.getElementById("isu_7_1").style.display = "block";
       document.getElementById("isu_8").style.display = "none";
@@ -190,6 +196,7 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "block";
@@ -200,6 +207,7 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
@@ -210,11 +218,23 @@
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "block";
+    }
+    if (selectValue == "8") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "block";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
     }
        if (selectValue == "0") {
       alert(" 🧾 결산 재무제표를 선택해 주세요 ");
