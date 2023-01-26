@@ -6,7 +6,7 @@
     <title>제112차 정기이사회 주요의안 요약 정리</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10 {
+      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10, #vscu {
         display: none;
       }
       a {
@@ -66,6 +66,7 @@
       <option value="5"># 제8호안: 조합원퇴직공로금 지급기준 변경의 건</option>
       <option value="6"># 제9호안:출자금 중도인출 건 일시 납입 폐지의 건</option>
       <option value="7"># 제10호안:조합 특별회계(특판몰)이용고배당 신설의 건</option>
+      <option value="9">※ 참고자료: 병원신협 2022년 결산현황(세브란스,서울성모)</option>
     </select>
     </div>
     <br>
@@ -80,6 +81,7 @@
     <img src="img/isu_8.jpg" id="isu_8"/>
     <img src="img/isu_9.jpg" id="isu_9"/>
     <img src="img/isu_10.jpg" id="isu_10"/>
+    <img src="img/vscu_2022.jpg" id="vscu"/>
     <hr>
     <div style="display: inline-block; text-align: left; color: black; ">
     <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
@@ -158,6 +160,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "2") {
       document.getElementById("bs").style.display = "none";
@@ -169,6 +172,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "3") {
       document.getElementById("bs").style.display = "none";
@@ -180,6 +184,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "4") {
       document.getElementById("bs").style.display = "none";
@@ -191,6 +196,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "5") {
       document.getElementById("bs").style.display = "none";
@@ -202,6 +208,7 @@
       document.getElementById("isu_8").style.display = "block";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "6") {
       document.getElementById("bs").style.display = "none";
@@ -213,6 +220,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "block";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "7") {
       document.getElementById("bs").style.display = "none";
@@ -224,6 +232,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "block";
+      document.getElementById("vscu").style.display = "none";
     }
     if (selectValue == "8") {
       document.getElementById("bs").style.display = "none";
@@ -235,6 +244,19 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+    }
+    if (selectValue == "9") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "block";
     }
        if (selectValue == "0") {
       alert(" 🧾 결산 재무제표를 선택해 주세요 ");
@@ -246,6 +268,7 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
   }
   /*  if (selectValue == "12") {
       document.getElementById("month-nine").style.display = "none";
