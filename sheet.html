@@ -6,7 +6,7 @@
     <title>제112차 정기이사회 주요의안 요약 정리</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10, #vscu {
+      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10, #vscu, #vscu_arr {
         display: none;
       }
       a {
@@ -82,6 +82,7 @@
     <img src="img/isu_9.jpg" id="isu_9"/>
     <img src="img/isu_10.jpg" id="isu_10"/>
     <img src="img/vscu_2022.jpg" id="vscu"/>
+    <h2 id="vscu_arr" style="color: red;">⚠️ 입력값오류입니다. 대외비 자료로 열람이 불가 합니다.<br> 담당자에게 문의 바랍니다. </h3>
     <hr>
     <div style="display: inline-block; text-align: left; color: black; ">
     <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
@@ -161,6 +162,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "2") {
       document.getElementById("bs").style.display = "none";
@@ -173,6 +175,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "3") {
       document.getElementById("bs").style.display = "none";
@@ -185,6 +188,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "4") {
       document.getElementById("bs").style.display = "none";
@@ -197,6 +201,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "5") {
       document.getElementById("bs").style.display = "none";
@@ -209,6 +214,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "6") {
       document.getElementById("bs").style.display = "none";
@@ -221,8 +227,10 @@
       document.getElementById("isu_9").style.display = "block";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "7") {
+      document.getElementById("isu_10").style.display = "block";
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
       document.getElementById("divid").style.display = "none";
@@ -230,21 +238,22 @@
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
-      document.getElementById("isu_9").style.display = "none";
-      document.getElementById("isu_10").style.display = "block";
+      document.getElementById("isu_9").style.display = "none";      
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "8") {
+      document.getElementById("isu_6").style.display = "block";
       document.getElementById("bs").style.display = "none";
       document.getElementById("pl").style.display = "none";
-      document.getElementById("divid").style.display = "none";
-      document.getElementById("isu_6").style.display = "block";
+      document.getElementById("divid").style.display = "none";      
       document.getElementById("isu_7").style.display = "none";
       document.getElementById("isu_7_1").style.display = "none";
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
     }
     if (selectValue == "9") {
       document.getElementById("bs").style.display = "none";
@@ -256,8 +265,17 @@
       document.getElementById("isu_8").style.display = "none";
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
+      let password = prompt("조합의 인가번호(숫자만)를 입력하세요, ⚠️대외비 자료입니다. ");
+
+      if (password.toLowerCase() === "03239") {
       document.getElementById("vscu").style.display = "block";
+      document.getElementById("vscu_arr").style.display = "none";
+    } else {
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "block";
+      alert("🚨입력이 안되었거나, 인가번호가 맞지 않습니다.")
     }
+  }
        if (selectValue == "0") {
       alert(" 🧾 결산 재무제표를 선택해 주세요 ");
       document.getElementById("bs").style.display = "none";
@@ -269,6 +287,7 @@
       document.getElementById("isu_9").style.display = "none";
       document.getElementById("isu_10").style.display = "none";
       document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
   }
   /*  if (selectValue == "12") {
       document.getElementById("month-nine").style.display = "none";
