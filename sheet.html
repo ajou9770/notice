@@ -50,6 +50,40 @@
   body {
     text-align: center;
   } 
+  #box_form {
+width:auto;
+font-size: 25px;
+font-weight: 600;
+height: 65px; 
+padding-top : 10px;
+padding-bottom: -10px;
+border: 3px solid darkblue white; 
+margin:5px; 
+border-radius:5px;
+background-color: teal;
+color: whitesmoke;
+text-align: center;
+box-shadow: 0px 4px 8px 0px grey;
+}
+#box_form_top {
+width:auto;
+font-size: 25px;
+font-weight: 600;
+height: 65px; 
+padding-top : 10px;
+padding-bottom: -10px;
+border: 3px solid darkblue white; 
+margin:5px; 
+border-radius:5px;
+background-color:indianred;
+color: whitesmoke;
+text-align: center;
+box-shadow: 0px 4px 8px 0px grey;
+}
+#showbox, #showbox_top {
+width: 98%;
+border: 3px solid teal;
+}
     </style>
 </head>
 <body>
@@ -83,6 +117,18 @@
     <img src="img/isu_10.jpg" id="isu_10"/>
     <img src="img/vscu_2022.jpg" id="vscu"/>
     <h2 id="vscu_arr" style="color: red;">⚠️ 입력값오류입니다. 대외비 자료로 열람이 불가 합니다.<br> 담당자에게 문의 바랍니다. </h3>
+    <hr>
+    <span id="box_form" style="CURSOR: hand" onclick = "if(showbox.style.display==`none`)
+    {showbox.style.display=``; box_form.innerText = ` 2022이용고 배당 항목별  닫기 ▲`} else {showbox.style.display = `none`; 
+    box_form.innerText = `2022 이용고 항목별 배당보기 ▼`}">2022 이용고 항목별 배당 보기 ▼</span>
+    <div id="showbox" style="display: none">
+    <img src="img/div_list_2022.jpg"/></div>
+    <br/>
+    <span id="box_form_top" style="CURSOR: hand" onclick = "if(showbox_top.style.display==`none`)
+    {showbox_top.style.display=``; box_form_top.innerText = ` 2022이용고 배당 항목별 TOP  닫기 ▲`} else {showbox_top.style.display = `none`; 
+    box_form_top.innerText = `2022 이용고 항목별 TOP 보기 ▼`}">2022 이용고 항목별 TOP 보기 ▼</span>
+    <div id="showbox_top" style="display: none">
+    <img src="img/div_top_2022.jpg"/></div>
     <hr>
     <div style="display: inline-block; text-align: left; color: black; ">
     <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
