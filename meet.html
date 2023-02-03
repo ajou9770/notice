@@ -259,8 +259,19 @@
         width: 100%;
         box-shadow: 0px 4px 8px 0px grey;
       }
-      #bs, #pl, #divid {
+      #bs, #pl, #divid, #div_info, #close_div {
         display: none;
+      }
+      button {
+        background-color: teal;
+        color: aliceblue;
+        font-size: large;
+        font-weight: 600;
+        border-radius: 5px;
+        border: none;
+        width: 30%;
+        padding: 10px;
+        box-shadow: 0px 4px 8px 0px grey;
       }     
   </style>
 </head>
@@ -298,6 +309,17 @@
               <img src="img/share_2022.jpg">
               <h4><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">✔️출자배당율(3%)은 2022년 정기예탁 평균금리 (2.9%)의 약 104%에 해당됨</mark></h4>
               </div>
+              <br>
+              <span onclick="divInfo()" id="divInfo"><mark style="background: linear-gradient(to top,  rgb(18, 139, 121) 10%, transparent 30%);"> 😟시중 금리에 비해 출자배당율이 좀 적은 것 아닌가요?🔽</mark></span>
+              <div id="div_info" style="border: solid 1px 3px 3px 1px teal;"> 📢 출자배당은 2022년 한해동안의 평균잔액(평잔)을 기준으로 총회에서 정한 배당율을 적용하여 지급됩니다. 
+                2022년도 조합의 평균 예금 금리는 2.90%입니다. 
+                <br>시중금리의 금리는 2022년 후반기에 급격히 상승하였습니다. 지금은 다시
+                4% 아래로 인하 추세로 전환된 상태입니다. 
+                <br>이에, 조합에서는 2022년 잉여금처분안에서 출자배당율 3%안을 상정하였으며, 이는 약 545백만원으로 
+                전년도(414백만원) 대비 약 32% (131백만원)가 증가된 배당(안)임을 양지하여 주시기 바랍니다.   
+              </div>
+              <button onclick="close_div()" id="close_div"> 확인(닫기) 🔼</button>
+              <hr>
               <a href="http://ajou9770.github.io/notice/milecal.html">🔎 2022년 이용고 배당(안) 지급 예시(셀프 계산)</a><br/>
               <br/>
               4. 총회 경품행사를 대체하여 전체 조합원에게 세븐일레븐 상품교환권을 보내 드립니다.<br/>
@@ -356,10 +378,23 @@
     <div class="end"> 
     <footer>&copy ajou9770@ajoucu.page 아주대학교의료원 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</footer>
     </div>
-    <script
+    <script>
+      function divInfo() {
+        document.getElementById("div_info").style.display = "block";
+        document.getElementById("close_div").style.display = "block";
+        document.getElementById("divInfo").style.display = "none";
+      }
+    </script>
+    <script>
+      function close_div() {
+        document.getElementById("div_info").style.display = "none";
+        document.getElementById("close_div").style.display = "none";
+        document.getElementById("divInfo").style.display = "block";
+      }
+    </script>
     src="https://kit.fontawesome.com/6478f529f2.js"
     crossorigin="anonymous"
-    ></script>
+    ></ㅗ>
     <script>
         window.kakaoAsyncInit = function() {
           Kakao.Channel.createChatButton({
