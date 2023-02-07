@@ -3,15 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
         <title>이벤트 추첨하기</title>
     <style>
     form {
-        background-color: aquamarine;
-        width: 120px;
+        background-color: teal;
+        width: 50px;
         text-align: center;
         height: auto;
         padding: 10px;
         font-size: larger;
+        font-weight: 600;
+        box-shadow: 0px 4px 8px 0px grey;
+    }
+    input {
+        background-color: tomato;
+        box-shadow: 0px 4px 8px 0px grey;
+        font-weight: 600;
+        width: 140px;
+    }
+    input:active {
+        transform: scale(0.98);
     }    
     </style>
     <h2><b>설명절 특판몰 무통입금(급여공제)결제 추첨 </b></h2>
@@ -21,6 +33,7 @@
     <form name="form">
     <input type="button" value="추첨하기 " onClick="rand();">
     </form>
+    <hr>
     </div>
     <div id="current_date"></p>
         <script>
@@ -588,7 +601,7 @@ data[553]=new Array("sea~♡", "010-2762-7401");
          
         head="<br><br><font color=blue size=4><b> 설명절 무통입금 급여공제결제 추첨결과(10명)</b></font><br><br>";
         head+="<table border=1 cellspacing=0 width=350 bordercolordark=white bordercolorlight=#A0ACA0>";
-        head+="<tr><td align=center><font size=2>No.<td align=center><font size=2>사원번호(조합원번호)</td><td align=center><font size=2>핸드폰번호</td></tr>";
+        head+="<tr><td align=center><font size=3>No.<td align=center><font size=3><padding = 5px>조합원성명</td><td align=center><font size=3>핸드폰번호</td></tr>";
         
         lot=new Array(tot);
         lot[1]=0;
@@ -623,10 +636,10 @@ data[553]=new Array("sea~♡", "010-2762-7401");
         }
         document.write(head)
         for (i=1;i<=cnt;i++)  {
-            document.write("<tr><td align=center><font size=2>",i,"</td><td align=center><font size=2>",data[lot[i]][0],"</td><td><font size=2>&nbsp;"+data[lot[i]][1]+"</td>");
+            document.write("<tr><td align=center><font size=3>",i,"</td><td align=center><font size=3>",data[lot[i]][0],"</td><td><font size=3>&nbsp;"+data[lot[i]][1]+"</td>");
             }
         document.write("</table>");
-        document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:9pt;text-align:right"></font></a></div>');
+        document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:11pt;text-align:right"></font></a></div>');
         }
         </script>
          </BODY>
