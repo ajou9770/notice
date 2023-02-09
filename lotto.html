@@ -29,26 +29,45 @@
     }
     input:active {
         transform: scale(0.98);
-    }    
+    }  
+    #lotonum, #lotall, #lottitle, #lotgift {
+        background-color: beige;
+        color: rgb(24, 22, 22);
+        font-size: 15px;
+        width: 200px;
+    }  
     </style>
-    <h2><b>설명절 특판몰 무통입금(급여공제)결제 추첨 </b></h2>
-    <h3 style="color: tomato;"> 🎁 추첨인원 10명: 스벅 커피 모바일 기프티권<br/>
-    </ㅗ>
-    <br/><br/>
+    <h2><b>🎉 신협 이벤트 추첨 Program  </b></h2>
+    <h3 style="color: tomato;"> ✔️이벤트 제목 및 내용을 입력하세요~<br/>
+    </h3>
+
     <form name="form">
-    <input type="button" value="🎉추첨하기🖱️ " onClick="rand();">
+        <input id="lottitle" type="text" name="추첨타이틀" placeholder="🎉추첨명 입력" required>
+        <input id="lotgift" type="text" name="추첨상품" placeholder="🎁이벤트 상품 입력" required>
+        <input id="lotonum" type="text" name="추첨인원" placeholder="추첨인원(건)수 입력" required>
+        <input id="lotall" type="text" name="추첨대상인원" placeholder="추첨대상인원(건)수 입력" required>
+    <input type="submit" value="🎉추첨하기🖱️ " onClick="rand();">
     </form>
-    <hr>
+    <br>
+    <a href="mailto:ajou9770@ajoucu.page">📨추첨대상자 파일(Excell 등) 📤업로드 메일 보내기</a>
     </div>
+    <br><br>
     <div id="current_date" style="font-size: large; font-weight: 600; color: blue;"></p>
         <script>
         const NewDate = new Date().toLocaleString(); 
         document.getElementById("current_date").innerHTML =`🗓️추첨일시:  ${NewDate}`;
         </script>
     <script>
+        const lotNum = form.querySelector("#lotonum");
+        const lotAll = form.querySelector("#lotall");
+        const lotTitle = form.querySelector("#lottitle");
+        const lotGift = form.querySelector("#lotgift");
         function rand() {
-        tot=553 // 자료수
-        cnt=10; // 추첨인원
+            console.log(lotNum);
+        let Title = lotTitle.value;
+        let Gift = lotGift.value;    
+        let tot=lotAll.value; // 자료수
+        let cnt=lotNum.value; // 추첨인원
         data=new Array(tot);
         
         data[1]=new Array("박다미", "010-9612-3132");
@@ -640,6 +659,8 @@ data[553]=new Array("sea~♡", "010-2762-7401");
             }
         }
         }
+        document.write(`<h3>🎉추첨 타이틀: ${Title}</h3>`);
+        document.write(`<h3 style="color:tomato;">🎁상품명: ${Gift}</h3>`);
         document.write(head)
         for (i=1;i<=cnt;i++)  {
             document.write("<tr><td align=center><font size=3>",i,"</td><td align=center><font color=blue size=3>",data[lot[i]][0],"</td><td><font size=3>&nbsp;"+data[lot[i]][1]+"</td>");
@@ -647,7 +668,6 @@ data[553]=new Array("sea~♡", "010-2762-7401");
         document.write("</table>");
         /* document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:11pt;text-align:right"></font></a></div>'); */
         
-        document.write(`<h3>🎉 총추첨대상 인원(건수) ${tot} 명(건)중 '10'명(건)을 랜덤 추첨</h3>`)
         // 추첨일시 표기 //
         document.write(`<div id="current_date" style="font-size: large; font-weight: 600; color: blue;"></p>`)
         const NewDate = new Date().toLocaleString(); 
