@@ -71,6 +71,16 @@
         let Gift = lotGift.value;   // 추첨 상품명 
         let tot=lotAll.value; // 자료수
         let cnt=lotNum.value; // 추첨인원
+
+        if (tot === "") {
+            alert(" 🔢추첨대상인원(건)수를 입력하세요(필수)")
+            event.preventDefault();
+        }; 
+        if (cnt ==="" ) {
+            alert("🎉추첨인원을 입력하세요(필수)")
+            event.preventDefault();
+        };
+
         data=new Array(tot);
         
         data[1]=new Array("박다미", "010-0000-****");
