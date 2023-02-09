@@ -12,7 +12,7 @@
         }
     form {
         background-color: teal;
-        width: 50px;
+        width: 95%;
         text-align: center;
         height: auto;
         padding: 10px;
@@ -24,17 +24,19 @@
         background-color: tomato;
         box-shadow: 0px 4px 8px 0px grey;
         font-weight: 600;
+        font-size: 20px;
         width: auto;
         color: whitesmoke;
     }
     input:active {
         transform: scale(0.98);
-    }  
+    } 
     #lotonum, #lotall, #lottitle, #lotgift {
         background-color: beige;
         color: rgb(24, 22, 22);
-        font-size: 15px;
-        width: 200px;
+        font-size: 20px;
+        padding: 10px;
+        width: 80%;
     }  
     </style>
     <h2><b>🎉 JS랜덤 이벤트 추첨 Page  </b></h2>
@@ -45,7 +47,7 @@
       <input id="lotgift" type="text" name="추첨상품" placeholder="🎁이벤트 상품 입력" required>
       <input id="lotonum" type="text" name="추첨인원" placeholder="🚀추첨인원(건)수 입력" required>
       <input id="lotall" type="text" name="추첨대상인원" placeholder="🔢추첨대상인원(건)수 입력" required>
-    <input type="submit" value="🎉추첨하기🖱️ " onClick="rand();">
+      <input type="submit" value="🎉추첨하기🖱️ " onClick="rand();" style="font-size: 20px;">
     </form>
     <br>
     <a href="mailto:ajou9770@ajoucu.page">📨추첨대상자 파일(Excell 등) 📤업로드 메일 보내기</a>
