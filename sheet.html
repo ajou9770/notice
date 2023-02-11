@@ -2,16 +2,144 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>2021년 결산(안) 요약 보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제112차 정기이사회 주요의안 요약 정리</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #bs, #pl, #divid, #isu_6, #isu_7, #isu_7, #isu_7_1, #isu_8, #isu_9, #isu_10, #vscu, #vscu_arr {
+        display: none;
+      }
+      a {
+        font-size: larger;
+      }
+      span {
+        font-size: large;
+        color: rgb(55, 55, 128);
+        font-weight: 600;
+        font-family: fantasy;
+      }
+      #selectbox {
+        width: 90%;
+        padding: 10px;
+        font-weight: 600;
+        font-size: xx-large;
+        box-shadow: 0px 4px 8px 0px grey;
+      }
+      option {
+        font-weight: 600;
+        color: teal;
+      }
+      img {
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px 0px grey;
+      }
+      button {
+    font-weight: 600;
+    background-color: teal;
+    font-size: 15px;
+    color:whitesmoke;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    border-style: none;
+}
+  body {
+    text-align: center;
+  } 
+  #box_form {
+width:auto;
+font-size: 20px;
+font-weight: 600;
+height: 65px; 
+padding-top : 10px;
+padding-bottom: -10px;
+border: 3px solid darkblue white; 
+margin:5px; 
+border-radius:5px;
+background-color: teal;
+color: whitesmoke;
+text-align: center;
+box-shadow: 0px 4px 8px 0px grey;
+}
+#box_form_top {
+width:auto;
+font-size: 20px;
+font-weight: 600;
+height: 65px; 
+padding-top : 10px;
+padding-bottom: -10px;
+border: 3px solid darkblue white; 
+margin:5px; 
+border-radius:5px;
+background-color:indianred;
+color: whitesmoke;
+text-align: center;
+box-shadow: 0px 4px 8px 0px grey;
+}
+#showbox, #showbox_top {
+width: 98%;
+border-radius: 5px;
+border: none;
+}
+    </style>
 </head>
 <body>
-    <img src="img/bs2021.JPG"><br/>
-    <img src="img/pl2021.JPG"><br/>
-    <img src="img/7thyear.JPG"><br/>
-        <span style="font-size: 35px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">※ 보다 자세한 내용은 총회리플릿을 참조해 주세요</span><br/>
-   <!--<div class="mile">
+     <h2>제112차 정기이사회 결산 및 주요 상정의안 요약본</h2>
+     <hr style="color:black;">
+     <div id="paytable">
+     <select id="selectbox" name="selectbox" onchange="changeLangSelect()" style="font-size: larger; border-radius:5px;">
+      <option value="0" selected="selected" style="font-size: large;">🔎2022년결산 또는 이사회 안건 선택</option>
+      <option value="1"># 2022년 요약재무상태표</option>
+      <option value="2"># 2022년 요약손익계산서</option>
+      <option value="3"># 2022년 잉여금처분(안)</option>
+      <option value="8"># 제6호안: 외부감사인 선임(변경)의 건</option>
+      <option value="4"># 제7호안:조합원 경조금 신설의 건</option>
+      <option value="5"># 제8호안: 조합원퇴직공로금 지급기준 변경의 건</option>
+      <option value="6"># 제9호안:출자금 중도인출 건 일시 납입 폐지의 건</option>
+      <option value="7"># 제10호안:조합 특별회계(특판몰)이용고배당 신설의 건</option>
+      <option value="9">※ 참고자료: 병원신협 2022년 결산현황(세브란스,서울성모)</option>
+    </select>
+    </div>
+    <br>
+    <hr>
+    <img src="img/bs_2022.jpg" id="bs"/><br/>
+    <img src="img/pl_2022.jpg" id="pl"/><br/>
+    <img src="img/share_2022.jpg" id="divid"/>
+    <img src="img/isu_6.jpg" id="isu_6"/>
+    <img src="img/isu_7_2.jpg" id="isu_7_2"/>
+    <br>
+    <img src="img/isu_7_1.jpg" id="isu_7_1"/>
+    <img src="img/isu_8.jpg" id="isu_8"/>
+    <img src="img/isu_9.jpg" id="isu_9"/>
+    <img src="img/isu_10.jpg" id="isu_10"/>
+    <img src="img/vscu_2022.jpg" id="vscu"/>
+    <h2 id="vscu_arr" style="color: red;">⚠️ 입력값오류입니다. 대외비 자료로 열람이 불가 합니다.<br> 담당자에게 문의 바랍니다. </h3>
+    <hr>
+    <span id="box_form" style="CURSOR: hand" onclick = "if(showbox.style.display==`none`)
+    {showbox.style.display=``; box_form.innerText = ` 2022이용고 배당 항목별  닫기 ▲`} else {showbox.style.display = `none`; 
+    box_form.innerText = `2022 이용고 항목별 배당보기 ▼`}">2022 이용고 항목별 배당 보기 ▼</span>
+    <div id="showbox" style="display: none">
+    <img src="img/div_list_2022.jpg"/></div>
+    <br/>
+    <span id="box_form_top" style="CURSOR: hand" onclick = "if(showbox_top.style.display==`none`)
+    {showbox_top.style.display=``; box_form_top.innerText = ` 2022이용고 배당 항목별 TOP  닫기 ▲`} else {showbox_top.style.display = `none`; 
+    box_form_top.innerText = `2022 이용고 항목별 TOP 보기 ▼`}">2022 이용고 항목별 TOP 보기 ▼</span>
+    <div id="showbox_top" style="display: none">
+    <img src="img/div_top_2022.jpg"/></div>
+    <hr>
+    <div style="display: inline-block; text-align: left; color: black; ">
+    <h3> 🚨 담당자(책임자)에게 코멘트 </h3>
+    
+<button onclick="callon()"> 📞전화 </button>
+<button><a href="mailto:ajou9770@ajoucu.page">📨Email</a></button>
+</div>
+<button onclick="window.print()">🖨️print</button>
+    <!--<span style="font-size: 35px; font-weight: 600; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">※ 보다 자세한 내용은 총회리플릿을 참조해 주세요</span><br/>
+   <div class="mile">
     ○ 의료원 신협에서는 5월 31일까지만 주문 받습니다.  <br/>
         이후에는 우주텍 아로마패치 쇼핑몰에서 신협 공동구매가로 구매하실 수 있습니다. <br/><br/>
          <span>○ 아래 아로마 패치 주문하기 단추를 누르시면 됩니다. <a href="https://aromapatch.co.kr/surl/P/27"> 공동구매하기 <i class="fas fa-chevron-right"></i></a><br/><br/></span>
@@ -35,11 +163,11 @@
     data-channel-public-id="_dfhkK"
     data-size="large"
     data-support-multiple-densities="true"
-  ></div><br/>-->
+  ></div><br/>
   <div style="align-items: center;">
   <div class="card">    
     <a href="https://ajou9770.github.io/notice/meet.html"> <i class="fas fa-chevron-left fa-lg"></i>이전으로 돌아가기</a>
-    </div></div>
+    </div></div>-->
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script><br/>
 </div>
 <br/><!--
@@ -64,6 +192,178 @@
     js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'kakao-js-sdk');
+</script>
+<script>
+  function changeLangSelect() {
+    console.log("done");
+    var langSelect = document.getElementById("selectbox");
+    var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+    if (selectValue == "1") {
+      document.getElementById("bs").style.display = "block";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "2") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "block";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "3") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "block";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "4") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "block";
+      document.getElementById("isu_7_1").style.display = "block";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "5") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "block";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "6") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "block";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "7") {
+      document.getElementById("isu_10").style.display = "block";
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";      
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "8") {
+      document.getElementById("isu_6").style.display = "block";
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";      
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+    }
+    if (selectValue == "9") {
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7_2").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      let password = prompt("조합의 인가번호(숫자만)를 입력하세요, ⚠️대외비 자료입니다. ");
+
+      if (password.toLowerCase() === "03239") {
+      document.getElementById("vscu").style.display = "block";
+      document.getElementById("vscu_arr").style.display = "none";
+    } else {
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "block";
+      alert("⚠️ 인가번호가 입력되지 않았거나, 틀립니다. 다시 진행해 주세요") 
+    }
+  }
+       if (selectValue == "0") {
+      alert(" 🧾 항목을 선택해 주세요 ");
+      document.getElementById("bs").style.display = "none";
+      document.getElementById("pl").style.display = "none";
+      document.getElementById("divid").style.display = "none";
+      document.getElementById("isu_6").style.display = "none";
+      document.getElementById("isu_7").style.display = "none";
+      document.getElementById("isu_7_1").style.display = "none";
+      document.getElementById("isu_8").style.display = "none";
+      document.getElementById("isu_9").style.display = "none";
+      document.getElementById("isu_10").style.display = "none";
+      document.getElementById("vscu").style.display = "none";
+      document.getElementById("vscu_arr").style.display = "none";
+  }
+  /*  if (selectValue == "12") {
+      document.getElementById("month-nine").style.display = "none";
+      document.getElementById("month-ten").style.display = "none";
+      document.getElementById("month-11").style.display = "none";
+      document.getElementById("print&email").style.display = "block";
+      alert(
+        "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
+      );
+    }
+  }*/
+}
+</script>
+<script>
+  function callon() {
+      if(window.confirm("📞통화가능시간은 평일 8:30~17:00까지입니다. , 전화앱으로 연결 할까요?")){
+      document.location.href="tel:031-219-6438"} 
+      else {
+          console.log("cancel")
+      }
+  }
+</script>
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  oncontextmenu = (event) => {
+    alert("🚨우측마우스 버튼은 사용이 제한됩니다.")
+  }
 </script>
 </body>
 </html>

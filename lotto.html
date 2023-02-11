@@ -3,56 +3,91 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>이벤트 추첨하기</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
+    <title>이벤트 추첨하기</title>
     <style>
+        html {
+            margin: 5px;
+            padding: 5px;
+        }
     form {
-        background-color: aquamarine;
-        width: 120px;
+        background-color: teal;
+        width: 95%;
         text-align: center;
         height: auto;
         padding: 10px;
         font-size: larger;
-    }    
+        font-weight: 600;
+        box-shadow: 0px 4px 8px 0px grey;
+    }
+    input {
+        background-color: tomato;
+        box-shadow: 0px 4px 8px 0px grey;
+        font-weight: 600;
+        font-size: 20px;
+        width: auto;
+        color: whitesmoke;
+    }
+    input:active {
+        transform: scale(0.98);
+    } 
+    #lotonum, #lotall, #lottitle, #lotgift {
+        background-color: beige;
+        color: rgb(24, 22, 22);
+        font-size: 20px;
+        padding: 10px;
+        width: 80%;
+    }  
     </style>
-    <h2><b>장보고 체크카드 발급 이벤트 </b></h2>
-    <span> # 3월 추첨(10명): 스벅 커피 모바일 기프티권<br/>
-    </span>
-    <br/><br/>
-    <form name="form">
-    <input type="button" value="추첨하기 " onClick="rand();">
+    <h2><b>🎉 JS랜덤 이벤트 추첨 Page  </b></h2>
+    <h3 style="color: tomato;"> ✔️이벤트 제목 및 내용을 입력하세요~<br/>
+    </h3>
+      <form name="form">
+      <input id="lottitle" type="text" name="추첨타이틀" placeholder="🎉추첨명 입력" required>
+      <input id="lotgift" type="text" name="추첨상품" placeholder="🎁이벤트 상품 입력" required>
+      <input id="lotonum" type="text" name="추첨인원" placeholder="🚀추첨인원(건)수 입력" required>
+      <input id="lotall" type="text" name="추첨대상인원" placeholder="🔢추첨대상인원(건)수 입력" required>
+      <input type="submit" value="🎉추첨하기🖱️ " onClick="rand();" style="font-size: 20px;">
     </form>
+    <br>
+    <a href="mailto:ajou9770@ajoucu.page">📨추첨대상자 파일(Excell 등) 📤업로드 메일 보내기</a>
+    <h4>📑written by s.h kim<a href="mailto:sktseolho@gmail.com">📨</a></h4>
     </div>
-    <div id="current_date"></p>
+    <br><br>
+    <!-- <div id="current_date" style="font-size: large; font-weight: 600; color: blue;"> -->
+    
         <script>
-        document.getElementById("current_date").innerHTML = Date();
+        const NewDate = new Date().toLocaleString(); 
+        document.getElementById("current_date").innerHTML =`🗓️추첨일시:  ${NewDate}`;
         </script>
     <script>
+        const lotNum = form.querySelector("#lotonum");
+        const lotAll = form.querySelector("#lotall");
+        const lotTitle = form.querySelector("#lottitle");
+        const lotGift = form.querySelector("#lotgift");
         function rand() {
-        tot=17 // 자료수
-        cnt=10; // 추첨인원
+            alert("현재는 입력된 추첨대상 자료가 없습니다. ");
+        let Title = lotTitle.value; // 추첨 타이틀
+        let Gift = lotGift.value;   // 추첨 상품명 
+        let tot=lotAll.value; // 자료수
+        let cnt=lotNum.value; // 추첨인원
+
+        if (tot === "") {
+            alert(" 🔢추첨대상인원(건)수를 입력하세요(필수)")
+            event.preventDefault();
+        }; 
+        if (cnt ==="" ) {
+            alert("🎉추첨인원을 입력하세요(필수)")
+            event.preventDefault();
+        };
+
         data=new Array(tot);
         
-    data[1]=new Array("111284", "1033976387");
-    data[2]=new Array("113681", "1044424059");
-    data[3]=new Array("111319", "1083805360");
-    data[4]=new Array("112792", "1068040423");
-    data[5]=new Array("108732", "1099054169");
-    data[6]=new Array("113058", "1088139434");
-    data[7]=new Array("113348", "1022149872");
-    data[8]=new Array("110015", "1048076200");
-    data[9]=new Array("109556", "1025048171");
-    data[10]=new Array("112794", "1089140559");
-    data[11]=new Array("111422", "1088874956");
-    data[12]=new Array("111039", "1083979297");
-    data[13]=new Array("105288", "1099186670");
-    data[14]=new Array("107809", "1089818328");
-    data[15]=new Array("113397", "1033288372");
-    data[16]=new Array("104990", "1064104172");
-    data[17]=new Array("109492", "1090692594");
+        data[1]=new Array("박다미", "010-0000-****");
          
-        head="<br><br><font color=blue size=4><b> 장보고 체크카드 발급이벤트 추첨결과(10명)</b></font><br><br>";
+        head="<br><br><font color=tomato size=4><b> ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ </b></font><br><br>";
         head+="<table border=1 cellspacing=0 width=350 bordercolordark=white bordercolorlight=#A0ACA0>";
-        head+="<tr><td align=center><font size=2>No.<td align=center><font size=2>사원번호(조합원번호)</td><td align=center><font size=2>핸드폰번호</td></tr>";
+        head+="<tr><td align=center><font size=3>No.<td align=center><font size=3><padding = 5px>조합원성명</td><td align=center><font size=3>핸드폰번호</td></tr>";
         
         lot=new Array(tot);
         lot[1]=0;
@@ -85,13 +120,33 @@
             }
         }
         }
+        document.write(`<h3>🎉추첨 타이틀: ${Title}</h3>`);
+        document.write(`<h3 style="color:tomato;">🎁상품명: ${Gift}</h3>`);
+        document.write(`<h3 style="color:blue;">| 🎉 ${Title} 추첨결과 |`);
         document.write(head)
         for (i=1;i<=cnt;i++)  {
-            document.write("<tr><td align=center><font size=2>",i,"</td><td align=center><font size=2>",data[lot[i]][0],"</td><td><font size=2>&nbsp;"+data[lot[i]][1]+"</td>");
+            document.write("<tr><td align=center><font size=3>",i,"</td><td align=center><font color=blue size=3>",data[lot[i]][0],"</td><td><font size=3>&nbsp;"+data[lot[i]][1]+"</td>");
             }
         document.write("</table>");
-        document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:9pt;text-align:right"></font></a></div>');
+        /* document.write('<div style="height:35; width=300; margin:10 10 0 0;font-size:11pt;text-align:right"></font></a></div>'); */
+        
+        // 추첨일시 표기 //
+        document.write(`<div id="current_date" style="font-size: large; font-weight: 600; color: blue;"></p>`)
+        const NewDate = new Date().toLocaleString(); 
+        document.getElementById("current_date").innerHTML =`🗓️추첨일시:  ${NewDate}`;
+        document.write(`<hr>`);
+        // 재추첨하기 버튼 CSS //
+        document.write(`<input type="submit" value="🎉다시추첨하기🖱️" onclick="window.location.reload()" 
+        /* style="font-size:large; 
+        background-color:tomato; 
+        border:none; 
+        border-radius:5px; 
+        padding:10px; 
+        color:white; 
+        font-weight:600; 
+        box-shadow:0px 4px 8px 0px grey;" */>`);
         }
         </script>
+        <div id="current_date" style="font-size: large; font-weight: 600; color: blue;"></p>
          </BODY>
     </HTML>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이용고배당 조회하기</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        #search_div {
+            display: none;
+            width: 100%;
+            padding: 5px;
+        }
+        body {
+            text-align: left;
+        }
+        input {
+            width: 200px;
+            height: auto;
+            padding: 10px;
+            border-radius: 5px;
+            border: 0px 4px 8px 0px solid;
+            box-shadow: 0px 4px 8px 0px grey;
+        }
+        #submit {
+            width: 100px;
+            height: auto;
+            border: none;
+            font-size: larger;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 5px;
+            border: 0px 4px 8px 0px solid;
+            box-shadow: 0px 4px 8px 0px grey; 
+        }
+        #submit:active {
+            transform: scale(0.97);
+        }
+        p {
+            font-size: larger;
+            font-weight: 600;
+            color: brown;
+        }
+    </style>
+  </head>
+  <body>
+    <!--<img src="img/memberfind.jpg">-->
+    <span style="font-size: x-large; font-weight: 600;"> | 2022년 이용고배당 조회 화면(핸드폰번호) |</span>
+    <hr>
+    <div id="login_Form">
+    <input id="info" type="password" placeholder="password" />
+    <br> 
+    <button
+          id="submit"
+          type="submit"
+          style="font-size: 15px"
+          onclick="submitClick()"
+        >
+          Login
+        </button></div>
+    
+    <hr>
+    <div id="search_div" style="text-align: left;">
+    <h3><mark style="background: linear-gradient(to top, mediumspringgreen 20%, transparent 30%);">✔본인의  "핸드폰번호"를 입력하세요</mark><br/></h3>
+    <form>
+      <input
+       class="form-input-one" type="number" placeholder=" 핸드폰번호" />
+      <input class="form-input-two" type="submit" />
+    </form>
+    <div style="text-align: left;">
+      <u><h2 style="color: blue; font-size: larger;"></h2></u></div>
+      </div>
+      <p>※ 항목 참고 사항:
+        (대):대출금, (요)요구불예금, (카)체크카드사용, (자)자동이체, (적)적금, (보)보험료  </p>
+    <h3><mark style="background: linear-gradient(to top, mediumspringgreen 20%, transparent 30%);">※ 2022년 이용고배당 기준입니다. .</mark><br/>
+        <span>☞ 이용고배당이 조회되지 않는 경우 아래 상담톡 또는 신협(☎219-6052,6971)으로 문의 바랍니다.<br/>
+        📢 타인의 정보를 도용할 경우, 개인정보보호법에 의거 처벌 받을 수 있습니다.<br/>
+        ☞ 이 사이트는 크롬(Chrome)에 최적화 되어 있습니다. </h3>
+        <div
+  id="kakao-talk-channel-chat-button"
+  data-channel-public-id="_dfhkK"
+  data-title="consult"
+  data-size="small"
+  data-color="yellow"
+  data-shape="mobile"
+  data-support-multiple-densities="true"
+></div><br/>
+<div class="card_two"> 
+<a href="https://ajou9770.github.io/usertip/mile.html">🧾이용고배당 상세보기<i class="fas fa-chevron-right fa-lg"></i></a></div>
+<span><b>※개인정보 보호를 위해 마우스 우측버튼 사용 제한.</b></span>
+<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>    
+<script src="divscrip.js"></script>
+<script>
+  window.kakaoAsyncInit = function() {
+    Kakao.Channel.createChatButton({
+      container: '#kakao-talk-channel-chat-button',
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'kakao-js-sdk');
+</script>
+<script>
+    const inputValue = document.getElementById("info");
+
+    function submitClick() {
+      console.log("done");
+      var actualPw = "ajou2130";
+      var inputPw = inputValue.value;
+
+      if (inputPw == actualPw) {
+        alert("⚠️개인정보 유출우려!! 🚨외부로 URL전송 등 금지 바랍니다. 직원 조회용으로만 활용 요망");
+        document.getElementById("search_div").style.display = "block";
+        document.getElementById("login_Form").style.display = "none";  
+        }  
+      if (inputPw !== actualPw) {
+        alert("password가 다르거나 입력되지 않았습니다");
+      }
+    }
+  </script>
+<!--<script>
+  alert("⚠2022년 4월 30일까지 가입된 의료원 교직원 조합원에 한해 조회가능.  그 외 조합원은 신협(☎219-6052)으로 문의 바랍니다."); 
+</script>-->   
+</html>
