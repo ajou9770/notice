@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal window</title>
+    <style>
+        dialog {
+          border-radius: 10px;
+          border: none;
+          box-shadow: 0px 4px 8px grey;
+                }
+        button {
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: medium;
+          background-color: rgb(89, 48, 71);
+          color: whitesmoke;
+          box-shadow: 0px 3px 6px grey;
+          border: none;
+        }
+        #linkbtn {
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: medium;
+          background-color: rgb(16, 67, 67);
+          color: whitesmoke;
+          border: none; 
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="popup()"> 
+    <h2>this is madal window demo!!</h2>
+    <!-- <button onclick="popup()">modal</button> -->
+    <dialog>
+        <h3>This is modal window</h3>
+        <p> good news!  popup window.up..</p>
+        <form method="dialog">
+            <button value="close">Close</button>
+            <button id="dayNonsee" onclick="notSee()" >하루동안 안보기</button>
+            <button id="linkbtn" onclick="if(window.confirm('특판몰 이동?')){
+            document.location.href='http://ajoucu.com'  
+            }else {
+                alert('canceled!!')
+                console.log('cancel')
+            }">특판몰이동</button>
+        </form>
+    </dialog>
+<script>
+    const dialog = document.querySelector("dialog");
+    function popup() {
+        console.log("done");
+        dialog.showModal();
+    }
+</script> 
+<script>
+    const nonSee = document.getElementById("dayNonsee");
+    const localItem = parseInt(localStorage.getItem("alertTime"));
+    const newDate = Date.now();
+    const calculate = newDate - localItem;
+
+    function notSee() {
+    dialog.classList.add("none");
+    localStorage.setItem("alertTime", JSON.stringify(newDate));
+    }
+    if (calculate < 1000 * 60 * 60 * 24 * 1) {
+    console.log(`localstorage에 저장된시간: ${localItem}`);
+    console.log(`현재시간: ${newDate}`);
+    console.log(`경과된 시간(현재시간-경과되시간): ${calculate}`);
+    dialog.classList.add("none");
+    } else {
+      console.log("good");
+    }
+</script>  
+</body>
+</html>
