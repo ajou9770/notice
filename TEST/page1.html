@@ -8,15 +8,20 @@
     <title>Pass text from one to another page!!</title>
 <script>
     function getTxt(){
-        var txtValue = document.getElementById('txt').value;
-        localStorage.setItem("passValue", txtValue);
+        var nameValue = document.getElementById('name').value;
+        localStorage.setItem("nameValue", nameValue);
+        var telValue = document.getElementById('tel').value;
+        localStorage.setItem("telValue", telValue);
+        var emailValue = document.getElementById('email').value;
+        localStorage.setItem("emailValue", emailValue);
     }
 </script>
-
 </head>
 <body>
     <form action="page2.html">
-        <input type="text" id="txt"/>
+        <input type="text" id="name" placeholder="Name" required/>
+        <input type="tel" id="tel" placeholder="Mobile" required/>
+        <input type="email" id="email" placeholder="Email" required/>
         <input type="submit" value="Submit" onclick="getTxt()"/>
     </form>
 </body>

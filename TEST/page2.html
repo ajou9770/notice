@@ -6,11 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
     <title>page2 get from page1 txt</title>
+<style>
+    body {
+        text-align: center;
+        padding: 5px 10px;
+    }
+    .none {
+        display: none;
+    }
+    td, th {
+        width: 90%;
+    }
+    table {
+        text-align: center;
+        width: 80%;
+        font-size: large;
+        font-weight: 600;
+        box-shadow: 0px 4px 8px grey;
+    }
+</style>
 </head>
 <body>
-    this text form page1 : <span id="result"></span>
+    <h2> ✨ 이벤트 접수자 명단 </h2>
+    <table>
+        <tr><td>Item</td><td>content</td></tr>
+        <tr><td>Name</td><td><span id="name"></span></td></tr>
+        <tr><td>Tel_Num</td><td><span id="tel"></span></td></tr>
+        <tr><td>Email</td><td><span id="email"></span></td></tr>
+    </table>
     <script>
-        document.getElementById("result").innerHTML = localStorage.getItem("passValue");
+        document.getElementById("name").innerHTML = localStorage.getItem("nameValue");
+        document.getElementById("tel").innerHTML = localStorage.getItem("telValue");
+        document.getElementById("email").innerHTML = localStorage.getItem("emailValue");
     </script>
 </body>
 </html>
