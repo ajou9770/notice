@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">  -->
+    <title>신협 헌혈 사은품 신청</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#memberqus").click(function(){
+    $("#memyesAns").show("slow");
+    $("#memnoAns").show("slow");
+    $("#memverqus").hide("slow");
+    $("#donequs").show("slow");
+  });
+  $("#donequs").click(function(){
+    $("#doneyesAns").show("slow");
+    $("#donenoAns").show("slow");
+    $("#memyesAns").hide("slow");
+    $("#memnoAns").hide("slow");
+  });
+  $("#memyesAns").click(function(){
+    $("#donequs").show("slow");
+    $("#memberqus").hide("slow");
+    $("#memnoAns").hide("slow");
+    $("#memyesAns").hide("slow");
+    $("#doneyesAns").show("slow");
+    $("#donenoAns").show("slow");
+  });
+});
+</script>
+    <style>
+        body {
+            display:inline-block;
+            flex-direction: column;
+            justify-content: center;
+            background-color: ivory;
+            vertical-align: middle;
+            text-align: justify;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;  
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            border-color: black;            
+            border-radius: 10px;
+            justify-content: center;
+            align-items:center;
+            color: seashell;
+        }
+        button, button a {
+          width: 90%;
+          font-size: x-large;
+          font-weight: 600;
+          font-size: larger;
+          margin-right: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: cornflowerblue;
+          height: 80px;
+          color: whitesmoke;
+          box-shadow: 0px 4px 8px grey;
+        }
+        button:active {
+          transform: scale(0.98);
+        }
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+        .dropbtn {
+  background-color: ✔04aa6d;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+.closebtn {
+  background-color: ✔284b3f;
+  color: white;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+#rangeans {
+  display: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+#dropdown-content {
+  display: none;
+  padding: 5px;
+  color: ✔2c3d51;
+  position: absolute;
+  background-color: ✔f1f1f1;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+span {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+textarea {
+  border: none;
+  height: 50px;
+  font-size: large;
+  font-weight: 600;
+}
+mark {
+  border-radius: 5px;
+  background-color: rgb(37, 80, 98);
+  color: whitesmoke;
+  box-shadow: 0px 3px 6px grey;
+}
+mark:active {
+  transform: scale(0.97);
+}
+#donequs, #donequs, #doneyesAns, #donenoAns {
+  display: none;
+}
+input {
+  font-weight: 600;
+  box-shadow: 0px 3px 6px grey;
+}
+body {
+    text-align: left;
+}
+.ans {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+.ans div {
+    width: 70px;
+}
+  </style>
+</head>
+<body>
+    <h2>🙏소중한 헌혈에 감사 드립니다. </h2>
+    <br><br>
+    <button id="memberqus" >🤷‍♂️신협 조합원이신가요? </button>
+    <button id="donequs" >✨헌혈에 성공하셨나요? </button>
+    <br><br>
+    <div class="ans">
+    <button id="memyesAns" >👌네 </button>
+    <button id="doneyesAns" onclick="giftCho()" >👌네 </button>
+    <button id="memnoAns" onclick="memNo()">😢아니요 </button>
+    <button id="donenoAns" onclick="doneNo()" >😢아니요 </button>
+    </div>
+    <br><br>
+    <div
+id="kakao-talk-channel-chat-button"
+data-channel-public-id="_dfhkK"
+data-title="consult"
+data-size="small"
+data-color="yellow"
+data-shape="mobile"
+data-support-multiple-densities="true"
+></div>
+<h3 onclick="if(window.confirm('📞통화가능 시간은 평일 9시~17시까지 입니다. 연결할까요?')){
+    location.href='tel:031-219-6052'
+  } else{
+    alert('취소되었습니다.')
+  }">📞 문의: 신협 ☎ 031)219-6052</h3>
+<!--     <div class="footer"> 
+    <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
+    </div> -->
+    <script>
+        function giftCho(){
+            alert("👌감사합니다. 기념품 신청화면으로 이동합니다. ");
+            navigator.vibrate(200);
+            location.href="https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?usp=sf_link";
+        }
+        function doneNo(){
+            alert("😪ㅠㅠ 아쉽네요, 다음에 한번 더 참여해 주시기 바랍니다.");
+            navigator.vibrate(200);
+        }
+        function memNo(){
+            alert("😪죄송합니다. 신협 조합원에 한해 추가 기념품을 신청하실 수 있습니다.");
+            navigator.vibrate(200);
+        }
+        </script>
+    <script>
+        window.kakaoAsyncInit = function() {
+          Kakao.Channel.createChatButton({
+            container: '#kakao-talk-channel-chat-button',
+          });    
+        };
+       
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'kakao-js-sdk');
+      </script>
+   </script>
+    <script
+    src="https://kit.fontawesome.com/6478f529f2.js"
+    crossorigin="anonymous"
+    ></script>
+    <!-- <script>
+        alert('특판몰로 이동합니다~');
+location.href = 'http://ajoucu.com';
+    </script> --> 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+      </style>  
+</body>
+</html>
+
