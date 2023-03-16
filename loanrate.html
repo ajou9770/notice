@@ -280,6 +280,7 @@ a:active {
   border-radius: 5px;
   font-weight: 600;
 	background-color:#378de5;
+  box-shadow: 0px 4px 8px grey;
 }
 #btnReload:active {
 	position:relative;
@@ -460,7 +461,7 @@ a:active {
         ※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
         ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 매년(2월경) 지급 됩니다.
       </h3><br/>
-      <button id="btnReload" onclick="window.location.reload()">🔃초기화(처음부터)</button>
+      <button id="btnReload" onclick="reLoad()">🔃초기화(처음부터)</button>
       <br>
       <div style="text-align: center;">
       <div class="Button_blue_link">
@@ -476,6 +477,12 @@ a:active {
         </a>
         </div>
     <br/>
+    <script>
+      function reLoad() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.location.reload();        
+      }
+      </script>
     <script>
       const form = document.querySelector("form");
       const aside = document.querySelector("aside");
