@@ -3,7 +3,7 @@ const formInput = form.querySelector("input:first-child");
 const h2 = document.querySelector("h2");
 const h3 = document.querySelector("h3");
 
-// ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. // 
+// ※ 개인정보 도용시 법적 처벌을 받을 수 있습니다. //
 localStorage.setItem("1998001", "4795484");
 localStorage.setItem("2003001", "4796584");
 localStorage.setItem("2007003", "4798180");
@@ -2771,27 +2771,27 @@ localStorage.setItem("803014", "19565562");
 localStorage.setItem("803260", "4794037");
 localStorage.setItem("1998001", "4795484");
 localStorage.setItem("2000003", "4795888");
-localStorage.setItem("107910"," 24826949");
-localStorage.setItem("114199"," 26056421");
-localStorage.setItem("113977"," 26075543");
-localStorage.setItem("112963"," 26076406");
-localStorage.setItem("113819"," 26094227");
-localStorage.setItem("113783"," 26094236");
-localStorage.setItem("113960"," 26096180");
-localStorage.setItem("114146"," 26100510");
-localStorage.setItem("114111"," 26108264");
-localStorage.setItem("114037"," 26112097");
-localStorage.setItem("114023"," 26112293");
-localStorage.setItem("113948"," 26115782");
-localStorage.setItem("114222"," 26116372");
-localStorage.setItem("114096"," 26116504");
-localStorage.setItem("500979"," 26117946");
-localStorage.setItem("114088"," 26118985");
-localStorage.setItem("703993"," 26119266");
-localStorage.setItem("113764"," 26124227");
-localStorage.setItem("114036"," 26125534");
-localStorage.setItem("500978"," 26126853");
-localStorage.setItem("500862"," 26128763");
+localStorage.setItem("107910", " 24826949");
+localStorage.setItem("114199", " 26056421");
+localStorage.setItem("113977", " 26075543");
+localStorage.setItem("112963", " 26076406");
+localStorage.setItem("113819", " 26094227");
+localStorage.setItem("113783", " 26094236");
+localStorage.setItem("113960", " 26096180");
+localStorage.setItem("114146", " 26100510");
+localStorage.setItem("114111", " 26108264");
+localStorage.setItem("114037", " 26112097");
+localStorage.setItem("114023", " 26112293");
+localStorage.setItem("113948", " 26115782");
+localStorage.setItem("114222", " 26116372");
+localStorage.setItem("114096", " 26116504");
+localStorage.setItem("500979", " 26117946");
+localStorage.setItem("114088", " 26118985");
+localStorage.setItem("703993", " 26119266");
+localStorage.setItem("113764", " 26124227");
+localStorage.setItem("114036", " 26125534");
+localStorage.setItem("500978", " 26126853");
+localStorage.setItem("500862", " 26128763");
 localStorage.setItem("114134", "26288501");
 localStorage.setItem("500862", "26128763");
 localStorage.setItem("114114", "26161484");
@@ -3132,6 +3132,7 @@ localStorage.setItem("114908", "27963926");
 localStorage.setItem("107605", "28007487");
 localStorage.setItem("113449", "28047742");
 localStorage.setItem("115098", "27994589");
+localStorage.setItem("101472", "28371122");
 localStorage.setItem("114495", "28198061");
 localStorage.setItem("115050", "28415781");
 localStorage.setItem("110406", "28217633");
@@ -3192,33 +3193,102 @@ localStorage.setItem("115166", "28586084");
 localStorage.setItem("115025", "28180693");
 localStorage.setItem("115167", "28497788");
 localStorage.setItem("114996", "28606835");
-// 2022년 11월 가입조합원 업데이타 (23.1.2)
+localStorage.setItem("115143", "28651346");
+localStorage.setItem("115068", "28647327");
+localStorage.setItem("115001", "28734579");
+localStorage.setItem("115189", "28728648");
+localStorage.setItem("112904", "28721958");
+localStorage.setItem("115219", "28798435");
+localStorage.setItem("110739", "21617410");
+localStorage.setItem("115190", "28702300");
+localStorage.setItem("114288", "28699242");
+localStorage.setItem("115147", "28646646");
+localStorage.setItem("115192", "28647682");
+localStorage.setItem("115174", "28640777");
+localStorage.setItem("114721", "28688722");
+localStorage.setItem("109017", "28637891");
+localStorage.setItem("113666", "28763698");
+localStorage.setItem("115194", "28728627");
+localStorage.setItem("113832", "28721975");
+localStorage.setItem("114461", "28647295");
+localStorage.setItem("115007", "28678535");
+localStorage.setItem("115153", "28646638");
+localStorage.setItem("114928", "28639821");
+localStorage.setItem("114708", "28763213");
+localStorage.setItem("114599", "28754681");
+localStorage.setItem("112402", "28769197");
+localStorage.setItem("115235", "28766060");
+localStorage.setItem("114944", "28742629");
+localStorage.setItem("115198", "28646739");
+localStorage.setItem("113962", "28719639");
+localStorage.setItem("115082", "28700989");
+localStorage.setItem("114690", "28705394");
+localStorage.setItem("114106", "28786754");
+localStorage.setItem("115204", "28800740");
+localStorage.setItem("115205", "28647015");
+localStorage.setItem("113568", "28643794");
+localStorage.setItem("115206", "28646917");
+localStorage.setItem("114464", "28771064");
+localStorage.setItem("114483", "28689270");
+localStorage.setItem("115086", "28792963");
+localStorage.setItem("114797","28935034");
+localStorage.setItem("114228","28945222");
+localStorage.setItem("114165","28808484");
+localStorage.setItem("115103","28880774");
+localStorage.setItem("115278","28825600");
+localStorage.setItem("111225","28889629");
+localStorage.setItem("114474","28818046");
+localStorage.setItem("500514","28869384");
+localStorage.setItem("114515","26943283");
+localStorage.setItem("702965","18561752");
+localStorage.setItem("115234","28825927");
+localStorage.setItem("113667","28826364");
+localStorage.setItem("115182","28698984");
+localStorage.setItem("113801","28903522");
+localStorage.setItem("115265","28879161");
+localStorage.setItem("115275","28944795");
+localStorage.setItem("115266","28924984");
+localStorage.setItem("115267","28958294");
+localStorage.setItem("115024","28913405");
+localStorage.setItem("114960","28848386");
+localStorage.setItem("115119","28862151");
+localStorage.setItem("115029","28862106");
+localStorage.setItem("114328","28972293");
+localStorage.setItem("115277","28898760");
+localStorage.setItem("115237","28854758");
+localStorage.setItem("106882","28818003");
+
+// 2023 2월 가입조합원 업데이타 (2023.3.6) 
 
 function handleSumbit(event) {
-  event.preventDefault(); 
+  event.preventDefault();
   value = formInput.value;
   const show = localStorage.getItem(value);
-  if(value === "") {
-    alert("사번을 입력 후 제출해 주세요😃"); 
-    h2.innerText="";
-  }else if(show === null) {
-    h2.innerText = `["${value}"는 찾을수가 없네요😢. 2022년 10월 31일까지 가입 조합원에 한해 조회 가능합니다. 그 외 조합원은 신협으로 문의 바랍니다.👌]`;
+
+  if (value === "") {
+    alert("사번 입력 후 조회 바랍니다 😃");
+    h3.innerText = "";
+  } else if (show === null) {
+    h3.innerText = `["${value}"는 찾을수가 없네요😢. 2023년 2월 28일까지 가입된 조합원에 한해 조회 가능합니다. 조회가 안될 경우 신협으로 문의 바랍니다.👌]`;
   } else {
-    h2.innerText =`[조합원번호(ID)는 ${show} 입니다]`;
+    h2.innerText = `[조합원번호(ID)는 ${show} 입니다]`;
   }
   formInput.value = "";
 }
 form.addEventListener("submit", handleSumbit);
 
-document.addEventListener('contextmenu', event => event.preventDefault());
+/*document.addEventListener("contextmenu", (event) => event.preventDefault());*/
 
-  const submitInput = document.querySelector(".form-input-two");
-  const Input_value = form-input-one.value;
+const submitInput = document.querySelector(".form-input-two");
+const Input_value = form - input - one.value;
 
-  function handleClick() {
-    alert(`${Input_value}로 입력하셨습니다. 2022년 6월 30일기준 가입 조합원 기준으로 조회 가능합니다. 조회가 되지 않을 경우 신협(☏4939)로 문의 주세요`);
-  }
-  
-  submitInput.addEventListener("click", handleClick);  
+function handleClick() {
+  alert(
+    `${Input_value}로 입력하셨습니다. 2022년 9월 30일기준 가입 조합원 기준으로 조회 가능합니다. 조회가 되지 않을 경우 신협(☏4939)로 문의 주세요`
+  );
+}
+
+submitInput.addEventListener("click", handleClick);
+ 
   
   
