@@ -137,18 +137,26 @@
        border-radius: 10px;
      }
      .seetermrate {
+      z-index: 2;
+      position: fixed;
+      border-radius: 10px;
+      right: 20px;
+      bottom: 400px;
       display: flex;
       width: 380px;
       font-weight: 600;
-      font-size: large;
-      color: rgb(37, 37, 143);
+      font-size: medium;
+      color: whitesmoke;
       height: auto;
-      border-width: 1px 1px;
-      border-style: solid;
-      border-color: whitesmoke;
+      border: none;
+      background-color: rgb(10, 50, 80);
       margin-right: 10px;
       align-items: center;
       justify-content: center;
+      box-shadow: 0px 4px 8px grey;
+     }
+     .seetermrate:active {
+      transform: scale(0.97);
      }
      .resultmile {
       height: auto;
