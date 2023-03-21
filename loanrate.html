@@ -141,7 +141,7 @@
       position: fixed;
       border-radius: 10px;
       right: 20px;
-      bottom: 100px;
+      bottom: 110px;
       display: flex;
       width: 200px;
       font-weight: 600;
@@ -280,12 +280,17 @@ a:active {
 	top:1px;
 }
 #btnReload {
-	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
-  padding: 20px;
-  width: 50%;
-  font-size: large;
+  z-index: 2;
+  position: fixed;
+  border-radius: 10px;
+  right: 25px;
+  bottom: 50px;
+	background:linear-gradient(to bottom, #a5ccbc 5%, #eff5f2 100%);
+  padding: 10px;
+  width: 200px;
+  height: auto;
+  font-size: 15px;
   border: none;
-  border-radius: 5px;
   font-weight: 600;
 	background-color:#378de5;
   box-shadow: 0px 4px 8px grey;
@@ -550,7 +555,6 @@ a:active {
           if (changeValue === 2) {
             // 금리 6개월로 바꿀떄
             BASE_RATE = BASE_RATE + 0.001;
-            
           }
           if (changeValue === 3) {
             // 금리 12개월로 바꿀떄
@@ -589,7 +593,7 @@ a:active {
             // 일반등급일떄
             BASE_RATE = BASE_RATE + 0.002;
           }
-          if (changeValue === 3) {
+          if (changeValue === 2) {
             // 금리 6개월로 바꿀떄
             BASE_RATE = BASE_RATE + 0.001;
           }
