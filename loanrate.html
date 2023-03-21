@@ -143,9 +143,9 @@
       right: 20px;
       bottom: 100px;
       display: flex;
-      width: 350px;
+      width: 250px;
       font-weight: 600;
-      font-size: 15px;
+      font-size: 10px;
       color: whitesmoke;
       height: auto;
       border: none;
@@ -305,7 +305,7 @@ a:active {
     border-bottom: solid gray 2px;
     padding: 10px;
     }
-    .Button_blue a {
+  .Button_blue a {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
 	background-color:#7892c2;
@@ -460,11 +460,12 @@ a:active {
       <h2 id="rate"></h2>
       <h2 id="result"></h2></div>
       <div class="seetermrate">
-        <h2 id="detail" class="none">☞ 회차별 원리금 조회하기</h2>
+        <h2 id="detail" class="none">🔎 회차별 원리금 조회하기</h2>
       </div>
       <h2 class="resultmile" id="dividend"></h2>
     </main>
-    <aside class="none"></aside>
+    <aside class="none">
+    </aside>
     <h3 class="mark_three">
         ※ 대출기간이 1년미만이거나, 중도상환할 경우 이용고 배당 금액은 달라 질 수 있습니다.<br/>
         ※ 이용고배당은 대출금평잔과 대출관련 기타이용 실적이 포함되어 매년(2월경) 지급 됩니다.
@@ -643,12 +644,12 @@ a:active {
         if (detail.on === true) {
           detail.on = false;
           aside.classList.add(CLASS_NONE);
-          detail.innerText = "☞ 회차별 원리금 조회하기";
+          detail.innerText = "🔎 회차별 원리금 조회하기";
         } else {
           window.scrollTo(0, -document.body.scrollHeight);
           detail.on = true;
           aside.classList.remove(CLASS_NONE);
-          detail.innerText = "☞ 회차별 원리금 닫기";
+          detail.innerText = "↩ 회차별 원리금 닫기";
         }
       };
       detail.addEventListener("click", onOff);
