@@ -112,7 +112,7 @@ $(document).ready(function(){
   font-weight: 600;
   border: none;
 }
-#rangeans {
+#rangeans, #copyed {
   display: none;
 }
 .dropdown {
@@ -198,6 +198,7 @@ textarea {
     <small>※ 카카오를 사용하지 않는경우 아래 계좌번호 복사후 모바일뱅크로 보내 주세요</small>
     <button onclick="copyBtn_seol()">✔송금할 김설호님의 계좌 복사하기
     <textarea id="myAcc" rows="1" cols="15">0323913000016</textarea>
+    <small id="copyed" style="color:burlywood">👌복사되었습니다.</small>
     </button>
     <br>
     <!--     <div
@@ -230,10 +231,12 @@ data-support-multiple-densities="true"
 </script> -->
 <script>    
     function copyBtn_seol() { 
-    var myAccount = document.getElementById("myAcc"); 
+    var myAccount = document.getElementById("myAcc");
+    const Copyed = document.getElementById("copyed"); 
     myAccount.select();
     document.execCommand("copy"); 
     myAccount.style.display="none";
+    Copyed.style.display="block";
     alert(`✔김설호님의 신협 계좌번호 [${myAccount.value}]가 복사되었습니다. \n계좌번호 입력란에 붙여넣으세요`);
    }   
   </script>
