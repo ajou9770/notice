@@ -9,8 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#range").click(function(){
-    $("#rangeans").toggle("slow");
+  $("#notKakao").click(function(){
+    $("#kakao").hide("slow");
+    $("#etcApp").show("slow");
+  });
+  $("#reRoad").click(function(){
+    $("#kakao").show("slow");
+    $("#etcApp").hide("slow");
   });
 });
 </script>
@@ -30,12 +35,11 @@ $(document).ready(function(){
         div {
             display: flex;
             flex-direction: column;
-            text-align: end;
+            text-align: center;
             border-color: black;            
             border-radius: 10px;
             justify-content: center;
             align-items:center;
-            color: seashell;
         }
         .quzi {
             background-color:seagreen;
@@ -112,7 +116,7 @@ $(document).ready(function(){
   font-weight: 600;
   border: none;
 }
-#rangeans, #copyed {
+#rangeans, #copyed, #etcApp {
   display: none;
 }
 .dropdown {
@@ -147,12 +151,6 @@ textarea {
   height: 50px;
   font-size: large;
   font-weight: 600;
-}
-mark {
-  border-radius: 5px;
-
-  color: whitesmoke;
-  box-shadow: 0px 3px 6px grey;
 }
 mark:active {
   transform: scale(0.97);
@@ -200,23 +198,23 @@ textarea {
   </style>
 </head>
 <body>
+  <div id="kakao">
   <img src="img/topimg.JPG"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
     <!-- <h3>💸정산(송금) 안내</h3> -->
     <br>
     <small id="range" style="font-weight: 600;">※ 김설호님에게 카톡(카카오페이)로 바로 송금 또는 계좌번호 복사 </small>
-    <!-- <h4 id="rangeans"> ✔ 아주대학교(의료원)교직원<br>
-        ✔ 학교법인 대우학원 임직원<br>
-        ✔ 조합원의 주민등록상 동거가족<br>
-        ✔ 아주대의료원신협 직원<br>
-    </h4> -->
     <br><br>
     <button id="yes" onclick="kakaoPay()">💸카톡(카카오페이)으로 바로송금<i class="fas fa-chevron-right fa-lg"></i> </button>
-
-    <h2>-------------- or -------------</h2>
+    <br>
+    <samll id="notKakao" style="font-weight: 600;"><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 10%, transparent 15%);">※다른 은행 모바일앱으로 송금할래요 ▶ </mark></samll>
+    </div>
+    
+    <div id="etcApp">
+    <br>
     <small>※ 카카오를 사용하지 않는경우 아래 계좌번호 복사후 사용 하시는 은행 모바일뱅크로 보내 주세요</small>
-    <button onclick="copyBtn_seol()"><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 10%, transparent 15%);">
+    <button onclick="copyBtn_seol()"><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 10%, transparent 15%); color:whitesmoke;">
       ✔ 신협은행 계좌 복사하기<i class="fas fa-copy"></i></mark><br>
     <textarea id="myAcc" rows="1" cols="15">0323913000016</textarea>
     <small id="copyed" style="color:burlywood">👌복사되었습니다.</small>
@@ -231,34 +229,15 @@ textarea {
      <img class="mobimg" src="img/tossimg.JPG"/ onclick="location.href='https://play.google.com/store/apps/details?id=viva.republica.toss'">
     </div><br>
     <small>※ 기타 은행 모바일앱 또는 아이폰 사용자는 스마트폰에 설치된 앱을 이용하세요</small>
-    <!--<div
-id="kakao-talk-channel-chat-button"
-data-channel-public-id="_dfhkK"
-data-title="consult"
-data-size="small"
-data-color="yellow"
-data-shape="mobile"
-data-support-multiple-densities="true"
-></div>-->
+    <br>
+    <button id="reRoad" style="width:50%; height: 60px; background-color: cadetblue">↩이전하면으로 돌아가기</button>
 <h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시~23시까지 입니다. 연결할까요?')){
     location.href='tel:010-7118-6639'
   } else{
     alert('취소되었습니다.')
   }">📞 010-7118-6639</h3>
-<!--     <div class="footer"> 
-    <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
-    </div> -->
-    <!-- <script>
-      function copyBtn_seol() {
-      var obj = document.getElementById("seol");
-      obj.select();  //인풋 컨트롤의 내용 전체 선택
-      console.log("copyed");
-      navigator.vibrate(500);
-      document.execCommand("copy");  //복사
-      obj.setSelectionRange(0, 0);  //커서 위치 초기화
-      alert(`김설호님의 신협 계좌 [${obj.value}] 가 복사되었습니다. 계좌번호 입력란 붙여 넣으세요`);
-    }
-</script> -->
+
+  </div>
 <script>    
     function copyBtn_seol() { 
     var myAccount = document.getElementById("myAcc");
@@ -281,21 +260,6 @@ data-support-multiple-densities="true"
           }
         }
         </script>
-    <script>
-        window.kakaoAsyncInit = function() {
-          Kakao.Channel.createChatButton({
-            container: '#kakao-talk-channel-chat-button',
-          });    
-        };
-       
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'kakao-js-sdk');
-      </script>
    </script>
     <script
     src="https://kit.fontawesome.com/6478f529f2.js"
