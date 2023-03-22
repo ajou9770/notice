@@ -171,8 +171,11 @@ body {
 ::view-transition-new(root) {
    animation-duration: 5s;
 }
-#seol {
+#myAcc {
   display: none;
+}
+#yes {
+  background-color: goldenrod;
 }
   </style>
 </head>
@@ -185,10 +188,10 @@ body {
         ✔ 아주대의료원신협 직원<br>
     </h4> -->
     <br><br>
-    <button id="yes" onclick="location.href='https://qr.kakaopay.com/Ej8LSuQyO', navigator.vibrate(200)">💸카톡(카카오페이)으로 바로송금 </button>
+    <button id="yes" onclick="kakaoPay()">💸카톡(카카오페이)으로 바로송금 </button>
     <br><br>
-    <button onclick="copyBtn_seol()">✔계좌 복사하기
-      <textarea id="seol">0323913000016</textarea>
+    <button onclick="copyBtn_seol()">✔송금할 김설호님의 계좌 복사하기
+    <textarea id="myAcc">0323913000016</textarea>
     </button>
     <br>
     <!--     <div
@@ -208,9 +211,9 @@ data-support-multiple-densities="true"
 <!--     <div class="footer"> 
     <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
     </div> -->
-    <script>
+    <!-- <script>
       function copyBtn_seol() {
-      let obj = document.getElementById("seol");
+      var obj = document.getElementById("seol");
       obj.select();  //인풋 컨트롤의 내용 전체 선택
       console.log("copyed");
       navigator.vibrate(500);
@@ -218,12 +221,23 @@ data-support-multiple-densities="true"
       obj.setSelectionRange(0, 0);  //커서 위치 초기화
       alert(`김설호님의 신협 계좌 [${obj.value}] 가 복사되었습니다. 계좌번호 입력란 붙여 넣으세요`);
     }
-</script>
+</script> -->
+<script>    
+    function copyBtn_seol() { 
+    const myAccount = document.getElementById("myAcc");  
+    window.navigator.clipboard.writeText(myAccount.value);
+    alert(`✔김설호님의 신협 계좌번호 [${myAccount.value}]가 복사되었습니다. \n계좌번호 입력란에 붙여넣으세요`);
+   }   
+  </script>
     <script>
-        function ansNo(){
-            alert("😪조합원 공동유대(대상)이 아닙니다. 이전화면으로 이동합니다. ");
+        function kakaoPay() {
+          if(window.confirm("🤷‍♂️카카오페이로 송금하시겠습니까?  카카오페이 송금이 불가한 경우 아래 계좌 복사하셔서 송금바랍니다. "))
+          {
+            location.href='https://qr.kakaopay.com/Ej8LSuQyO';
             navigator.vibrate(200);
-            location.href="https://ajou9770.github.io/usertip/index.html";
+          } else {
+            alert(" 🤷‍♀️카카오송금이 취소 되었습니다. ");
+          }
         }
         </script>
     <script>
