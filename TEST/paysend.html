@@ -171,9 +171,6 @@ body {
 ::view-transition-new(root) {
    animation-duration: 5s;
 }
-#myAcc {
-  display: none;
-}
 #yes {
   background-color: goldenrod;
 }
@@ -225,8 +222,10 @@ data-support-multiple-densities="true"
 </script> -->
 <script>    
     function copyBtn_seol() { 
-    const myAccount = document.getElementById("myAcc");  
-    window.navigator.clipboard.writeText(myAccount.value);
+    var myAccount = document.getElementById("myAcc"); 
+    myAccount.select();
+    document.execCommand("copy"); 
+    myAccount.style.display="none";
     alert(`✔김설호님의 신협 계좌번호 [${myAccount.value}]가 복사되었습니다. \n계좌번호 입력란에 붙여넣으세요`);
    }   
   </script>
