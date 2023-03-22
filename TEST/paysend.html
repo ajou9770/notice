@@ -182,6 +182,20 @@ textarea {
   text-align: center;
   height: 18px;
 }
+.mobile {
+  display: flexbox;
+  flex-direction: row;
+  }
+.mobimg {
+  width: 80px;
+  margin-right: 10px;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px grey;
+}
+.mobimg:active {
+  transform: scale(0.98);
+}
   </style>
 </head>
 <body>
@@ -197,7 +211,6 @@ textarea {
     <br><br>
     <button id="yes" onclick="kakaoPay()">💸카톡(카카오페이)으로 바로송금<i class="fas fa-chevron-right fa-lg"></i> </button>
 
-    <hr>
     <h2>-------------- or -------------</h2>
     <small>※ 카카오를 사용하지 않는경우 아래 계좌번호 복사후 사용 하시는 은행 모바일뱅크로 보내 주세요</small>
     <button onclick="copyBtn_seol()"><mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 10%, transparent 15%);">
@@ -206,7 +219,16 @@ textarea {
     <small id="copyed" style="color:burlywood">👌복사되었습니다.</small>
     </button>
     <br>
-    <!--     <div
+    <h4>#아래 은행별 모바일 뱅킹(<i class="fa-brands fa-google-play"></i>구글전용)으로 접속하세요</h4>
+    <small>※ 기타 은행 모바일앱 또는 아이폰 사용자는 스마트폰에 설치된 앱을 이용하세요</small>
+    
+    <br><div class="mobile">
+     <img class="mobimg" src="img/kbbankimg.JPG"/ onclick="location.href='https://play.google.com/store/apps/details?id=com.kbstar.kbbank'"> 
+     <img class="mobimg" src="img/scbankimg.JPG"/ onclick="location.href='https://play.google.com/store/apps/details?id=com.scbank.ma30'">
+     <img class="mobimg" src="img/wooribankimg.JPG"/ onclick="location.href='https://play.google.com/store/apps/details?id=com.wooribank.smart.npib'">
+     <img class="mobimg" src="img/tossimg.JPG"/ onclick="location.href='https://play.google.com/store/apps/details?id=viva.republica.toss'">
+    </div>
+    <!--<div
 id="kakao-talk-channel-chat-button"
 data-channel-public-id="_dfhkK"
 data-title="consult"
@@ -214,7 +236,7 @@ data-size="small"
 data-color="yellow"
 data-shape="mobile"
 data-support-multiple-densities="true"
-></div> -->
+></div>-->
 <h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시~23시까지 입니다. 연결할까요?')){
     location.href='tel:010-7118-6639'
   } else{
