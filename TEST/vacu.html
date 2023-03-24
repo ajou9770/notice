@@ -22,7 +22,8 @@ $(document).ready(function(){
       $("#yes").hide("slow");
     $("#iFram").show("slow");
     $("#closeyes").show("slow");
-    alert("✨신청서 제출 후 신청내역을 확인해 주세요")
+    alert("✨신청서 제출 후 신청내역을 확인해 주세요");
+    navigator.vibrate(200);
   } else {
     alert("취소 되었습니다.")
   }
@@ -59,7 +60,7 @@ $(document).ready(function(){
     
     <iframe id="iFram" src="https://docs.google.com/forms/d/e/1FAIpQLSfKpIQI0jGIZ2q71yWe7T4JQ07Ng1fzQk3fN0iC3cmn82iYAA/viewform?embedded=true" width="640" height="2935" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <hr>
-    <button id="closeyes">↩신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <button id="closeyes">신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;">   
 <h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시 ~ 23시까지 입니다. 전화앱으로 연결 할까요?')){
     location.href='tel:010-8013-6639'
