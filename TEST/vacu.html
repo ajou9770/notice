@@ -211,7 +211,7 @@ textarea {
         ❔기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
      </span>
      <br>
-     <small onclick="location.href='https://docs.google.com/spreadsheets/d/1RgLApD0DeTJvD-8GKpxb3uNoIBRmq5VvNrkKIzFyYFw/edit#gid=1062282151'">🔎현재 휴가 신청내역 보기 &rarr;</small>
+     <small onclick="seeRe()">🔎현재 휴가 신청내역 보기 &rarr;</small>
      <br>
     <button id="yes" onclick="kakaoPay()">📝휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
     <br>
@@ -231,6 +231,15 @@ textarea {
           if(window.confirm("🤷‍♂️유의사항을 확인 하셨나요?  휴가신청을 위해 구글폼으로 이동할까요? "))
           {
             location.href='https://docs.google.com/forms/d/e/1FAIpQLSe8XRT5TX-JC2vgPHSCDVk6eLC2GwDj77ZMxgYYWSzTtnrqMg/viewform?usp=sf_link';
+            navigator.vibrate(200);
+          } else {
+            alert(" 🤷‍♀️취소 되었습니다. ");
+          }
+        }
+        function seeRe() {
+          if(window.confirm("🤷‍♂️접수된 시트 양식은 변경하지 마세요 현재 신청된 현황을 보시겠어요?"))
+          {
+            location.href='https://docs.google.com/spreadsheets/d/1RgLApD0DeTJvD-8GKpxb3uNoIBRmq5VvNrkKIzFyYFw/edit?usp=sharing';
             navigator.vibrate(200);
           } else {
             alert(" 🤷‍♀️취소 되었습니다. ");
