@@ -9,9 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#notKakao").click(function(){
-    $("#kakao").hide("slow");
-    $("#etcApp").show("slow");
+  $("#conForm").click(function(){
+    $("#serRe").show("slow");
   });
   $("#reRoad").click(function(){
     $("#kakao").show("slow");
@@ -170,6 +169,7 @@ body {
    animation-duration: 5s;
 }
 #yes {
+    display: neon;
   background-color: rgb(12, 66, 104);
 }
 textarea {
@@ -204,14 +204,18 @@ textarea {
     <!-- <h3>💸정산(송금) 안내</h3> -->
 
      <h3>🤷‍♂️휴가신청시 유의 사항 </h3>
-     <span>✔ 동일날짜에 3명이상 신청한 경우 조정될 수 있습니다. 
-        <br>
+     <span>✔ 동일날짜에 3명이상 신청한 경우 선착순으로 접수됩니다.
+             <br>  (아래 "휴가신청내역" 확인요망) 
+             <br>
         ✔ 양식에 맞게 작성 바랍니다. 
         <br>
         ❔기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
      </span>
      <br>
-     <small onclick="seeRe()">🔎현재 휴가 신청내역 보기 &rarr;</small>
+     <button id="conForm" onclick="seeRe()">🔎현재 휴가 신청내역 보기 <i class="fas fa-chevron-right fa-lg"></i></button>
+    <br>
+     ⏬
+     <br>
      <br>
     <button id="yes" onclick="kakaoPay()">📝휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
     <br>
@@ -228,7 +232,7 @@ textarea {
 
     <script>
         function kakaoPay() {
-          if(window.confirm("🤷‍♂️유의사항을 확인 하셨나요?  휴가신청을 위해 구글폼으로 이동할까요? "))
+          if(window.confirm("🤷‍♂️유의사항 및 신청된 내역을 확인하셨나요?  휴가신청을 위해 구글폼으로 이동할까요? "))
           {
             location.href='https://docs.google.com/forms/d/e/1FAIpQLSe8XRT5TX-JC2vgPHSCDVk6eLC2GwDj77ZMxgYYWSzTtnrqMg/viewform?usp=sf_link';
             navigator.vibrate(200);
@@ -236,7 +240,7 @@ textarea {
             alert(" 🤷‍♀️취소 되었습니다. ");
           }
         }
-        function seeRe() {
+        function seeRe() {  
           if(window.confirm("🤷‍♂️접수된 시트 양식은 변경하지 마세요 현재 신청된 현황을 보시겠어요?"))
           {
             location.href='https://docs.google.com/spreadsheets/d/1RgLApD0DeTJvD-8GKpxb3uNoIBRmq5VvNrkKIzFyYFw/edit?usp=sharing';
