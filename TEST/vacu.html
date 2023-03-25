@@ -37,14 +37,17 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body>
+<body onload="alert('[신청순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 중복되지 않게 휴가신청서 작성하기 \n⏳신청기간:매월 10일까지')">
   <img src="img/topimg.JPG"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
     <!-- <h3>💸정산(송금) 안내</h3> -->
 
      <h3>🤷‍♂️휴가신청시 유의 사항 </h3>
-     <span>✔ 동일날짜에 3명 이상 신청한 경우 선착순으로 접수됩니다.(아래 "휴가신청내역" 확인요망) 
+     <span>
+      📆신청기간:매월1일~10일 (이후, 신청 불가)
+      <br>
+      ✔ 동일날짜에 2명까지만 신청 가능. (아래 "휴가신청내역" 확인요망) 
              <br>
              
         ✔기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
@@ -59,18 +62,20 @@ $(document).ready(function(){
     
     <iframe id="iFram" src="https://docs.google.com/forms/d/e/1FAIpQLSfKpIQI0jGIZ2q71yWe7T4JQ07Ng1fzQk3fN0iC3cmn82iYAA/viewform?embedded=true" width="640" height="2935" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <hr>
-    <button id="closeyes">신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;">   
 <h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시 ~ 23시까지 입니다. 전화앱으로 연결 할까요?')){
     location.href='tel:010-8013-6639'
   } else{
     alert('취소되었습니다.')
   }">📞 문의하기 </h3>   
-  <h3 onclick="if(window.confirm('병동파트장에게 📧이메일 보낼까요?')){
+  
+  <!--메일보내기
+   <h3 onclick="if(window.confirm('병동파트장에게 📧이메일 보낼까요?')){
     location.href='mailto:happyiris522@naver.com'
   } else{
     alert('취소되었습니다.')
-  }">📩 메일보내기 </h3>
+  }">📩 메일보내기 </h3> -->
   
    </div>
     <script>
