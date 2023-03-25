@@ -17,6 +17,9 @@ $(document).ready(function(){
     $("#kakao").show("slow");
     $("#etcApp").hide("slow");
   });
+  $("#dialogBtn").click(function(){
+    $("#diaLog").hide();
+  });
 });
 </script>
     <style>
@@ -191,9 +194,17 @@ textarea {
 .mobimg:active {
   transform: scale(0.98);
 }
+dialog {
+  text-align: end;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0pc 4px 8px grey;
+}
   </style>
 </head>
 <body>
+  <dialog open id="diaLog">이 정보는 개인정보 보호법에 의거 보호됩니다. <br>
+  <small id="dialogBtn">□ 확인하였습니다</small></dialog>
 <h3>승선자 명단 안내</h3>
 <h3>📅승선일: 2023.3.25(토) 11시 (국화도 왕복15:30) </h3> 
     
