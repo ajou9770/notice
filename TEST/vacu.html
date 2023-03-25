@@ -37,7 +37,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body onload="alert('[신청순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 중복되지 않게 휴가신청서 작성하기 \n⏳신청기간:매월 10일까지')">
+<body onload="alert('[휴가 신청 순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 동일날짜 2명 초과 중복되지 않게 휴가신청서 작성하기 \n\n⏳신청기간:매월 10일까지')">
   <img src="img/topimg.JPG"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
@@ -64,8 +64,8 @@ $(document).ready(function(){
     <hr>
     <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;">   
-<h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시 ~ 23시까지 입니다. 전화앱으로 연결 할까요?')){
-    location.href='tel:010-8013-6639'
+<h3 onclick="if(window.confirm('📞파트장에게 전화연결 하시겠어요?')){
+    location.href='tel:010-1234-5678'
   } else{
     alert('취소되었습니다.')
   }">📞 문의하기 </h3>   
@@ -78,6 +78,12 @@ $(document).ready(function(){
   }">📩 메일보내기 </h3> -->
   
    </div>
+   <script>
+    document.addEventListener("contextmenu", event =>
+      event.preventDefault());
+      document.addEventListener("contextmenu", event =>
+      alert("⚠우측마우스 사용이 제한됩니다."));  
+      </script>
     <script>
         function kakaoPay() {
           if(window.confirm("🤷‍♂️유의사항 및 신청내역을 확인하셨나요?  휴가신청서 구글폼으로 이동할까요? "))
