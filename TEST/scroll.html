@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lightsteelblue;
+            width: 260px;
+        }
+
+        .item {
+            background-color: lightgoldenrodyellow;
+            margin: 3px;
+            width: 250px;
+            height: 250px;
+        }
+
+        .btns {
+            position: sticky;
+            top: 0;
+            left: 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btns">
+        <input type="button" value="50px씩 아래로 이동하기" class="scrollBy" data-direction="bottom">
+        <input type="button" value="50px씩 위로 이동하기" class="scrollBy" data-direction="top">
+        <input type="button" value="500px 지점으로 이동하기" class="scrollTo" data-direction="500">
+        <input type="button" value="최상단 이동" data-direction="first">
+        <input type="button" value="최하단 이동" data-direction="last">
+    </div>
+    <div class="items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item">500px 지점</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        const scrollMove = (event) => {
+            if (event.target.dataset.direction === 'bottom')
+                window.scrollBy(0, 50);
+            else if (event.target.dataset.direction === 'top')
+                window.scrollBy(0, -50);
+            else if (event.target.dataset.direction === '500')
+                window.scrollTo(0, 500);
+            else if (event.target.dataset.direction === 'first')
+                window.scrollTo(0, 0);
+            else if (event.target.dataset.direction === 'last')
+                window.scrollTo(0, document.querySelector('body').scrollHeight);
+        }
+
+        document.querySelector('.btns').addEventListener('click', scrollMove);
+    </script>
+</body>
+
+</html>
