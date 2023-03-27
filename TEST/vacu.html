@@ -19,8 +19,10 @@ $(document).ready(function(){
   $("#yes").click(function(){
     if(confirm("🤷‍♀️휴가 신청내역을 확인하셨나요? 휴가 신청서를 작성하시겠습니까?"))
     {
-      $("#yes").hide("slow");
+    $("#yes").hide("slow");
     $("#iFram").show("slow");
+    $("#item").show("slow");
+    $("#cal").show("slow");
     $("#closeyes").show("slow");
     alert("✨신청서 제출 후 신청내역을 확인해 주세요.\n 해당날짜에 순서대로 총 7개(OF,PE1,D,E,N,C,V)의 선택항목이 있습니다. 폰화면에서는 가로로 보시거나 좌우측으로 스크롤 하여 보세요 ");
     navigator.vibrate(200);
@@ -33,6 +35,22 @@ $(document).ready(function(){
     $("#iFram").hide("slow");
     $("#closeyes").hide("slow");
     window.scrollTo(top(200));
+  });
+  $("#itemClose").click(function(){
+    $("#item").hide("slow");
+    $("#seeitem").show("slow");
+  });
+  $("#calClose").click(function(){
+    $("#cal").hide("slow");
+    $("#seecal").show("slow");
+  });
+  $("#seeitem").click(function(){
+    $("#item").show("slow");
+    $("#seeitem").hide("slow");
+  });
+  $("#seecal").click(function(){
+    $("#cal").show("slow");
+    $("#seecal").hide("slow");
   });
 });
 </script>
@@ -65,6 +83,11 @@ $(document).ready(function(){
     <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;"> 
     <h4 id="clock" style="font-family: 'Times New Roman', Times, serif; font-size: large; font-weight: 600;"></h4>  
+    <div id="item"><img src="img/itemimg.jpg" style="width:300px; height:50px;"/><span id="itemClose">❌닫기</span></div>
+    <div id="cal"><img src="img/cal_may.jpg" style="width:200px; height:200px;"/><span id="calClose">❌닫기</span></div>
+    <div id="seeitem">🔎선택항목보기</div>
+    <div id="seecal">📆달력보기</div>
+    
     <!--<h3 onclick="if(window.confirm('📞파트장에게 전화연결 하시겠어요?')){
      location.href='tel:010-1234-5678'
      } else{
