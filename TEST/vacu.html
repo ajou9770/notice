@@ -22,7 +22,7 @@ $(document).ready(function(){
       $("#yes").hide("slow");
     $("#iFram").show("slow");
     $("#closeyes").show("slow");
-    alert("✨신청서 제출 후 신청내역을 확인해 주세요.\n 해당날짜에 순서대로 총 5개(OF,PE1,D,E,N)의 선택항목이 있습니다. 폰화면에서는 가로로 보시거나 좌우측으로 스크롤 하여 보세요 ");
+    alert("✨신청서 제출 후 신청내역을 확인해 주세요.\n 해당날짜에 순서대로 총 7개(OF,PE1,D,E,N,C,V)의 선택항목이 있습니다. 폰화면에서는 가로로 보시거나 좌우측으로 스크롤 하여 보세요 ");
     navigator.vibrate(200);
   } else {
     alert("취소 되었습니다.")
@@ -60,7 +60,7 @@ $(document).ready(function(){
     <button id="yes" >📝휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
    <!--  <h4 id="notice">🤷‍♂️휴가 신청 기간이 아닙니다. 파트장에게 문의 하세요
       <br>(📅신청기간: 매월 1일 ~ 10일)</h4> -->
-    <iframe id="iFram" src="https://docs.google.com/forms/d/e/1FAIpQLSfsiGFEcY65vJRZDo1-y7hoXDgerjbdty5IiqpIlcUjZ-Uzgg/viewform?embedded=true" width="100%" height="2606" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+    <iframe id="iFram" src="https://docs.google.com/forms/d/e/1FAIpQLScgGDLbhJJdn3LjZuFuDs5vyzspywXQ_5VwcQxlA6MaRkyKtg/viewform?embedded=true" width="100%" height="2606" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <hr>
     <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;"> 
@@ -113,7 +113,7 @@ $(document).ready(function(){
         function seeRe() {  
           if(window.confirm("🤷‍♂️현재 신청된 시트는 변경하지 마세요.  신청 현황을 확인하시겠어요?"))
           {
-            location.href='https://docs.google.com/spreadsheets/d/1J2XhDp_ADz_cnlTzeUTvPExn5O0fwrd40Erhi9IfWq4/edit?usp=sharing';
+            location.href='https://docs.google.com/spreadsheets/d/1e245Errw3sEs-jiGq2feu2KesUt-l-e_1zk2r5lW3os/edit?usp=sharing';
             navigator.vibrate(200);
           } else {
             alert(" 🤷‍♀️취소 되었습니다. ");
