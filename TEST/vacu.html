@@ -57,7 +57,6 @@ $(document).ready(function(){
   $(window).resize(function() {
     var width_size = window.outerWidth;
     if(width_size >= 1000) {
-      window.resizeTo(1000,950);
       alert(`🚨현재 PC가로사이즈는 ${(width_size).toLocaleString("ko-KR")}px입니다.  가로사이즈를 1,000px보다 작게 조정하시면 보기에 편합니다.`);
     } else {
       console.log("good size");
