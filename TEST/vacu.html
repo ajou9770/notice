@@ -26,6 +26,7 @@ $(document).ready(function(){
     $("#julybtn").show("slow");
     $("#seeitem").show("slow");
     $("#closeyes").show("slow");
+    $("#widthSeebtn").show("slow");    
     alert("✨신청서 제출 후 신청내역을 확인해 주세요.\n 해당날짜에 순서대로 총 7개(OF,V,D,E,N,C,PE1)의 선택항목이 있습니다. 폰화면에서는 가로로 보시거나 좌우측으로 스크롤 하여 보세요 ");
     navigator.vibrate(200);
   } else {
@@ -39,6 +40,9 @@ $(document).ready(function(){
     $("#seeitem").hide("slow");
     $("#seecal").hide("slow");
     location.reload();
+  });
+  $("#widthseeClose").click(function(){
+    $("#widthSeebtn").hide("slow");
   });
   $("#mayClose").click(function(){
     $("#may").hide("slow");
@@ -167,6 +171,9 @@ display: none;
     <div id="maybtn">5월</div>
     <div id="junebtn">6월</div>
     <div id="julybtn">7월</div>
+    <div id="widthSeebtn">📱폰에서는 가로화면이 편해요<br>
+    <span id="widthseeClose" style="color:black;">👌확인</span>
+    </div>
     </div>
     <!-- <div id="item"><img src="img/itemimg.jpg" style="width:200px; height:50px;"/><span id="itemClose">❌닫기</span></div> -->
     <!-- <div id="seeitem">📆달력보기🔼</div> -->
