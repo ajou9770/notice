@@ -127,7 +127,7 @@ display: none;
 }
   </style>
 </head>
-<body onload="alert('[휴가 신청 순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 동일날짜 2명 초과 중복되지 않게 휴가신청서 작성하기 \n\n⏳신청기간:매월 10일까지')">
+<body onload="alert('[휴가 신청 순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 휴가신청서 작성하기 \n\n⏳신청기간:매월 10일까지')">
   <img src="img/topimg.JPG"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
@@ -136,7 +136,7 @@ display: none;
      <span>
       📆신청기간:매월1일~10일 (이후, 신청 불가)
       <br>
-      ✔ 동일날짜에 7명까지만 신청 가능. (아래 "휴가신청내역" 확인요망) 
+      <mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">✔ 동일날짜에 7명까지만 신청 가능.</mark> (아래 "휴가신청내역" 확인요망) 
              <br>
              
         ✔기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
@@ -155,7 +155,7 @@ display: none;
     <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <h3 id="changebtn" style="color:tomato; font-weight: 600;">🔀기 신청된 휴가 신청서 수정(변경)신청 &rarr;</h3>
     <iframe id="changeFram" src="https://docs.google.com/forms/d/e/1FAIpQLScXtrktHCLVo2iOiMkXH4qaTZXJLDYALE2Z8Er5xu_Xpzh-lw/viewform?embedded=true" width="640" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
-    <button id="changeClose">❌변경신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <button id="changeClose" style="background-color: tomato;">❌변경신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     <div style="display:flex; align-items:center;"> 
     <h4 id="clock" style="font-family: 'Times New Roman', Times, serif; font-size: large; font-weight: 600;"></h4>  
     <!-- <div id="item"><img src="img/itemimg.jpg" style="width:200px; height:50px;"/><span id="itemClose">❌닫기</span></div> -->
