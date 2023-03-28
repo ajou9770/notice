@@ -54,6 +54,12 @@ $(document).ready(function(){
     $("#cal").show("slow");
     $("#seecal").hide("slow");
   });
+  $(window).resize(function() {
+    var width_size = window.outerWidth;
+    if(width_size >= 1000) {
+      alert(`🚨현재 PC가로사이즈는 ${width_size}px입니다.  넓이를 1,000px보다 작게 조정하시면 보기에 편합니다.`);
+    }
+  })
 });
 </script>
 <style>
