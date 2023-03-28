@@ -185,8 +185,8 @@ iframe {
   color: whitesmoke;
   border-radius: 100px;
   background-color: rgb(14, 115, 9);
-  bottom: 100px;
-  right: 150px;
+  bottom: 30px;
+  right: 140px;
   padding: 5px;
   opacity: 0.8;
   z-index: 1;
@@ -199,8 +199,8 @@ iframe {
   color: whitesmoke;
   border-radius: 100px;
   background-color: rgb(118, 76, 7);
-  bottom: 100px;
-  right: 90px;
+  bottom: 30px;
+  right: 80px;
   padding: 5px;
   opacity: 0.8;
   z-index: 1;
@@ -213,8 +213,8 @@ iframe {
   color: whitesmoke;
   border-radius: 100px;
   background-color: rgb(28, 6, 108);
-  bottom: 100px;
-  right: 30px;
+  bottom: 30px;
+  right: 20px;
   padding: 5px;
   opacity: 0.8;
   z-index: 1;
