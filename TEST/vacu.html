@@ -138,10 +138,13 @@ display: none;
     <!-- <h3>💸정산(송금) 안내</h3> -->
          <h3>🤷‍♂️휴가신청시 유의 사항 </h3>
      <span>
-      📆신청기간:매월1일~10일 (이후, 신청 불가)
-      <br>
-      <mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">✔ 동일날짜에 7명까지만 신청 가능.</mark> (아래 "휴가신청내역" 확인요망) 
+      <mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">
+             1. OF신청 7명이내/일당 (구역당 1명 이내).</mark> 
              <br>
+             2. 신청기간:매월1일~10일 (이후, 신청 불가)<br>
+             3. 근무,휴가,학업 등 신청사유 기입은 기타에 기입<br>
+             4. 보수교육 신청은 교육명과 교육기관 기입 <br>
+             => 예)보수교육 - 감염관리 - 병원간호사회<br>
              
         ✔기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
      </span>
@@ -158,9 +161,10 @@ display: none;
     <hr>
     <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
     
-    <h3 id="changebtn" style="color:tomato; font-weight: 600;">🔀기 신청된 휴가 신청서 변경신청 &rarr;</h3>
+    <button id="changebtn" style="background-color:tomato; color:whitesmoke; font-weight: 600; height: 60px;">🔀 휴가 신청서 변경 신청 &rarr;</button>
     <iframe id="changeFram" src="https://docs.google.com/forms/d/e/1FAIpQLScXtrktHCLVo2iOiMkXH4qaTZXJLDYALE2Z8Er5xu_Xpzh-lw/viewform?embedded=true" width="640" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
-    <button id="changeClose" style="background-color: tomato;">❌변경신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <button id="changeClose" style="background-color: tomato; height: 60px;">❌변경신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <br>
     <small id="adminlogin" onclick="adminLogin()">💻 변경신청내역보기(관리자) &rarr;</small>
     <iframe id="changeResponse" src="https://docs.google.com/spreadsheets/d/15H8Ftqse6UtshV1YBJTGRcMetDHk9-pfnQt8KdqQ3v8/edit?usp=sharing/viewform?embedded=true" width="640" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <div style="display:flex; align-items:center;"> 
