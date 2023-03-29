@@ -193,16 +193,17 @@ display: none;
   
   <script>
     function adminLogin() {
-        var qus = prompt("⚙비밀번호를 입력하세요");
+        var qus = prompt("🔐password?");
         var res = "1234";
         var statut;
         var nouveau = "yes";
        
       if(qus === res) {
     /* document.getElementById("changeResponse").style.display = "block"; */
+       alert("✔휴가신청 변경내역 접수 구글폼으로 이동합니다. ")
        location.href ="https://docs.google.com/spreadsheets/d/15H8Ftqse6UtshV1YBJTGRcMetDHk9-pfnQt8KdqQ3v8/edit?usp=sharing"
       } else {
-        alert(` 🤷‍♀️비밀번호가 틀리거나 취소 되었습니다.`);
+        alert(`✔password가 불일치 하거나, 취소 되었습니다.`);
       }
     }
 </script>
