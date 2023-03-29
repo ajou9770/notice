@@ -192,21 +192,16 @@ display: none;
   }">📩 메일보내기 </h3> -->
   
   <script>
-    function adminLogin() {
-        var qus = prompt("🔐password?");
-        var res = "1234";
-        var statut;
-        var nouveau = "yes";
-       
-      if(qus === res) {
-    /* document.getElementById("changeResponse").style.display = "block"; */
-       alert("✔휴가신청 변경내역 접수 구글폼으로 이동합니다. ")
+  function adminLogin() {
+    password = prompt("🔐 password? ");
+    if(password == 1234 ) {
+      alert("✔휴가신청 변경내역 접수 구글폼으로 이동합니다. ")
        location.href ="https://docs.google.com/spreadsheets/d/15H8Ftqse6UtshV1YBJTGRcMetDHk9-pfnQt8KdqQ3v8/edit?usp=sharing"
-      } else {
+    } else {
         alert(`✔password가 불일치 하거나, 취소 되었습니다.`);
       }
     }
-</script>
+  </script>
    <script>
      const offtime = new Date(2023, 03, 11, 01, 00, 00);
      setInterval(myTimer, 1000);
