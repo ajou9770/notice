@@ -233,14 +233,14 @@ display: none;
         let year = nowDate.getFullYear();
         let month = nowDate.getMonth() +1;
         let day = nowDate.getDate();
-        const passWord = "0" + month+""+day;
+        const passWord = year+"0" + month;
         NowDate.innerHTML = passWord;
-        //상기는 '월일'을 password로 적용하는 법. 
+        //상기는 '년월(202303)'을 password로 적용하는 법. 
         function seeRe() {
         password = prompt("🤷‍♀️password?");  
         if(password == passWord 
         ) {
-         alert("📢현재 신청된 시트는 변경할 수 없어요. 신청 현황 내역으로 이동합니다.  ");
+         alert("📢현재 신청 현황 확인합니다. 시트는 수정할 수 없습니다.");
         location.href='https://docs.google.com/spreadsheets/d/1iM7UuYQQ0YW5AaFQpsAdhlDdSpapFr29HrhSKxCihL0/edit?usp=sharing';
               navigator.vibrate(200);
         } else {
