@@ -132,7 +132,7 @@ display: none;
   </style>
 </head>
 <body onload="alert('[휴가 신청 순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 휴가신청서 작성하기 \n\n⏳신청기간:매월 10일까지')">
-  <img src="img/topimg.JPG"/>
+  <img src="img/vacimg_new.jpg"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
     <!-- <h3>💸정산(송금) 안내</h3> -->
@@ -227,7 +227,28 @@ display: none;
       document.addEventListener("contextmenu", event =>
       alert("⚠우측마우스 사용이 제한됩니다."));  
       </script>
-    <script>
+      <script>
+        const NowDate = document.getElementById("nowDate");
+        let nowDate = new Date();
+        let year = nowDate.getFullYear();
+        let month = nowDate.getMonth() +1;
+        let day = nowDate.getDate();
+        const passWord = "0" + month+""+day;
+        NowDate.innerHTML = passWord;
+        //상기는 '월일'을 password로 적용하는 법. 
+        function seeRe() {
+        password = prompt("🤷‍♀️password?");  
+        if(password == passWord 
+        ) {
+         alert("📢현재 신청된 시트는 변경할 수 없어요. 신청 현황 내역으로 이동합니다.  ");
+        location.href='https://docs.google.com/spreadsheets/d/1iM7UuYQQ0YW5AaFQpsAdhlDdSpapFr29HrhSKxCihL0/edit?usp=sharing';
+              navigator.vibrate(200);
+        } else {
+          alert("⚠패스워드가 불일치하거나, 취소 되었습니다.");
+        }  
+      }
+  </script> 
+    <!-- <script>
          function seeRe() {  
           if(window.confirm("🤷‍♂️현재 신청된 시트는 변경하지 마세요.  신청 현황을 확인하시겠어요?"))
           {
@@ -237,7 +258,7 @@ display: none;
             alert(" 🤷‍♀️취소 되었습니다. ");
           }
         }
-        </script>
+        </script> -->
    </script>
     <script
     src="https://kit.fontawesome.com/6478f529f2.js"
