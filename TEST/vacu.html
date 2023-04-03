@@ -251,6 +251,7 @@ display: none;
     const cal = newDate - localItem;
     
     function notSeeDay() {
+      navigator.vibrate(200);
       document.getElementById("popup").style.display = 'none';
       localStorage.setItem("alertTime", JSON.stringify(newDate));  
     }
@@ -261,6 +262,7 @@ display: none;
     }
     
     function yesbtn() {
+      navigator.vibrate(200);
         document.getElementById("popup").style.display = 'none'; 
     }
     </script> 
