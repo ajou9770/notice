@@ -129,9 +129,36 @@ display: none;
   border: solid 1px 3px 3px 1px black;
   box-shadow: 0px 4px 8px grey;
 }
+#popup, .modal-content {
+  color: whitesmoke;
+  padding: 10px;
+  text-align: left;
+  z-index: 2;
+  position: fixed;
+  background-color: rgb(87, 139, 149);
+  bottom: 50%;
+  left: 20%;
+  right: 20%;
+  box-shadow: 0px 4px 8px grey;
+}
+.duble-underline {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, #8cb510 50%);
+}
   </style>
 </head>
-<body onload="alert('[휴가 신청 순서]\n 1. 현재 휴가신청내역 확인(보기)\n 2. 휴가신청서 작성하기 \n\n⏳신청기간:매월 10일까지')">
+<body onload="popup()">
+  <!-- popup window -->
+  <div id="popup">
+    <div class="modal-content">      
+      <h4>[휴가 신청 순서]<br>
+        1. 현재 휴가신청내역 확인(보기)<br> 
+        2. 휴가신청서 작성하기 <br><br>
+        ⏳신청기간:매월 10일까지</h4>
+      <h3 id="popupYes" onclick="yesbtn()" class="duble-underline">✔확인</h3>
+      <span id="close-button" onclick="notSeeDay()" class="duble-underline">❌하루동안 안보기</span>
+      </div>
+  </div>
+
   <img src="img/vacimg_new.jpg"/>
     <!-- <h3>📑정산 내역 </h3>
     <img src="#"/>  -->
@@ -193,7 +220,26 @@ display: none;
   } else{
     alert('취소되었습니다.')
   }">📩 메일보내기 </h3> -->
-  
+  <script>
+    const localItem = parseInt(localStorage.getItem("alertTime"));
+    const newDate = Date.now();
+    const cal = newDate - localItem;
+    
+    function notSeeDay() {
+      document.getElementById("popup").style.display = 'none';
+      localStorage.setItem("alertTime", JSON.stringify(newDate));  
+    }
+    if(cal < 1000 * 60 * 60 * 24 * 1) {
+        document.getElementById("popup").style.display = 'none'; 
+    } else {
+        console.log("good");
+    }
+    
+    function yesbtn() {
+        document.getElementById("popup").style.display = 'none'; 
+    }
+    </script> 
+
   <script>
   function adminLogin() {
     password = prompt("🔐 password? ");
