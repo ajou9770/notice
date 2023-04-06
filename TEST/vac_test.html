@@ -335,14 +335,15 @@ select {
     var year = nowDate.getFullYear();
     var month = nowDate.getMonth() +1;
     var day = nowDate.getDate();
-    var passWord = year+"0" + month;
+    var passWord = (year-2000)+"0" + month;
     NowDate.innerHTML = passWord;
     //상기는 '년월(202303)'을 password로 적용하는 법. 
     function currentSee() {
+      alert(passWord);
     password = prompt("🤷‍♀️password?");  
     if(password == passWord 
     ) {
-     alert("🆗 => 월을 선택하시면 해당 시트로 이동합니다.  ");
+     alert("🆗 아래에서 월을 선택하시면 해당 시트로 이동합니다.  ");
      document.getElementById("selet_see").style.display = "block";
      navigator.vibrate(200);
     } else {
