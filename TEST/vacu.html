@@ -130,94 +130,105 @@ display: none;
   box-shadow: 0px 4px 8px grey;
 }
 #popup, .modal-content {
+  color: whitesmoke;
   padding: 5px;
   text-align: left;
-  max-width: 400px;
-  overflow: hidden;
   z-index: 2;
   position: fixed;
   height: 230px;
-  background: #ECE9E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: rgb(53, 101, 123);
   top: 20%;
   bottom: 50%;
   left: 15%;
   right: 15%;
   box-shadow: 0px 4px 8px grey;
 }
-.yesbtn {
-  box-shadow: 0px 4px 8px grey;
-  width: 100px;
-  height: 100%;
-  font-weight: 600;
-  font-size: 13px;
-  background-color: rgb(64, 111, 231);
+.duble-underline {
+  background: linear-gradient(180deg,rgba(255,255,255,0) 90%, #8cb510 50%);
 }
-.daybtn {
-  box-shadow: 0px 4px 8px grey;
-  width: 100px;
-  height: 100%;
-  font-weight: 600;
-  font-size: 13px;
-  margin-left: 10px;
-  background-color: rgb(222, 162, 102);
+#May, #June, #July, #selet_see {
+  display: none;
 }
-#foot {
-  display: inline-flex;
-  flex-direction: row;
-  height:60px;
-  margin-bottom: opx;
+#closebtn {
+  display: none;
+  width: 60%;
+  background-color: brown;
+}
+select {
+  width: 60%;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 8px grey;
+  text-align: center;
 }
   </style>
 </head>
-<body onload="popup()">
+<body>
   <!-- popup window -->
-  <div id="popup">
+  <!-- <div id="popup">
     <div class="modal-content">      
-      <h4>[휴가 신청 순서]<br><br>
+      <h4>[휴가 신청 순서]<br>
         1. 현재 휴가신청내역 확인(보기)<br> 
         2. 휴가신청서 작성하기 <br>
         ⏳신청기간:매월 10일까지</h4>
-       <div id="foot"> 
-      <div id="popupYes" onclick="yesbtn()" class="yesbtn">✔확인</div>
-      <div id="close-button" onclick="notSeeDay()" class="daybtn">❌하루동안 <br>안보기</div>
-       </div>  
-    </div>
-  </div>
+      <h3 id="popupYes" onclick="yesbtn()" class="duble-underline">✔확인</h3>
+      <span id="close-button" onclick="notSeeDay()" class="duble-underline">❌하루동안 안보기</span>
+      </div>
+  </div> -->
 
   <img src="img/vacimg_new.jpg"/>
-    <!-- <h3>📑정산 내역 </h3>
-    <img src="#"/>  -->
-    <!-- <h3>💸정산(송금) 안내</h3> -->
          <h3>🤷‍♂️휴가신청시 유의 사항 </h3>
      <span>
       <mark style="background: linear-gradient(to top,  rgb(230, 160, 9) 5%, transparent 20%);">
-             1. OF신청 7명이내/일당 (구역당 1명 이내).</mark> 
+             1. OF, C, V 신청은 총7명 이내/일당 (구역당 1명 이내).</mark> 
              <br>
+                <strong>=> 마감된 경우 해당 체크 박스가 안보여짐.</strong> 
+             <br>                
              2. 신청기간:매월1일~10일 (이후, 신청 불가)<br>
              3. 근무,휴가,학업 등 신청사유 기입은 기타에 기입<br>
              4. 보수교육 신청은 교육명과 교육기관 기입 <br>
              => 예)보수교육 - 감염관리 - 병원간호사회<br>
              
-            <i class="fas fa-question-circle"></i>기타 궁금하신 사항은 파트장에게 문의 바랍니다. 
+            <strong><i class="fas fa-question-circle"></i>
+            기타 궁금하신 사항은 파트장에게 문의 바랍니다.</strong> 
      </span>
+     
+     <h2><i class="fas fa-edit"></i>휴가 신청서 작성</h2>
+     <select id="selet_Form" onchange="seletedMonth()">
+        <option value="item">📅신청월 선택</option>
+        <option value="firstMon">5월</option>
+        <option value="secondMon">6월</option>
+        <option value="thirthMon">7월</option>
+     </select>
      <br>
-     <button id="conForm" onclick="seeRe()">🔎현재 휴가 신청내역 보기 <i class="fas fa-chevron-right fa-lg"></i></button>
-    <br>
-     <i class="fas fa-arrow-circle-down"></i>
-     <br>
-    <button id="yes" ><i class="fas fa-edit"></i>휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
+       <iframe id="May" src="https://docs.google.com/forms/d/e/1FAIpQLSd4M-h_cQeBXRMYnLakWlrqmtAAsLhez_WX6G5YU1T6frGWGA/viewform?embedded=true" width="100%" height="1083" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+       <iframe id="June" src="https://docs.google.com/forms/d/e/1FAIpQLSfwnA9CwWLI8LZXyjIklu_N5QqIA4iHSN3IE6tztwOLYzteow/viewform?embedded=true" width="100%" height="1077" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+       <iframe id="July" src="https://docs.google.com/forms/d/e/1FAIpQLSfoPfwKxqJncwghAjEJ0QHe3CsrBM54gp4X2dniW3AFxsLV5A/viewform?embedded=true" width="100%" height="1077" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+       <button id="closebtn" onclick="closeBtn()"><i class="fa fa-chevron-circle-up"></i>신청서 닫기</button>
+       
+       <h4 onclick="currentSee()">🔎현재 휴가 신청내역 보기 <i class="fas fa-chevron-down fa-lg"></i></h4>
+
+       <select id="selet_see" onchange="seletedSee()">
+        <option value="seemonth" selected="selected">📅 월 선택</option>
+        <option value="seemay">5월</option>
+        <option value="seejune">6월</option>
+        <option value="seejuly">7월</option>
+     </select>
+     
+       <!--     <button id="yes" ><i class="fas fa-edit"></i>휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
     <h4 id="notice">🤷‍♂️휴가 신청 기간이 아닙니다. 파트장에게 문의 하세요
     <br>(📅신청기간: 매월 1일 ~ 10일)</h4>
     <iframe id="iFram" src="https://docs.google.com/forms/d/e/1FAIpQLSeoXUaUKxKhxwVLGcfFuyUQ-tozXq89BM1632bLWhetxy9BMw/viewform?embedded=true" width="100%" height="2606" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <hr>
-    <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
+    <button id="closeyes">📑신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button> -->
     <br>
-    <button id="changebtn" style="background-color:tomato; color:whitesmoke; font-weight: 600; height: 50px;">🔀 휴가 신청서 변경 신청<i class="fas fa-chevron-right fa-lg"></i> </button>
-    <iframe id="changeFram" src="https://docs.google.com/forms/d/e/1FAIpQLScXtrktHCLVo2iOiMkXH4qaTZXJLDYALE2Z8Er5xu_Xpzh-lw/viewform?embedded=true" width="640" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+    <button id="changebtn" style="width:100%; background-color:tomato; color:whitesmoke; font-weight: 600; height: 50px;">🔀 휴가 신청서 변경 신청<i class="fas fa-chevron-right fa-lg"></i> </button>
+    <iframe id="changeFram" src="https://docs.google.com/forms/d/e/1FAIpQLScXtrktHCLVo2iOiMkXH4qaTZXJLDYALE2Z8Er5xu_Xpzh-lw/viewform?embedded=true" width="100%" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <button id="changeClose" style="background-color: tomato; height: 60px;">❌변경신청서  닫기<i class="fas fa-chevron-up fa-lg"></i> </button>
-    <br>
+    <br><br>
     <small id="adminlogin" onclick="adminLogin()">💻 변경신청내역보기(관리자) &rarr;</small>
     <iframe id="changeResponse" src="https://docs.google.com/spreadsheets/d/15H8Ftqse6UtshV1YBJTGRcMetDHk9-pfnQt8KdqQ3v8/edit?usp=sharing/viewform?embedded=true" width="640" height="875" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <div style="display:flex; align-items:center;"> 
@@ -233,14 +244,81 @@ display: none;
     <span id="widthseeClose" style="color:black;">👌확인</span>
     </div>
     </div>
-    
     <script>
+      function seletedMonth() { 
+        var selectBox = document.getElementById("selet_Form");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+         
+        if(selectedValue === "firstMon"){
+           document.getElementById("May").style.display = "block";
+           document.getElementById("may").style.display = "block";
+           document.getElementById("closebtn").style.display = "block";
+           document.getElementById("June").style.display = "none";
+           document.getElementById("July").style.display = "none";
+           document.getElementById("closebtn").style.display = "block";
+        } if(selectedValue === "secondMon") {
+          document.getElementById("May").style.display = "none";
+          document.getElementById("June").style.display = "block";
+          document.getElementById("june").style.display = "block";
+          document.getElementById("July").style.display = "none";
+          document.getElementById("closebtn").style.display = "block";
+          
+        } if(selectedValue === "thirthMon") {
+          document.getElementById("May").style.display = "none";
+          document.getElementById("July").style.display = "block";
+          document.getElementById("july").style.display = "block";
+          document.getElementById("June").style.display = "none";
+          document.getElementById("closebtn").style.display = "block";
+        } if(selectedValue === "item") {
+          alert("🤷‍♂️신청월을 선택하세요");
+          document.getElementById("May").style.display = "none";
+          document.getElementById("July").style.display = "none";
+          document.getElementById("June").style.display = "none";
+          document.getElementById("closebtn").style.display = "none";
+        } 
+        
+        else {
+          console.log("None");
+        }
+      } 
+      function closeBtn() {
+          document.getElementById("May").style.display = "none";
+          document.getElementById("July").style.display = "none";
+          document.getElementById("June").style.display = "none";
+          document.getElementById("closebtn").style.display = "none";
+          document.getElementById("may").style.display = "none";
+          document.getElementById("june").style.display = "none";
+          document.getElementById("july").style.display = "none";
+        }    
+      </script>
+      <script>
+        function seletedSee() { 
+          var seeBox = document.getElementById("selet_see");
+          var seeValue = seeBox.options[seeBox.selectedIndex].value;
+           
+          if(seeValue === "seemay"){
+            navigator.vibrate(200);
+            location.href = "https://docs.google.com/spreadsheets/d/1j28sEKmli4eEEnhO3Xll3pEK8zAwL1RrMdW-fayVF8U/edit?usp=sharing";            
+          } if(seeValue === "seejune") {
+            navigator.vibrate(200);
+            location.href = "https://docs.google.com/spreadsheets/d/1Q0aDabibgy1nXNibmJVqNOnFtFZbiEJ3ibP9E6dHN-c/edit?usp=sharing";   
+          } if(seeValue === "seejuly") {
+            navigator.vibrate(200);
+            location.href = "https://docs.google.com/spreadsheets/d/1EkDhjIOvcKoAww5r3YswF157BkL3OX4VHKpRmSu4srA/edit?usp=sharing";   
+          } if(seeValue === "seemonth") {
+            navigator.vibrate(200);
+            alert("📆월을 선택하세요") 
+          } else {
+            console.log("None");
+          }
+        }   
+        </script>
+  <script>
     const localItem = parseInt(localStorage.getItem("alertTime"));
     const newDate = Date.now();
     const cal = newDate - localItem;
     
     function notSeeDay() {
-      navigator.vibrate(200);
       document.getElementById("popup").style.display = 'none';
       localStorage.setItem("alertTime", JSON.stringify(newDate));  
     }
@@ -251,10 +329,32 @@ display: none;
     }
     
     function yesbtn() {
-      navigator.vibrate(200);
         document.getElementById("popup").style.display = 'none'; 
     }
     </script> 
+  
+  <script>
+    const NowDate = document.getElementById("nowDate");
+    var nowDate = new Date();
+    var year = nowDate.getFullYear();
+    var month = nowDate.getMonth() +1;
+    var day = nowDate.getDate();
+    var passWord = (year-2000)+"0" + month;
+    NowDate.innerHTML = passWord;
+    //상기는 '년월(202303)'을 password로 적용하는 법. 
+    function currentSee() {
+      alert(`임시패스워드는 년월 [${passWord}] 입니다`);
+    password = prompt("🤷‍♀️password?");  
+    if(password == passWord 
+    ) {
+     alert("🆗 보시고자 하는 월을 아래에서 월을 선택하시면 해당 시트로 이동합니다.  ");
+     document.getElementById("selet_see").style.display = "block";
+     navigator.vibrate(200);
+    } else {
+      alert("⚠패스워드가 불일치하거나, 취소 되었습니다.\n ※ 패스워드는 별도 공지 되었습니다.");
+    }  
+  }
+  </script>
 
   <script>
   function adminLogin() {
@@ -309,17 +409,6 @@ display: none;
         }  
       }
   </script> 
-    <!-- <script>
-         function seeRe() {  
-          if(window.confirm("🤷‍♂️현재 신청된 시트는 변경하지 마세요.  신청 현황을 확인하시겠어요?"))
-          {
-            location.href='https://docs.google.com/spreadsheets/d/1iM7UuYQQ0YW5AaFQpsAdhlDdSpapFr29HrhSKxCihL0/edit?usp=sharing';
-            navigator.vibrate(200);
-          } else {
-            alert(" 🤷‍♀️취소 되었습니다. ");
-          }
-        }
-        </script> -->
    </script>
     <script
     src="https://kit.fontawesome.com/6478f529f2.js"
