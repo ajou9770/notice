@@ -297,12 +297,16 @@ select {
           var seeValue = seeBox.options[seeBox.selectedIndex].value;
            
           if(seeValue === "seemay"){
+            navigator.vibrate(200);
             location.href = "https://docs.google.com/spreadsheets/d/1j28sEKmli4eEEnhO3Xll3pEK8zAwL1RrMdW-fayVF8U/edit?usp=sharing";            
           } if(seeValue === "seejune") {
+            navigator.vibrate(200);
             location.href = "https://docs.google.com/spreadsheets/d/1Q0aDabibgy1nXNibmJVqNOnFtFZbiEJ3ibP9E6dHN-c/edit?usp=sharing";   
           } if(seeValue === "seejuly") {
+            navigator.vibrate(200);
             location.href = "https://docs.google.com/spreadsheets/d/1EkDhjIOvcKoAww5r3YswF157BkL3OX4VHKpRmSu4srA/edit?usp=sharing";   
           } if(seeValue === "seemonth") {
+            navigator.vibrate(200);
             alert("📆월을 선택하세요") 
           } else {
             console.log("None");
