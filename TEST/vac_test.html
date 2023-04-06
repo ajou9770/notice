@@ -209,10 +209,10 @@ select {
        <iframe id="July" src="https://docs.google.com/forms/d/e/1FAIpQLSfoPfwKxqJncwghAjEJ0QHe3CsrBM54gp4X2dniW3AFxsLV5A/viewform?embedded=true" width="100%" height="1077" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
        <button id="closebtn" onclick="closeBtn()"><i class="fa fa-chevron-circle-up"></i>신청서 닫기</button>
        
-       <h4 onclick="currentSee()">🔎현재 휴가 신청내역 보기 <i class="fas fa-chevron-right fa-lg"></i></h4>
+       <h4 onclick="currentSee()">🔎현재 휴가 신청내역 보기 <i class="fas fa-chevron-down fa-lg"></i></h4>
 
        <select id="selet_see" onchange="seletedSee()">
-        <option value="seemonth" selected="selected">📅신청월 선택</option>
+        <option value="seemonth" selected="selected">📅 월 선택</option>
         <option value="seemay">5월</option>
         <option value="seejune">6월</option>
         <option value="seejuly">7월</option>
@@ -339,11 +339,11 @@ select {
     NowDate.innerHTML = passWord;
     //상기는 '년월(202303)'을 password로 적용하는 법. 
     function currentSee() {
-      alert(passWord);
+      alert(`임시패스워드는 년월 [${passWord}] 입니다`);
     password = prompt("🤷‍♀️password?");  
     if(password == passWord 
     ) {
-     alert("🆗 아래에서 월을 선택하시면 해당 시트로 이동합니다.  ");
+     alert("🆗 보시고자 하는 월을 아래에서 월을 선택하시면 해당 시트로 이동합니다.  ");
      document.getElementById("selet_see").style.display = "block";
      navigator.vibrate(200);
     } else {
