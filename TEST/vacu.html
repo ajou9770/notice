@@ -347,9 +347,16 @@ select {
     NowDate.innerHTML = passWord;
     //상기는 '년월(202303)'을 password로 적용하는 법. 
     function currentSee() {
+      document.getElementById("May").style.display = "none";
+      document.getElementById("July").style.display = "none";
+      document.getElementById("June").style.display = "none";
+      document.getElementById("closebtn").style.display = "none";
+       document.getElementById("maybtn").style.display = "none";
+      document.getElementById("junebtn").style.display = "none";
+      document.getElementById("julybtn").style.display = "none";
       alert(`임시패스워드는 년월 [${passWord}] 입니다`);
-    password = prompt("🤷‍♀️password?");  
-    if(password == passWord 
+      password = prompt("🤷‍♀️password?");  
+      if(password == passWord 
     ) {
      alert("🆗 보시고자 하는 월을 아래에서 월을 선택하시면 해당 시트로 이동합니다.  ");
      document.getElementById("selet_see").style.display = "block";
