@@ -22,6 +22,17 @@
         padding: 10px;
         padding-left: 15px;
     }
+    #sheet, #closebtn {
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px grey;
+        display: none;
+        border: none;
+    }
+    #openbtn, button{
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 3px 6px grey;
+    }
   </style>  
 </head>
     <h4> 📝 아래에 작성하여 제출 하세요</h4>
@@ -30,7 +41,24 @@
     <br>
     <small>※제출후에는 입력폼이 보이지 않습니다.</small>
     <br><br>
-    <buttton onclick="location.reload()">🔃다시작성하기</buttton>
-   
+    <div style="display: flex; justify-content: space-around;">
+    <button onclick="location.reload()">🔃다시작성하기</button>
+    
+    <button id="openbtn" onclick="opneBtn()">📈Sheet 보기</button>
+    <button id="closebtn" onclick="closeBtn()">❌Sheet 닫기</button>    
+</div>
+    <iframe id="sheet" src="https://docs.google.com/spreadsheets/d/182FT5eI3o-ZA5nHOgU-sUjFd9XVNf9UofBk-qAEpklc/edit?usp=sharing"></iframe>
+     <script>
+        function opneBtn() {
+            document.getElementById("sheet").style.display = "block";
+            document.getElementById("closebtn").style.display = "block";
+            document.getElementById("openbtn").style.display = "none";
+        }
+        function closeBtn() {
+            document.getElementById("sheet").style.display = "none";
+            document.getElementById("closebtn").style.display = "none";
+            document.getElementById("openbtn").style.display = "block";
+        }
+     </script>
 </body>
 </html>
