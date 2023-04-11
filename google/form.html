@@ -14,7 +14,7 @@
     }
     iframe {
         width: 98%;
-        height: 550px;
+        height: 500px;
         margin: 10px;
     }
     body {
@@ -35,8 +35,8 @@
   </style>  
 </head>
     <iframe id="myifram" src="https://script.google.com/a/macros/ajoucu.page/s/AKfycbwHGQNNnBEkB9F3ZT5qFVd2eMsEDQgrlqwpYg2aVxbQHGRrNWPVDTbkGvHkjiCXfqlDhQ/exec"></iframe>
-    <br>
     <small>※제출후에는 입력폼이 보이지 않습니다.</small>
+    <br>
     <iframe id="sheet" src="https://docs.google.com/spreadsheets/d/182FT5eI3o-ZA5nHOgU-sUjFd9XVNf9UofBk-qAEpklc/edit?usp=sharing"></iframe>
     <br>
     <div style="display: flex; justify-content: space-around;">
@@ -51,15 +51,16 @@
             top: 1000,
             behavior: "smooth",
             });
-            alert("📢화면을 위로 스크롤 하시면 보여요");
             document.getElementById("sheet").style.display = "block";
             document.getElementById("closebtn").style.display = "block";
             document.getElementById("openbtn").style.display = "none";
+            document.getElementById("myifram").style.display = "none";
         }
         function closeBtn() {
             document.getElementById("sheet").style.display = "none";
             document.getElementById("closebtn").style.display = "none";
             document.getElementById("openbtn").style.display = "block";
+            document.getElementById("myifram").style.display = "block";
         }
      </script>
 </body>
