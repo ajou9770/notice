@@ -32,10 +32,14 @@
         border: none;
         box-shadow: 0px 3px 6px grey;
     }
+    #sheetTitle {
+        display: none;
+    }
   </style>  
 </head>
+    <h5 id="sheetTitle">📑 제출된 Sheet 🔽</h5>
     <iframe id="myifram" src="https://script.google.com/a/macros/ajoucu.page/s/AKfycbwHGQNNnBEkB9F3ZT5qFVd2eMsEDQgrlqwpYg2aVxbQHGRrNWPVDTbkGvHkjiCXfqlDhQ/exec"></iframe>
-    <small>※제출후에는 입력폼이 보이지 않습니다.</small>
+    <small id="small">※제출후에는 입력폼이 보이지 않습니다.</small>
     <br>
     <iframe id="sheet" src="https://docs.google.com/spreadsheets/d/182FT5eI3o-ZA5nHOgU-sUjFd9XVNf9UofBk-qAEpklc/edit?usp=sharing"></iframe>
     <br>
@@ -53,12 +57,15 @@
             });
             document.getElementById("sheet").style.display = "block";
             document.getElementById("closebtn").style.display = "block";
+            document.getElementById("sheetTitle").style.display = "block";
             document.getElementById("openbtn").style.display = "none";
             document.getElementById("myifram").style.display = "none";
+            document.getElementById("small").style.display = "none";
         }
         function closeBtn() {
             document.getElementById("sheet").style.display = "none";
             document.getElementById("closebtn").style.display = "none";
+            document.getElementById("sheetTitle").style.display = "none";
             document.getElementById("openbtn").style.display = "block";
             document.getElementById("myifram").style.display = "block";
         }
