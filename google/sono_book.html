@@ -44,36 +44,38 @@
     <br>
     <iframe id="sheet" src="https://docs.google.com/spreadsheets/d/182FT5eI3o-ZA5nHOgU-sUjFd9XVNf9UofBk-qAEpklc/edit#gid=583599525"></iframe>
     <br>
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#flush-collapseOne" 
-            aria-expanded="false" 
-            aria-controls="flush-collapseOne"
-            onclick="window.scrollTo(0,2000)">
-              # 추가기능 검토요청
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-                1. 상기 성수기 리조트를 지역별, 일자별로 분류(sort)할  수 있도록 기능 추가기능
-                <br>
-                2. 해당리조트 신청내역이 실시간 반영되어 당첨확률을 알 수 있는 기능 추가.
-                3. 기타 이용조합원의 편의 기능 제공 (달력 화면 alert 기능 등) 
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <br>
     <div style="display: flex; justify-content: space-around;">
     <button onclick="location.reload()">🔃다시작성하기</button>    
     <button id="openbtn" onclick="opneBtn()">🔎신청현황 보기</button>
     <button id="closebtn" onclick="closeBtn()">❌현황 닫기</button>    
 </div>
+<br>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#flush-collapseOne" 
+        aria-expanded="false" 
+        aria-controls="flush-collapseOne"
+        onclick="window.scrollTo(0,2000)">
+        <strong># 추가기능 검토요청</strong>
+        </button>
+      </h2>
+      <div id="flush-collapseOne" 
+           class="accordion-collapse collapse" 
+           data-bs-parent="#accordionFlushExample">
+           <div class="accordion-body">
+            1. 상기 성수기 리조트를 지역별, 일자별로 분류(sort)할  수 있도록 기능 추가기능
+            <br>
+            2. 해당리조트 신청내역이 실시간 반영되어 당첨확률을 알 수 있는 기능 추가.
+            <br>
+            3. 기타 이용조합원의 편의 기능 제공 (달력 화면 alert 기능 등) 
+        </div>
+      </div>
+    </div>
+  </div>
     <br>
      <script>
         function opneBtn() {
