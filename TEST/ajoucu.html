@@ -27,6 +27,18 @@
           width: 100px;
           height: 150px;
         }
+        .zoomimg {
+          width: 400px;
+          height: 400px;
+        }
+        .zoomimg_se {
+          width: 250px;
+          height: 350px;
+        }
+        .zoomimg_sm {
+          width: 200px;
+          height: 200px;
+        }
         a {
           text-decoration: none;
          }
@@ -57,7 +69,7 @@
             <br>
              <a href="http://ajou9770.github.io/usertip/index.html"> 💻신협이용안내사이트→ </a>
              <br>
-             <strong>#신입교직원알림톡<img src="img/newmem_info.jpg"/ title="신입교직원 안내 알림톡">
+             <strong>#신입교직원알림톡<img src="img/newmem_info.jpg" title="신입교직원 안내 알림톡" onclick="zoomImg(this)" title="✔클릭 하시면 확대 됩니다">
              </strong>
               <br>
             3. 신입 교직원 입문교육시 약 10분간 신협이용안내 브리핑
@@ -110,7 +122,7 @@
           <br><br>
           3. 총회배당전, 사전 이용고배당 조회 서비스로 이용고 배당에 대한 이슈 부각(참조합원 평균 이용고 배당 약 30만원 내외)
           <br>
-          <img src="img/search_mile.jpg"/>
+          <img src="img/search_mile.jpg" onclick="zoomImg(this)" title="✔클릭 하시면 확대 됩니다"/>
           <br>
           ※ 참조합원 현황: 약 960여명 (전체 교직원 조합원의 약 34% , 급여이체 조합원 약 1,700여명 )
     </div>
@@ -136,12 +148,12 @@
               <br>
               <a href="http://pf.kakao.com/_dfhkK"> 아주대의료원신협카톡채널 </a>
               <br>
-              <img src="img/katokch_img.jpg" class="img_sm">
+              <img src="img/katokch_img.jpg" class="img_sm" onclick="zoomImg_sm(this)" title="✔클릭 하시면 확대 됩니다">
                <br>
               <br>
               2. 매월 채널친고 조합원에게 세븐일레븐(아주대병원) 할인쿠폰 발송.[20%]  
               <br>
-               <strong>#세븐일레븐 할인 🎫쿠폰<img src="img/coupon_katok.jpg" class="img_se">
+               <strong>#세븐일레븐 할인 🎫쿠폰<img src="img/coupon_katok.jpg" class="img_se" onclick="zoomImg_se(this)" title="✔클릭 하시면 확대 됩니다">
                </strong>
                 <br>
               3. 조합 전용 템플릿을 통한 카톡 알림톡 안내 및 신청 접수 등 조합원과 쌍방향 커뮤니티  
@@ -166,7 +178,7 @@
             <h5>1. 분기별 (년4회) 채널 조합원 전체 대상 세븐일레븐 상품 무료 증정 이벤트(약2,800여명 대상) 
             </h5>
               <br>
-            <img src="img/coupon_free.jpg" class="img_se">
+            <img src="img/coupon_free.jpg" class="img_se" onclick="zoomImg_se(this)" title="✔클릭 하시면 확대 됩니다">
                <br>
             <br>
             <h5>2. 으뜸이(약 640여명) 생일 선물(축하 카드) 자택주소 발송 (월 약 50명 내외/ 15,000원상당)   
@@ -179,7 +191,7 @@
               <br> 
             <a href="http://ajou9770.github.io/notice/camp.html">✨헌혈캠페인 안내→</a>
             <br>
-            <strong>📢헌혈캠페인 안내 알림톡<img src="img/camp_info.jpg" class="img_se">
+            <strong>📢헌혈캠페인 안내 알림톡<img src="img/camp_info.jpg" class="img_se" onclick="zoomImg_se(this)" title="✔클릭 하시면 확대 됩니다">
             </strong>            
               <br><br>
             <h5>4. 중앙회 실적 달성 이벤트 등 효과적 홍보 및 참여 유도
@@ -188,10 +200,10 @@
              <strong> # 2022년 하반기 현대카드 이벤트 실적 약 250여건 (전국 7위 달성) 
               </strong>
               <br>
-              <strong>📢플러스적금대상자여부확인신청 친구톡<img src="img/plus_draw_q.jpg" class="img_se">
+              <strong>📢플러스적금대상자여부확인신청 친구톡<img src="img/plus_draw_q.jpg" class="img_se" onclick="zoomImg_se(this)" title="✔클릭 하시면 확대 됩니다">
               </strong>
               <br>
-              <strong>📢대상여부 결과 회신(알림톡)<img src="img/plus_draw.jpg" class="img_se">
+              <strong>📢대상여부 결과 회신(알림톡)<img src="img/plus_draw.jpg" class="img_se" onclick="zoomImg_se(this)" title="✔클릭 하시면 확대 됩니다">
               </strong>            
                 <br>             
                 <br>     
@@ -218,15 +230,19 @@
             <br>
             <a href="http://ajou9770.github.io/usertip/process.html">📝온라인가입안내 →</a>
             <br><br>
-            2. 조합원 대출한도, 대출금리, 보증보험료 등 사전 간편 조회 서비스 제공
-            <br><br>
+            2. 조합원 대출한도,금리, 보증보험료 등 간편 조회 서비스 제공
+            <br>
             <a href="http://ajou9770.github.io/usertip/loan.html">💰대출계산기 →</a>
-            <br>
-            3. 조합원 경조금 제도 안내 및 온라인 신청
             <br><br>
-            <a href="http://ajou9770.github.io/usertip/congrat.html">🎀경조금신청바로가기 →</a>
+            3. 조합원 경조금 제도 안내 및 온라인 신청
             <br>
-            # 결혼, 사망, 퇴직 등 10만원~50만원 지급(청구에 의한 지급)
+            <a href="http://ajou9770.github.io/usertip/congrat.html">🎀경조금신청바로가기 →</a>
+            <br> # 결혼, 사망, 퇴직 등 10만원~50만원 지급(청구에 의한 지급)
+            <br><br>
+            4. 조합 총회 기념품,명절특판, 공동구매 쇼핑몰 운영 (#비상설) 
+            <br>
+            <a href="http://ajoucu.com">🎁특판몰 둘러 보기 →</a>
+            <br>
       </div>
       </div>
       </div>
@@ -265,6 +281,29 @@
       </div>
       <br>
       
+      <script> 
+        function zoomImg(img) {
+          if(img.classList.contains('zoomimg')) {
+            img.classList.remove('zoomimg');
+          } else {
+            img.classList.add('zoomimg');
+          }
+        }
+        function zoomImg_se(img) {
+          if(img.classList.contains('zoomimg_se')) {
+            img.classList.remove('zoomimg_se');
+          } else {
+            img.classList.add('zoomimg_se');
+          }
+        }
+          function zoomImg_sm(img) {
+          if(img.classList.contains('zoomimg_sm')) {
+            img.classList.remove('zoomimg_sm');
+          } else {
+            img.classList.add('zoomimg_sm');
+          }
+        }
+      </script>
       <script src="https://kit.fontawesome.com/6478f529f2.js"
     crossorigin="anonymous">
     </script>
