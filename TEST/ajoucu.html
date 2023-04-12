@@ -12,7 +12,8 @@
             margin: 10px;
         }
         .center {
-            text-align: center;
+          display: flex;
+            justify-content: center;
         }
         img {
           width: 200px;
@@ -252,10 +253,18 @@
       <div class="space_around">
       <button type="button" class="btn btn-primary btn-lg" onclick="callon()" >📞전화문의 </button>
        <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='mailto:ajou9770@ajoucu.page'">📨Email문의</button>
+       </div>
+       <br>
+       <div class="space_around">
+       <span style="font-weight: 600;"><a href="https://chat.openai.com/chat">🤖Chat GPT→</a></span>
+       <span onclick="document.getElementById('qrcode').style.display='block'">🔎QRCODE</span> 
+       <br><br>
+      </div>
+      <div class="center">
+      <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
       </div>
       <br>
-      <span style="font-weight: 600;"><a href="https://chat.openai.com/chat">🤖Chat GPT→</a></span>
-       <br>
+      
       <script src="https://kit.fontawesome.com/6478f529f2.js"
     crossorigin="anonymous">
     </script>
