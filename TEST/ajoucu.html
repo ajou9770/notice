@@ -18,26 +18,32 @@
         img {
           width: 200px;
           height: 200px;
+          border-radius: 10px;
         }
         .img_sm {
           width: 100px;
           height: 100px;
+          border-radius: 10px;
         }
         .img_se {
           width: 100px;
           height: 150px;
+          border-radius: 10px;
         }
         .zoomimg {
           width: 400px;
           height: 400px;
+          border-radius: 10px;
         }
         .zoomimg_se {
           width: 250px;
           height: 350px;
+          border-radius: 10px;
         }
         .zoomimg_sm {
           width: 200px;
           height: 200px;
+          border-radius: 10px;
         }
         a {
           text-decoration: none;
@@ -251,8 +257,25 @@
       <hr>
       <br>
       <h5> <strong>✨조합 홍보 및 커뮤니티 관련 이용 참고 사이트 </strong></h5>
-      <select id="site-selet" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>📢아래 항목 선택</option>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          ✔ 선택 하세요
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://workspace.google.com/intl/ko/lp/business/">구글(폼),워크스페이스(서버)</a></li>
+          <li><a class="dropdown-item" href="https://www.ppurio.com">카톡알림톡 (뿌리오)</a></li>
+          <li><a class="dropdown-item" href="https://business.kakao.com/info/kakaotalkchannel/">비즈 카카오톡</a></li>
+          <li><a class="dropdown-item" href="https://biz.giftishow.com/home">비즈 기프티쇼(모바일쿠폰)</a></li>
+          <li><a class="dropdown-item" href="https://visualstudio.microsoft.com/ko/">웹문서 작성툴(비주얼스튜디오)</a></li>
+          <li><a class="dropdown-item" href="https://github.com/">웹문서 배포(Github)</a></li>
+          <li><a class="dropdown-item" href="https://www.miricanvas.com/">이미지제작 툴(미리캔버스)</a></li>
+          <li><a class="dropdown-item" href="https://www.w3schools.com/">웹페이지제작 배움터(W3school)</a></li>
+          <li><a class="dropdown-item" href="https://getbootstrap.com/">웹페이지제작 라이브러리(Bootstrap)</a></li>
+        </ul>
+      </div> 
+      
+     <!--  <select id="site-selet" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+        <option selected>📢항목 선택</option>
         <option value="1"><img src="img/googlelogo.jpg"/>구글(폼),워크스페이스(서버)</option>
         <option value="2">카톡알림톡 (뿌리오)</option>
         <option value="3">비즈 카카오톡</option>
@@ -262,7 +285,7 @@
         <option value="7">이미지제작 툴(미리캔버스)</option>
         <option value="8">웹페이지제작 배움터(W3school)</option>
         <option value="9">웹페이지제작 라이브러리(Bootstrap)</option>
-      </select>
+      </select> -->
       <hr>
       <h5><strong>🔎궁금한 사항이 있으시면 아래로 문의 주세요 </strong></h5>
       <br>
@@ -320,38 +343,5 @@
         }
     </script>
     
-    <script>
-          function handleSelectChange() {
-          var selet = document.getElementById("site-selet");
-
-          var selectedValue = selet.value;
-
-          if(selectedValue === '1'){
-            location.href = "https://workspace.google.com/intl/ko/lp/business/";
-          } else if(selectedValue === '2') {
-            location.href = "https://www.ppurio.com/";
-          }  else if(selectedValue === '3') {
-            location.href = "https://business.kakao.com/info/kakaotalkchannel/";
-          } else if(selectedValue === '4') {
-            location.href = "https://biz.giftishow.com/home";
-          } else if(selectedValue === '5') {
-            location.href = "https://visualstudio.microsoft.com/ko/";
-          } else if(selectedValue === '6') {
-            location.href = "https://github.com/";
-          } else if(selectedValue === '7') {
-            location.href = "https://www.miricanvas.com/";
-          } else if(selectedValue === '8') {
-            location.href = "https://www.w3schools.com/";
-          } else if(selectedValue === '9') {
-            location.href = "https://getbootstrap.com/";
-          } else {
-            console.log("done");
-          }
-        }
-        document.getElementById('site-selet').addEventListener('change', handleSelectChange);
-       </script>
-      
-
-
 </body>
 </html>
