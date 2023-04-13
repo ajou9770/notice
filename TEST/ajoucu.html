@@ -280,7 +280,7 @@
       <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
       </div>
       <br>
-      
+      <!-- 이미지 확대.축소 이벤트-->
       <script> 
         function zoomImg(img) {
           if(img.classList.contains('zoomimg')) {
@@ -304,9 +304,11 @@
           }
         }
       </script>
+
       <script src="https://kit.fontawesome.com/6478f529f2.js"
     crossorigin="anonymous">
     </script>
+
     <script>
         function callon() {
             if(window.confirm("통화가능시간은 평일 8:30~17:00까지입니다. \n전화앱으로 김설호 상무에게 전화 연결 할까요?")){
@@ -316,7 +318,8 @@
             }
         }
     </script>
-       <script>
+    
+    <script>
           function handleSelectChange() {
           var selet = document.getElementById("site-selet");
 
