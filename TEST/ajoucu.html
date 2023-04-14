@@ -20,6 +20,9 @@
       $("#sectThreebtn").click(function(){
         $("#sectThree").toggle("slow");
       });
+      $("#memobtn").click(function(){
+        $("#Text").toggle("slow");
+      });
     });
     </script>
 
@@ -69,8 +72,12 @@
           display: flex;
           justify-content: space-around;
         }
-        #sectOne, #sectTwo, #sectThree {
+        #sectOne, #sectTwo, #sectThree, #memo {
           display: none;
+        }
+        textarea {
+          border-radius: 5px;
+          padding: 5px;
         }
     </style>
 </head>
@@ -332,8 +339,24 @@
       <div class="center">
       <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
       </div>
-      <br>
+      
+      <samll id="memobtn" class="btn-secondary btn-sm" onclick="document.getElementById('memo').style.display ='block'">Googleapp</samll>
+      <small onclick="copyText()">Copy</small>
+            <div id="memo">
+        <textarea id="Text"> 
+          function doGet(request) {
+          return HtmlService.createTemplateFromFile('Index').evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+        }</textarea></div>
       </div>
+      
+      
+      <script>
+        function copyText() {
+          let textarea = document.getElementById("Text");
+          textarea.select();
+          document.execCommand("copy");
+        }
+        </script>
            <!-- 이미지 확대.축소 이벤트-->
       <script> 
         function zoomImg(img) {
