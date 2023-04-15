@@ -202,9 +202,9 @@ dialog {
 }
   </style>
 </head>
-<body>
-  <dialog open id="diaLog">이 정보는 개인정보 보호법에 의거 보호됩니다. <br>
-  <small id="dialogBtn">□ 확인하였습니다</small></dialog>
+<body onload="alert('이정보는 개인정보입니다. 무단 사용을 금지합니다')">
+  <!-- <dialog open id="diaLog">이 정보는 개인정보 보호법에 의거 보호됩니다. <br>
+  <small id="dialogBtn">□ 확인하였습니다</small></dialog> -->
 <h3>승선자 명단 안내</h3>
 <h3>📅승선일: 2023.3.25(토) 11시 (국화도 왕복15:30) </h3> 
     
@@ -213,7 +213,11 @@ dialog {
     
     </button>
     <br>
-    <textarea id="myAcc" rows="1" cols="15"></textarea>
+    <textarea id="myAcc" rows="1" cols="15">
+김설호 010-7118-6639  720202
+이주성 010-8013-6639  562365
+
+    </textarea>
     <small id="copyed" style="color:rgb(21, 21, 20); font-weight:600;">👌복사되었습니다.</small>
 <h3 onclick="if(window.confirm('📞통화가능 시간은 매일 8시~23시까지 입니다. 연결할까요?')){
     location.href='tel:010-7118-6639'
