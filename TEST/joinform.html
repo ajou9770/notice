@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+</style>
+</head>
+<body>
+    <form id="signup-form">
+        <h2>가입신청서</h2>
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
+      
+        <label for="birthday">생년월일:</label>
+        <input type="date" id="birthday" name="birthday" required>
+      
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required>
+      
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+      
+        <label for="confirm-password">비밀번호 확인:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      
+        <label for="phone">전화번호:</label>
+        <input type="tel" id="phone" name="phone" required>
+      
+        <label for="address">주소:</label>
+        <input type="text" id="address" name="address" required>
+      
+        <input type="submit" value="가입하기">
+      </form>
+      
+    <script>
+     const form = document.querySelector('#signup-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = document.querySelector('#name').value;
+  const birthday = document.querySelector('#birthday').value;
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
+  const confirmPassword = document.querySelector('#confirm-password').value;
+  const phone = document.querySelector('#phone').value;
+  const address = document.querySelector('#address').value;
+
+  if(password !== confirmPassword) {
+    alert("password가 일치하지 않아요")
+  } else{ 
+  console.log(`이름: ${name}, 생년월일: ${birthday}, 이메일: ${email}, 비밀번호: ${password}, 비밀번호 확인: ${confirmPassword}, 전화번호: ${phone}, 주소: ${address}`);
+  }
+});
+   </script>
+</body>
+</html>
