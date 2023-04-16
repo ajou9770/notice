@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <title>5월국화도탐방참가신청서</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+    border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+form {
+  border-radius: 10px;  
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#preferences label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #2196f3;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0d8aee;
+} 
+ </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="signup-form">
+      <div style="text-align: center"> ;"<h3>탐방참가신청서(5.13 국화도)</h3>
+      </div>
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required>
+
+<!--       <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" required> -->
+
+      <label for="phone">연락처:</label>
+      <small>☞입력패턴:010-0000-0000</small>
+      <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" value="010-"  id="phone" name="phone" required>
+      
+      <label for="joinnum">참여인원</label>
+      <select id="joinnum" name="joinnum" required>
+        <option value="0">선택하세요</option>
+        <option value="1명">1명</option>
+        <option value="2명">2명</option>
+        <option value="3명">3명</option>
+        <option value="4명">4명</option>
+        <option value="5명">5명</option>
+      </select>
+
+      <label for="joinbaby">미취학자녀?</label>
+      <select id="joinbaby" name="joinbaby" required>
+        <option value="없어요">없어요</option>
+        <option value="1명">1명</option>
+        <option value="2명">2명</option>
+        <option value="2명">2명</option>
+      </select>
+
+      <label for="joinsobak">탐방인원미달시 산악회(소백산 등반) 참여 여부?</label>
+      <select id="joinsobak" name="joinsobak" required>
+        <option value="선택">선택하세요</option>
+        <option value="참여합니다">참여합니다</option>
+        <option value="미참여">미참여</option>
+      </select>
+
+      <label for="othoer">기타 남기실 말씀이 있으시면?</label>
+      <input type="text" id="other" name="other">
+
+<!--       <label for="preferences">선호하는 서비스:</label>
+      <div id="preferences">
+        <input type="checkbox" id="news" name="preferences" value="📝뉴스">
+        <label for="news">📝뉴스</label>
+        <input type="checkbox" id="updates" name="preferences" value="📢업데이트 알림" checked>
+        <label for="updates">📢업데이트 알림</label>
+        <input type="checkbox" id="offers" name="preferences" value="🎂특별식">
+        <label for="offers">🎂특별식</label>
+        <input type="checkbox" id="event" name="preferences" value="💙이벤트">
+        <label for="offers">💙이벤트</label>
+        <input type="checkbox" id="tour" name="preferences" value="🚍여행">
+        <label for="offers">🚍여행</label>
+        <input type="checkbox" id="golf" name="preferences" value="⛳골프">
+        <label for="offers">⛳골프</label>
+      </div> -->
+      <!-- checkbox 는 여러개 선택가능, 1개의 옵션만 선택하기는 => radio버튼 옵션 사용-->
+      <button type="submit"><strong>참가신청</strong></button>
+    </form>
+  </div>
+  <script>
+  document.getElementById("signup-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const joinnum = document.getElementById("joinnum").value;
+  const joinbaby = document.getElementById("joinbaby").value;
+  const joinsobak = document.getElementById("joinsobak").value;
+  const other = document.getElementById("other").value;
+
+  
+  // 양식 제출 후 출력
+  console.log("이름: ", name);
+  console.log("연락처: ", phone);
+  console.log("참석인원: ",joinnum);
+  console.log("미취학자녀: ",joinbaby);
+  console.log("소백산참여여부?", joinsobak);
+  console.log("기타남긴말씀?", other);
+  location.reload();
+});  
+  </script>
+</body>
+</html>

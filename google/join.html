@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가입신청서 양식</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+    border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+form {
+  border-radius: 10px;  
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#preferences label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #2196f3;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0d8aee;
+} 
+ </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="signup-form">
+      <div style="text-align: center"> ;"<h1>가입신청서</h1>
+      </div>
+      <label for="name">이름:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">연락처:</label>
+      <small>☞입력패턴:010-0000-0000</small>
+      <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" value="010-"  id="phone" name="phone" required>
+      
+      <label for="occupation">직업:</label>
+      <select id="occupation" name="occupation">
+        <option value="학생">학생</option>
+        <option value="개발자">개발자</option>
+        <option value="디자이너`">디자이너</option>
+        <option value="기타">기타</option>
+      </select>
+
+      <label for="preferences">선호하는 서비스:</label>
+      <div id="preferences">
+        <input type="checkbox" id="news" name="preferences" value="📝뉴스">
+        <label for="news">📝뉴스</label>
+        <input type="checkbox" id="updates" name="preferences" value="📢업데이트 알림" checked>
+        <label for="updates">📢업데이트 알림</label>
+        <input type="checkbox" id="offers" name="preferences" value="🎂특별식">
+        <label for="offers">🎂특별식</label>
+        <input type="checkbox" id="event" name="preferences" value="💙이벤트">
+        <label for="offers">💙이벤트</label>
+        <input type="checkbox" id="tour" name="preferences" value="🚍여행">
+        <label for="offers">🚍여행</label>
+        <input type="checkbox" id="golf" name="preferences" value="⛳골프">
+        <label for="offers">⛳골프</label>
+      </div>
+      <!-- checkbox 는 여러개 선택가능, 1개의 옵션만 선택하기는 => radio버튼 옵션 사용-->
+      <button type="submit"><strong>가입하기</strong></button>
+    </form>
+  </div>
+  <script>
+  document.getElementById("signup-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const occupation = document.getElementById("occupation").value;
+  const preferences = Array.from(document.querySelectorAll("input[name='preferences']:checked")).map((checkbox) => checkbox.value);
+
+  
+  // 양식 제출 후 출력
+  console.log("이름: ", name);
+  console.log("이메일: ", email);
+  console.log("연락처: ", phone);
+  console.log("직업: ", occupation);
+  console.log("선호하는 서비스: ", preferences.join(", "));
+});  
+
+  </script>
+</body>
+</html>
