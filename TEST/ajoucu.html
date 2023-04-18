@@ -322,7 +322,23 @@
         </ul>
       </div>
       <p class="fw-semibold"><mark style="background-color: beige; background-color:beige; border-radius: 5px;">💻 PC로 접속하시면 보기에 좋습니다. </mark></p>   
-      
+      <div class="space_around">
+        <span style="font-weight: 600;"><a href="https://chat.openai.com/chat" target="_blank">🤖Chat GPT→</a></span>
+        <span onclick="document.getElementById('qrcode').style.display='block'"><i class="fa-sharp fa-solid fa-qrcode fa-lg"></i></span> 
+        <span style="font-weight: 600;"><a href="https://bitly.com" target="_blank">Bitly→</a></span>
+        <br><br>
+       </div>
+       <div class="center">
+       <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
+       </div>
+       
+       <samll id="memobtn" class="btn-secondary btn-sm" onclick="document.getElementById('memo').style.display ='block'">Googleapp</samll>
+       <small onclick="copyText()">Copy</small>
+             <div id="memo">
+         <textarea id="Text"> 
+           function doGet(request) {
+           return HtmlService.createTemplateFromFile('Index').evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+         }</textarea></div>
       <hr>
       <h6><strong>🤷‍♂️궁금한 사항이 있으시면 아래로 문의 주세요 </strong></h6>
       <br>
@@ -330,25 +346,6 @@
       <button type="button" class="btn btn-primary btn-sm" onclick="callon()" >📞전화문의 </button>
        <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='mailto:ajou9770@ajoucu.page'">📨Email문의</button>
        </div>
-       <br>
-       <div class="space_around">
-       <span style="font-weight: 600;"><a href="https://chat.openai.com/chat" target="_blank">🤖Chat GPT→</a></span>
-       <span onclick="document.getElementById('qrcode').style.display='block'"><i class="fa-sharp fa-solid fa-qrcode fa-lg"></i></span> 
-       <span style="font-weight: 600;"><a href="https://bitly.com" target="_blank">Bitly→</a></span>
-       <span style="font-weight: 600;"><a href="https://ajou9770.github.io/notice/TEST/paysend.html" title="🤷‍♂️인터넷은행 VS은행(신협)" onclick="alert('🚨이 페이지는 인터넷은행과 신협(은행)앱과의 송금방식의 차이를 보여주기 위한 예시입니다. \n ❌절대 송금하지마세요 (송금됨)')" target="_blank">💸송금Tip→</a></span>
-       <br><br>
-      </div>
-      <div class="center">
-      <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
-      </div>
-      
-      <samll id="memobtn" class="btn-secondary btn-sm" onclick="document.getElementById('memo').style.display ='block'">Googleapp</samll>
-      <small onclick="copyText()">Copy</small>
-            <div id="memo">
-        <textarea id="Text"> 
-          function doGet(request) {
-          return HtmlService.createTemplateFromFile('Index').evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
-        }</textarea></div>
       </div>
       
       
