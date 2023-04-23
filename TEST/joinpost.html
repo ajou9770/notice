@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> 
+    <title>Form from joinget</title>
+<style>
+    body {
+        text-align: center;
+        padding: 5px 10px;
+    }
+    .none {
+        display: none;
+    }
+    td {
+        text-align: center;
+        width: 90%;
+    }
+    th {
+        background-color: steelblue;
+        color: whitesmoke;
+        font-size: larger;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    table {
+        width: 80%;
+        font-size: large;
+        font-weight: 500;
+        box-shadow: 0px 4px 8px grey;
+    }
+</style>
+</head>
+<body>
+    <h2> ✨ 가입신청서 접수 명단 </h2>
+    <table>
+        <tr><strong><th>구분</th><th>내용</th></strong></tr>
+        <tr><td>이름</td><td><span id="name"></span></td></tr>
+        <tr><td>Email</td><td><span id="email"></span></td></tr>
+        <tr><td>연락처</td><td><span id="phone"></span></td></tr>
+        <tr><td>패스워드</td><td><span id="password"></span></td></tr>
+        <tr><td>주소</td><td><span id="address"></span></td></tr>
+        
+    </table>
+    <script>
+        document.getElementById("name").innerHTML = localStorage.getItem("nameValue");
+        document.getElementById("phone").innerHTML = localStorage.getItem("phoneValue");
+        document.getElementById("email").innerHTML = localStorage.getItem("emailValue");
+        document.getElementById("password").innerHTML = localStorage.getItem("passwordValue");
+        document.getElementById("address").innerHTML = localStorage.getItem("addressValue");
+     </script>   
+</body>
+</html>

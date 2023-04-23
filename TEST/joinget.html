@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>가입신청서 폼</title>
+	<script>
+       function getTxt() {
+       
+       var name = document.getElementById('name').value;
+       localStorage.setItem('nameValue', name);
+       var email = document.getElementById('email').value;
+       localStorage.setItem('emailValue', email);
+       var phone = document.getElementById('phone').value;
+       localStorage.setItem('phoneValue', phone);
+       var password = document.getElementById('password').value;
+       localStorage.setItem('passwordValue', password);
+       var confirmPassword = document.getElementById('confirm-password').value;
+       var address = document.getElementById('address').value;
+       localStorage.setItem('addressValue', address);
+       
+   
+       if (password !== confirmPassword) {
+           alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+           return;
+       }
+   
+       if (!isValidName(name)) {
+           alert("올바른 이름을 입력하세요.");
+           return;
+       }
+   
+       if (!isValidEmail(email)) {
+           alert("올바른 이메일 주소를 입력하세요.");
+           return;
+       }
+   
+       if (!isValidPhone(phone)) {
+           alert("올바른 전화번호를 입력하세요.");
+           return;
+       }
+       alert(`이름은 ${name}이고, 연락처는 ${phone}, 주소는 ${address}입니다`);
+       // 여기서부터 실제 서버에 전송하는 코드를 추가할 수 있습니다.
+       alert("가입이 완료되었습니다.");
+       
+      
+   function isValidName(name) {
+       return /^[가-힣]{2,4}$/.test(name);
+   }
+   
+   function isValidEmail(email) {
+       return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+   }
+   
+   function isValidPhone(phone) {
+       return /^\d{3}-\d{4}-\d{4}$/.test(phone);
+   }
+}
+   </script>
+    <style>
+        .form-container {
+	background-color: #f2f2f2;
+	padding: 20px;
+	border-radius: 5px;
+	margin: 50px auto;
+	width: 50%;
+}
+
+h2 {
+	text-align: center;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	font-weight: bold;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=tel] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+input:required:invalid {
+	border: 2px solid red;
+}
+
+input:required:valid {
+	border: 2px solid green;
+}
+</style>
+</head>
+<body>
+	<div class="form-container">
+		<h2>가입신청서</h2>
+		<form action="joinpost.html">
+			<label for="name">이름:</label>
+			<input type="text" id="name" name="name" required><br><br>
+			
+			<label for="email">이메일:</label>
+			<input type="email" id="email" name="email" required><br><br>
+			
+			<label for="phone">전화번호:</label>
+			<input type="tel" id="phone" name="phone" required><br><br>
+			
+			<label for="password">비밀번호:</label>
+			<input type="password" id="password" name="password" required><br><br>
+			
+			<label for="confirm-password">비밀번호 확인:</label>
+			<input type="password" id="confirm-password" name="confirm-password" required><br><br>
+			
+			<label for="address">주소:</label>
+			<input type="text" id="address" name="address" required><br><br>
+			
+			<input type="submit" value="가입하기" onclick="getTxt()">
+		</form>
+	</div>
+</body>
+</html>
