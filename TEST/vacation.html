@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>휴가신청서</title>
+    <meta charset="UTF-8">
+    <style>
+    h1 {
+  font-size: 32px;
+  color: blue;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 16px;
+  color: gray;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select, textarea {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <h1>휴가신청서</h1>
+    <form>
+        <div>
+        <label for="name">성명(직책):</label>
+        <select id="name" name="name" required>
+            <option value="">--선택--</option>
+            <option value="김설호 상무">김설호 상무</option>
+            <option value="이연주 부장">이연주 부장</option>
+            <option value="한진희 차장">한진희 차장</option>
+            <option value="이정민 과장">이정민 과장</option>
+            <option value="김기헌 과장">김기헌 과장</option>
+          </select>
+      </div>
+      <div>
+        <label for="vacation-type">휴가 종류:</label>
+        <select id="vacation-type" name="vacation-type" required>
+          <option value="">--선택--</option>
+          <option value="반반휴">반반휴</option>
+          <option value="반휴">반휴</option>
+          <option value="연차">연차</option>
+          <option value="병가">병가</option>
+          <option value="경조사">경조사</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+      <div>
+        <label for="start-date">시작일:</label>
+        <input type="date" id="start-date" name="start-date" required>
+      </div>
+      <div>
+        <label for="end-date">종료일:</label>
+        <input type="date" id="end-date" name="end-date" required>
+      </div>
+      <div>
+        <label for="long-day">휴가일수?</label>
+        <input type="float_num" id="long-day" name="long-day" required>
+        </div>
+      <div>
+        <label for="time-type">오전/오후</label>
+        <select id="time-type" name="time-type" required>
+          <option value="">--선택--</option>
+          <option value="오전">오전</option>
+          <option value="오후">오후</option>
+        </select>
+      </div>
+      <div>
+        <label for="reason">사유 또는 참고사항(선택사항) </label>
+        <textarea id="reason" name="reason" rows="5"></textarea>
+      </div>
+      <button type="submit">제출</button>
+    </form>
+    <script>
+    const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+const name = form.elements['name'].value;
+const longDay = form.elements['long-day'].value;
+const timeType = form.elements['time-type'].value;
+const vacationType = form.elements['vacation-type'].value;
+const startDate = form.elements['start-date'].value;
+const endDate = form.elements['end-date'].value;
+const reason = form.elements['reason'].value;
+
+alert(`성명: ${name} 휴가 종류: ${vacationType} 시작일: ${startDate} 종료일: ${endDate} 사유: ${reason}`);
+});
+</script>
+</body>
+</html>
