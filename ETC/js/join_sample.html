@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>조합 동호회 가입 신청서</title>
+    <style>
+      /* CSS 스타일을 정의합니다. */
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      input[type=text], input[type=email], select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+      
+      input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* 필수 입력란을 나타내는 스타일 */
+      .required:after {
+        content: "*";
+        color: red;
+        font-size: 20px;
+        margin-left: 5px;
+      }
+      
+      /* 오류 메시지를 나타내는 스타일 */
+      .error {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>조합 동호회 가입 신청서</h1>
+    <form id="membership-form">
+      <label for="name" class="required">이름:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="name-error" class="error"></span>
+      
+      <label for="email" class="required">이메일:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="email-error" class="error"></span>
+      
+      <label for="gender" class="required">성별:</label>
+      <select id="gender" name="gender" required>
+        <option value="">성별을 선택하세요</option>
+        <option value="male">남성</option>
+        <option value="female">여성</option>
+        <option value="other">기타</option>
+      </select>
+      <span id="gender-error" class="error"></span>
+      
+      <label for="age">나이:</label>
+      <input type="text" id="age" name="age">
+      
+      <input type="submit" value="제출">
+    </form>
+    <script>
+      // JavaScript 코드를 작성합니다.
+      const form = document.getElementById("membership-form");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const genderInput = document.getElementById("gender");
+      const ageInput = document.getElementById("age");
+      
+      // 폼 제출 시 유효성 검사를 수행
+      form.addEventListener("submit", function(event) {
+  event.preventDefault(); // 폼 제출을 막습니다.
+  
+  // 유효성 검사를 수행합니다.
+  let isValid = true;
+  
+  if (nameInput.value.trim() === "") {
+    document.getElementById("name-error").textContent = "이름을 입력해주세요.";
+    isValid = false;
+  } else {
+    document.getElementById("name-error").textContent = "";
+  }
+  
+  if (emailInput.value.trim() === "") {
+    document.getElementById("email-error").textContent = "이메일을 입력해주세요.";
+    isValid = false;
+  } else {
+    document.getElementById("email-error").textContent = "";
+  }
+  
+  if (genderInput.value === "") {
+    document.getElementById("gender-error").textContent = "성별을 선택해주세요.";
+    isValid = false;
+  } else {
+    document.getElementById("gender-error").textContent = "";
+  }
+  
+  // 폼이 유효한 경우 서버로 데이터를 전송합니다.
+  if (isValid) {
+    alert("가입 신청서가 제출되었습니다.");
+    form.reset(); // 폼을 초기화합니다.
+  }
+});
+    </script>
+  </body>
+</html>
+
