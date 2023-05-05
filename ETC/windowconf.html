@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="windowConfirm()">submit</button>
+
+    <script>
+        function windowConfirm() {
+        if(window.confirm("실무책임자에게 문자로 보고하시겠습니까?")) {
+           location.href="sms:01071186639?body=실책에게 문자로 알릴까요?" 
+              } else {
+                  console.log("cancel");
+              }
+        document.getElementById("myForm").reset();
+      }
+      </script>
+    
+</body>
+</html>
