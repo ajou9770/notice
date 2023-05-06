@@ -199,7 +199,7 @@ select {
      <h2><i class="fas fa-edit"></i>휴가 신청서 작성</h2>
      <select id="selet_Form" onchange="seletedMonth()">
         <option value="item">📅신청월 선택</option>
-        <option value="firstMon">5월</option>
+        <!-- <option value="firstMon">5월</option> -->
         <option value="secondMon">6월</option>
         <option value="thirthMon">7월[Wufoo Form]</option>
      </select>
@@ -216,9 +216,9 @@ select {
 
        <select id="selet_see" onchange="seletedSee()">
         <option value="seemonth" selected="selected">📅 월 선택</option>
-        <option value="seemay">5월</option>
+        <!-- <option value="seemay">5월</option> -->
         <option value="seejune">6월</option>
-        <option value="seejuly">7월[Wofoo form]</option>
+        <option value="seejuly">7월</option>
      </select>
      
        <!--     <button id="yes" ><i class="fas fa-edit"></i>휴가 신청서 작성 하기<i class="fas fa-chevron-right fa-lg"></i> </button>
@@ -307,7 +307,7 @@ select {
             location.href = "https://docs.google.com/spreadsheets/d/1Q0aDabibgy1nXNibmJVqNOnFtFZbiEJ3ibP9E6dHN-c/edit?usp=sharing";   
           } if(seeValue === "seejuly") {
             navigator.vibrate(200);
-            alert("응답결과를 확인하기위해 Wofoo Form에 로그인이 필요합니다. * 지금은 연결하지 않을게요")
+            /* alert("응답결과를 확인하기위해 Wofoo Form에 로그인이 필요합니다. * 지금은 연결하지 않을게요")
            /*  location.href = "https://docs.google.com/spreadsheets/d/1EkDhjIOvcKoAww5r3YswF157BkL3OX4VHKpRmSu4srA/edit?usp=sharing"; */   
           } if(seeValue === "seemonth") {
             navigator.vibrate(200);
@@ -354,16 +354,11 @@ select {
        document.getElementById("maybtn").style.display = "none";
       document.getElementById("junebtn").style.display = "none";
       document.getElementById("julybtn").style.display = "none";
-      alert(`임시패스워드는 년월 [${passWord}] 입니다`);
-      password = prompt("🤷‍♀️password?");  
-      if(password == passWord 
-    ) {
+      
      alert("🆗 아래 선택창에서 '월'을 선택하시면 해당 시트로 이동합니다.");
      document.getElementById("selet_see").style.display = "block";
      navigator.vibrate(200);
-    } else {
-      alert("⚠패스워드가 불일치하거나, 취소 되었습니다.\n ※ 패스워드는 별도 공지 되었습니다.");
-    }  
+     
   }
   </script>
 
