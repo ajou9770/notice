@@ -77,18 +77,17 @@
         <input type="file" id="file-input-8">
         <input type="file" id="file-input-9">
         <input type="file" id="file-input-10">
-        <input type="file" id="file-input-11">
       </div>
       <input id="plusbtn" type="button" value="➕이미지파일 더 추가하기" onclick="plusbtn()">
       <hr>
       <button onclick="mergeImages()">🚀이미지 합치기</button>
-    </div>
+
     <div id="merged-image"></div>
     <script>
         function plusbtn() {
             document.getElementById('plusimg').style.display='block';
             document.getElementById('plusbtn').style.display='none';
-            alert('🚀5개의 이미지 파일을 더 추가하실 수 있습니다.(총11개 파일 추가 가능)')
+            alert('🚀4개의 이미지 파일을 더 추가 됩니다(총10개 파일 선택 가능)')
         }
 
         function mergeImages() {
