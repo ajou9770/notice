@@ -81,6 +81,10 @@
     <script>
         var canvas = document.querySelector("canvas");
         var signaturePad = new SignaturePad(canvas);
+        var ctx = canvas.getContext('2d');
+
+       ctx.font = '15px Arial'; // 원하는 폰트와 크기를 설정
+       ctx.fillText('서명일시: ' + new Date().toLocaleDateString(), 10, 140);
 
         document.getElementById('save').addEventListener('click', function () {
             if (signaturePad.isEmpty()) {
