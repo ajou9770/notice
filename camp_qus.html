@@ -176,8 +176,11 @@ data-support-multiple-densities="true"
     <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
     </div> -->
     <script>
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
         function qusYES(){
-            if(window.confirm("📢전자문진은 오늘(D-2)부터 유효합니다.  전자문진 사이트(대한혈액관리본부)로 접속 할까요?.")){
+            if(window.confirm(`📢전자문진은 6월 13일(D-2)부터 유효합니다.  전자문진 사이트(대한혈액관리본부)로 접속 할까요?.`)){
                 location.href="https://www.bloodinfo.net/emi2/login.do?_ga=2.184604009.1775326130.1670198672-409715244.1669188102";
                 navigator.vibrate(200);
             } else {
