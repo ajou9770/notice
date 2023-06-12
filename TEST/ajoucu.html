@@ -72,7 +72,7 @@
           display: flex;
           justify-content: space-around;
         }
-        #sectOne, #sectTwo, #sectThree, #memo {
+        #sectOne, #sectTwo, #sectThree, #memo, #paysend {
           display: none;
         }
         textarea {
@@ -340,12 +340,16 @@
         <div class="space_around">
         <span style="font-weight: 600;"><a href="https://chat.openai.com/chat" target="_blank">🤖Chat GPT→</a></span>
         <span onclick="document.getElementById('qrcode').style.display='block'"><i class="fa-sharp fa-solid fa-qrcode fa-lg"></i></span> 
+        <span onclick="document.getElementById('paysend').style.display='block'">💸kakaopay</span> 
         <span style="font-weight: 600;"><a href="https://bitly.com" target="_blank">Bitly→</a></span>
         <br><br>
        </div>
        <div class="center">
        <img id="qrcode" src="img/qrcode.jpg" style="display:none;" onclick="document.getElementById('qrcode').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
        </div>
+       <div class="center">
+        <img id="paysend" src="img/paysend.png" style="display:none;" onclick="document.getElementById('paysend').style.display ='none';" title="📢이미지를 터치 하면 숨겨집니다"> 
+        </div>
        
        <samll id="memobtn" class="btn-secondary btn-sm" onclick="document.getElementById('memo').style.display ='block'">Googleapp</samll>
        <small onclick="copyText()">Copy</small>
