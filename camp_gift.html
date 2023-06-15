@@ -18,9 +18,6 @@ $(document).ready(function(){
     $("#donenoAns").show("slow");
     $("ios").show();
   });
-  $("memyesAns").click(function(){
-    $("ios").show();
-  });
 });
 </script>
     <style>
@@ -107,16 +104,17 @@ a {
 <body>
     <!-- <h2>🙏소중한 헌혈에 감사 드립니다. </h2>
     <br> -->
-    <br><br>
-    <h2 id="memberqus" >🤷‍♂️신협 조합원이신가요? </h2>
+    <div id="coupon">
+    <h2 id="memberqus" style="color:black;">🤷‍♂️신협 조합원이신가요? </h2>
     
-    <h2 id="donequs" >✨헌혈에 성공하셨나요? </h2>
+    <h2 id="donequs" style="color:black;">✨헌혈에 성공하셨나요? </h2>
     <br>
     <div class="ans">
     <button id="memyesAns" >👌네 </button>
     <button id="doneyesAns" onclick="giftCho()" >👌네 </button>
     <button id="memnoAns" onclick="memNo()">😢아니요 </button>
     <button id="donenoAns" onclick="doneNo()" >😢아니요 </button>
+    </div>
     </div>
     <br>
     <iframe id="ifram" src="https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?embedded=true" width="100%" height="890" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
@@ -142,8 +140,9 @@ data-support-multiple-densities="true"
    } */
    function giftCho() {
     document.getElementById("ifram").style.display="block";
+    document.getElementById("coupon").style.display="none";
     navigator.vibrate(200); 
-  }
+  } 
 
         function doneNo(){
             alert("😪ㅠㅠ 아쉽네요, 다음에 한번 더 참여해 주시기 바랍니다.");
