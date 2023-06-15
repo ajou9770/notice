@@ -82,7 +82,7 @@ mark {
 mark:active {
   transform: scale(0.97);
 }
-#donequs, #donequs, #doneyesAns, #donenoAns, #ios {
+#donequs, #donequs, #doneyesAns, #donenoAns, #ifram {
   display: none;
 }
 input {
@@ -118,8 +118,8 @@ a {
     <button id="memnoAns" onclick="memNo()">😢아니요 </button>
     <button id="donenoAns" onclick="doneNo()" >😢아니요 </button>
     </div>
-    <br><a href="https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?usp=sf_link" id="ios">📲아이폰 쿠폰신청하기(구글폼) 바로가기</a>
     <br>
+    <iframe id="ifram" src="https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?embedded=true" width="100%" height="890" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
     <a href="http://ajou9770.github.io/usertip/index" id="meminfo"><samll onclick="alert('🤷‍♂️신협 이용(가입)안내 페이지로 이동합니다')">※신협 조합원은 어떻게 되고, 혜택이 무엇인가요? </samll></a><br>
     <br>
     <div
@@ -135,11 +135,16 @@ data-support-multiple-densities="true"
     <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
     </div> -->
     <script>
-        function giftCho() {
+        /* function giftCho() {
     alert("👌감사합니다. 기념품 신청화면으로 이동합니다.");
     navigator.vibrate(200);
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?usp=sf_link", "_blank");
-   }
+   } */
+   function giftCho() {
+    document.getElementById("ifram").style.display="block";
+    navigator.vibrate(200); 
+  }
+
         function doneNo(){
             alert("😪ㅠㅠ 아쉽네요, 다음에 한번 더 참여해 주시기 바랍니다.");
             location.reload();
