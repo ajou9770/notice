@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="container">
-        <h3>🚀 조합원의 핸드폰번호 입력후 관련내용을 선택 후 메세지를 보내세요.</h3>
+        <h5>🚀 조합원의 핸드폰번호 입력후 관련내용을 선택 후 메세지를 보내세요.</h5>
+        <br>
         <form id="phoneNumberForm">
             <div class="form-group">
-                <label for="phoneNumber">📞보내실 핸드폰 번호 입력</label>
+                <label for="phoneNumber">📞보내실 (조합원) 핸드폰 번호?</label>
                 <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number">
             </div>
             <div class="form-group">
@@ -28,7 +29,7 @@
                 </select>
                 
             </div>
-            <button type="button" class="btn btn-primary" id="sendSMS">Send SMS</button>
+            <button type="button" class="btn btn-primary btn-block" id="sendSMS">💬SMS 보내기</button>
         </form>
     </div>
 
@@ -41,29 +42,31 @@
             var phoneNumber = document.getElementById('phoneNumber').value;
             var messageSelect = document.getElementById('messageSelect').value;
     
-            if (phoneNumber && messageSelect) {
-                var messages = {
-                    'Message 1': '✔소노호텔앨 리조트 실시간 예약안내는 아래 링클르 참조해 주세요 \n https://ajou9770.github.io/usertip/dm.html',
-                    'Message 2': '✔조합 카카오톡 채널홈으로 가기 \n http://pf.kakao.com/_dfhkK',
-                    'Message 3': '✔조합 경조금신청 안내 \n https://ajou9770.github.io/usertip/congrat.html',
-                    'Message 4': '✔조합 이용꿀팁(홈) \n https://ajou9770.github.io/usertip',
-                    'Message 5': '✔조합 진행중 이벤트 바로가기 \n https://ajou9770.github.io/usertip/event.html',
-                };
-                
-                var selectedMessage = messages[messageSelect];
-                
-                if (selectedMessage) {
-                    var message = encodeURIComponent(selectedMessage);
-                    location.href = 'sms:' + phoneNumber + '?body=' + message;
-                } else {
-                    alert("💬보내실 메세지 내용을 선택하세요");
-                }
-                
-            } else {
-                alert("🤷‍♀️보내실 핸드폰 번호를 입력후 내용을 선택하세요");
-            }
-        });
-    </script>
+            var messages = {
+                'Message 1': '✔소노호텔앨 리조트 실시간 예약안내는 아래 링클르 참조해 주세요 \n https://ajou9770.github.io/usertip/dm.html',
+                'Message 2': '✔조합 카카오톡 채널홈으로 가기 \n http://pf.kakao.com/_dfhkK',
+                'Message 3': '✔조합 경조금신청 안내 \n https://ajou9770.github.io/usertip/congrat.html',
+                'Message 4': '✔조합 이용꿀팁(홈) \n https://ajou9770.github.io/usertip',
+                'Message 5': '✔조합 진행중 이벤트 바로가기 \n https://ajou9770.github.io/usertip/event.html',
+            };
     
+            if (!phoneNumber) {
+                alert("🤷‍♀️보내실 핸드폰 번호를 입력하세요");
+                return;
+            } 
+            
+            if (!messageSelect) {
+                alert("💬보내실 메세지 내용을 선택하세요");
+                return;
+            }
+    
+            var selectedMessage = messages[messageSelect];
+    
+            if (selectedMessage) {
+                var message = encodeURIComponent(selectedMessage);
+                location.href = 'sms:' + phoneNumber + '?body=' + message;
+            } 
+        });
+    </script>    
 </body>
 </html>
