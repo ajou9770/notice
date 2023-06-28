@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title># 문자안내 서비스</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Send SMS</h1>
+        <form id="phoneNumberForm">
+            <div class="form-group">
+                <label for="phoneNumber">📞보내실 핸드폰 번호 입력</label>
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+            </div>
+            <button type="button" class="btn btn-primary" id="sendSMS">Send SMS</button>
+        </form>
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('sendSMS').addEventListener('click', function() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            if (phoneNumber) {
+                var message = encodeURIComponent("소노호텔앤리조트 실시간예약 안내.  ->\n 메뉴얼 보기:https://ajou9770.github.io/usertip/dm.html");
+                location.href = 'sms:' + phoneNumber + '?body=' + message;
+            } else {
+                alert("Please enter a phone number");
+            }
+        });
+    </script>
+</body>
+</html>
