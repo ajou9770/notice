@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title># 문자안내 서비스</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📢문자 안내 보내기</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Send SMS</h1>
+        <h3>🚀 조합원의 핸드폰번호 입력후 관련내용을 선택 후 메세지를 보내세요.</h3>
         <form id="phoneNumberForm">
             <div class="form-group">
                 <label for="phoneNumber">📞보내실 핸드폰 번호 입력</label>
                 <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+            </div>
+            <div class="form-group">
+                <label for="messageSelect">💬보내실 내용 선택</label>
+                <select class="form-control" id="messageSelect">
+                    <option value="">🤷‍♂️보내실 내용을 선택하세요</option> 
+                    <option value="Message 1">#소노호텔앤리조트 실시간 예약(이용)안내</option>
+                    <option value="Message 2">#조합 카카오톡홈으로 가기</option>
+                    <option value="Message 3">#조합 경조금 신청안내</option>
+                    <option value="Message 4">#조합 이용꿀팁(홈)안내</option>
+                    <option value="Message 5">#진행중 이벤트 안내</option>
+                </select>
+                
             </div>
             <button type="button" class="btn btn-primary" id="sendSMS">Send SMS</button>
         </form>
@@ -24,13 +39,31 @@
     <script>
         document.getElementById('sendSMS').addEventListener('click', function() {
             var phoneNumber = document.getElementById('phoneNumber').value;
-            if (phoneNumber) {
-                var message = encodeURIComponent("소노호텔앤리조트 실시간예약 안내.  ->\n 메뉴얼 보기:https://ajou9770.github.io/usertip/dm.html");
-                location.href = 'sms:' + phoneNumber + '?body=' + message;
+            var messageSelect = document.getElementById('messageSelect').value;
+    
+            if (phoneNumber && messageSelect) {
+                var messages = {
+                    'Message 1': '✔소노호텔앨 리조트 실시간 예약안내는 아래 링클르 참조해 주세요 \n https://ajou9770.github.io/usertip/dm.html',
+                    'Message 2': '✔조합 카카오톡 채널홈으로 가기 \n http://pf.kakao.com/_dfhkK',
+                    'Message 3': '✔조합 경조금신청 안내 \n https://ajou9770.github.io/usertip/congrat.html',
+                    'Message 4': '✔조합 이용꿀팁(홈) \n https://ajou9770.github.io/usertip',
+                    'Message 5': '✔조합 진행중 이벤트 바로가기 \n https://ajou9770.github.io/usertip/event.html',
+                };
+                
+                var selectedMessage = messages[messageSelect];
+                
+                if (selectedMessage) {
+                    var message = encodeURIComponent(selectedMessage);
+                    location.href = 'sms:' + phoneNumber + '?body=' + message;
+                } else {
+                    alert("💬보내실 메세지 내용을 선택하세요");
+                }
+                
             } else {
-                alert("Please enter a phone number");
+                alert("🤷‍♀️보내실 핸드폰 번호를 입력후 내용을 선택하세요");
             }
         });
     </script>
+    
 </body>
 </html>
