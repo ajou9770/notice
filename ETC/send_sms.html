@@ -9,64 +9,68 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <br>
     <div class="container">
         <h5>🚀 조합원의 핸드폰번호 입력후 관련내용을 선택 후 메세지를 보내세요.</h5>
         <br>
         <form id="phoneNumberForm">
             <div class="form-group">
                 <label for="phoneNumber">📞보내실 (조합원) 핸드폰 번호?</label>
-                <input type="tel" class="form-control" id="phoneNumber" value="010">
+                <input type="tel" class="form-control" id="phoneNumber" pattern="[0-9]{11}\s*" value="010" required>
             </div>
             <div class="form-group">
                 <label for="messageSelect">💬보내실 내용 선택</label>
-                <select class="form-control" id="messageSelect">
+                <select class="form-control" id="messageSelect" required>
                     <option value="">🤷‍♂️보내실 내용을 선택하세요</option> 
                     <option value="#소노호텔앤리조트 실시간 예약(이용)안내">#소노호텔앤리조트 실시간 예약(이용)안내</option>
-                    <option value="#조합 카카오톡홈으로 가기">#조합 카카오톡홈으로 가기</option>
-                    <option value="#조합 경조금 신청안내">#조합 경조금 신청안내</option>
-                    <option value="#조합 이용꿀팁(홈)안내">#조합 이용꿀팁(홈)안내</option>
+                    <option value="#조합 카카오톡홈으로 가기">#조합 이용팁(홈)안내</option>
                     <option value="#진행중 이벤트 안내">#진행중 이벤트 안내</option>
                 </select>
-                
-            </div>
-            <button type="button" class="btn btn-primary btn-block" id="sendSMS">💬SMS 보내기</button>
+                <br>
+                <label for="messageSelect">🤵보내는 직원 선택</label>
+                <select class="form-control" id="senderSelect" required>
+                    <option value="">🤷‍♂️보내시는 분을 선택하세요</option> 
+                    <option value="아주대의료원 신협 김설호상무">아주대의료원 신협 김설호상무</option>
+                    <option value="아주대의료원 신협 이연주부장">아주대의료원 신협 이연주부장</option>
+                    <option value="아주대의료원 신협 한진희 차장">아주대의료원 신협 한진희 차장</option>
+                    <option value="아주대의료원 신협 이정민과장">아주대의료원 신협 이정민과장</option>
+                    <option value="아주대의료원 신협 김기헌 과장">아주대의료원 신협 김기헌 과장</option>
+                </select> 
+                <br>
+            <button type="submit" class="btn btn-primary btn-block">💬SMS 보내기</button>
         </form>
     </div>
-
-    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script>
-    document.getElementById('sendSMS').addEventListener('click', function() {
-        var phoneNumber = document.getElementById('phoneNumber').value;
-        var messageSelect = document.getElementById('messageSelect').value;
-    
-        var messages = {
+        document.getElementById('phoneNumberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var messageSelect = document.getElementById('messageSelect').value;
+            var sender = document.getElementById('senderSelect').value;
+
+            var messages = {
             '#소노호텔앤리조트 실시간 예약(이용)안내': '✔소노호텔앨 리조트 실시간 예약안내는 아래 링크를 참조해 주세요 \n https://ajou9770.github.io/usertip/dm.html',
             '#조합 카카오톡홈으로 가기': '✔조합 카카오톡 채널홈으로 가기 \n http://pf.kakao.com/_dfhkK',
             '#조합 경조금 신청안내': '✔조합 경조금신청 안내 \n https://ajou9770.github.io/usertip/congrat.html',
             '#조합 이용꿀팁(홈)안내': '✔조합 이용꿀팁(홈) \n https://ajou9770.github.io/usertip',
             '#진행중 이벤트 안내': '✔조합 진행중 이벤트 바로가기 \n https://ajou9770.github.io/usertip/event.html',
         };
-    
-        if (!phoneNumber) {
-            alert("🤷‍♀️보내실 핸드폰 번호를 입력하세요");
-            return;
-        } 
-    
-        if (!messageSelect) {
-            alert("💬보내실 메세지 내용을 선택하세요");
-            return;
-        }
-    
-        var selectedMessage = messages[messageSelect];
-    
-        if (selectedMessage) {
-            var message = encodeURIComponent(selectedMessage);
-            alert(`📞${phoneNumber} 으로 [${messageSelect}] 를 전송 합니다`);
-            location.href = 'sms:' + phoneNumber + '?body=' + message;
-        } 
-    });
+
+            if (!phoneNumber || !messageSelect || !sender) {
+                // If any of the fields are empty, stop the function.
+                return;
+            }
+
+            var selectedMessage = messages[messageSelect];
+
+            if (selectedMessage) {
+                var message = `${sender}에서 보내는 메시지: ${selectedMessage}`;
+                var encodedMessage = encodeURIComponent(message);
+                location.href = 'sms:' + phoneNumber + '?body=' + encodedMessage;
+                alert(`🤷‍♀️${phoneNumber}으로 [ ${messageSelect} ]의 내용을 전송합니다`);
+            } 
+        });
     </script>
 </body>
 </html>
+
