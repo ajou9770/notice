@@ -64,9 +64,10 @@
             var selectedMessage = messages[messageSelect];
 
             if (selectedMessage) {
-                var message = `${sender}에서 보내는 메시지: ${selectedMessage}`;
+                var message = `${selectedMessage} \n ▣보내는분: ${sender}`;
                 var encodedMessage = encodeURIComponent(message);
                 location.href = 'sms:' + phoneNumber + '?body=' + encodedMessage;
+                alert(message);
                 alert(`🤷‍♀️${phoneNumber}으로 [ ${messageSelect} ]의 내용을 전송합니다`);
             } 
         });
