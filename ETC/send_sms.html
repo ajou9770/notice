@@ -63,8 +63,8 @@
     
         if (selectedMessage) {
             var message = encodeURIComponent(selectedMessage);
-            location.href = 'sms:' + phoneNumber + '?body=' + message;
             alert(`📞${phoneNumber} 으로 [${messageSelect}] 를 전송 합니다`);
+            location.href = 'sms:' + phoneNumber + '?body=' + message;
         } 
     });
     </script>
