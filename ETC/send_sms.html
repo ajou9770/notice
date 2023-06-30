@@ -15,7 +15,12 @@
     height: 50px;
     margin-left: 5px;
  }
-
+ #imgppurio {
+    position: fixed;
+    bottom: 45%;
+    right: 25%;
+    border: 1px solid;
+ }
  </style>
 </head>
 <body>
@@ -59,7 +64,7 @@
         <br> ==> 내문자함 > 보낼내용 선택 > 전송 </span>
     <br>
     <span onclick="showppurio()">💬뿌리오 내문자함 보기(이미지 터치시 닫힘) → </span>
-    <img src="img/ppurio_mysms.jpg" id="imgppurio" style="width: 170px; height: 230px; display: none;" onclick="this.style.display='none';">  
+    <img src="img/ppurio_mysms.jpg" id="imgppurio" style="width: 270px; height: 400px; display: none;" onclick="this.style.display='none';">  
     <script>
       function showppurio() {
         document.getElementById("imgppurio").style.display ="block";
