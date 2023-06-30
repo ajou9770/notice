@@ -7,6 +7,16 @@
     <title>📢문자 안내 보내기</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+ .ppurio {
+    box-shadow: 0px 3px 6px 0px grey;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    margin-left: 5px;
+ }
+
+ </style>
 </head>
 <body>
     <br>
@@ -43,6 +53,10 @@
             <button type="submit" class="btn btn-primary btn-block">💬SMS 보내기</button>
         </form>
     </div>
+    <a href="http://m.ppurio.com"><img src="img/Purio_logo.jpg"  class="ppurio"></a>
+    <br><br>
+    <span>✨모바일 뿌리오에서는 조합대표번호로 문자전송 가능
+        <br> ==> 내문자함 > 보낼내용 선택 > 전송 </span>
     <script>
         document.getElementById('phoneNumberForm').addEventListener('submit', function(e) {
             e.preventDefault();
