@@ -57,6 +57,14 @@
     <br><br>
     <span>✨모바일 뿌리오에서는 조합대표번호로 문자전송 가능
         <br> ==> 내문자함 > 보낼내용 선택 > 전송 </span>
+    <br>
+    <span onclick="showppurio()">💬뿌리오 내문자함 보기(이미지 터치시 닫힘) → </span>
+    <img src="img/ppurio_mysms.jpg" id="imgppurio" style="width: 170px; height: 230px; display: none;" onclick="this.style.display='none';">  
+    <script>
+      function showppurio() {
+        document.getElementById("imgppurio").style.display ="block";
+      }
+    </script>  
     <script>
         document.getElementById('phoneNumberForm').addEventListener('submit', function(e) {
             e.preventDefault();
