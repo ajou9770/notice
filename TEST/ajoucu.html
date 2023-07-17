@@ -79,9 +79,37 @@
           border-radius: 5px;
           padding: 5px;
         }
+        .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 15px;
+      font-weight: bold;
+    }
     </style>
 </head>
-<body onload="alert('📢이 사이트는 인천경기지역본부 농.소형조합 순회교육을 목적으로 오픈된 것으로 그외 목적의 외부 유출을 삼가해 주세요.')">
+<body>
 <div class="center"><h3># 아주대의료원신협 조합원 관리 Tip</h3>
 </div>
 <hr>
@@ -324,6 +352,7 @@
           <li><a class="dropdown-item" href="https://www.w3schools.com/" target="_blank">웹페이지제작 배움터(W3school)</a></li>
           <li><a class="dropdown-item" href="https://getbootstrap.com/" target="_blank">웹페이지제작 라이브러리(Bootstrap)</a></li>
           <li><a class="dropdown-item" href="https://bitly.com" target="_blank">단축Url변환(Bitly)</a></li>
+          <li><a class="dropdown-item" href="https://dpromotion.io/" target="_blank">🎉이벤트프로모션사이트</a></li>
         </ul>
       </div>
       <p class="fw-semibold"><mark style="background-color: beige; background-color:beige; border-radius: 5px;">💻 PC로 접속하시면 보기에 좋습니다. </mark></p>   
@@ -379,7 +408,59 @@
        <button type="button" class="btn btn-light btn-sm" onclick="location.href='mailto:ajou9770@ajoucu.page'">📨Email문의</button>
        </div>
       </div>
-      
+      <!-- Modal HTML -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h4>🤷‍♀️알려 드립니다</h4>
+      <p>이 사이트는 인천경기지역 농소형조합 순회교육 자료로 배포되었습니다. 
+        <br>그외 목적으로 이용을 삼가 주세요</p>
+      <p></p>
+      <button class="btn btn-light btn-sm" onclick="hideModalFor('day')">✔하루동안 안보기</button>
+      <br>
+<!--       <button class="btn btn-light btn-sm" onclick="hideModalFor('week')">일주일 안보기</button>
+      <br> -->
+      <small class="modal-close" onclick="hideModal()">❌닫기</small>
+    </div>
+  </div>
+
+  <script>
+    // Check if modal should be displayed
+    function showModal() {
+      var lastModalTime = localStorage.getItem('lastModalTime');
+      if (!lastModalTime || shouldShowModal(lastModalTime)) {
+        document.getElementById('myModal').style.display = "block";
+      }
+    }
+
+    // Hide modal and set the hiding time
+    function hideModalFor(duration) {
+      var now = new Date().getTime();
+      var timeToHide;
+
+      if (duration === 'day') {
+        timeToHide = now + 24 * 60 * 60 * 1000; // Add 24 hours in milliseconds
+      } else if (duration === 'week') {
+        timeToHide = now + 7 * 24 * 60 * 60 * 1000; // Add 7 days in milliseconds
+      }
+
+      localStorage.setItem('lastModalTime', timeToHide);
+      hideModal();
+    }
+
+    // Check if modal should be shown based on the hiding time
+    function shouldShowModal(lastModalTime) {
+      var currentTime = new Date().getTime();
+      return currentTime > parseInt(lastModalTime);
+    }
+
+    // Hide the modal
+    function hideModal() {
+      document.getElementById('myModal').style.display = "none";
+    }
+
+    // Show the modal when the page loads
+    window.onload = showModal;
+  </script>
       
       <script>
         function copyText() {
