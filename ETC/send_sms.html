@@ -31,7 +31,7 @@
         <form id="phoneNumberForm">
             <div class="form-group">
                 <label for="phoneNumber">📞보내실 (조합원) 핸드폰 번호(#숫자11자리만)</label>
-                <input type="tel" class="form-control" id="phoneNumber" pattern="[0-9]{11}\s*" value="010" required>
+                <input type="tel" class="form-control" id="phoneNumber" value="010" required>
             </div>
             <div class="form-group">
                 <label for="messageSelect">💬보내실 내용 선택</label>
@@ -73,7 +73,7 @@
         document.getElementById("imgppurio").style.display ="block";
       }
     </script>  
-    <script>
+    <!-- <script>
         document.getElementById('phoneNumberForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -105,7 +105,47 @@
                 location.href = 'sms:' + phoneNumber + '?body=' + encodedMessage;
                } 
         });
+    </script> 
+pattern="[0-9]{11}\s*"-->
+    <script>
+        document.getElementById('phoneNumberForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var phoneNumberString = document.getElementById('phoneNumber').value;
+    var phoneNumberArray = phoneNumberString.split(',');
+    var messageSelect = document.getElementById('messageSelect').value;
+    var sender = document.getElementById('senderSelect').value;
+
+    var messages = {
+        '#소노호텔앤리조트 실시간 예약(이용)안내': '✔소노호텔앨 리조트 실시간 예약안내는 아래 링크를 참조해 주세요 \n https://ajou9770.github.io/usertip/dm.html \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+            '#조합 카카오톡홈으로 가기': '✔조합 카카오톡 채널홈으로 가기 \n http://pf.kakao.com/_dfhkK \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+            '#조합 경조금 신청안내': '✔조합 경조금신청 안내 \n https://ajou9770.github.io/usertip/congrat.html \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+            '#신협 알뜰폰 가입안내': '✔신협 알뜰폰 가입안내 \n https://ajou9770.github.io/usertip/mobile.html \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+            '#조합 이용꿀팁(홈)안내': '✔조합 이용꿀팁(홈) \n https://ajou9770.github.io/usertip \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+            '#진행중 이벤트 안내': '✔조합 진행중 이벤트 바로가기 \n https://ajou9770.github.io/usertip/event.html \n 더 궁금하신 사항은 카카오 상담톡(http://pf.kakao.com/_dfhkK/chat) 또는 유선으로 문의하여 주세요.',
+        // Your predefined messages here
+    };
+
+    if (!phoneNumberString || !messageSelect || !sender) {
+        // If any of the fields are empty, stop the function.
+        return;
+    }
+
+    var selectedMessage = messages[messageSelect];
+
+    if (selectedMessage) {
+        phoneNumberArray.forEach(function(phoneNumber) {
+            phoneNumber = phoneNumber.trim();  // remove any whitespace
+            var message = `${selectedMessage} \n ▣보내는분: ${sender}`;
+            var encodedMessage = encodeURIComponent(message);
+            alert(`🤷‍♀️${phoneNumber}으로 [ ${messageSelect} ]의 내용을 전송합니다`);
+            console.log(message);
+            location.href = 'sms:' + phoneNumber + '?body=' + encodedMessage;
+        });
+    }
+});
     </script>
+
 </body>
 </html>
 
