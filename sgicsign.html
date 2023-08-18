@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>서울보증보험대출 계약체결 동의 및 전자서명</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #toTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #555;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        #toTopBtn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
   <body onload="alert('🤷‍♂️홈페이지 이미지는 변경될 수 있습니다. 메뉴(문자)를 참조하여 이용 바랍니다.')">
     <h2 id="subtitle_css"> 서울보증보험대출 계약을 위한 개인정보 및 전자서명 안내 </h2>
     <h3>☞ 서울보증보험 생활안정대출 계약을 위한 사전 개인정보동의 및 보증보험 대출 신청 후 전자서명 방법을 안내 해 드립니다.  <br/><br/>
@@ -57,6 +83,7 @@
   data-shape="mobile"
   data-support-multiple-densities="true"
 ></div><br/>
+<button id="toTopBtn" onclick="scrollToTop()">▲</button>
     <a href="http://ajou9770.github.io/usertip/loan.html" class="backButton"> <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기 </i></a><br/>
 <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>    
 <script src="script.js"></script>
@@ -74,5 +101,29 @@
     js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'kakao-js-sdk');
-</script>   
+</script>  
+<script> 
+let toTopBtn = document.getElementById("toTopBtn");
+
+// 사용자가 페이지를 스크롤할 때마다 함수를 호출
+window.onscroll = function() {
+    scrollFunction();
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        // 스크롤 위치가 20px보다 클 때 버튼을 표시
+        toTopBtn.style.display = "block";
+    } else {
+        // 스크롤 위치가 20px보다 작을 때 버튼을 숨김
+        toTopBtn.style.display = "none";
+    }
+}
+
+// 최상단으로 스크롤하는 함수
+function scrollToTop() {
+    document.body.scrollTop = 0; // Safari 호환성
+    document.documentElement.scrollTop = 0;  // 다른 브라우저 호환성
+}
+</script>
 </html>
