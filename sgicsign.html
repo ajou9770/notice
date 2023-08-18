@@ -105,25 +105,28 @@
 <script> 
 let toTopBtn = document.getElementById("toTopBtn");
 
-// 사용자가 페이지를 스크롤할 때마다 함수를 호출
 window.onscroll = function() {
     scrollFunction();
 };
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        // 스크롤 위치가 20px보다 클 때 버튼을 표시
         toTopBtn.style.display = "block";
     } else {
-        // 스크롤 위치가 20px보다 작을 때 버튼을 숨김
         toTopBtn.style.display = "none";
     }
 }
 
-// 최상단으로 스크롤하는 함수
 function scrollToTop() {
-    document.body.scrollTop = 0; // Safari 호환성
-    document.documentElement.scrollTop = 0;  // 다른 브라우저 호환성
+    let scrollDuration = 300; // 스크롤에 걸리는 시간 (1초 = 1000ms)
+    let scrollStep = -window.scrollY / (scrollDuration / 15),
+        scrollInterval = setInterval(function() {
+        if (window.scrollY != 0) {
+            window.scrollBy(0, scrollStep);
+        } else {
+            clearInterval(scrollInterval);
+        }
+    }, 15);
 }
 </script>
 </html>
