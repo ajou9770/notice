@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Menu Order Form</h2>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input type="text" class="form-control" id="id" name="id" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="burgerQuantity">Burger:</label>
+          <input type="number" class="form-control" id="burgerQuantity" name="burgerQuantity" placeholder="Enter quantity">
+        </div>
+        
+        <div class="form-group">
+          <label for="pizzaQuantity">Pizza:</label>
+          <input type="number" class="form-control" id="pizzaQuantity" name="pizzaQuantity" placeholder="Enter quantity">
+        </div>
+        
+        <div class="form-group">
+          <label for="pastaQuantity">Pasta:</label>
+          <input type="number" class="form-control" id="pastaQuantity" name="pastaQuantity" placeholder="Enter quantity">
+        </div>
+        
+        <!-- Add more menu items as needed -->
+
+        <button type="button" class="btn btn-primary" onclick="submitOrder()">Submit</button>
+      </form>
+    </div>
+    
+    <script>
+      function submitOrder() {
+        var form = document.getElementById('orderForm');
+        var data = {
+          id: form.id.value,
+          burger: form.burgerQuantity.value,
+          pizza: form.pizzaQuantity.value,
+          pasta: form.pastaQuantity.value
+          // Add more menu items as needed
+        };
+        
+        google.script.run.orderMenu(data);
+        alert('Order submitted!');
+      }
+    </script>
+  </body>
+</html>
