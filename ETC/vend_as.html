@@ -133,15 +133,15 @@
   <div class="modal-content">
     <div id="sms_box" style="text-align: center;">
       <h5>🤷‍♂️접수하실 자판기를 담당자를 선택해 주세요</h5>
-      <div id="sms_box_btn">
-        <a href="sms:01071186639"><button id="sms_btn1" style="background-color: rgb(86, 86, 209); margin-right: 15px; width: 150px;">🧴음료캔자판기</button></a>
-        <a href="sms:01071186639"><button id="sms_btn2" style="background-color: rgb(111, 186, 101); width: 150px;">☕원두 커피자판기</button></a><br>
+      <div id="sms_box_btn"> 
+        <a href="sms:01046278900?body=아주대병원 자판기관련 불편사항을 접수하였습니다. 확인 바랍니다."><button id="sms_btn1" style="background-color: rgb(86, 86, 209); margin-right: 15px; width: 150px;">🧴음료캔자판기</button></a>
+        <a href="sms:01094954103?body=아주대병원 자판기관련 불편사항을 접수하였습니다. 확인 바랍니다."><button id="sms_btn2" style="background-color: rgb(111, 186, 101); width: 150px;">☕원두 커피자판기</button></a><br>
         <button onclick="closeSmsModal()" style="background-color: thistle;">❌</button>
       </div>
     </div>
   </div>
 </div>
-
+<!-- 자판기 담당자 음료캔:구동열01046278900 dicndgjs@ccbk.co.kr / 커피 : 정지언 01094954103 sjungje@hanmail.net-->
 <script>
   function openModal() {
         document.getElementById("myModal").style.display = "block";
@@ -150,10 +150,10 @@
         document.getElementById("myModal").style.display = "none";
     }
      function can_Call() {
-      window.location.href="tel:01071186639";
+      window.location.href="tel:01046278900";
      }
      function coffee_Call() {
-      window.location.href="tel:01071186639";
+      window.location.href="tel:01094954103";
      }
      function openSmsModal() {
      document.getElementById("smsModal").style.display = "block";
