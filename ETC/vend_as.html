@@ -74,15 +74,31 @@
     align-items: center; 
     flex-wrap: wrap;     
    }
+   #myModal {
+    position: fixed;
+    top: 200px;
+    height: 300px;
+    padding: 20PX;
+   }
+   #smsModal {
+    position: fixed;
+    top: 200px;
+    height: 300px;
+    padding: 20PX;
+   }
+   .modal-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
     </style>
 </head>
 <body>
-   <iframe src="https://script.google.com/macros/s/AKfycbx6FbdxcfCOBdADJHq8Bp4OqaJKMToumEd-PiC4G8i8I15ZnXexPspdKtBaReBiT4iu/exec" width="100%" height="650" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+   <iframe src="https://script.google.com/macros/s/AKfycbx6FbdxcfCOBdADJHq8Bp4OqaJKMToumEd-PiC4G8i8I15ZnXexPspdKtBaReBiT4iu/exec" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
    <br>
    <div class="around">
-   <button onclick="location.href='tel:01054460658'">📞담당자에게 전화하기 →</button>
+   <button onclick="openModal()">📞담당자에게 전화하기 →</button>
    <br><br>
-   <button onclick="location.href='sms:01054460658?body=자판기 이용불편내용을 접수하였습니다. 확인 후 빠른 조치 바랍니다\n'">💬담당자에게 문자보내기 →</button>
+   <button onclick="openSmsModal()">💬담당자에게 문자보내기 →</button>
    </div>
    <br><br>
   <!-- <script>
@@ -100,6 +116,63 @@
         }
     }
 </script> -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+       <div id="box" style="text-align: center;">
+        <h5> 🤷‍♂️ 접수하실 자판기를 담당자를 선택해주세요 </h5>
+        <div id="box_btn">
+          <button id="fab_fa-google-play" onclick="can_Call()" style="background-color: rgb(86, 86, 209); margin-right: 15px; width: 150px;">🧴음료캔자판기</button>
+          <button id="fab_fa-apple" onclick="coffee_Call()" style="background-color: rgb(111, 186, 101); width: 150px;">☕원두커피자판기</button><br>
+          <button onclick="closeModal()" style="background-color: thistle;">❌</button>
+      </div>
+  </div>
+</div>
+</div>
+
+<div id="smsModal" class="modal">
+  <div class="modal-content">
+    <div id="sms_box" style="text-align: center;">
+      <h5>🤷‍♂️접수하실 자판기를 담당자를 선택해 주세요</h5>
+      <div id="sms_box_btn">
+        <a href="sms:01071186639"><button id="sms_btn1" style="background-color: rgb(86, 86, 209); margin-right: 15px; width: 150px;">🧴음료캔자판기</button></a>
+        <a href="sms:01071186639"><button id="sms_btn2" style="background-color: rgb(111, 186, 101); width: 150px;">☕원두 커피자판기</button></a><br>
+        <button onclick="closeSmsModal()" style="background-color: thistle;">❌</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+     function can_Call() {
+      window.location.href="tel:01071186639";
+     }
+     function coffee_Call() {
+      window.location.href="tel:01071186639";
+     }
+     function openSmsModal() {
+     document.getElementById("smsModal").style.display = "block";
+     }
+
+     function closeSmsModal() {
+     document.getElementById("smsModal").style.display = "none";
+     }
+
+     // 모달창 바깥쪽 클릭 시 닫기
+    window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    var smsModal = document.getElementById("smsModal");
+    if (event.target == modal || event.target == smsModal) {
+    modal.style.display = "none";
+    smsModal.style.display = "none";
+     }
+    }
+    </script>
 <div id="loading-overlay">
   <div id="loading-spinner"></div>
   <div id="loading-message"><span style="padding-left: 15px;">로딩중입니다...</span>
