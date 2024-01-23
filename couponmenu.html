@@ -7,6 +7,10 @@
     <title>신협 특판몰 쿠폰 등록&사용안내</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <!-- 부트스트랩 CSS 추가 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- FontAwesome CSS 추가 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script>
       $(document).ready(function(){
         $("#btn_plate").click(function(){
@@ -26,6 +30,12 @@
         background: -webkit-linear-gradient(to right, #3d72b4, #525252);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #3d72b4, #525252); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
+      .youtube-link {
+    position: fixed; /* 고정 위치 */
+    right: 10px; /* 우측 여백 */
+    top: 50%; /* 상단에서 50% 위치 */
+    transform: translateY(-50%); /* Y축으로 50% 이동하여 중간에 위치하도록 조정 */
+}
     </style>
   </head>
   <body>
@@ -63,6 +73,7 @@
  <img src="#"/>
  <img src="$"/>
 </div>-->
+<a href="https://youtu.be/TaETwnDElEk" class="btn btn-primary youtube-link"><i class="fab fa-youtube"></i>동영상 메뉴얼보기</a>
 <div
   id="kakao-talk-channel-chat-button"
   data-channel-public-id="_dfhkK"
