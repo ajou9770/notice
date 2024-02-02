@@ -283,6 +283,50 @@
     background-size: 100% 5px; /* 이미지 크기 조정 (가로 100%, 높이 3px) */
     padding-bottom: 1px; /* 밑줄과 텍스트 사이의 간격 조정 */
 }
+#infomodalBox {
+              position: absolute;
+              left: 5px;
+              right: 5px;
+              top: 20vh;
+            }
+            #infomodal {
+                
+              width: auto;
+              height: auto;
+              border-radius: 10px;
+              margin: 10px;
+              background-color: rgb(178, 207, 222);
+              padding: 20px;
+              font-size: 15px;
+              font-weight: 500;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+            }
+          #infobtn {
+              font-size:13px;
+              font-weight:600;
+              height:auto;
+              width:auto;
+              padding:5px;
+              background-color: white;
+              border: 2px 6px 6px 2px;
+              }
+            #infomodal_input {
+              width: 100%;
+              padding: 10px;
+              font-size:15px;
+              background-color: antiquewhite;
+              font-weight:650;  
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+            }
+            .none {
+              display: none;
+            }
   </style>
 </head>
 <body>
@@ -384,6 +428,58 @@
             <a href="https://ajou9770.github.io/usertip/"><i class="fas fa-chevron-left fa-lg"></i>  메인화면(4가지팁) 돌아가기</a>
         </div><br/>
     <br/>-->
+    <section id="infomodalBox">
+      <aside id="infomodal">
+        <div></div>
+        <p>신협총회기념품(설명절)특판이 <mark>🚚택배주문이 오늘 2.2일(금) 일부 마감됩니다.</mark> 
+          <br>🤷🏽‍♀️아직 까지 쿠폰미사용 또는 명절선물을 주문하지 못하신 선생님께서는 특판몰을 방문해 보세요 
+          <br><br>
+          <a href="http://ajoucu.com" style="font-size: medium;">🚚특판몰 구경하기</a>
+        </p>
+        <hr>
+        <div id="infomodal_input">        
+            <label for="infoinput" style="font-size: medium;">하루동안 안보기</label><input id="infoinput" type="checkbox" />
+                 
+        </div>
+        <hr>
+        <button id="infobtn" style="font-size: medium; color: blue;">확인</button>
+      </aside>
+    </section>
+    <script>
+      const section = document.getElementById("infomodalBox");
+      const btn = document.getElementById("infobtn");
+      const input = document.getElementById("infoinput");
+      const localItem = localStorage.getItem("alertTime");
+      const newDate = Date.now();
+    
+      function hideModal() {
+        section.classList.add("none");
+      }
+    
+      function showModal() {
+        section.classList.remove("none");
+      }
+    
+      btn.addEventListener("click", hideModal);
+    
+      input.addEventListener("click", () => {
+        if (input.checked) {
+          localStorage.setItem("alertTime", newDate);
+        }
+      });
+    
+      if (localItem) {
+        const calculate = newDate - parseInt(localItem);
+        if (calculate >= 1000 * 60 * 60 * 24) {
+          showModal();
+        } else {
+          hideModal();
+        }
+      } else {
+        showModal();
+      }
+    </script>
+   
     <script>
       function divInfo() {
         document.getElementById("div_info").style.display = "block";
