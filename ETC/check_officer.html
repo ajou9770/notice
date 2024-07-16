@@ -23,6 +23,7 @@
     $("#payimgBtn").click(function(){
         $("#payimg").toggle("slow");
     });
+});
      // ios(아이폰계열)의 경우 우측 스크롤 상하 버튼생성(안내포함)
      if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
     var scrollButtons = `
@@ -34,7 +35,6 @@
     $("body").append(scrollButtons);
     alert('🤷🏽‍♀️아이폰 등 iOS계열은 우측의 🔼🔽로 상.하 스크롤 이동이 가능합니다');
 }
-});
 
 
 function openCongrat() {
