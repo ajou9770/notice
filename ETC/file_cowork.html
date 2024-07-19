@@ -87,16 +87,17 @@
     });
 
     installButton.addEventListener('click', () => {
-      installButton.style.display = 'none';
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('사용자가 설치를 수락했습니다.');
-        } else {
-          console.log('사용자가 설치를 거부했습니다.');
-        }
-        deferredPrompt = null;
-      });
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('사용자가 설치를 수락했습니다.');
+          } else {
+            console.log('사용자가 설치를 거부했습니다.');
+          }
+          deferredPrompt = null;
+        });
+      }
     });
 
 
