@@ -28,6 +28,42 @@
             </div>
         </div>
     </div>
+    <div class="container">
+                <hr>
+        <p class="text-center">아래 사이트를 바탕화면으로 드래그하여 바로가기 아이콘을 만들어 보세요</p>
+        <div class="text-center">
+            <a href="https://ajou9770.github.io/notice/ETC/appsheet.html" id="shortcut-link" class="btn btn-primary">🖱업무용App(본페이지)</a>
+            <br><br>
+            <a href="https://ajou9770.github.io/notice/ETC/file_cowork.html" id="shortcut-link" class="btn btn-primary">🖱업무공용파일Up&Down</a>
+        </div>
+        </div>
+
+    <script>
+        document.getElementById('shortcut-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert("🤷‍♂️업무용 앱페이지를 바탕화면에 드래그 하여 바로가기앱으로 사용하세요");
+        });
+
+        // PWA 설치 이벤트
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('install-button').style.display = 'block';
+        });
+
+        document.getElementById('install-button').addEventListener('click', (e) => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
+    </script>
     <!-- <script>
         window.onload = function() {
           alert("🤷‍♂️업무APP 선택 후, PC또는 핸드폰에 아이콘(바로가기) 설치 후 사용바랍니다. ");
