@@ -64,6 +64,9 @@
   <div id="content">
     <iframe id="iframe" src="https://script.google.com/macros/s/AKfycbzbq1QKAHq9DpdUxHnB8tD8xL1DsSjWpIP_r5LgU58kFAMSwe9uyKpCRs8O15iq_P7C/exec">로드 중…</iframe>
   </div>
+  <div class="container mt-3 text-center">
+    <button id="installButton" class="btn btn-primary">바탕화면에 바로가기 추가</button>
+  </div>
   <div id="loading-overlay">
     <div id="loading-spinner"></div>
     <div id="loading-message">
@@ -72,6 +75,30 @@
     </div>
   </div>
   <script>
+    
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installButton.style.display = 'block';
+    });
+
+    installButton.addEventListener('click', () => {
+      installButton.style.display = 'none';
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('사용자가 설치를 수락했습니다.');
+        } else {
+          console.log('사용자가 설치를 거부했습니다.');
+        }
+        deferredPrompt = null;
+      });
+    });
+
+
     function resizeIframe() {
       var iframe = document.getElementById('iframe');
       iframe.style.height = window.innerHeight + 'px';
