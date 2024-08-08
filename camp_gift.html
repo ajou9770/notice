@@ -1,242 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">  -->
-    <title>신협 헌혈 감사 쿠폰 신청</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#memyesAns").click(function(){
-    $("#donequs").show("slow");
-    $("#meminfo").hide("slow");
-    $("#memberqus").hide("slow");
-    $("#memnoAns").hide("slow");
-    $("#memyesAns").hide("slow");
-    $("#doneyesAns").show("slow");
-    $("#donenoAns").show("slow");
-    $("ios").show();
-  });
-  $("memyesAns").click(function(){
-    $("ios").show();
-  });
-});
-</script>
-    <style>
-        body {
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: ivory;
-            vertical-align: middle;
-            text-align: center;
-            margin-left: 5px;
-            margin-right: 5px;
-            margin-bottom: 10px;  
-        }
-        div {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            border-color: black;            
-            border-radius: 10px;
-            justify-content: center;
-            align-items:center;
-            margin-left: 10px;
-        }
-        button, button a {
-          width:150px;
-          font-size: x-large;
-          font-weight: 600;
-          font-size: larger;
-          margin-right: 10px;
-          border: none;
-          border-radius: 5px;
-          background-color: cornflowerblue;
-          height: 80px;
-          color: whitesmoke;
-          box-shadow: 0px 4px 8px grey;
-        }
-        button:active {
-          transform: scale(0.98);
-        }
-        img {
-          width: 100%;
-          border-radius: 10px;
-        }
-        #rangeans {
-  display: none;
-}
-span {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-mark {
-  border-radius: 5px;
-  background-color: rgb(37, 80, 98);
-  color: whitesmoke;
-  box-shadow: 0px 3px 6px grey;
-}
-mark:active {
-  transform: scale(0.97);
-}
-#donequs, #donequs, #doneyesAns, #donenoAns, #ifram {
-  display: none;
-}
-input {
-  font-weight: 600;
-  box-shadow: 0px 3px 6px grey;
-}
-.ans {
-    display: flex;
-    flex-direction: row;
-    margin-right: 20px;
-}
-.ans div {
-    width: 70px;
-}
-a {
-    text-decoration: none;
-    font-size: medium;
-    font-weight: 600;
-}
-#loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 배경 색상과 투명도를 조정하세요 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-#loading-message {
-  font-size: 24px;
-  color: white;
-}
-#loading-spinner {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-  </style>
-</head>
-<body>
-    <!-- <h2>🙏소중한 헌혈에 감사 드립니다. </h2>
-    <br> -->
-    <div id="coupon">
-    <h2 id="memberqus" >🤷‍♂️신협 조합원이신가요? </h2>
-    
-    <h2 id="donequs" >✨헌혈에 성공하셨나요? </h2>
-    <br>
-    <div class="ans">
-    <button id="memyesAns" >⭕예 </button>
-    <button id="doneyesAns" onclick="giftCho()" >⭕예 </button>
-    <button id="memnoAns" onclick="memNo()">❌아니요 </button>
-    <button id="donenoAns" onclick="doneNo()" >❌아니요 </button>
-    </div>
-    </div>
-    <br>
-    <iframe id="ifram" src="https://script.google.com/macros/s/AKfycbyGKlQ3uN9ZHLXQE9rwHFsue6j2JT9K9ai6fXBgbvK-5A1Z87R0nQUuULDA1d2RJ4Ap/exec" width="350" height="500" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
-    <a href="http://ajou9770.github.io/usertip/index" id="meminfo"><samll onclick="alert('🤷‍♂️신협 이용(가입)안내 페이지로 이동합니다')">※신협 조합원은 어떻게 되고, 혜택이 무엇인가요? </samll></a><br>
-    <br>
-    <div
-id="kakao-talk-channel-chat-button"
-data-channel-public-id="_dfhkK"
-data-title="consult"
-data-size="small"
-data-color="yellow"
-data-shape="mobile"
-data-support-multiple-densities="true"
-></div>
-<!--     <div class="footer"> 
-    <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438 조합가입 또는 금융상담:219-6052,6971</h2></footer>
-    </div> -->
-    <div id="loading-overlay" style="display: none;">
-      <div id="loading-spinner"></div>
-      <div id="loading-message"><span style="padding-left: 15px;">로딩중입니다...</span>
-        <br><small>✨평생어부바 신협</small>
-      </div>
-    </div>
-    
-    <script>
-    function giftCho() {
-  // 로딩 화면을 표시하기 위해 로딩 오버레이를 보이도록 변경합니다.
-  var loadingOverlay = document.getElementById('loading-overlay');
-  loadingOverlay.style.display = 'block';
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css"> -->
+        <title>신협 헌혈 감사 쿠폰 신청</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#memyesAns").click(function () {
+                    $("#donequs").show("slow");
+                    $("#meminfo").hide("slow");
+                    $("#memberqus").hide("slow");
+                    $("#memnoAns").hide("slow");
+                    $("#memyesAns").hide("slow");
+                    $("#doneyesAns").show("slow");
+                    $("#donenoAns").show("slow");
+                    $("ios").show();
+                });
+                $("memyesAns").click(function () {
+                    $("ios").show();
+                });
+            });
+        </script>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: ivory;
+                vertical-align: middle;
+                text-align: center;
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                border-color: black;
+                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+                margin-left: 10px;
+            }
+            button,
+            button a {
+                width: 150px;
+                font-size: x-large;
+                font-weight: 600;
+                font-size: larger;
+                margin-right: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: cornflowerblue;
+                height: 80px;
+                color: whitesmoke;
+                box-shadow: 0 4px 8px grey;
+            }
+            button:active {
+                transform: scale(0.98);
+            }
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+            #rangeans {
+                display: none;
+            }
+            span {
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            mark {
+                border-radius: 5px;
+                background-color: rgb(37, 80, 98);
+                color: whitesmoke;
+                box-shadow: 0 3px 6px grey;
+            }
+            mark:active {
+                transform: scale(0.97);
+            }
+            #donenoAns,
+            #donequs,
+            #donequs,
+            #doneyesAns,
+            #ifram {
+                display: none;
+            }
+            input {
+                font-weight: 600;
+                box-shadow: 0 3px 6px grey;
+            }
+            .ans {
+                display: flex;
+                flex-direction: row;
+                margin-right: 20px;
+            }
+            .ans div {
+                width: 70px;
+            }
+            a {
+                text-decoration: none;
+                font-size: medium;
+                font-weight: 600;
+            }
+            #loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                /* 배경 색상과 투명도를 조정하세요 */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            #loading-message {
+                font-size: 24px;
+                color: white;
+            }
+            #loading-spinner {
+                border: 16px solid #f3f3f3;
+                border-top: 16px solid #3498db;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <h2>🙏소중한 헌혈에 감사 드립니다. </h2> <br> -->
+        <div id="coupon">
+            <h2 id="memberqus">🤷‍♂️신협 조합원이신가요?
+            </h2>
 
-  // 기존의 giftCho() 함수 코드를 여기에 추가합니다.
-  // ...
+            <h2 id="donequs">✨헌혈에 성공하셨나요?
+            </h2>
+            <br>
+            <div class="ans">
+                <button id="memyesAns">⭕예
+                </button>
+                <button id="doneyesAns" onclick="giftCho()">⭕예
+                </button>
+                <button id="memnoAns" onclick="memNo()">❌아니요
+                </button>
+                <button id="donenoAns" onclick="doneNo()">❌아니요
+                </button>
+            </div>
+        </div>
+        <br>
+        <iframe
+            id="ifram"
+            src="https://script.google.com/macros/s/AKfycbyGKlQ3uN9ZHLXQE9rwHFsue6j2JT9K9ai6fXBgbvK-5A1Z87R0nQUuULDA1d2RJ4Ap/exec"
+            width="350"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">로드 중…</iframe>
+        <a href="http://ajou9770.github.io/usertip/index" id="meminfo">
+            <samll onclick="alert('🤷‍♂️신협 이용(가입)안내 페이지로 이동합니다')">※신협 조합원은 어떻게 되고, 혜택이 무엇인가요?
+            </samll>
+        </a><br>
+        <br>
+        <div
+            id="kakao-talk-channel-chat-button"
+            data-channel-public-id="_dfhkK"
+            data-title="consult"
+            data-size="small"
+            data-color="yellow"
+            data-shape="mobile"
+            data-support-multiple-densities="true"></div>
+        <!-- <div class="footer"> <footer><h2>&copy ajou9770@ajoucu.page 신협 031)219-6438
+        조합가입 또는 금융상담:219-6052,6971</h2></footer> </div> -->
+        <div id="loading-overlay" style="display: none;">
+            <div id="loading-spinner"></div>
+            <div id="loading-message">
+                <span style="padding-left: 15px;">로딩중입니다...</span>
+                <br>
+                <small>✨평생어부바 신협</small>
+            </div>
+        </div>
 
-  // 로딩 작업이 완료되면 로딩 화면을 숨깁니다.
-  // 예를 들어, 로딩 작업이 완료되는 시점에 다음과 같이 호출할 수 있습니다.
-  // hideLoadingOverlay();
-}
-function hideLoadingOverlay() {
-  var loadingOverlay = document.getElementById('loading-overlay');
-  loadingOverlay.style.display = 'none';
-}
-    </script>
-    <script>
-        /* function giftCho() {
+        <script>
+            function giftCho() {
+                // 로딩 화면을 표시하기 위해 로딩 오버레이를 보이도록 변경합니다.
+                var loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'block';
+
+                // 기존의 giftCho() 함수 코드를 여기에 추가합니다. ... 로딩 작업이 완료되면 로딩 화면을 숨깁니다. 예를 들어, 로딩 작업이
+                // 완료되는 시점에 다음과 같이 호출할 수 있습니다. hideLoadingOverlay();
+            }
+            function hideLoadingOverlay() {
+                var loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'none';
+            }
+        </script>
+        <script>
+            /* function giftCho() {
     alert("👌감사합니다. 기념품 신청화면으로 이동합니다.");
     navigator.vibrate(200);
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdmay35BG-cRz2qOLxGDh0OeCthJj_qvKzWjXxtmyErQ_kh4g/viewform?usp=sf_link", "_blank");
    } */
-   function giftCho() {
-    document.getElementById("ifram").style.display="block";
-    document.getElementById("coupon").style.display="none";
-    navigator.vibrate(200); 
-  }
+            function giftCho() {
+                document
+                    .getElementById("ifram")
+                    .style
+                    .display = "block";
+                document
+                    .getElementById("coupon")
+                    .style
+                    .display = "none";
+                navigator.vibrate(200);
+            }
 
-        function doneNo(){
-            alert("😪ㅠㅠ 아쉽네요, 다음에 한번 더 참여해 주시기 바랍니다.");
-            location.reload();
-            navigator.vibrate(200);
-        }
-        function memNo(){
-            alert("😪죄송합니다. 신협 조합원에 한해 추가 기념품을 신청하실 수 있습니다.");
-            navigator.vibrate(200);
-            history.back();
-        }
+            function doneNo() {
+                alert("😪ㅠㅠ 아쉽네요, 다음에 한번 더 참여해 주시기 바랍니다.");
+                location.reload();
+                navigator.vibrate(200);
+            }
+            function memNo() {
+                alert("😪죄송합니다. 신협 조합원에 한해 추가 기념품을 신청하실 수 있습니다.");
+                navigator.vibrate(200);
+                history.back();
+            }
         </script>
-    <script>
-        window.kakaoAsyncInit = function() {
-          Kakao.Channel.createChatButton({
-            container: '#kakao-talk-channel-chat-button',
-          });    
-        };
-       
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'kakao-js-sdk');
-      </script>
-   </script>
-    <script
-    src="https://kit.fontawesome.com/6478f529f2.js"
-    crossorigin="anonymous"
-    ></script>
-    <!-- <script>
-        alert('특판몰로 이동합니다~');
-location.href = 'http://ajoucu.com';
-    </script> --> 
+        <script>
+            window.kakaoAsyncInit = function () {
+                Kakao
+                    .Channel
+                    .createChatButton({container: '#kakao-talk-channel-chat-button'});
+            };
+
+            (function (d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) 
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+                fjs
+                    .parentNode
+                    .insertBefore(js, fjs);
+            })(document, 'script', 'kakao-js-sdk');
+        </script>
+    </script>
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+    <!-- <script> alert('특판몰로 이동합니다~'); location.href = 'http://ajoucu.com';
+    </script> -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
-      </style>  
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+    </style>
 </body>
 </html>
-
