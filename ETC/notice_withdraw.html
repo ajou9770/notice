@@ -85,8 +85,8 @@
             <input type="tel" class="form-control" id="contact" placeholder="연락처(숫자만)를 입력하세요" required>
         </div>
         <div class="form-group">
-            <label for="comment">기타 남기실 말씀:</label>
-            <textarea class="form-control" id="comment" rows="2" placeholder="기타 남기실 말씀을 입력하세요 (선택)"></textarea>
+            <label for="comment">✔️탈퇴철회 신청:</label>
+            <textarea class="form-control" id="comment" rows="2" placeholder="탈퇴를 철회하는 경우 여기에 철회 신청해 주세요"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-block" id="submitButton">✔️제출 하기</button>
     </form>
@@ -154,7 +154,7 @@
         const agreement = document.getElementById("agreementCheck").checked;
 
         // 데이터 확인 메시지
-        if (!confirm(`입력한 정보를 확인하세요:\n\n성명: ${name}\n연락처: ${contact}\n탈퇴시 조합원혜택 소멸내용 확인 여부? ${agreement ? '확인' : '미확인'}\n코멘트: ${comment || '없음'} \n\n이대로 제출할까요?`)) {
+        if (!confirm(`입력한 정보를 확인하세요:\n\n성명: ${name}\n연락처: ${contact}\n탈퇴시 조합원혜택 소멸내용 확인 여부? ${agreement ? '확인' : '미확인'}\n탈퇴철회신청: ${comment || '없음'} \n\n이대로 제출할까요?`)) {
             submitButton.disabled = false;
             submitButton.textContent = "✔️제출하기";
             return;
