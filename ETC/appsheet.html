@@ -1,81 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>📝업무용APP(SHEET)</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🧰 업무용 도구 모음</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h4 class="mt-4 mb-4">📑업무용app(sheet)</h4>
-        <h5>✔아래에서 업무용APP(web)을 선택하세요</h5>    
-        <br>    
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                🤖APP 선택
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="https://www.appsheet.com/start/39c36fa4-5592-490b-8668-dfe0fc7bb5e7" target="_blank">🏝️직원휴가신청서(app)</a>
-                <a class="dropdown-item" href="https://www.appsheet.com/start/f5829f3b-80c3-4de9-9e9b-cce8bde161b0" target="_blank">📝업무관련앱[4종]</a>
-                <a class="dropdown-item" href="https://www.appsheet.com/start/03c20fe7-c78e-4c3e-80f0-59e6b9962f89" target="_blank">💵대내외예치금관리(현황)</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/notice/ETC/file_cowork.html" target="_blank">📤업무공유파일UP&Down</a>
-                <a class="dropdown-item" href="https://www.appsheet.com/start/0ca59961-5af3-43cc-888a-dd5d5253cffa" target="_blank">🎖️대외연수(표창)현황</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/notice/ETC/law" target="_blank">📒조합규정집</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/workform/lawlist" target="_blank">📤제규정관리대장(등록)</a>
-                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1-d9yGU0aFjptZpRJzIZzndR8xgjm6-r7fM5YoHlH3HI/edit?usp=sharing" target="_blank">📑제규정관리대장(list)</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/notice/ETC/send_sms.html" target="_blank">💬조합원문자안내</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/meet/search_share" target="_blank">🔎이용고배당 조회(전체)</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/meet/findmember" target="_blank">🔎조합원 조회(대외비)</a>  
-                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/16h3PXfFXMkR9FcQ8fTRxCf2or27hc6wIybbhv2vkx1k/edit?usp=sharing" target="_blank">🔎총회참석(당첨)조회</a>              
-                <a class="dropdown-item" href="https://ajou9770.github.io/edu/make_qrcode" target="_blank">🔗QR코드생성 & URL단축하기</a>
-                <a class="dropdown-item" href="https://ajou9770.github.io/edu/test/parking" target="_blank">🚓행사차량 주차등록</a>
-            </div>
+  <div class="container py-4">
+    <h3 class="mb-4 text-center">🧰 전자업무 페이지</h3>
+    <p class="text-center text-muted">업무 유형별로 필요한 앱 또는 웹을 선택하세요.</p>
+
+    <div class="row g-4">
+
+      <!-- 근태 및 복지 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🧳 휴가 및 복지</h5>
+            <p class="card-text small">직원 휴가 신청 및 연수 현황 관리</p>
+            <a href="https://www.appsheet.com/start/39c36fa4-5592-490b-8668-dfe0fc7bb5e7" class="btn btn-outline-primary btn-sm mb-2" target="_blank">🏝️ 휴가 신청서</a>
+            <a href="https://www.appsheet.com/start/0ca59961-5af3-43cc-888a-dd5d5253cffa" class="btn btn-outline-primary btn-sm" target="_blank">🎖️ 대외연수(표창)</a>
+          </div>
         </div>
+      </div>
+
+      <!-- 자산 및 예치금 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">💰 관리대장</h5>
+            <p class="card-text small">예치금 및 관리대장 업무앱</p>
+            <a href="https://www.appsheet.com/start/03c20fe7-c78e-4c3e-80f0-59e6b9962f89" class="btn btn-outline-success btn-sm mb-2" target="_blank">💵 예치금 현황</a>
+            <a href="https://www.appsheet.com/start/f5829f3b-80c3-4de9-9e9b-cce8bde161b0" class="btn btn-outline-success btn-sm" target="_blank">📝 업무앱(4종)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 규정 및 문서 관리 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">📒 규정 및 문서</h5>
+            <p class="card-text small">규정 등록 및 문서 공유</p>
+            <a href="https://ajou9770.github.io/notice/ETC/law" class="btn btn-outline-warning btn-sm mb-2" target="_blank">📘 조합 규정집</a>
+            <a href="https://ajou9770.github.io/workform/lawlist" class="btn btn-outline-warning btn-sm mb-2" target="_blank">📤 제규정 등록</a>
+            <a href="https://docs.google.com/spreadsheets/d/1-d9yGU0aFjptZpRJzIZzndR8xgjm6-r7fM5YoHlH3HI/edit?usp=sharing" class="btn btn-outline-warning btn-sm" target="_blank">📑 규정 목록 보기</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 공지 및 조회 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🔍 조회 및 공지</h5>
+            <p class="card-text small">조합원 정보 및 배당 조회</p>
+            <a href="https://ajou9770.github.io/meet/search_share" class="btn btn-outline-info btn-sm mb-2" target="_blank">🔎 이용고 배당 조회</a>
+            <a href="https://ajou9770.github.io/meet/findmember" class="btn btn-outline-info btn-sm mb-2" target="_blank">👤 조합원 정보 조회</a>
+            <a href="https://docs.google.com/spreadsheets/d/16h3PXfFXMkR9FcQ8fTRxCf2or27hc6wIybbhv2vkx1k/edit?usp=sharing" class="btn btn-outline-info btn-sm" target="_blank">🏛️ 총회 참석 확인</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 기타 유틸 도구 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🛠️ 기타 도구</h5>
+            <p class="card-text small">공유 파일, QR, 문자 안내 등</p>
+            <a href="https://ajou9770.github.io/notice/ETC/file_cowork.html" class="btn btn-outline-secondary btn-sm mb-2" target="_blank">📤 파일 업&다운</a>
+            <a href="https://ajou9770.github.io/notice/ETC/send_sms.html" class="btn btn-outline-secondary btn-sm mb-2" target="_blank">💬 문자 안내</a>
+            <a href="https://ajou9770.github.io/edu/make_qrcode" class="btn btn-outline-secondary btn-sm" target="_blank">🔗 QR 생성 & URL 단축</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 차량 등록 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">🚗 행사차량 등록</h5>
+            <p class="card-text small">행사 시 차량 주차 등록</p>
+            <a href="https://ajou9770.github.io/edu/test/parking" class="btn btn-outline-dark btn-sm" target="_blank">🚓 차량 주차 등록</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="container">
-                <hr>
-        <p class="text-center">아래 사이트를 바탕화면으로 드래그하면 바로가기가 생성됩니다. </p>
-        <div class="text-center">
-            <a href="https://ajou9770.github.io/notice/ETC/appsheet.html" id="shortcut-link" class="btn btn-primary">🖱업무용App(본페이지)</a>
-            <br><br>
-            <a href="https://ajou9770.github.io/notice/ETC/file_cowork.html" id="shortcut-link" class="btn btn-primary">🖱업무공용파일Up&Down</a>
-        </div>
-        </div>
+  </div>
 
-    <script>
-        document.getElementById('shortcut-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            alert("🤷‍♂️업무용 앱페이지를 바탕화면에 드래그 하여 바로가기앱으로 사용하세요");
-        });
-
-        // PWA 설치 이벤트
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('install-button').style.display = 'block';
-        });
-
-        document.getElementById('install-button').addEventListener('click', (e) => {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-                deferredPrompt = null;
-            });
-        });
-    </script>
-    <!-- <script>
-        window.onload = function() {
-          alert("🤷‍♂️업무APP 선택 후, PC또는 핸드폰에 아이콘(바로가기) 설치 후 사용바랍니다. ");
-        }
-    </script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
