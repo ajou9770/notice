@@ -91,6 +91,13 @@
     return;
   }
 
+  if (amount > 9500) {
+  resultBox.innerText = ⛔대출금액은 최대 9,500만원까지 입력 가능합니다.";
+  resultBox.scrollIntoView({ behavior: "smooth" });
+  return;
+}
+
+
   const entry = kcbTable.find(item => score >= item.min && score <= item.max);
   if (!entry) {
     resultBox.innerText = "❗입력된 KCB 평점에 해당하는 구간이 없습니다.";
