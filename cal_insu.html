@@ -98,7 +98,7 @@
   }
 
   const rate = entry.rate; // % 단위
-  const insurance1yr = Math.round((amount * 1.1) * (rate / 100) * 1.7 * 10000); // 원 단위
+  const insurance1yr = Math.floor((amount * 1.1) * (rate / 100) * 1.7 * 10000 / 10) * 10;
   const insurance2yr = insurance1yr * 2;
 
   resultBox.innerHTML = `
