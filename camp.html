@@ -86,6 +86,39 @@
       .hero-body h1 { font-size: 1.4rem; }
       .hero-body p { font-size: .95rem; }
     }
+    /* 4) 터치 피드백 최적화(모바일 클릭 지연/하이라이트 최소화) */
+    button, a.btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    :root { --sticky-h: 64px; }
+
+  /* 하단 고정바 (모바일 전용) */
+  .sticky-actions {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 1030;
+    height: var(--sticky-h);
+    display: flex; align-items: center;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 -6px 20px rgba(0,0,0,.06);
+    padding: 8px clamp(12px, 4vw, 18px) calc(8px + env(safe-area-inset-bottom));
+  }
+  .sticky-actions .wrap {
+    width: 100%;
+    max-width: 980px; /* 페이지 본문 폭에 맞춤 */
+    margin: 0 auto;
+    display: flex; gap: 8px;
+  }
+  .sticky-actions .btn {
+    flex: 1 1 0;
+    border-radius: 12px;
+    font-weight: 700;
+    padding: 10px 12px;
+  }
+  /* 모바일에만 표시 */
+  @media (min-width: 768px) {
+    .sticky-actions { display: none; }
+  }
   </style>
 </head>
 <body>
@@ -157,7 +190,6 @@
       <i class="fa-solid fa-circle-info me-1"></i>
       전자문진은 <strong>9월 10일(D-2)</strong>부터 유효합니다. 사전 전자문진을 통해 대기 시간을 단축하세요.
     </div>
-
     <!-- CTA Buttons -->
     <section class="cta mt-3">
       <div class="d-grid d-sm-flex gap-2">
@@ -176,7 +208,7 @@
         <div>
           <div class="fw-bold mb-1">문의</div>
           <div class="text-secondary">
-            원내 4939, 6052
+            원내 6438, 6052
             <span class="ms-2 small text-muted">평일 08:30 ~ 17:00</span>
           </div>
         </div>
@@ -187,6 +219,29 @@
         </div>
       </div>
     </section>
+    <!-- Sticky Quick Actions (모바일 전용) -->
+ <nav class="sticky-actions" role="navigation" aria-label="빠른 실행바">
+  <div class="wrap">
+    <button class="btn btn-primary"
+            aria-label="전자문진 바로가기"
+            onclick="openConfirm('전자문진은 9월 10일(D-2)부터 유효합니다. 혈액원 전자문진 페이지로 이동할까요?','https://www.bloodinfo.net/emi2/login.do')">
+      <i class="fa-solid fa-list-check me-1"></i> 전자문진
+    </button>
+
+    <button class="btn btn-danger"
+            aria-label="모바일 쿠폰 신청"
+            onclick="openConfirm('헌혈에 성공하셨나요? 감사 쿠폰을 신청하시겠습니까?','http://ajou9770.github.io/notice/camp_gift.html')">
+      <i class="fa-solid fa-ticket me-1"></i> 쿠폰
+    </button>
+
+    <a class="btn btn-outline-secondary"
+       aria-label="전화걸기"
+       onclick="openConfirm('업무시간은 평일 08:30~17:00입니다. 전화 앱으로 이동할까요?','tel:031-219-6052')">
+      <i class="fa-solid fa-phone me-1"></i> 전화
+    </a>
+  </div>
+</nav>
+
 
   </main>
 
@@ -209,6 +264,28 @@
 
   <!-- Bootstrap JS (bundle: Popper 포함) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  // 하단 고정바 높이만큼 본문 하단 여백 자동 보정
+  (function () {
+    const sticky = document.querySelector('.sticky-actions');
+    const main   = document.querySelector('main');
+    if (!sticky || !main) return;
+
+    function applyPadding() {
+      const h = window.getComputedStyle(sticky).display === 'none'
+        ? 0
+        : sticky.offsetHeight;
+      main.style.paddingBottom = (h + 12) + 'px';
+    }
+
+    window.addEventListener('resize', applyPadding);
+    window.addEventListener('orientationchange', applyPadding);
+    document.addEventListener('DOMContentLoaded', applyPadding);
+    applyPadding();
+  })();
+</script>
+
 
   <script>
     // 공용 확인 모달 열기
