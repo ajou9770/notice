@@ -173,7 +173,7 @@
     // 숫자만
     function onlyDigits(s){ return String(s||'').replace(/[^0-9]/g,''); }
     // 전화번호 10~11자리
-    function isValidPhone(num){ const d=onlyDigits(num); return d.length===10 || d.length===11; }
+    function isValidPhone(num){ const d=onlyDigits(num); return d.length===11; }
 
     // PHP 엔드포인트
     const ALIMTALK_ENDPOINT = 'https://ajoucu.mycafe24.com/relay_blood_cpn.php';
@@ -195,7 +195,7 @@
       // 검증
       if (!data.name){ alert('성명을 입력하세요.'); return; }
       if (!data.idnum){ alert('사번 또는 조합원번호를 입력하세요.'); return; }
-      if (!isValidPhone(data.tel)){ alert('연락처는 10~11자리 숫자만 입력하세요.'); return; }
+      if (!isValidPhone(data.tel)){ alert('연락처는 010이 포함된 11자리 핸드폰번호로 입력하세요.'); return; }
 
       const confirmationMessage =
 `이름: ${data.name}
