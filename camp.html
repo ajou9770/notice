@@ -119,6 +119,11 @@
   @media (min-width: 768px) {
     .sticky-actions { display: none; }
   }
+  :root { --sticky-h: 64px; }
+/* 모바일에서만 본문 하단 여백을 고정바 높이만큼 확보 */
+@media (max-width: 767.98px) {
+  main { padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom, 0px) + 12px); }
+}
   </style>
 </head>
 <body>
