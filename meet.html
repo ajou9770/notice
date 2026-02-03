@@ -1,548 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>제31차 신협 정기총회(임원선거) 개최</title>   
-    <style>
-        body {
-            display:flex;
-            flex-direction: column;
-            justify-content: left;
-            background-color: ivory;
-            vertical-align: middle;
-            text-align: justify;
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-bottom: 5px;  
-        }
-        a {
-            color: darkcyan;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 25px;
-        }
-        a:active {
-            transform: scale(0.98);
-        }
-        .mile a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 30px;
-        }
-        .mile a:active {
-            transform: scale(0.98);
-        }
-        div {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            font-size: 25px;
-            font-weight: 600;
-            border-color: black; 
-            padding-bottom: 10px;           
-            border-radius: 10px;
-            justify-content: center;
-            align-items:center;
-        }
-        .top {
-            background-color: teal;
-            border-radius: 10px;
-            border: 2px 0px 2px 0px solid;
-            opacity: 0.8;
-            height: 50px;
-            padding: 10px;
-            width: 80%;
-            font-size:25px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            color: whitesmoke;
-            margin-bottom: 5px;
-            box-shadow: 0px 4px 8px 0px grey;
-        }
-        .end {
-            background-color:navy;
-            border-radius: 10px;
-            opacity: 0.8;
-            height: auto;
-            width: auto;
-            font-size:20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 500;
-            color:whitesmoke;
-            padding: 10px;
-        }
-        .mile {
-            background-color:darkcyan;
-            border-radius: 30px;
-            opacity: 0.8;
-            height: 50px;
-            width:auto;
-            font-size:35px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 700;
-            color: snow;
-            margin-bottom: 5px;
-            border-radius: 10px;
-            border-style: solid;
-            border-width: 2px 5px 5px 2px;
-            border-color: chocolate;
-            padding-left: 10px;
-            padding-right: 10px; 
-        }
-        .mov {
-            background-color:skyblue;
-            border-radius: 20px;
-            opacity: 0.8;
-            height: 90px;
-            width: 600px;
-            font-size:30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 700;
-            color: snow;
-            margin-bottom: 5px;
-        }
-        .kaka {
-            background-color:gold;
-            border-radius: 20px;
-            opacity: 0.8;
-            height: 90px;
-            width: 600px;
-            font-size:30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 700;
-            color: snow;
-            margin-bottom: 5px;
-        }
-        .cubank {
-            background-color:midnightblue;
-            border-radius: 20px;
-            opacity: 0.8;
-            height: 100px;
-            width: 650px;
-            font-size:30px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 700;
-            color: snow;
-            margin-bottom: 10px;
-            padding-left: 10px;
-            margin-right: 10px;
-        }
-        .sinhyup {
-            background-color:wheat;
-            border-radius: 10px;
-            border-color:mediumblue;
-            padding-top: 15px;
-            opacity: 0.8;
-            height: 650px;
-            width: 670px;
-            padding-left: 10px;
-        }
-        .aumc {
-            background-color:thistle;
-            border-radius: 10px;
-            border-color:mediumblue;
-            padding-top: 10px;
-            opacity: 0.8;
-            height: 350px;
-            width: 670px;
-            padding-left: 10px;
-        }
-        .content {
-            background-color:rgb(245, 237, 224);
-            justify-content: left;
-            opacity: 0.8;
-            border-radius: 10px;
-            padding-left: 10px;
-            height:auto;
-            width: auto;
-            text-align: left;
-            font-size: 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .app {
-            background-color:rgb(243, 237, 243);
-            justify-content: left;
-            border-radius: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            height:auto;
-            width: auto;
-            margin-top: 10px;
-            text-align: left;
-            font-size: 25px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .footer {
-            display: flex;
-            widows: windows 100px;
-            flex-direction: column;
-            justify-content: center;
-            background-color:navy;
-            height: auto;
-            text-align: left;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-left: 20px;
-            color:whitesmoke;
-            font-size:x-large;
-            font-weight: 500;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .text {
-            background-color:ivory;
-            border-radius: 30px;
-            opacity: 0.9;
-            height:auto;
-            width: 650px;
-            font-size:50px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color:darkorange;
-            font-weight: 800;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        .in {
-        width: 30%;
-        height: 100px;
-        font-size: 30px;
-        font-weight: 500;
-      }
-      .in-term {
-        width: 10%;
-        height: 100px;
-        font-size: 30px;
-        font-weight: 500;
-      }
-      .out {
-          width: 20%;
-          height: 55px;
-          font-size: 25px;
-          font-weight: 600;
-      }
-      .submit {
-          margin-top: 20px;
-      }
-      .dan {
-        font-size: 30px;
-        font-weight: 700; 
-      }
-    .boxstyle a {
-        background-color:lightcoral;
-        height: 50px;
-        width: 350px;
-        color: ivory;
-        text-align: center;
-        border-radius: 10px;
-        border-style: solid;
-        border-width: 2px 5px 5px 2px;
-        border-color: chocolate;       
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>제32차 신협 정기총회 및 임원선거 공고</title>
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text-main: #0f172a;
+      --text-sub: #475569;
+      --border: #e5e7eb;
     }
-    #selectbox {
-        width: 90%;
-        padding: 10px;
-        font-weight: 600;
-        font-size: x-large;
-        box-shadow: 0px 4px 8px 0px grey;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    .hero {
+      background: linear-gradient(135deg, var(--primary), #0d9488);
+      color: white;
+      padding: 32px 24px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: 0.95;
+    }
+
+    /* Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-box {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .info-box strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .info-box span {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .agenda {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .agenda li {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    /* Details (Accordion) */
+    details {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      background: #f9fafb;
+    }
+
+    details summary {
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    details ul {
+      margin-top: 14px;
+      padding-left: 18px;
+    }
+
+    details li {
+      margin-bottom: 8px;
+    }
+
+    /* Highlight */
+    .highlight {
+      background: #fff7ed;
+      border-left: 6px solid var(--accent);
+      padding: 22px;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin: 40px 0 20px;
+    }
+
+    /* Print */
+    @media print {
+      body {
+        background: white;
       }
-      option {
-        font-weight: 600;
-        color: teal;
+      .hero {
+        box-shadow: none;
       }
-      img {
-        border-radius: 5px;
-        width: 100%;
-        box-shadow: 0px 4px 8px 0px grey;
-      }
-      #bs, #pl, #divid, #div_info, #close_div {
-        display: none;
-      }
-      button {
-        background-color: teal;
-        color: aliceblue;
-        font-size: large;
-        font-weight: 600;
-        border-radius: 5px;
-        border: none;
-        width: 30%;
-        padding: 10px;
-        box-shadow: 0px 4px 8px 0px grey;
-      }
-      mark {
-    background-color: transparent; /* 배경색 제거 */
-    color: inherit; /* 텍스트 색상 유지 */
-    text-decoration: none; /* 기본 밑줄 제거 */
-    background-image: linear-gradient(to top, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 0) 100%); /* 그라디언트 효과 적용 */
-    background-repeat: no-repeat; /* 이미지 반복 제거 */
-    background-position: bottom; /* 이미지 위치를 텍스트 아래쪽으로 설정 */
-    background-size: 100% 5px; /* 이미지 크기 조정 (가로 100%, 높이 3px) */
-    padding-bottom: 1px; /* 밑줄과 텍스트 사이의 간격 조정 */
-}
-#infomodalBox {
-              position: absolute;
-              left: 5px;
-              right: 5px;
-              top: 20vh;
-            }
-            #infomodal {
-                
-              width: auto;
-              height: auto;
-              border-radius: 10px;
-              margin: 10px;
-              background-color: rgb(178, 207, 222);
-              padding: 20px;
-              font-size: 15px;
-              font-weight: 500;
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              align-items: center;
-            }
-          #infobtn {
-              font-size:13px;
-              font-weight:600;
-              height:auto;
-              width:auto;
-              padding:5px;
-              background-color: white;
-              border: 2px 6px 6px 2px;
-              }
-            #infomodal_input {
-              width: 100%;
-              padding: 10px;
-              font-size:15px;
-              background-color: antiquewhite;
-              font-weight:650;  
-              display: flex;
-              justify-content: space-around;
-              align-items: center;
-            }
-            .none {
-              display: none;
-            }
+    }
   </style>
 </head>
+
 <body>
-    <div>
-    <div class="top">    
-    제31차 정기총회 및 임원(보궐)선거 개최 공고
-    </div><br/>
-    <h4>신협 제31차 정기총회 및 임원(보궐)선거를 아래와 같이 개최하오니 조합원 여러분의 참석을 바랍니다.  
-    </h4>
-    <h4><mark>1. 일시: 2025년 2월 20일(목) 17시~</mark> <br/><br/> 
-     2. 장소: 별관 대강당</h4>
-    <h4>3. 부의 안건</h4>
-           <p>
-              가. 의안 제1호: 2024년 감사보고서 승인의 건<br/> 
-              나. 의안 제2호: 2024년 결산(안) 승인의 건<br/>
-              다. 의안 제3호: 2024년 잉여금 처분(안) 승인의 건 <br/>
-              라. 의안 제4호: 2025년도 사업계획 및 예산(안) 승인의 건<br/>
-              마. 의안 제5호: 정관및정관부속서임원선거규약 일부개정의 건<br>
-              바. 의안 제6호: 임원(보궐)선거의 건<br>
-           
-               <p style="font-size: 17px;">1) 선거하여야 할 비상임 임원: 이사장 1인, 감사 1인 <br><br>
-               2) 선거인의 자격 :정관부속서임원선거규약 제2조에 의거 정관 제14조의 규정에 <br>
-                  의한 선거권이 있는 조합원<br><br>
-               3) 피선거권자의 자격 : 신협법 제28조,정관 제54조(임원 등의 자격제한), 규약 제<br>
-                  8조가 정하는 제한사유에 해당하지 않는 자.<br><br>
-               4).후보등록기간<br>
-                  가. 등록기간 : 2025년 1월 31일부터 2025년 2월 6일(목)까지 (5영업일간)<br>
-                  나. 등록시간 : 평일: 9시 〜17시 <br><br>
-               5) 등록접수 장소 : 아주대의료원신용협동조합 사무실(본관지하 2층)<br><br>
-               6) 제출 서류      <br>
-                  가. 입후보자 등록서 1부.<br>
-                  나. 입후보 추천서 1부.<br>
-                  다. 이력서 1부.<br>
-                  다. 재직증명서 1부.<br>
-                  라. 명함판 사진 3매.<br><br>
-               7) 후보 등록 서류교부 및 접수처: 신협 선거관리위원회 (신협사무실 원내☏ 4939)</p>
-              <hr>
-              <h3> 4.경품행사 </h3>
-              <br/>
-                 ☞ 총51명을 추첨하여 상품권(500만원)을 드립니다. <br/>
-                 🎉참석하시는 모든분에게 소정의 기념품을 드립니다. <br/>
-                <!-- ☆ 대상(1명): 50만원 상당의 상품권, 1등(3명): 30만원 상당의 상품권 <br/>
-                    2등(30명): 5만원 상당의 상품권, 3등(260명) 1만원권 세븐일레븐 모바일쿠폰<br/><br/>
-                   
-              <!--<a href="#"></i> ☞ 이벤트 참여하기 <i class="fas fa-chevron-right fa-lg"></i></a><br/><br/>-->
-             <!--  5. 2022년도 거래 우수 조합원 시상 <br/>
-              ※선정기준: 2022년도 분기별 참조합원 최고 득점조합원(기수상자 제외)<br/>
-                ▷ 1분기 ~ 4분기 최고점 중 차순위 조합원 : 박*화 조합원 외 3명<br/> 
-                ☆ 시상금: 30만원 (신협 본인 계좌로 입금 / 제세금 공제 후)<br/><br> -->
-            
-            <!--<h3>[상정 안건]</h3>
-              <div class="app">
-               <p>제1호의 안: 출자금 납입한도 변경의 건<br/><br/>
-                   ▶ 상정취지: 조합의 안정적인 자기자본 및 운용자금 확보 및 조합원 출자 납입 선택권 확대<br/><br/> 
-                   ▶ 출자금 납입 한도 변경(안) <br/><br/>
-                      *(현행) 월납입한도: 10만원 / 최대납입한도: 1,500만원<br/><br/>
-                      *변경(안)<br/>
-                      <mark style="background: linear-gradient(to top, teal 5%, transparent 15%);">- 1안: 월납입 20만원 / 최대납입 : 2,000만원 <br/>
-                      - 2안: 월납입 20만원 / 최대납입 : 1,500만원 (월한도만 증액)<br/>
-                      - 3안: 월납입 10만원 / 최대납입: 2,000만원  (최대납입한도 증액) </mark> <br/>
-                    ※ 출자배당율 목표(당기 정기예탁금의 약 1.5배 이상 목표 (배당율:2.1% / 평균금리 1.42%) <br/><br/>
-                 
-                제2호의 안: 2021년도 신협직원 임금 인상(안) 승인의 건 <br/>
-                   ▶ 상정취지: 급여규정에 의거 이사장이 아래와 같이 결정함에 따라 이사회의 승인을 득하고자 함. <br/>
-                   ▶ 인상(안) : <mark style="background: linear-gradient(to top, teal 5%, transparent 15%);">기본급2% / 출납수당(인상):4만원, 장기근속수당: 2만원/3만원인상, 명절(휴가)수당 10만원 인상<br/>
-                      ※총액기준: 3.3% ~ 3.8% 인상 </mark><br/>
-                      ※2021년 의료원 임금인상에 준함<br/><br/>
-                    <a href="http://ajou9770.github.io/notice/pl.html"><i class="far fa-file-excel fa=large"></i> 2021년 9월말 기준 전년동기대비 인건비 증감현황 보기<i class="fas fa-chevron-right fa-lg"></i></a><br/><br/>
-                    <a href="https://drive.google.com/file/d/188OIyUUAEq9tKO2bXJPIYLVFL2q86pnB/view?usp=sharing"><i class="far fa-file-image fa-lg"></i> 내부품의서(2021년 급여인상)사본 보기 <i class="fas fa-chevron-right fa-lg"></i></a><br/><br/>  
-                제3호의 안: 신협 의무(임의)규정 개정(채택)의 건<br/>
-                    <!--<mark style="background: linear-gradient(to top, teal 20%, transparent 30%);">☆ 최초입사자: 최대 1억원<br/>
-                ▶ 상정취지: 신협 의무(임의)규정 개정에 따라 이사회에서 관련 개정된 내용을 채택하여야 함.<br/>
-                ▶ 본 안건은 이사회 상정안건(이메일)을 참조해 주세요. <br/>
-            </p></div>
-                ※ 상기와 같이 주요 보고사항 및 상정안건에 대하여 간략히 보고 드립니다. <br/>
-                관련하여 궁금하신 사항이나 추가 자료가 필요하신 경우 아래로 의견을 보내 주시거나 신협(☎6438)으로 연락 바랍니다. <br/>
-                감사 합니다. <br/><br/>-->
-              <!--   
-               <a href="https://drive.google.com/file/d/1NnHNXyVqKsHADbSCRsoxORsW5RCeeMT-/view?usp=share_link" onclick="alert('📒총회리플릿 보기 및 다운로드 PDF로 이동합니다. ')">📒 제29차 총회리플릿 보기 (PDF)</a><br/>            
-               <a href="https://drive.google.com/file/d/13ta3iEAShByqWmciMc_6LMrM0eyzqa71/view?usp=share_link" onclick="alert('📑외부감사보고서 보기 및 다운로드 PDF로 이동합니다. ')">📑 외부감사보고서 보기 (PDF)</a><br/> --> 
-               <!-- <div
-      id="kakao-talk-channel-chat-button"
-      data-channel-public-id="_dfhkK"
-      data-title="consult"
-      data-size="small"
-      data-color="yellow"
-      data-shape="mobile"
-      data-support-multiple-densities="true"
-    ></div><br/> -->
-     <!--<div class="mile">    
-            <a href="https://ajou9770.github.io/usertip/"><i class="fas fa-chevron-left fa-lg"></i>  메인화면(4가지팁) 돌아가기</a>
-        </div><br/>
-    <br/>-->
-    <!-- <section id="infomodalBox">
-      <aside id="infomodal">
-        <div></div>
-        <p style="font-size: larger;">신협총회기념품(설명절)특판이 <mark>🚚택배주문이 오늘 2.2일(금) 일부 마감됩니다.</mark> 
-          <br>🤷🏽‍♀️아직 까지 쿠폰미사용 또는 명절선물을 주문하지 못하신 선생님께서는 특판몰을 방문해 보세요 
-          <br><br>
-          <a href="http://ajoucu.com" style="font-size: larger;" style="font-size: large;">🚚특판몰 방문 하기</a>
-        </p>
-        <hr>
-        <div id="infomodal_input">        
-            <label for="infoinput" style="font-size: medium;">하루동안 안보기</label><input id="infoinput" type="checkbox" />
-                 
-        </div>
-        <hr>
-        <button id="infobtn" style="font-size: medium; color: blue;">확인</button>
-      </aside>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>제32차 정기총회 및 임원선거 개최 공고</h1>
+      <p>조합원 여러분의 많은 참석을 부탁드립니다.</p>
     </section>
-    <script>
-      const section = document.getElementById("infomodalBox");
-      const btn = document.getElementById("infobtn");
-      const input = document.getElementById("infoinput");
-      const localItem = localStorage.getItem("alertTime");
-      const newDate = Date.now();
-    
-      function hideModal() {
-        section.classList.add("none");
-      }
-    
-      function showModal() {
-        section.classList.remove("none");
-      }
-    
-      btn.addEventListener("click", hideModal);
-    
-      input.addEventListener("click", () => {
-        if (input.checked) {
-          localStorage.setItem("alertTime", newDate);
-        }
-      });
-    
-      if (localItem) {
-        const calculate = newDate - parseInt(localItem);
-        if (calculate >= 1000 * 60 * 60 * 24) {
-          showModal();
-        } else {
-          hideModal();
-        }
-      } else {
-        showModal();
-      }
-    </script>
-    -->
-    <script>
-      function divInfo() {
-        document.getElementById("div_info").style.display = "block";
-        document.getElementById("close_div").style.display = "block";
-        document.getElementById("divInfo").style.display = "none";
-      }
-    </script>
-    <script>
-      function close_div() {
-        document.getElementById("div_info").style.display = "none";
-        document.getElementById("close_div").style.display = "none";
-        document.getElementById("divInfo").style.display = "block";
-      }
-    </script>
-    <script>
-    src="https://kit.fontawesome.com/6478f529f2.js"
-    crossorigin="anonymous"
-    </script>
-    <script>
-        window.kakaoAsyncInit = function() {
-          Kakao.Channel.createChatButton({
-            container: '#kakao-talk-channel-chat-button',
-          });    
-        };
-       
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'kakao-js-sdk');
-      </script> 
-      <script>
-        function changeLangSelect() {
-          console.log("done");
-          var langSelect = document.getElementById("selectbox");
-          var selectValue = langSelect.options[langSelect.selectedIndex].value;
-      
-          if (selectValue == "1") {
-            document.getElementById("bs").style.display = "block";
-            document.getElementById("pl").style.display = "none";
-            document.getElementById("divid").style.display = "none";
-          }
-          if (selectValue == "2") {
-            document.getElementById("bs").style.display = "none";
-            document.getElementById("pl").style.display = "block";
-            document.getElementById("divid").style.display = "none";
-          }
-          if (selectValue == "3") {
-            document.getElementById("bs").style.display = "none";
-            document.getElementById("pl").style.display = "none";
-            document.getElementById("divid").style.display = "block";
-          }
-            if (selectValue == "0") {
-            alert(" 🧾 결산 재무제표를 선택해 주세요 ");
-            document.getElementById("bs").style.display = "none";
-            document.getElementById("pl").style.display = "none";
-            document.getElementById("divid").style.display = "none";
-        }
-        /*  if (selectValue == "12") {
-            document.getElementById("month-nine").style.display = "none";
-            document.getElementById("month-ten").style.display = "none";
-            document.getElementById("month-11").style.display = "none";
-            document.getElementById("print&email").style.display = "block";
-            alert(
-              "🚨아직 급여 지급전입니다. 📆 급여지급일 이후에 조회하여 주시기 바랍니다!"
-            );
-          }
-        }*/
-      }
-      </script>
-</body>   
+
+    <!-- BASIC INFO -->
+    <section class="info-grid">
+      <div class="info-box">
+        <strong>📅 일시</strong>
+        <span>2026년 2월 26일(목) 17:00</span>
+      </div>
+      <div class="info-box">
+        <strong>📍 장소</strong>
+        <span>별관 대강당</span>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="card">
+      <h2>📌 부의 안건</h2>
+      <ol class="agenda">
+        <li>2025년 감사보고서 및 승인</li>
+        <li>2025년 결산(안) 승인</li>
+        <li>2025년 잉여금 처분(안) 승인</li>
+        <li>2026년도 사업계획 및 예산(안) 승인</li>
+        <li>임원선거의 건</li>
+      </ol>
+    </section>
+
+    <!-- ELECTION DETAIL -->
+    <section class="card">
+      <details>
+        <summary>🗳️ 임원선거 세부 안내</summary>
+        <ul>
+          <li><strong>선출 인원</strong> : 비상임 이사장 1인, 비상임 부이사장 1인, 이사 7인, 감사 3인</li>
+          <li><strong>선거권</strong> : 정관 제14조에 따른 선거권 보유 조합원</li>
+          <li><strong>피선거권</strong> : 신협법 제28조 및 정관·규약상 결격사유 없는 자</li>
+          <li><strong>후보 등록 기간</strong> : 2026.02.05(목) ~ 02.09(월) / 09:00~17:00</li>
+          <li><strong>접수처</strong> : 아주대의료원신용협동조합 사무실 (본관 지하 2층)</li>
+          <li><strong>문의</strong> : 신협 선거관리위원회 (원내 ☎ 4939)</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- EVENT -->
+    <section class="highlight">
+      🎉 총 61명 추첨! 상품권 <strong>총 550만원</strong><br />
+      🎁 참석자 전원 소정의 기념품 증정
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 아주대의료원신용협동조합 · 본 페이지는 총회 안내 전용 페이지입니다.
+    </footer>
+
+  </main>
+</body>
 </html>
