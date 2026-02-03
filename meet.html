@@ -156,6 +156,47 @@
         box-shadow: none;
       }
     }
+      .highlight{
+    text-align:left;
+    padding:18px 14px;
+    border-radius:14px;
+  }
+  .highlight a{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    background:#0d6efd;
+    color:#fff;
+  }
+  .highlight a:hover{ filter:brightness(.95); }
+  .report-link{ margin: 10px 0 14px; }
+
+  .report-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    border-radius:14px;
+    text-decoration:none;
+    background: rgba(0,0,0,.03);
+    border: 1px solid rgba(0,0,0,.08);
+    color:#212529;
+    font-weight:700;
+  }
+  .report-btn:hover{
+    background: rgba(0,0,0,.05);
+  }
+  .report-btn .icon{ font-size:18px; line-height:1; }
+  .report-btn .txt{ flex:1; }
+  .report-btn .arrow{ opacity:.55; font-size:18px; }
+
+  .sep{
+    margin:14px 0;
+    border:0;
+    border-top:1px solid rgba(0,0,0,.08);
+  }
   </style>
 </head>
 
@@ -195,7 +236,7 @@
     <!-- ELECTION DETAIL -->
     <section class="card">
       <details>
-        <summary>🗳️ 임원선거 세부 안내</summary>
+        <summary>임원선거 세부 안내</summary>
         <ul>
           <li><strong>선출 인원</strong> : 비상임 이사장 1인, 비상임 부이사장 1인, 이사 7인, 감사 3인</li>
           <li><strong>선거권</strong> : 정관 제14조에 따른 선거권 보유 조합원</li>
@@ -207,11 +248,26 @@
       </details>
     </section>
 
-    <!-- EVENT -->
-    <section class="highlight">
-      🎉 총 61명 추첨! 상품권 <strong>총 550만원</strong><br />
-      🎁 참석자 전원 소정의 기념품 증정
-    </section>
+    <!-- 결산보고 -->
+<div class="report-link">
+  <a href="http://ajoucu.co.kr/closing_report/"
+     class="report-btn"
+     target="_blank"
+     rel="noopener">
+    <span class="icon">📄</span>
+    <span class="txt">결산보고서 보기</span>
+    <span class="arrow">›</span>
+  </a>
+</div>
+
+<hr class="sep">
+
+<!-- EVENT -->
+<section class="highlight">
+  🎉 총 61명 추첨! 상품권 <strong>총 550만원</strong><br />
+  🎁 참석자 전원 소정의 기념품 증정
+</section>
+
 
     <!-- FOOTER -->
     <footer>
