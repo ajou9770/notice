@@ -124,6 +124,8 @@
 @media (max-width: 767.98px) {
   main { padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom, 0px) + 12px); }
 }
+.modal { z-index: 1055; }
+.modal-backdrop { z-index: 1050; }
   </style>
 </head>
 <body>
@@ -268,10 +270,47 @@
       </div>
     </div>
   </div>
-
+<div id="noticeOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:9999;">
+  <div style="max-width:520px; margin:10vh auto; background:#fff; border-radius:16px; overflow:hidden;">
+    <div style="padding:16px 18px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-weight:700;">📢신협 총회 개최 안내</div>
+      <button id="noticeCloseX" style="border:0; background:transparent; font-size:22px; line-height:1; cursor:pointer;">×</button>
+    </div>
+    <div style="padding:18px;">
+      <div style="font-weight:700; margin-bottom:8px;">📍일시&장소: 2월 26일(목) 17시 / 별관대강당</div>
+      <div style="color:#555; line-height:1.5;">
+        🎉경품행사 : 총 51명을 추첨하여 500만원의 행운을 드립니다.  <br/>
+        🧩추가로, 앞자리 선착순 착석 100명중 10명을 추첨하여 신세계이마트상품권(5만원)을 드립니다.<br/>
+       <a href="https://ajou9770.github.io/notice/meet.html" target="_blank">🔎자세히 보기</a> 
+      </div>
+      <div style="margin-top:16px; display:flex; justify-content:flex-end;">
+        <button id="noticeCloseBtn" style="border:0; background:#0d6efd; color:#fff; padding:10px 16px; border-radius:10px; cursor:pointer;">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- Bootstrap JS (bundle: Popper 포함) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    const overlay = document.getElementById("noticeOverlay");
+    const closeX = document.getElementById("noticeCloseX");
+    const closeBtn = document.getElementById("noticeCloseBtn");
 
+    overlay.style.display = "block";
+
+    const close = () => { overlay.style.display = "none"; };
+    closeX.addEventListener("click", close);
+    closeBtn.addEventListener("click", close);
+
+    // 바깥 클릭 닫기(원치 않으면 아래 3줄 삭제)
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) close();
+    });
+  });
+</script>
   <script>
   // 하단 고정바 높이만큼 본문 하단 여백 자동 보정
   (function () {
