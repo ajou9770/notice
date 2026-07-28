@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>재무제표 조회</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background-color: #f8f9fa; }
+  .report-container { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-top: 30px; }
+  h2 { font-weight: 700; margin-bottom: 1rem; color: #2c3e50; }
+  table { font-size: 0.95rem; width: 100%; }
+  thead th { background-color: #2c3e50; color: #fff; text-align: center; }
+  tbody td { text-align: right; vertical-align: middle; }
+  tbody td:first-child { text-align: left; }
+  .highlight-row { background-color: #e3f2fd; font-weight: bold; }
+</style>
+</head>
+<body class="p-3">
+  <div class="container py-4">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">✨ 2025년 경영공시 <small class="text-muted">(주요 재무제표)</small></h2>
+      <p class="text-muted">최신 경영 실적 및 재무 현황 보고</p>
+      <hr>
+    </div>
+
+    <!-- Button Group -->
+    <div class="btn-group d-flex flex-wrap mb-4" role="group">
+      <button class="btn btn-outline-primary flex-fill m-1" onclick="loadData('pl')">요약 손익계산서</button>
+      <button class="btn btn-outline-success flex-fill m-1" onclick="loadData('bs')">요약 재무상태표</button>
+      <button class="btn btn-outline-warning flex-fill m-1" onclick="loadData('retained')">이익잉여금 처분계산서</button>
+      <button class="btn btn-outline-info flex-fill m-1" onclick="loadData('budget2026')">자기자본 현황</button>
+      <button class="btn btn-outline-danger flex-fill m-1" onclick="loadData('seed')">자본 적정성</button>
+      <button class="btn btn-outline-secondary flex-fill m-1" onclick="loadData('jasan')">자산 건전성</button>
+    </div>
+
+        <!-- Report Table -->
+    <div class="report-container shadow-sm rounded bg-white p-3">
+      <h5 id="reportTitle" class="mb-3 fw-bold">📊 재무 보고서</h5>
+      <div id="loadingIndicator" class="my-4 text-center" style="display:none;">
+      <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status"></div>
+      <p class="mt-3 mb-0 fw-semibold">🔄 데이터를 불러오는 중...</p>
+    </div>
+      <div class="table-responsive" id="tablearea">
+        <table class="table table-hover align-middle" id="financialTable">
+          <thead class="table-dark"></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyAkm7WZ-U7i3WnJZl0s_YqzLvPcZSB33toYQkL8Vt9u9rFbPUUfeHW4xIjaaJDdyhk/exec";
+const highlightKeywords = ["자산", "당기순이익", "자본", "대출"];
+const titleMap = {
+  pl: "📊 요약 손익계산서",
+  bs: "📊 요약 재무상태표",
+  retained: "📑 이익잉여금처분계산서",
+  budget2026: "✨자기자본 현황",
+  seed: "🔎 자본 적정성",
+  jasan: "✨ 자산 건전성"
+};
+
+function loadData(type) {
+  document.getElementById("reportTitle").textContent = titleMap[type] || "📊 재무 보고서";
+  document.getElementById("loadingIndicator").style.display = "block";
+  document.getElementById("tablearea").style.display = "none";
+
+  fetch(`${GAS_URL}?type=${type}&t=${Date.now()}`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("loadingIndicator").style.display = "none";
+      document.getElementById("tablearea").style.display = "block";
+
+      const thead = document.querySelector("#financialTable thead");
+      const tbody = document.querySelector("#financialTable tbody");
+      thead.innerHTML = "";
+      tbody.innerHTML = "";
+
+      if (!Array.isArray(data) || data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="10" class="text-center text-muted">데이터가 없습니다.</td></tr>`;
+        return;
+      }
+
+      const headerRow = document.createElement("tr");
+      data[0].forEach(text => {
+        const th = document.createElement("th");
+        th.textContent = text;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      data.slice(1).forEach(row => {
+        const tr = document.createElement("tr");
+        if (row[0] && highlightKeywords.some(keyword => row[0].toString().includes(keyword))) {
+          tr.classList.add("highlight-row");
+        }
+
+        row.forEach((cell, index) => {
+          const td = document.createElement("td");
+          let value = String(cell).replace(/,/g, "");
+          const numValue = parseFloat(value);
+
+          if (!isNaN(numValue) && cell !== "") {
+            if (String(data[0][index]).includes("증감율")) {
+              let pct = numValue;
+              if (Math.abs(pct) < 1) pct *= 100;
+              td.textContent = pct.toFixed(1) + "%";
+              td.style.color = pct > 0 ? "red" : pct < 0 ? "blue" : "black";
+            } else if (index > 0) {
+              td.textContent = numValue.toLocaleString();
+            } else {
+              td.textContent = cell;
+            }
+          } else {
+            td.textContent = cell;
+          }
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    })
+    .catch(err => {
+      document.getElementById("loadingIndicator").style.display = "none";
+      console.error("데이터 불러오기 오류:", err);
+      document.querySelector("#financialTable tbody").innerHTML =
+        `<tr><td colspan="10" class="text-center text-danger">⚠ 데이터를 불러오는 중 오류가 발생했습니다.</td></tr>`;
+    });
+}
+
+loadData("pl");
+</script>
+</body>
+</html>
+
+<!--const GAS_URL = "https://script.google.com/macros/s/AKfycbyAkm7WZ-U7i3WnJZl0s_YqzLvPcZSB33toYQkL8Vt9u9rFbPUUfeHW4xIjaaJDdyhk/exec"; // 배포된 WebApp URL-->
