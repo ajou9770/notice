@@ -1,0 +1,126 @@
+/* AjouCU Notice UI v2026.08 - shared mobile-first layer */
+:root{
+  --ui-primary:#174c82;
+  --ui-primary-2:#0f3864;
+  --ui-accent:#2876c7;
+  --ui-bg:#f4f7fb;
+  --ui-surface:#fff;
+  --ui-text:#182433;
+  --ui-muted:#687587;
+  --ui-border:#dce4ed;
+  --ui-danger:#c93434;
+  --ui-radius:16px;
+  --ui-shadow:0 8px 28px rgba(26,56,91,.09);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  padding:20px 14px 40px;
+  background:var(--ui-bg);
+  color:var(--ui-text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+body>*{max-width:960px;margin-left:auto;margin-right:auto}
+body>script,body>style,body>link{max-width:none}
+a{color:var(--ui-primary);text-underline-offset:3px}
+a:hover{color:var(--ui-accent)}
+img{max-width:100%!important;height:auto!important;object-fit:contain}
+iframe,video,embed,object{max-width:100%}
+h1,h2,h3,h4,h5,h6{line-height:1.35;letter-spacing:-.025em;color:#13283f}
+h1{font-size:clamp(1.65rem,5.5vw,2.25rem)}
+h2{font-size:clamp(1.35rem,4.5vw,1.8rem)}
+h3{font-size:clamp(1.15rem,4vw,1.45rem)}
+p{margin-top:.65em;margin-bottom:.65em}
+hr{border:0;border-top:1px solid var(--ui-border);margin:24px auto}
+/* Legacy tables become clean cards without changing markup */
+table{
+  width:100%!important;
+  max-width:960px;
+  border-collapse:separate!important;
+  border-spacing:0!important;
+  background:var(--ui-surface);
+  border:1px solid var(--ui-border)!important;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 4px 18px rgba(26,56,91,.05);
+}
+th,td{
+  padding:11px 12px!important;
+  border-color:var(--ui-border)!important;
+  vertical-align:middle;
+}
+th{background:#edf4fb!important;color:#173a5d;font-weight:700}
+tr:nth-child(even)>td{background-color:#fbfcfe}
+/* Forms */
+input:not([type="checkbox"]):not([type="radio"]):not([type="image"]):not([type="range"]),select,textarea{
+  width:100%;max-width:100%;min-height:44px;
+  padding:10px 12px;
+  border:1px solid #cfd9e5;
+  border-radius:10px;
+  background:#fff;color:var(--ui-text);
+  font:inherit;
+  box-shadow:inset 0 1px 2px rgba(15,56,100,.025);
+  transition:border-color .15s,box-shadow .15s;
+}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:#67a2dc;box-shadow:0 0 0 3px rgba(40,118,199,.13)}
+input[type="checkbox"],input[type="radio"]{width:18px;height:18px;vertical-align:-3px;accent-color:var(--ui-primary)}
+button,input[type="button"],input[type="submit"],input[type="reset"],a.btn,.btn{
+  min-height:44px;
+  border:0;
+  border-radius:11px!important;
+  padding:10px 17px!important;
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .12s,box-shadow .12s,opacity .12s;
+}
+button:not(.btn-close),input[type="button"],input[type="submit"]{background:var(--ui-primary);color:#fff}
+button:hover,input[type="button"]:hover,input[type="submit"]:hover{opacity:.92;box-shadow:0 5px 14px rgba(23,76,130,.18)}
+button:active,input[type="button"]:active,input[type="submit"]:active{transform:translateY(1px)}
+/* Bootstrap / W3 legacy harmonization */
+.container,.container-fluid,.w3-container{max-width:960px!important}
+.card,.panel,.well,.jumbotron,.w3-card,.w3-card-2,.w3-card-4{
+  border:1px solid var(--ui-border)!important;
+  border-radius:var(--ui-radius)!important;
+  background:#fff!important;
+  box-shadow:var(--ui-shadow)!important;
+}
+.card-header,.panel-heading{border-radius:var(--ui-radius) var(--ui-radius) 0 0!important}
+.alert{border-radius:12px!important}
+.modal-content{border:0!important;border-radius:18px!important;box-shadow:0 20px 70px rgba(0,0,0,.22)!important;overflow:hidden}
+.modal-header{border-bottom:1px solid var(--ui-border)!important;padding:16px 18px!important}
+.modal-body{padding:18px!important}
+.modal-footer{border-top:1px solid var(--ui-border)!important;padding:12px 18px!important}
+/* Common old inline presentation fixes */
+center{max-width:960px;margin-left:auto;margin-right:auto}
+marquee{max-width:100%;overflow:hidden}
+font{font-family:inherit}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef2f7;padding:14px;border-radius:12px;overflow:auto}
+/* Horizontal overflow safety */
+.ui-table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:680px){
+  body{padding:12px 10px 32px;font-size:15px;line-height:1.6}
+  body>*{max-width:100%}
+  table{font-size:14px;border-radius:11px}
+  th,td{padding:9px 8px!important}
+  h1{margin-top:12px}
+  button,input[type="button"],input[type="submit"],input[type="reset"],a.btn,.btn{min-height:46px}
+  .modal-dialog{margin:12px!important}
+  .row{--bs-gutter-x:1rem}
+}
+@media (max-width:420px){
+  th,td{padding:8px 6px!important;font-size:13px}
+  body{padding-left:8px;padding-right:8px}
+}
+@media print{
+  body{background:#fff;padding:0;color:#000;font-size:12pt}
+  body>*{max-width:none}
+  table,.card,.panel,.well{box-shadow:none!important}
+  button,.btn{display:none!important}
+}
