@@ -1,353 +1,555 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>신협 헌혈캠페인 안내</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>신협 헌혈캠페인 안내</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Icons (선택) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+    <!-- Icons (선택) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root {
-      --brand: #0ea5e9;
-      --brand-2: #22c55e;
-      --bg-grad-from: #ffffff;
-      --bg-grad-to: #dfe9e8;
-    }
-    html, body {
-      height: 100%;
-      font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-      background: linear-gradient(135deg, var(--bg-grad-from), var(--bg-grad-to));
-    }
+    <style>
+      :root {
+        --brand: #0ea5e9;
+        --brand-2: #22c55e;
+        --bg-grad-from: #ffffff;
+        --bg-grad-to: #dfe9e8;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family:
+          "Noto Sans KR",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--bg-grad-from),
+          var(--bg-grad-to)
+        );
+      }
 
-    /* 컨테이너 폭 제한 */
-    .page-wrap { max-width: 980px; }
+      /* 컨테이너 폭 제한 */
+      .page-wrap {
+        max-width: 980px;
+      }
 
-    /* 히어로 섹션 */
-    .hero {
-      background: radial-gradient(1200px 400px at 50% -200px, rgba(14,165,233,.15), transparent);
-      border-radius: 24px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.06);
-      overflow: hidden;
-    }
-    .hero-img {
-      max-height: 220px; /* ← 이미지 과대 노출 방지 */
-      width: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .hero-body {
-      padding: 20px 24px 24px;
-    }
+      /* 히어로 섹션 */
+      .hero {
+        background: radial-gradient(
+          1200px 400px at 50% -200px,
+          rgba(14, 165, 233, 0.15),
+          transparent
+        );
+        border-radius: 24px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+      }
+      .hero-img {
+        max-height: 220px; /* ← 이미지 과대 노출 방지 */
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hero-body {
+        padding: 20px 24px 24px;
+      }
 
-    /* 카드 스타일 */
-    .info-card {
-      border: 0;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.06);
-      height: 100%;
-    }
-    .info-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      display: inline-flex; align-items: center; justify-content: center;
-      background: #eef6ff; color: #0ea5e9;
-      margin-right: .5rem;
-    }
-    .info-icon.warn { background: #eefcf2; color: #22c55e; }
+      /* 카드 스타일 */
+      .info-card {
+        border: 0;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        height: 100%;
+      }
+      .info-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #eef6ff;
+        color: #0ea5e9;
+        margin-right: 0.5rem;
+      }
+      .info-icon.warn {
+        background: #eefcf2;
+        color: #22c55e;
+      }
 
-    /* CTA 버튼 */
-    .cta .btn {
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-    }
+      /* CTA 버튼 */
+      .cta .btn {
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
 
-    /* 푸터 라이트 박스 */
-    .footnote {
-      border-radius: 16px;
-      background: rgba(255,255,255,.7);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 24px rgba(0,0,0,.04);
-    }
+      /* 푸터 라이트 박스 */
+      .footnote {
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      }
 
-    /* 모달 버튼 */
-    .modal .btn { border-radius: 10px; }
+      /* 모달 버튼 */
+      .modal .btn {
+        border-radius: 10px;
+      }
 
-    /* 반응형 */
-    @media (max-width: 576px) {
-      .hero-body h1 { font-size: 1.4rem; }
-      .hero-body p { font-size: .95rem; }
-    }
-    /* 4) 터치 피드백 최적화(모바일 클릭 지연/하이라이트 최소화) */
-    button, a.btn { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-    :root { --sticky-h: 64px; }
+      /* 반응형 */
+      @media (max-width: 576px) {
+        .hero-body h1 {
+          font-size: 1.4rem;
+        }
+        .hero-body p {
+          font-size: 0.95rem;
+        }
+      }
+      /* 4) 터치 피드백 최적화(모바일 클릭 지연/하이라이트 최소화) */
+      button,
+      a.btn {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+      :root {
+        --sticky-h: 64px;
+      }
 
-  /* 하단 고정바 (모바일 전용) */
-  .sticky-actions {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 1030;
-    height: var(--sticky-h);
-    display: flex; align-items: center;
-    background: rgba(255,255,255,.92);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(0,0,0,.06);
-    box-shadow: 0 -6px 20px rgba(0,0,0,.06);
-    padding: 8px clamp(12px, 4vw, 18px) calc(8px + env(safe-area-inset-bottom));
-  }
-  .sticky-actions .wrap {
-    width: 100%;
-    max-width: 980px; /* 페이지 본문 폭에 맞춤 */
-    margin: 0 auto;
-    display: flex; gap: 8px;
-  }
-  .sticky-actions .btn {
-    flex: 1 1 0;
-    border-radius: 12px;
-    font-weight: 700;
-    padding: 10px 12px;
-  }
-  /* 모바일에만 표시 */
-  @media (min-width: 768px) {
-    .sticky-actions { display: none; }
-  }
-  :root { --sticky-h: 64px; }
-/* 모바일에서만 본문 하단 여백을 고정바 높이만큼 확보 */
-@media (max-width: 767.98px) {
-  main { padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom, 0px) + 12px); }
-}
-.modal { z-index: 1055; }
-.modal-backdrop { z-index: 1050; }
-  </style>
+      /* 하단 고정바 (모바일 전용) */
+      .sticky-actions {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1030;
+        height: var(--sticky-h);
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+        padding: 8px clamp(12px, 4vw, 18px)
+          calc(8px + env(safe-area-inset-bottom));
+      }
+      .sticky-actions .wrap {
+        width: 100%;
+        max-width: 980px; /* 페이지 본문 폭에 맞춤 */
+        margin: 0 auto;
+        display: flex;
+        gap: 8px;
+      }
+      .sticky-actions .btn {
+        flex: 1 1 0;
+        border-radius: 12px;
+        font-weight: 700;
+        padding: 10px 12px;
+      }
+      /* 모바일에만 표시 */
+      @media (min-width: 768px) {
+        .sticky-actions {
+          display: none;
+        }
+      }
+      :root {
+        --sticky-h: 64px;
+      }
+      /* 모바일에서만 본문 하단 여백을 고정바 높이만큼 확보 */
+      @media (max-width: 767.98px) {
+        main {
+          padding-bottom: calc(
+            var(--sticky-h) + env(safe-area-inset-bottom, 0px) + 12px
+          );
+        }
+      }
+      .modal {
+        z-index: 1055;
+      }
+      .modal-backdrop {
+        z-index: 1050;
+      }
+    </style>
 
-<!-- AjouCU shared mobile UI -->
-<link rel="stylesheet" href="notice-ui.css?v=20260812">
-<script src="notice-ui.js?v=20260812" defer></script>
-</head>
-<body>
-  <main class="container page-wrap py-4 py-md-5">
+    <!-- AjouCU shared mobile UI -->
+    <link rel="stylesheet" href="notice-ui.css?v=20260812" />
+    <script src="notice-ui.js?v=20260812" defer></script>
+  </head>
+  <body>
+    <main class="container page-wrap py-4 py-md-5">
+      <!-- Hero -->
+      <section class="hero bg-white">
+        <!-- 상단 이미지 (작게, 가로폭에 맞춰 크롭) -->
+        <img
+          src="img/camp_top.jpg"
+          alt="신협 헌혈 캠페인 안내 이미지"
+          class="hero-img"
+        />
 
-    <!-- Hero -->
-    <section class="hero bg-white">
-      <!-- 상단 이미지 (작게, 가로폭에 맞춰 크롭) -->
-      <img src="img/camp_top.jpg" alt="신협 헌혈 캠페인 안내 이미지" class="hero-img" />
+        <div class="hero-body">
+          <h1 class="mb-2 fw-bold">❤️ 신협 헌혈데이 사랑나눔 캠페인</h1>
+          <p class="text-secondary mb-0">
+            헌혈로 사랑을 실천하고, 조합원 기념품 및 모바일 커피 교환권 혜택도
+            함께 받아가세요.
+          </p>
+        </div>
+      </section>
 
-      <div class="hero-body">
-        <h1 class="mb-2 fw-bold">
-          ❤️ 신협 헌혈데이 사랑나눔 캠페인
-        </h1>
-        <p class="text-secondary mb-0">
-          헌혈로 사랑을 실천하고, 조합원 기념품 및 모바일 커피 교환권 혜택도 함께 받아가세요.
-        </p>
-      </div>
-    </section>
-
-    <!-- 3-Grid Info -->
-    <section class="mt-4 mt-md-5">
-      <div class="row g-3 g-sm-4">
-        <div class="col-12 col-md-4">
-          <div class="card info-card h-100">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2">
-                <span class="info-icon"><i class="fa-solid fa-calendar-day"></i></span>
-                <h5 class="mb-0 fw-bold">일시</h5>
+      <!-- 3-Grid Info -->
+      <section class="mt-4 mt-md-5">
+        <div class="row g-3 g-sm-4">
+          <div class="col-12 col-md-4">
+            <div class="card info-card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <span class="info-icon"
+                    ><i class="fa-solid fa-calendar-day"></i
+                  ></span>
+                  <h5 class="mb-0 fw-bold">일시</h5>
+                </div>
+                <p class="mb-1"><strong>2026.8.21(금)</strong></p>
+                <p class="text-secondary mb-2">
+                  09:30 ~ 16:30
+                  <span class="badge text-bg-light ms-1">점심시간 운영</span>
+                </p>
+                <div class="small text-muted">
+                  좋은 컨디션으로 오세요. 아침식사는 꼭!
+                </div>
               </div>
-              <p class="mb-1"><strong>2026.8.21(금)</strong></p>
-              <p class="text-secondary mb-2">09:30 ~ 16:30 <span class="badge text-bg-light ms-1">점심시간 운영</span></p>
-              <div class="small text-muted">좋은 컨디션으로 오세요. 아침식사는 꼭!</div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card info-card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <span class="info-icon warn"
+                    ><i class="fa-solid fa-location-dot"></i
+                  ></span>
+                  <h5 class="mb-0 fw-bold">장소(변경)</h5>
+                </div>
+                <p class="mb-1"><strong>1층 정문 소아응급센터 앞</strong></p>
+                <p class="text-secondary mb-0">헌혈버스</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card info-card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <span class="info-icon"
+                    ><i class="fa-solid fa-gift"></i
+                  ></span>
+                  <h5 class="mb-0 fw-bold">혜택</h5>
+                </div>
+                <ul class="ps-3 mb-2">
+                  <li>현장 기념품 제공</li>
+                  <li>모바일 커피 교환권(헌혈 후 신청)</li>
+                </ul>
+                <div class="small text-muted">
+                  신협은 캠페인에 소정의 기념품을 후원합니다.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card info-card h-100">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2">
-                <span class="info-icon warn"><i class="fa-solid fa-location-dot"></i></span>
-                <h5 class="mb-0 fw-bold">장소(변경)</h5>
-              </div>
-              <p class="mb-1"><strong>1층 정문 소아응급센터 앞</strong></p>
-              <p class="text-secondary mb-0">헌혈버스</p>
+      </section>
+
+      <!-- 안내 Alert -->
+      <div class="alert alert-info mt-4" role="alert">
+        <i class="fa-solid fa-circle-info me-1"></i>
+        전자문진은 <strong>8월 19일(D-2)</strong>부터 유효합니다. 사전
+        전자문진을 통해 대기 시간을 단축하세요.
+      </div>
+      <!-- CTA Buttons -->
+      <section class="cta mt-3 d-none d-md-block">
+        <div class="d-grid d-sm-flex gap-2">
+          <button
+            class="btn btn-primary flex-fill"
+            onclick="
+              openConfirm(
+                '전자문진은 8월 19일(D-2)부터 유효합니다. 혈액원 전자문진 페이지로 이동할까요?',
+                'https://www.bloodinfo.net/emi2/login.do',
+              )
+            "
+          >
+            <i class="fa-solid fa-list-check me-2"></i>전자문진 바로가기
+          </button>
+          <button
+            class="btn btn-danger flex-fill"
+            onclick="
+              openConfirm(
+                '헌혈에 성공하셨나요? 감사 쿠폰을 신청하시겠습니까?',
+                'http://ajou9770.github.io/notice/camp_gift.html',
+              )
+            "
+          >
+            <i class="fa-solid fa-ticket me-2"></i>(헌혈 후) 모바일 쿠폰 신청
+          </button>
+        </div>
+      </section>
+
+      <!-- 연락/안내 -->
+      <section class="footnote p-3 p-sm-4 mt-4">
+        <div
+          class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2"
+        >
+          <div>
+            <div class="fw-bold mb-1">문의</div>
+            <div class="text-secondary">
+              원내 6052, 4939
+              <span class="ms-2 small text-muted">평일 08:30 ~ 17:00</span>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card info-card h-100">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2">
-                <span class="info-icon"><i class="fa-solid fa-gift"></i></span>
-                <h5 class="mb-0 fw-bold">혜택</h5>
-              </div>
-              <ul class="ps-3 mb-2">
-                <li>현장 기념품 제공</li>
-                <li>모바일 커피 교환권(헌혈 후 신청)</li>
-              </ul>
-              <div class="small text-muted">신협은 캠페인에 소정의 기념품을 후원합니다.</div>
-            </div>
+          <div class="d-none d-md-block">
+            <button
+              class="btn btn-outline-secondary"
+              onclick="
+                openConfirm(
+                  '업무시간은 평일 08:30~17:00입니다. 전화 앱으로 이동할까요?',
+                  'tel:031-219-6052',
+                )
+              "
+            >
+              <i class="fa-solid fa-phone me-2"></i>전화걸기
+            </button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 안내 Alert -->
-    <div class="alert alert-info mt-4" role="alert">
-      <i class="fa-solid fa-circle-info me-1"></i>
-      전자문진은 <strong>8월 19일(D-2)</strong>부터 유효합니다. 사전 전자문진을 통해 대기 시간을 단축하세요.
-    </div>
-    <!-- CTA Buttons -->
-    <section class="cta mt-3 d-none d-md-block">
-      <div class="d-grid d-sm-flex gap-2">
-        <button class="btn btn-primary flex-fill" onclick="openConfirm('전자문진은 8월 19일(D-2)부터 유효합니다. 혈액원 전자문진 페이지로 이동할까요?', 'https://www.bloodinfo.net/emi2/login.do')">
-          <i class="fa-solid fa-list-check me-2"></i>전자문진 바로가기
-        </button>
-        <button class="btn btn-danger flex-fill" onclick="openConfirm('헌혈에 성공하셨나요? 감사 쿠폰을 신청하시겠습니까?', 'http://ajou9770.github.io/notice/camp_gift.html')">
-          <i class="fa-solid fa-ticket me-2"></i>(헌혈 후) 모바일 쿠폰 신청
-        </button>
-      </div>
-    </section>
-
-    <!-- 연락/안내 -->
-    <section class="footnote p-3 p-sm-4 mt-4">
-      <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2">
-        <div>
-          <div class="fw-bold mb-1">문의</div>
-          <div class="text-secondary">
-            원내 6052, 4939
-            <span class="ms-2 small text-muted">평일 08:30 ~ 17:00</span>
-          </div>
-        </div>
-        <div class="d-none d-md-block">
-  <button class="btn btn-outline-secondary"
-          onclick="openConfirm('업무시간은 평일 08:30~17:00입니다. 전화 앱으로 이동할까요?', 'tel:031-219-6052')">
-    <i class="fa-solid fa-phone me-2"></i>전화걸기
-  </button>
-</div>
-
-      </div>
-    </section>
-    <!-- Sticky Quick Actions (모바일 전용) -->
- <nav class="sticky-actions" role="navigation" aria-label="빠른 실행바">
-  <div class="wrap">
-    <button class="btn btn-outline-primary"
+      </section>
+      <!-- Sticky Quick Actions (모바일 전용) -->
+      <nav class="sticky-actions" role="navigation" aria-label="빠른 실행바">
+        <div class="wrap">
+          <button
+            class="btn btn-outline-primary"
             aria-label="전자문진 바로가기"
-            onclick="openConfirm('전자문진은 8월 19일(D-2)부터 유효합니다. 혈액원 전자문진 페이지로 이동할까요?','https://www.bloodinfo.net/emi2/login.do')">
-      <i class="fa-solid fa-list-check me-1"></i> 전자문진
-    </button>
+            onclick="
+              openConfirm(
+                '전자문진은 8월 19일(D-2)부터 유효합니다. 혈액원 전자문진 페이지로 이동할까요?',
+                'https://www.bloodinfo.net/emi2/login.do',
+              )
+            "
+          >
+            <i class="fa-solid fa-list-check me-1"></i> 전자문진
+          </button>
 
-    <button class="btn btn-outline-danger"
+          <button
+            class="btn btn-outline-danger"
             aria-label="모바일 쿠폰 신청"
-            onclick="openConfirm('헌혈에 성공하셨나요? 감사 쿠폰을 신청하시겠습니까?','http://ajou9770.github.io/notice/camp_gift.html')">
-      <i class="fa-solid fa-ticket me-1"></i> 쿠폰
-    </button>
+            onclick="
+              openConfirm(
+                '헌혈에 성공하셨나요? 감사 쿠폰을 신청하시겠습니까?',
+                'http://ajou9770.github.io/notice/camp_gift.html',
+              )
+            "
+          >
+            <i class="fa-solid fa-ticket me-1"></i> 쿠폰
+          </button>
 
-    <a class="btn btn-outline-secondary"
-       aria-label="전화걸기"
-       onclick="openConfirm('업무시간은 평일 08:30~17:00입니다. 전화 앱으로 이동할까요?','tel:031-219-6052')">
-      <i class="fa-solid fa-phone me-1"></i> 전화
-    </a>
-  </div>
-</nav>
-
-
-  </main>
-
-  <!-- Confirm Modal (공용) -->
-  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow">
-        <div class="modal-header">
-          <h5 class="modal-title" id="confirmLabel">이동 확인</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+          <a
+            class="btn btn-outline-secondary"
+            aria-label="전화걸기"
+            onclick="
+              openConfirm(
+                '업무시간은 평일 08:30~17:00입니다. 전화 앱으로 이동할까요?',
+                'tel:031-219-6052',
+              )
+            "
+          >
+            <i class="fa-solid fa-phone me-1"></i> 전화
+          </a>
         </div>
-        <div class="modal-body" id="confirmMessage">이동하시겠습니까?</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">취소</button>
-          <a id="confirmGo" class="btn btn-primary" href="#" rel="noopener">이동</a>
+      </nav>
+    </main>
+
+    <!-- Confirm Modal (공용) -->
+    <div
+      class="modal fade"
+      id="confirmModal"
+      tabindex="-1"
+      aria-labelledby="confirmLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmLabel">이동 확인</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="닫기"
+            ></button>
+          </div>
+          <div class="modal-body" id="confirmMessage">이동하시겠습니까?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+              취소
+            </button>
+            <a id="confirmGo" class="btn btn-primary" href="#" rel="noopener"
+              >이동</a
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!--모달창-->
-  <!-- <div id="noticeOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:9999;">
-  <div style="max-width:520px; margin:10vh auto; background:#fff; border-radius:16px; overflow:hidden;">
-    <div style="padding:16px 18px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
-      <div style="font-weight:700;">📢3년 확정 금리형 저축공제판매 마감임박</div>
-      <button id="noticeCloseX" style="border:0; background:transparent; font-size:22px; line-height:1; cursor:pointer;">×</button>
-    </div>
-    <div style="padding:18px;">
-      <div style="font-weight:700; margin-bottom:8px;">📍기간&금리: 3년 / 4% (사업비차감 후 적용금리 3.13%)</div>
-      <div style="color:#555; line-height:1.5;">
-        ⌛판매마감 : ~ 5월 28일(목)  <br/>
-        🧩 3년 확정금리형 저축공제 판매마감이 다가옵니다.<br/><br>
-       <a href="http://pf.kakao.com/_dfhkK/113264090" target="_blank">🔎자세히 보기</a> 
+    <!--모달창-->
+    <div
+      id="noticeOverlay"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 9999;
+      "
+    >
+      <div
+        style="
+          max-width: 520px;
+          margin: 10vh auto;
+          background: #fff;
+          border-radius: 16px;
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            padding: 16px 18px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div style="font-weight: 700">
+            📢모바일 비대면 대출(최저 4.4%~_) 이벤트 진행중...8월말까지.
+          </div>
+          <button
+            id="noticeCloseX"
+            style="
+              border: 0;
+              background: transparent;
+              font-size: 22px;
+              line-height: 1;
+              cursor: pointer;
+            "
+          >
+            ×
+          </button>
+        </div>
+        <div style="padding: 18px">
+          <div style="font-weight: 700; margin-bottom: 8px">
+            📍기간&금리: 1년 / 최저 4.4% ~ (마이너스통장 최저 4.9%)
+          </div>
+          <div style="color: #555; line-height: 1.5">
+            ⌛대출한도 : 최대 1억원 이내 연소득 범위내 <br />
+            ⌛판매마감 : ~ 8월 31일(월) <br />
+            🧩 모바일로 편리하게 신청(상담)하실 수 있습니다.(📍사전 대출한도
+            ,금리 상담가능)<br /><br />
+            <a
+              href="https://ajou9770.github.io/event/online_loan.html"
+              target="_blank"
+              >🔎상담(신청)하기</a
+            >
+          </div>
+          <div
+            style="margin-top: 16px; display: flex; justify-content: flex-end"
+          >
+            <button
+              id="noticeCloseBtn"
+              style="
+                border: 0;
+                background: #0d6efd;
+                color: #fff;
+                padding: 10px 16px;
+                border-radius: 10px;
+                cursor: pointer;
+              "
+            >
+              확인
+            </button>
+          </div>
+        </div>
       </div>
-      <div style="margin-top:16px; display:flex; justify-content:flex-end;">
-        <button id="noticeCloseBtn" style="border:0; background:#0d6efd; color:#fff; padding:10px 16px; border-radius:10px; cursor:pointer;">
-          확인
-        </button>
-      </div>
     </div>
-  </div>
-</div>  -->
-  <!-- Bootstrap JS (bundle: Popper 포함) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  window.addEventListener("load", () => {
-    const overlay = document.getElementById("noticeOverlay");
-    const closeX = document.getElementById("noticeCloseX");
-    const closeBtn = document.getElementById("noticeCloseBtn");
+    <!-- Bootstrap JS (bundle: Popper 포함) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        const overlay = document.getElementById("noticeOverlay");
+        const closeX = document.getElementById("noticeCloseX");
+        const closeBtn = document.getElementById("noticeCloseBtn");
 
-    overlay.style.display = "block";
+        overlay.style.display = "block";
 
-    const close = () => { overlay.style.display = "none"; };
-    closeX.addEventListener("click", close);
-    closeBtn.addEventListener("click", close);
+        const close = () => {
+          overlay.style.display = "none";
+        };
+        closeX.addEventListener("click", close);
+        closeBtn.addEventListener("click", close);
 
-    // 바깥 클릭 닫기(원치 않으면 아래 3줄 삭제)
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) close();
-    });
-  });
-</script>
-  <script>
-  // 하단 고정바 높이만큼 본문 하단 여백 자동 보정
-  (function () {
-    const sticky = document.querySelector('.sticky-actions');
-    const main   = document.querySelector('main');
-    if (!sticky || !main) return;
+        // 바깥 클릭 닫기(원치 않으면 아래 3줄 삭제)
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) close();
+        });
+      });
+    </script>
+    <script>
+      // 하단 고정바 높이만큼 본문 하단 여백 자동 보정
+      (function () {
+        const sticky = document.querySelector(".sticky-actions");
+        const main = document.querySelector("main");
+        if (!sticky || !main) return;
 
-    function applyPadding() {
-      const h = window.getComputedStyle(sticky).display === 'none'
-        ? 0
-        : sticky.offsetHeight;
-      main.style.paddingBottom = (h + 12) + 'px';
-    }
+        function applyPadding() {
+          const h =
+            window.getComputedStyle(sticky).display === "none"
+              ? 0
+              : sticky.offsetHeight;
+          main.style.paddingBottom = h + 12 + "px";
+        }
 
-    window.addEventListener('resize', applyPadding);
-    window.addEventListener('orientationchange', applyPadding);
-    document.addEventListener('DOMContentLoaded', applyPadding);
-    applyPadding();
-  })();
-</script>
+        window.addEventListener("resize", applyPadding);
+        window.addEventListener("orientationchange", applyPadding);
+        document.addEventListener("DOMContentLoaded", applyPadding);
+        applyPadding();
+      })();
+    </script>
 
-
-  <script>
-    // 공용 확인 모달 열기
-    function openConfirm(message, href) {
-      const msgEl = document.getElementById('confirmMessage');
-      const goEl  = document.getElementById('confirmGo');
-      msgEl.textContent = message || '이동하시겠습니까?';
-      goEl.setAttribute('href', href || '#');
-      const m = new bootstrap.Modal(document.getElementById('confirmModal'));
-      m.show();
-    }
-  </script>
-</body>
+    <script>
+      // 공용 확인 모달 열기
+      function openConfirm(message, href) {
+        const msgEl = document.getElementById("confirmMessage");
+        const goEl = document.getElementById("confirmGo");
+        msgEl.textContent = message || "이동하시겠습니까?";
+        goEl.setAttribute("href", href || "#");
+        const m = new bootstrap.Modal(document.getElementById("confirmModal"));
+        m.show();
+      }
+    </script>
+  </body>
 </html>
