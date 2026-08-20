@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b2f4f" />
+    <title>아주대의료원신협 비대면 업무안내</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --navy: #0b2f4f;
+        --navy-2: #123f67;
+        --blue: #1976d2;
+        --sky: #eaf4ff;
+        --green: #0f9d72;
+        --violet: #6558d3;
+        --kakao: #fee500;
+        --text: #152233;
+        --muted: #667587;
+        --line: rgba(18, 47, 76, 0.1);
+        --white: #ffffff;
+        --shadow: 0 18px 45px rgba(13, 43, 70, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family:
+          "Noto Sans KR",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 8% 0%,
+            rgba(58, 149, 255, 0.15),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 96% 10%,
+            rgba(31, 173, 130, 0.12),
+            transparent 26%
+          ),
+          linear-gradient(180deg, #f7fbff 0%, #f1f6fb 100%);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1180px, 100%);
+        min-height: 100svh;
+        margin: 0 auto;
+        padding: max(20px, env(safe-area-inset-top)) 18px
+          max(22px, env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-radius: 28px;
+        padding: 28px 26px 26px;
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-2) 62%,
+          #17649a 100%
+        );
+        color: white;
+        box-shadow: 0 22px 55px rgba(11, 47, 79, 0.2);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        right: -75px;
+        top: -90px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .brand {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        opacity: 0.94;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 13px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        font-size: clamp(27px, 5vw, 46px);
+        line-height: 1.18;
+        letter-spacing: -0.055em;
+        font-weight: 800;
+      }
+
+      .hero p {
+        position: relative;
+        z-index: 1;
+        margin: 14px 0 0;
+        max-width: 760px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: clamp(14px, 2.5vw, 17px);
+        line-height: 1.7;
+        letter-spacing: -0.025em;
+      }
+
+      .notice {
+        margin-top: 17px;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 10px 13px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: white;
+        font-size: 13px;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        margin: 28px 4px 14px;
+      }
+
+      .section-title h2 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: -0.04em;
+      }
+
+      .section-title p {
+        margin: 5px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        flex: 1;
+      }
+
+      .service-card {
+        --accent: var(--blue);
+        position: relative;
+        min-height: 220px;
+        padding: 23px;
+        text-decoration: none;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          border-color 0.18s ease;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        right: -46px;
+        bottom: -55px;
+        border-radius: 50%;
+        background: color-mix(in srgb, var(--accent) 12%, transparent);
+      }
+
+      .service-card:hover {
+        transform: translateY(-3px);
+        border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+        box-shadow: 0 24px 55px rgba(13, 43, 70, 0.15);
+      }
+
+      .service-card:active {
+        transform: scale(0.985);
+      }
+
+      .service-card.deposit {
+        --accent: var(--green);
+      }
+      .service-card.loan {
+        --accent: var(--violet);
+      }
+      .service-card.kakao {
+        --accent: #3b3212;
+        background: linear-gradient(145deg, #fffcef 0%, #fff7b8 100%);
+      }
+
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .icon-wrap {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 11%, white);
+      }
+
+      .kakao .icon-wrap {
+        background: rgba(59, 50, 18, 0.08);
+      }
+
+      .arrow {
+        width: 37px;
+        height: 37px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 9%, white);
+        font-size: 14px;
+      }
+
+      .service-card h3 {
+        margin: 21px 0 7px;
+        font-size: 23px;
+        letter-spacing: -0.045em;
+        line-height: 1.25;
+      }
+
+      .service-card p {
+        margin: 0;
+        max-width: 90%;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+        letter-spacing: -0.02em;
+      }
+
+      .kakao p {
+        color: #625a3e;
+      }
+
+      .tag {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        margin-top: 18px;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: #f5f8fb;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .kakao .tag {
+        background: rgba(59, 50, 18, 0.07);
+        color: #625a3e;
+      }
+
+      footer {
+        padding: 22px 5px 4px;
+        color: #8190a1;
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding-left: 13px;
+          padding-right: 13px;
+        }
+
+        .hero {
+          border-radius: 23px;
+          padding: 24px 20px 22px;
+        }
+
+        .hero h1 {
+          font-size: 30px;
+        }
+
+        .notice {
+          font-size: 12px;
+        }
+
+        .section-title {
+          margin-top: 22px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .service-card {
+          min-height: 164px;
+          padding: 19px;
+          border-radius: 21px;
+        }
+
+        .service-card h3 {
+          font-size: 20px;
+          margin-top: 17px;
+        }
+
+        .service-card p {
+          font-size: 13px;
+        }
+
+        .icon-wrap {
+          width: 52px;
+          height: 52px;
+          border-radius: 16px;
+          font-size: 22px;
+        }
+
+        .tag {
+          margin-top: 13px;
+        }
+      }
+
+      @media (max-height: 760px) and (max-width: 680px) {
+        .hero {
+          padding-top: 20px;
+          padding-bottom: 18px;
+        }
+
+        .brand {
+          margin-bottom: 12px;
+        }
+
+        .hero h1 {
+          font-size: 27px;
+        }
+
+        .hero p {
+          margin-top: 9px;
+          line-height: 1.55;
+        }
+
+        .section-title {
+          margin-top: 17px;
+        }
+
+        .service-card {
+          min-height: 148px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="brand">
+          <div class="brand-mark">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <span>아주대의료원신협</span>
+        </div>
+
+        <h1>점심시간에도<br />비대면 온라인으로 이용하실 수 있습니다.</h1>
+
+        <p>
+          필요한 업무를 선택하시면 해당 서비스로 바로 연결됩니다. 모바일을 통해
+          빠르고 편리하게 이용해 주세요.
+        </p>
+
+        <div class="notice">
+          <i class="fa-regular fa-clock"></i>
+          <span>점심시간 :13시~14시 (1시간)</span>
+        </div>
+      </section>
+
+      <div class="section-title">
+        <h2>온라인 · 비대면 업무</h2>
+        <p>원하시는 서비스를 선택해 주세요.</p>
+      </div>
+
+      <section class="cards">
+        <!-- URL을 실제 모바일온뱅크 주소로 변경하세요 -->
+        <a
+          class="service-card"
+          href="https://ajou9770.github.io/notice/onbank_run.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <div class="card-top">
+              <div class="icon-wrap">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <h3>모바일온뱅크</h3>
+            <p>조회·이체 등 주요 금융업무를 모바일에서 편리하게 이용하세요.</p>
+          </div>
+          <span class="tag">모바일 금융업무</span>
+        </a>
+
+        <!-- URL을 실제 간편예금가입 주소로 변경하세요 -->
+        <a
+          class="service-card deposit"
+          href="https://ajou9770.github.io/usertip/event/draw_link.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <div class="card-top">
+              <div class="icon-wrap">
+                <i class="fa-solid fa-piggy-bank"></i>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <h3>간편예금가입</h3>
+            <p>방문 없이 온라인에서 간편하게 예·적금 상품 가입을 진행하세요.</p>
+          </div>
+          <span class="tag">예금 · 적금 가입</span>
+        </a>
+
+        <!-- URL을 실제 모바일대출 주소로 변경하세요 -->
+        <a
+          class="service-card loan"
+          href="http://ajou9770.github.io/event/online_loan.html"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <div class="card-top">
+              <div class="icon-wrap">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+              </div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <h3>모바일대출</h3>
+            <p>모바일에서 대출 상담 및 신청 관련 서비스를 빠르게 이용하세요.</p>
+          </div>
+          <span class="tag">대출 상담 · 신청</span>
+        </a>
+
+        <!-- URL을 실제 카카오톡 상담 주소로 변경하세요 -->
+        <a
+          class="service-card kakao"
+          href="http://pf.kakao.com/_dfhkK/chat"
+          target="_blank"
+          rel="noopener"
+        >
+          <div>
+            <div class="card-top">
+              <div class="icon-wrap"><i class="fa-solid fa-comment"></i></div>
+              <div class="arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <h3>카카오톡 상담</h3>
+            <p>궁금한 사항은 카카오톡을 통해 간편하게 문의해 주세요.</p>
+          </div>
+          <span class="tag">문의 · 상담</span>
+        </a>
+      </section>
+
+      <footer>
+        서비스 이용 시 각 금융서비스의 이용 가능 시간 및 본인인증 절차가 적용될
+        수 있습니다.<br />
+        © 아주대의료원신협
+      </footer>
+    </main>
+  </body>
+</html>
