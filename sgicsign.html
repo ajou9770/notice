@@ -1,135 +1,370 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>서울보증보험대출 계약체결 동의 및 전자서명</title>
-    <link rel="stylesheet" href="styles.css" />
-
+<!doctype html>
+<html lang="ko" id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>서울보증보험대출 안내 | 아주대의료원신협</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+      :root {
+        color-scheme: light;
+        --ink: #142b37;
+        --muted: #46606b;
+        --brand: #07575e;
+        --line: #d9e6e8;
+        --tint: #edf7f7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #f3f7fa;
+        color: var(--ink);
+        font:
+          1rem/1.65 system-ui,
+          "Malgun Gothic",
+          sans-serif;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+      }
+      .page {
+        width: min(100% - 32px, 880px);
+        margin: 28px auto;
+      }
+      .hero,
+      .panel {
+        border-radius: 22px;
+        padding: clamp(18px, 4vw, 36px);
+      }
+      .hero {
+        background: linear-gradient(125deg, #102f42, #07575e);
+        color: white;
+      }
+      .brand {
+        margin: 0;
+        font-weight: 750;
+        color: #bcefed;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      h1 {
+        margin: 10px 0;
+        font-size: clamp(1.65rem, 5vw, 2.55rem);
+        line-height: 1.25;
+      }
+      h2 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+      }
+      h3 {
+        font-size: 1rem;
+        margin: 16px 0 8px;
+      }
+      .hero p:last-of-type {
+        color: #e5f6f6;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        min-height: 48px;
+        padding: 10px 16px;
+        border: 1px solid transparent;
+        border-radius: 13px;
+        font-weight: 750;
+        text-align: center;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: var(--brand);
+        color: white;
+      }
+      .hero .btn-primary {
+        background: #dbfbf6;
+        color: #123d44;
+      }
+      .hero .btn-outline {
+        border-color: #a2c8cd;
+        color: white;
+      }
+      .btn-outline {
+        border-color: #9ebabe;
+        color: var(--brand);
+        background: transparent;
+      }
+      .btn-kakao {
+        background: #fee500;
+        color: #2f2516;
+      }
+      .btn:hover {
+        box-shadow: inset 0 0 0 2px currentColor;
+      }
+      :focus-visible {
+        outline: 3px solid #b95b00;
+        outline-offset: 3px;
+      }
+      .panel {
+        background: white;
+        border: 1px solid var(--line);
+        margin-top: 16px;
+        box-shadow: 0 6px 18px rgba(20, 43, 55, 0.04);
+        scroll-margin-top: 16px;
+      }
+      .panel:target {
+        border-color: var(--brand);
+      }
+      .panel p {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+      .step {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 3px 10px;
+        background: var(--tint);
+        color: var(--brand);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 750;
+      }
+      .note {
+        margin-top: 14px;
+        padding: 11px 14px;
+        background: #fff5dd;
+        border-radius: 10px;
+        color: #624100;
+      }
+      details {
+        margin-top: 16px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      summary {
+        padding: 12px 14px;
+        cursor: pointer;
+        font-weight: 750;
+        color: var(--brand);
+      }
+      summary:hover {
+        background: var(--tint);
+        border-radius: 12px;
+      }
+      .screens {
+        padding: 0 12px 12px;
+      }
+      .screens a {
+        display: block;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .agreement-code {
+        margin-top: 14px;
+        padding: 10px 14px;
+        background: var(--tint);
+        border: 1px solid #a9cdcd;
+        border-radius: 10px;
+        color: var(--brand);
+        font-weight: 700;
+      }
+      .agreement-code strong {
+        margin-left: 6px;
+        font-size: 1.25rem;
+        letter-spacing: 0.05em;
+      }
+      .agreement-code small {
+        display: block;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .hint {
+        font-size: 0.875rem;
+      }
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      @media (max-width: 520px) {
+        .page {
+          margin-top: 14px;
         }
-
-        #toTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99;
-            background-color: #cce2e4;
-            color: white;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
+        .actions .btn {
+          flex: 1 1 100%;
         }
-        #toTopBtn:hover {
-            background-color: #21444a;
+        .footer .btn {
+          flex: 1 1 auto;
         }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
     </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="brand">아주대의료원신협</p>
+        <h1>서울보증보험대출 안내</h1>
+        <p>
+          대출 신청 전에는 개인정보 동의, 대출 신청 후에는 보험계약 전자서명을
+          진행해 주세요.
+        </p>
+        <nav class="actions" aria-label="절차 바로가기">
+          <a class="btn btn-primary" href="#consent"
+            >01 개인정보 조회 동의 <span aria-hidden="true">↓</span></a
+          >
+          <a class="btn btn-outline" href="#signature"
+            >02 보험계약 전자서명 <span aria-hidden="true">↓</span></a
+          >
+        </nav>
+      </header>
 
-<!-- AjouCU shared mobile UI -->
-<link rel="stylesheet" href="notice-ui.css?v=20260812">
-<script src="notice-ui.js?v=20260812" defer></script>
-</head>
-  <body onload="alert('🤷‍♂️홈페이지 UI(메뉴이미지)는 변경될 수 있습니다. 메뉴(문자)를 참조하여 이용 바랍니다.')">
-    <h2 id="subtitle_css"> 서울보증보험대출 계약을 위한 개인정보 및 전자서명 안내 </h2>
-    <h3>☞ 서울보증보험 생활안정대출 계약을 위한 사전 개인정보동의 및 보증보험 대출 신청 후 전자서명 방법을 안내 해 드립니다.  <br/><br/>
-        📢 먼저, 서울보증보험 모바일 앱을 설치하신 후, 아래 개인정보 동의 및 전자서명 방법을 참조하여 진행 바랍니다. <br/><br/>   
-<!--<button id="signbtn"> 
-<a href="https://play.google.com/store/apps/details?id=com.sgic.mocha.external"> 서울보증 모바일앱 설치(<i class="fab fa-google-play fa-lg"></i><i class="fas fa-chevron-right fa-lg"></i></a></button><br/>
-<div class="mileapple">
-<i class="fab fa-apple fa-lg"></i>
-아이폰 계열은 <a href="https://apps.apple.com/kr/app/sgi%EC%84%9C%EC%9A%B8%EB%B3%B4%EC%A6%9D/id1483151303">(<i class="fab fa-app-store-ios fa-lg"></i>애플스토어)</a>에서 내려 받아 주세요~~ </h3></div>
-<div id="box">-->
-<div class="dropdown">
-  <button class="dropbtn">서울보증보험 모바일 앱 열기(설치)<i class="fas fa-download"></i></button>
-  <div class="dropdown-content">
-    <a href="https://play.google.com/store/apps/details?id=com.sgic.sgim.app" target="_blank"><i class="fab fa-google-play"></i>안드로이드</a>
-    <div onclick="alert('⚠️앱스토어에서 서울보증보험앱을 내려 받아주세요')"><a href="#"><i class="fab fa-apple"></i>아이폰(IOS)</a></div>
-</div>
-</div>
-<br/><br/><br/><br/>
-<h3>📢개인정보사전동의 진행방법</h3>
-<div style="max-width:fit-content">
-<img src="img/sign_notice2023_big.jpg" style="width: 100%;"><br/>
-<!-- <img src="img/insurmenu (2).jpg" style="width: 100%;"><br/>
-<img src="img/insurmenu (3).jpg" style="width: 100%;"><br/>
-<img src="img/insurmenu (4).jpg" style="width: 100%;"><br/>
-<img src="img/insurmenu (5).jpg" style="width: 100%;"><br/>
-<img src="img/insurmene_05_2.jpg" style="width: 100%;"><br/> -->
-</div>
-<h3><mark class="mint">※ 아래 "보험계약 전자서명"은 대출신청 후 진행 바랍니다.</mark><br/>
-  ☞ 전자서명은 모바일에 공동(구 공인)인증서가 있어야 합니다<br/>
-     (공동인증서가 있으시면 신협 고객용 PC를 이용하실 수 있습니다.)</h3>
-<img src="img/insurmenu (6).jpg"><br/>
-<h3><mark class="mint">※ PC에서도 아래와 같이 "개인정보동의" 또는 "계약전자서명"이 가능합니다.<br/>
-  ☞단, 계약전자서명은 공동인증서를 통해 인증절차가 필요함. </mark></h3>
-<h2 style="text-align: center;">[개인정보 동의]</h2>
-<img src="img/sgic_pcimg01.JPG"><br/>
-<h2 style="text-align: center;">[계약전자서명]</h2>
-<img src="img/sgic_pcimg02.JPG"><br/>
-<div class="loaninsu">
-  <a href="http://ajou9770.github.io/notice/loaninsu.html">
-      보증대출 보증보험료 조회하기<i class="fas fa-chevron-right fa-lg"></i>
-   </a></div><br/>
-<div
-  id="kakao-talk-channel-chat-button"
-  data-channel-public-id="_dfhkK"
-  data-title="consult"
-  data-size="small"
-  data-color="yellow"
-  data-shape="mobile"
-  data-support-multiple-densities="true"
-></div><br/>
-<button id="toTopBtn" onclick="scrollToTop()" style="font-size: 20px;">🔺</button>
-    <a href="http://ajou9770.github.io/usertip/loan.html" class="backButton"> <i class="fas fa-chevron-left fa-lg"></i> 이전화면 돌아가기 </i></a><br/>
-<script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>    
-<script src="script.js"></script>
-<script>
-  window.kakaoAsyncInit = function() {
-    Kakao.Channel.createChatButton({
-      container: '#kakao-talk-channel-chat-button',
-    });
-  };
+      <section class="panel" id="consent" aria-labelledby="consent-title">
+        <span class="step">01 · 대출 신청 전</span>
+        <h2 id="consent-title">개인정보 조회 동의</h2>
+        <div class="agreement-code">
+          <div>협약코드 <strong>H0134</strong></div>
+          <small>SGI 화면에서 협약코드를 요청하면 H0134를 입력해 주세요.</small>
+        </div>
+        <p>
+          아래 버튼으로 SGI서울보증에 접속해 주세요. 로그인 안내가 표시되면
+          ‘확인’을 누르고 로그인한 뒤, 개인정보 조회 동의 화면의 안내에 따라
+          진행해 주세요.
+        </p>
+        <div class="actions">
+          <a
+            class="btn btn-primary"
+            href="https://www.sgic.co.kr/biz/ccp/index.html?p=CCPSGN010015F01"
+            >SGI 개인정보 조회 동의서 열기 <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
 
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  })(document, 'script', 'kakao-js-sdk');
-</script>  
-<script> 
-let toTopBtn = document.getElementById("toTopBtn");
+      <section class="panel" id="signature" aria-labelledby="signature-title">
+        <span class="step">02 · 대출 신청 후</span>
+        <h2 id="signature-title">보험계약 전자서명</h2>
+        <div class="agreement-code">
+          <div>협약코드 <strong>H0134</strong></div>
+          <small>SGI 화면에서 협약코드를 요청하면 H0134를 입력해 주세요.</small>
+        </div>
+        <p>
+          SGI서울보증 앱을 열어 아래 화면 안내에 따라 전자서명을 진행해 주세요.
+        </p>
+        <div class="note">
+          전자서명에는 공동인증서가 필요합니다. 공동인증서가 있으면 신협 고객용
+          PC에서도 진행하실 수 있습니다.
+        </div>
+        <div class="actions" aria-label="SGI서울보증 앱 설치">
+          <a
+            class="btn btn-outline"
+            href="https://play.google.com/store/apps/details?id=com.sgic.sgim.app"
+            >Android 앱 설치 <span aria-hidden="true">↗</span></a
+          >
+          <a
+            class="btn btn-outline"
+            href="https://apps.apple.com/kr/app/sgi%EC%84%9C%EC%9A%B8%EB%B3%B4%EC%A6%9D/id1483151303"
+            >iPhone 앱 설치 <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <details>
+          <summary>모바일 전자서명 화면 보기</summary>
+          <div class="screens">
+            <a
+              href="img/insurmenu%20(6).jpg"
+              target="_blank"
+              rel="noopener"
+              aria-label="모바일 전자서명 화면 원본 보기 (새 탭)"
+            >
+              <img
+                src="img/insurmenu%20(6).jpg"
+                alt="SGI 모바일 보험계약 전자서명 화면"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </details>
+      </section>
 
-window.onscroll = function() {
-    scrollFunction();
-};
+      <section class="panel" aria-labelledby="pc-title">
+        <h2 id="pc-title">PC 이용 안내</h2>
+        <div class="agreement-code">
+          <div>협약코드 <strong>H0134</strong></div>
+          <small>SGI 화면에서 협약코드를 요청하면 H0134를 입력해 주세요.</small>
+        </div>
+        <p>
+          PC에서 개인정보 조회 동의를 진행하려면 위 ‘SGI 개인정보 조회 동의서
+          열기’를 이용해 주세요. PC 전자서명 화면은 아래에서 확인할 수 있습니다.
+        </p>
+        <details>
+          <summary>PC 전자서명 화면 보기</summary>
+          <div class="screens">
+            <h3>보험계약 전자서명</h3>
+            <a
+              href="img/sgic_pcimg02.JPG"
+              target="_blank"
+              rel="noopener"
+              aria-label="PC 전자서명 화면 원본 보기 (새 탭)"
+            >
+              <img
+                src="img/sgic_pcimg02.JPG"
+                alt="SGI PC 보험계약 전자서명 화면"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </details>
+        <p class="hint">
+          화면을 누르면 원본이 새 탭에서 열립니다. 실제 화면이 달라진 경우 메뉴
+          이름을 기준으로 찾아 주세요.
+        </p>
+      </section>
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        toTopBtn.style.display = "block";
-    } else {
-        toTopBtn.style.display = "none";
-    }
-}
+      <section class="panel" aria-labelledby="help-title">
+        <h2 id="help-title">보험료 조회 및 문의</h2>
+        <div class="actions">
+          <a
+            class="btn btn-outline"
+            href="https://ajou9770.github.io/notice/loaninsu.html"
+            >보증보험료 조회 <span aria-hidden="true">→</span></a
+          >
+          <a class="btn btn-kakao" href="https://pf.kakao.com/_dfhkK/chat"
+            >카카오톡 상담 <span aria-hidden="true">→</span></a
+          >
+        </div>
+      </section>
 
-function scrollToTop() {
-    let scrollDuration = 300; // 스크롤에 걸리는 시간 (1초 = 1000ms)
-    let scrollStep = -window.scrollY / (scrollDuration / 15),
-        scrollInterval = setInterval(function() {
-        if (window.scrollY != 0) {
-            window.scrollBy(0, scrollStep);
-        } else {
-            clearInterval(scrollInterval);
-        }
-    }, 15);
-}
-</script>
+      <footer class="footer">
+        <a
+          class="btn btn-outline"
+          href="https://ajou9770.github.io/usertip/loan.html"
+          ><span aria-hidden="true">←</span> 이전 화면</a
+        >
+        <a class="btn btn-outline" href="#top"
+          >맨 위로 <span aria-hidden="true">↑</span></a
+        >
+      </footer>
+    </main>
+  </body>
 </html>
